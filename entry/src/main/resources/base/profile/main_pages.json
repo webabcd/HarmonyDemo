@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/arkts/basic/Basic",
+    "pages/arkts/basic/Boolean",
+    "pages/arkts/basic/DataType",
+    "pages/arkts/basic/Number",
+    "pages/arkts/basic/String"
+  ]
+}
