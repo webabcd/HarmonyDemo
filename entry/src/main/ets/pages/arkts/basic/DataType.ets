@@ -37,6 +37,13 @@ struct MySample {
 }
 
 {
+  MyLog.d(`${undefined == null}, ${undefined === null}`); // true, false
+  MyLog.d(`${typeof null == 'object'}, ${typeof undefined == 'undefined'}`); // true, true
+  MyLog.d(`${Number(null)}, ${Number(undefined)}`); // 0, NaN
+  MyLog.d(`${Boolean(null)}, ${Boolean(undefined)}`); // false, false
+}
+
+{
   // 定义变量的时候如果没有指定数据类型，但是赋值了，则 ArkTS 会自动推导出变量的数据类型
   let a = 10;
   MyLog.d(`${typeof a}`); // number

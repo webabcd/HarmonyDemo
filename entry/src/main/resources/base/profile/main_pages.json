@@ -8,6 +8,14 @@
     "pages/arkts/basic/String",
     "pages/arkts/basic/Array",
     "pages/arkts/basic/Set",
-    "pages/arkts/basic/Map"
+    "pages/arkts/basic/Map",
+    "pages/arkts/basic/Tuple",
+    "pages/arkts/class/Enum",
+    "pages/arkts/class/Function",
+    "pages/arkts/class/Object",
+    "pages/arkts/class/Interface",
+    "pages/arkts/class/Generics",
+    "pages/arkts/class/Class",
+    "pages/arkts/module/Main"
   ]
 }
