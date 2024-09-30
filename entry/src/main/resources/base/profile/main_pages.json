@@ -16,6 +16,11 @@
     "pages/arkts/class/Interface",
     "pages/arkts/class/Generics",
     "pages/arkts/class/Class",
-    "pages/arkts/module/Main"
+    "pages/arkts/module/Main",
+    "pages/arkts/advanced/ArrayBuffer",
+    "pages/arkts/advanced/Promise",
+    "pages/arkts/advanced/AsyncAwait",
+    "pages/arkts/advanced/IteratorGenerator",
+    "pages/arkts/advanced/ProxyReflect"
   ]
 }

@@ -86,3 +86,20 @@ MyLog.d(`${b}`); // ['x', 'x', 'x']
   a.salt = 10;
   MyLog.d(`${a.add(2, 3)}`); // 15
 }
+
+{
+  // 泛型接口
+  interface MyInterface<T, U> {
+    hello(input: T): U;
+  }
+
+  // 实现泛型接口
+  class MyClass implements MyInterface<number, string> {
+    hello(input: number): string {
+      return `hello:${input}`;
+    }
+  }
+
+  let a = new MyClass();
+  MyLog.d(a.hello(100)); // hello:100
+}
