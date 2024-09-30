@@ -1,6 +1,6 @@
 ArkTs 不支持 var, any, symbol
 ArkTs 不支持匿名类型
-ArkTs 不支持解构赋值
+ArkTs 不支持解构
 
 
 ArkTs
