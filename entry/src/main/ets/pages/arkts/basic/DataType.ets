@@ -12,10 +12,6 @@ struct MySample {
 }
 
 
-// ArkTs 不支持 var
-// ArkTs 不支持 symbol
-// ArkTs 不支持 any
-
 // let 声明的变量是块作用域，仅块内可用，声明必须初始化
 {
   let a = 10;

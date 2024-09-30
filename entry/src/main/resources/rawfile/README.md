@@ -12,3 +12,9 @@
 - pages/arkts/basic/Number
 5. string
 - pages/arkts/basic/String
+6. array
+- pages/arkts/basic/Array
+7. set
+- pages/arkts/basic/Set
+8. map
+- pages/arkts/basic/Map

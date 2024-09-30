@@ -5,6 +5,9 @@
     "pages/arkts/basic/Boolean",
     "pages/arkts/basic/DataType",
     "pages/arkts/basic/Number",
-    "pages/arkts/basic/String"
+    "pages/arkts/basic/String",
+    "pages/arkts/basic/Array",
+    "pages/arkts/basic/Set",
+    "pages/arkts/basic/Map"
   ]
 }
