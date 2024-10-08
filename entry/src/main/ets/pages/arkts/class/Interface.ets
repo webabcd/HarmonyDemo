@@ -35,19 +35,27 @@ struct MySample {
 }
 
 {
-  interface Person {
+  interface IPerson {
     name: string;
     age?: number; // 通过 ? 定义可选属性
+    hello?(name: string): string; // 通过 ? 定义可选方法
   };
 
-  // 变量的形状必须和接口的形状保持一致，且可选属性可以不定义
-  let webabcd1: Person = {
-    name: 'webabcd',
-  };
-  let webabcd2: Person = {
-    name: 'webabcd',
-    age: 44
-  };
+  // 变量的形状必须和接口的形状保持一致，且可选属性和可选方法可以不定义
+  class MyPersion1 implements IPerson {
+    public name: string;
+    public constructor(name: string) {
+      this.name = name;
+    }
+  }
+  class MyPersion2 implements IPerson {
+    public name: string;
+    public age: number;
+    public constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age
+    }
+  }
 }
 
 {

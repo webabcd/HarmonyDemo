@@ -81,7 +81,6 @@ struct MySample {
     public name: string;
     public constructor(name: string) {
       this.name = name;
-      this.name = name;
     }
     // 抽象方法
     public abstract hello():string;
