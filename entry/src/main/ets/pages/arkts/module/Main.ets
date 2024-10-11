@@ -23,7 +23,7 @@ import './i';
 
 @Entry
 @Component
-struct MySample {
+struct MainDemo {
   build() {
     Column() {
       TitleBar()

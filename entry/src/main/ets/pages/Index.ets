@@ -23,17 +23,38 @@ struct Index {
 
     this.siteMap =
     [
-      new Node1("ArkTS", [
+      new Node1("ArkTS 基础", [
         new Node2("基础", "pages/arkts/basic/Basic"),
         new Node2("数据类型", "pages/arkts/basic/DataType"),
         new Node2("boolean", "pages/arkts/basic/Boolean"),
         new Node2("number", "pages/arkts/basic/Number"),
         new Node2("string", "pages/arkts/basic/String"),
+        new Node2("array", "pages/arkts/basic/Array"),
+        new Node2("set", "pages/arkts/basic/Set"),
+        new Node2("map", "pages/arkts/basic/Map"),
+        new Node2("tuple", "pages/arkts/basic/Tuple"),
       ]),
-      new Node1("ArkTS", [
-        new Node2("基础", "pages/arkts/Basic"),
-        new Node2("基础", "pages/arkts/Basic"),
-        new Node2("基础", "pages/arkts/Basic"),
+      new Node1("ArkTS 类", [
+        new Node2("enum", "pages/arkts/class/Enum"),
+        new Node2("function", "pages/arkts/class/Function"),
+        new Node2("interface", "pages/arkts/class/Interface"),
+        new Node2("object", "pages/arkts/class/Object"),
+        new Node2("类", "pages/arkts/class/Class"),
+        new Node2("泛型", "pages/arkts/class/Generics"),
+        new Node2("模块", "pages/arkts/module/Main"),
+      ]),
+      new Node1("ArkTS 进阶", [
+        new Node2("ArrayBuffer", "pages/arkts/advanced/ArrayBuffer"),
+        new Node2("Promise", "pages/arkts/advanced/Promise"),
+        new Node2("async/await", "pages/arkts/advanced/AsyncAwait"),
+        new Node2("iterator, generator", "pages/arkts/advanced/IteratorGenerator"),
+        new Node2("Proxy, Reflect", "pages/arkts/advanced/ProxyReflect"),
+      ]),
+      new Node1("鸿蒙开发基础", [
+        new Node2("ArkUI 基础", "pages/basic/Hello"),
+      ]),
+      new Node1("组件（布局类）", [
+        new Node2("Column", "pages/component/layout/ColumnDemo"),
       ]),
     ]
     return;
@@ -138,6 +159,7 @@ class Node1 {
 class Node2 {
   public title: string;
   public url: string;
+
   constructor(title: string, url: string) {
     this.title = title;
     this.url = url;

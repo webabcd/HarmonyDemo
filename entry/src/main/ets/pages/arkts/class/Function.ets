@@ -2,7 +2,7 @@ import { TitleBar, MyLog } from '../../TitleBar';
 
 @Entry
 @Component
-struct MySample {
+struct FunctionDemo {
   build() {
     Column() {
       TitleBar()

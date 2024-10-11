@@ -1,12 +1,6 @@
-ArkTs 不支持 var, any, unknown, symbol
-ArkTs 不支持匿名类型
-ArkTs 不支持解构
-ArkTs 不支持 Generator
-
-
 ArkTs
 ark 是方舟的意思，ts 是 typescript
-ArkTs 兼容大部分的 typescript 语法
+ArkTs 兼容大部分的 typescript 语法，不支持 var any unknown symbol，不支持匿名类型，不支持解构，不支持 Generator
 
 ohos
 ohos 全称是 OpenHarmony Open Source
