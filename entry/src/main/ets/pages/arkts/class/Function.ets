@@ -119,3 +119,21 @@ f4(1, 2, )
   }
   MyLog.d(`${myFunc(100)}, ${myFunc("webabcd")}`); // 200, hello webabcd
 }
+
+// 函数传参时，通过接口定义参数的形状
+{
+  interface MyOptions {
+    name: string;
+    age: number;
+    hello: (name: string) => string;
+  };
+
+  let f1 = (options:MyOptions): string => {
+    MyLog.d(options.hello(options.name)); // hello: webabcd
+    return `${options.name} ${options.age}`;
+  }
+  let result = f1({ name:"webabcd", age:44, hello: (name: string) => {
+    return `hello: ${name}`
+  }})
+  MyLog.d(result); // webabcd 44
+}

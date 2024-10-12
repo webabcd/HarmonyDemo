@@ -18,7 +18,7 @@ struct InterfaceDemo {
     readonly id: number; // 只读属性
     name: string;
     age: number;
-    // hello(name: string): string; // 方法
+    hello: (name: string) => string; // 方法
   };
 
   // 变量的形状必须和接口的形状保持一致（也就是说属性名和类型必须与接口一样，且每个属性都必须要定义，且不能定义接口未定义的属性）
@@ -26,19 +26,20 @@ struct InterfaceDemo {
     id: 1234,
     name: 'webabcd',
     age: 44,
-    // 通过这种 Object 的方式无法实现接口中的方法，会编译报错（但是 typescript 是支持的），用 class 的方式是可以实现接口的方法的
-    // hello(name: string): string { return 'hello: '+ name; }
+    hello: (name: string) => {
+      return 'hello: '+ name;
+    }
   };
 
   webabcd.name = 'wanglei';
-  MyLog.d(`${webabcd.id}, ${webabcd.name}, ${webabcd.age}`); // 1234, wanglei, 44
+  MyLog.d(`${webabcd.id}, ${webabcd.name}, ${webabcd.age}, ${webabcd.hello("webabcd")}`); // 1234, wanglei, 44, hello: webabcd
 }
 
 {
   interface IPerson {
     name: string;
     age?: number; // 通过 ? 定义可选属性
-    hello?(name: string): string; // 通过 ? 定义可选方法
+    hello?: (name: string) => string; // 通过 ? 定义可选方法
   };
 
   // 变量的形状必须和接口的形状保持一致，且可选属性和可选方法可以不定义
@@ -54,6 +55,9 @@ struct InterfaceDemo {
     public constructor(name: string, age: number) {
       this.name = name;
       this.age = age
+    }
+    public hello(name: string) {
+      return 'hello: ' + name;
     }
   }
 }
