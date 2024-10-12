@@ -16,11 +16,19 @@ struct Hello {
   // @State 表示组件中的状态变量，状态变量变化会触发UI刷新
   @State message: string = 'Hello World';
 
-  // ctrl + p
-  // ctrl + alt + space
+  // 构建 UI（在 build 内通过组件描述需要的 UI）
   build() {
     Column({ space: 20 }) {
-      Text(this.message).fontSize(15).fontColor(Color.Gray).width('90%')
+      Text(this.message)
+        .fontSize(16)
+        .fontColor(Color.Blue)
+      /*
+       * Button 是一个按钮组件
+       *   组件参数有啥，可通过快捷键 ctrl + p 查看，比如 Button 的参数有 label 和 options
+       *   本例的 options 参数是一个 ButtonOptions 接口，这个接口里有什么参数，可以在 {} 中通过快捷键 ctrl + alt + space 查看
+       *   其中的 width(), height() 等是属性方法，支持链式调用
+       *   其中的 onClick() 等是事件方法，支持链式调用
+       */
       Button('Ok', { type: ButtonType.Normal, stateEffect: true })
         .borderRadius(8)
         .backgroundColor(0x317aff)
