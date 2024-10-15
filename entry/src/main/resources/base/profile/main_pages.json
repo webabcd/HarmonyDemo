@@ -23,6 +23,7 @@
     "pages/arkts/advanced/IteratorGenerator",
     "pages/arkts/advanced/ProxyReflect",
     "pages/component/layout/ColumnDemo",
-    "pages/basic/Hello"
+    "pages/basic/Hello",
+    "pages/basic/BuilderDemo"
   ]
 }

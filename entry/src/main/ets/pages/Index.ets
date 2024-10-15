@@ -52,6 +52,7 @@ struct Index {
       ]),
       new Node1("鸿蒙开发基础", [
         new Node2("ArkUI 基础", "pages/basic/Hello"),
+        new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）", "pages/basic/BuilderDemo"),
       ]),
       new Node1("组件（布局类）", [
         new Node2("Column", "pages/component/layout/ColumnDemo"),
