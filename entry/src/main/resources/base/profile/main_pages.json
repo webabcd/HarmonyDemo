@@ -25,6 +25,7 @@
     "pages/component/layout/ColumnDemo",
     "pages/basic/Hello",
     "pages/basic/BuilderDemo",
-    "pages/basic/StyleDemo"
+    "pages/basic/StyleDemo",
+    "pages/basic/StatementDemo"
   ]
 }

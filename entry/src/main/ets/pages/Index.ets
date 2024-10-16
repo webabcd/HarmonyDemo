@@ -54,6 +54,7 @@ struct Index {
         new Node2("ArkUI 基础", "pages/basic/Hello"),
         new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）", "pages/basic/BuilderDemo"),
         new Node2("@Style 相关装饰器（@Style, @Extend, stateStyles）", "pages/basic/StyleDemo"),
+        new Node2("在描述 UI 时使用 if/else, ForEach 语句", "pages/basic/StatementDemo"),
       ]),
       new Node1("组件（布局类）", [
         new Node2("Column", "pages/component/layout/ColumnDemo"),
