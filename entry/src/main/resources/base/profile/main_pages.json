@@ -24,6 +24,7 @@
     "pages/arkts/advanced/ProxyReflect",
     "pages/component/layout/ColumnDemo",
     "pages/basic/Hello",
-    "pages/basic/BuilderDemo"
+    "pages/basic/BuilderDemo",
+    "pages/basic/StyleDemo"
   ]
 }

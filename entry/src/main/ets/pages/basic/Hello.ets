@@ -27,7 +27,7 @@ struct Hello {
   hello(): string {
     return `hello: ${this.name}`
   }
-  // @Builder 表示函数会返回一个组件（@Builder 函数可以在组件内部定义，也可以在组件外部定义）
+  // @Builder 表示函数会返回一个组件（可以在组件内部定义，也可以在全局定义）
   @Builder myBuilder1() {
     Text(this.message)
       .fontSize(24)
@@ -69,7 +69,7 @@ struct Hello {
   }
 }
 
-// @Builder 表示函数会返回一个组件（@Builder 函数可以在组件内部定义，也可以在组件外部定义）
+// @Builder 表示函数会返回一个组件（可以在组件内部定义，也可以在全局定义）
 @Builder function myBuilder2() {
   Text("myBuilder2")
     .fontSize(24)
