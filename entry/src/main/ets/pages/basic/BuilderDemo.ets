@@ -122,7 +122,7 @@ struct BuilderDemo {
         })
       })
 
-      Button('Ok', { type: ButtonType.Normal, stateEffect: true })
+      Button('button', { type: ButtonType.Normal, stateEffect: true })
         .borderRadius(8)
         .backgroundColor(Color.Blue)
         .width(90)

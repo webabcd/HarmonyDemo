@@ -26,6 +26,8 @@
     "pages/basic/Hello",
     "pages/basic/BuilderDemo",
     "pages/basic/StyleDemo",
-    "pages/basic/StatementDemo"
+    "pages/basic/StatementDemo",
+    "pages/state/StateDemo",
+    "pages/state/PropDemo"
   ]
 }

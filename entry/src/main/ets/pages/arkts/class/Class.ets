@@ -171,3 +171,27 @@ struct ClassDemo {
   }
   f1(new Dog("dog"));
 }
+
+// 关于普通函数和箭头函数的 this 指向问题（详细参见我在 typescript 项目中的说明）
+{
+  class Person {
+    public name: string
+    constructor(name:string) {
+      this.name = name
+    }
+
+    // 普通函数定义的是原型方法，动态 this（实例化对象后，可以通过 call() 等修改 this 的指向）
+    hello() {
+      return `hello:${this.name}`;
+    }
+
+    // 箭头函数定义的是实例方法，静态 this（实例化对象后，无法通过 call() 等修改 this 的指向）
+    hello2 = () => {
+      return `hello:${this.name}`;
+    }
+  }
+
+  let a = new Person('webabcd');
+  MyLog.d(a.hello()); // hello:webabcd
+  MyLog.d(a.hello2()); // hello:webabcd
+}

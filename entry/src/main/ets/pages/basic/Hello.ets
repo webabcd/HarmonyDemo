@@ -48,7 +48,7 @@ struct Hello {
        *   其中的 width(), height() 等是属性方法，支持链式调用
        *   其中的 onClick() 等是事件方法，支持链式调用
        */
-      Button('Ok', { type: ButtonType.Normal, stateEffect: true })
+      Button('button', { type: ButtonType.Normal, stateEffect: true })
         .borderRadius(8)
         .backgroundColor(0x317aff)
         .width(90)

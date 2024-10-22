@@ -30,7 +30,7 @@ export struct TitleBar {
           .align(Alignment.Start)
         Blank()
       }
-      .height(56)
+      .margin({bottom: 10})
       .width('100%')
     }
   }

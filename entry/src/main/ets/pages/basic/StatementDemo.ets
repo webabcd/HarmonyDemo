@@ -23,7 +23,7 @@ struct StatementDemo {
       } else if (this.flag == 1) {
         Text("flag == 1")
       }
-      Button("Button1")
+      Button("button")
         .onClick(() => {
           this.flag = this.flag == 0 ? 1 : 0;
         })
