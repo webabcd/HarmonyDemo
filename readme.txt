@@ -5,5 +5,8 @@ ArkTs 兼容大部分的 typescript 语法，不支持 var any unknown symbol，
 ohos
 ohos 全称是 OpenHarmony Open Source
 
+.ets 文件
+ets 的全称是 extended typescript
+
 通过 Previewer 可以快速查看 UI 效果，修改代码后不用重新编译即可快速看到修改后的效果，类似 flutter 的 hot reload，但是很多功能都无法使用
 通过 Simulator 可以使用较完整的功能，但是它不支持 hot reload
