@@ -28,6 +28,7 @@
     "pages/basic/StyleDemo",
     "pages/basic/StatementDemo",
     "pages/state/StateDemo",
-    "pages/state/PropDemo"
+    "pages/state/PropDemo",
+    "pages/state/WatchDemo"
   ]
 }

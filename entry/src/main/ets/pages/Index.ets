@@ -59,6 +59,7 @@ struct Index {
       new Node1("状态管理", [
         new Node2("@State", "pages/state/StateDemo"),
         new Node2("@Prop, @Link, @Provide/@Consume, @Observed/@ObjectLink", "pages/state/PropDemo"),
+        new Node2("@Watch, @Track, $$", "pages/state/WatchDemo"),
       ]),
       new Node1("组件（布局类）", [
         new Node2("Column", "pages/component/layout/ColumnDemo"),
