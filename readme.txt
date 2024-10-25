@@ -1,3 +1,6 @@
+https://developer.huawei.com
+https://docs.openharmony.cn
+
 ArkTs
 ark 是方舟的意思，ts 是 typescript
 ArkTs 兼容大部分的 typescript 语法，不支持 var any unknown symbol，不支持匿名类型，不支持解构，不支持 Generator

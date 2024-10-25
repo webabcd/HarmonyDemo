@@ -32,6 +32,10 @@
     "pages/state/WatchDemo",
     "pages/basic/LifecycleDemo",
     "pages/component/common/CommonSizeDemo",
-    "pages/component/common/CommonStyleDemo"
+    "pages/component/common/CommonStyleDemo",
+    "pages/shape/BorderDemo",
+    "pages/ui/ColorDemo",
+    "pages/shape/ClipDemo",
+    "pages/ui/UnitPage"
   ]
 }

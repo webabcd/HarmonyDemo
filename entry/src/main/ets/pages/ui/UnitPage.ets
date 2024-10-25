@@ -1,16 +1,18 @@
 /*
- *
+ * 单位相关
  */
 
-import { TitleBar } from '../../TitleBar';
+import { TitleBar } from '../TitleBar';
 
 @Entry
 @Component
-struct CommonStyleDemo {
+struct UnitDemo {
 
   build() {
     Column({ space: 10 }) {
       TitleBar()
+
+      
     }
   }
 }
