@@ -36,6 +36,10 @@
     "pages/shape/BorderDemo",
     "pages/ui/ColorDemo",
     "pages/shape/ClipDemo",
-    "pages/ui/UnitPage"
-  ]
+    "pages/ui/UnitDemo"
+  ],
+  "window": {
+    "designWidth": 720,
+    "autoDesignWidth": false
+  }
 }
