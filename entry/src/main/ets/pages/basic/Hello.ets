@@ -37,7 +37,11 @@ struct Hello {
   // 构建 UI（在 build 内通过组件描述需要的 UI）
   build() {
     Column({ space: 20 }) {
+
+      // 先 import { TitleBar } from '../TitleBar'; 就可以用 TitleBar 了
+      // 如果之前没有 import 则可以把光标放到 TitleBar() 内然后通过快捷键 alt + enter 添加相关的 import
       TitleBar()
+
       Text(this.message)
         .fontSize(16)
         .fontColor(Color.Blue)

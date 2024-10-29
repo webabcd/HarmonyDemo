@@ -1,5 +1,5 @@
 /*
- * 剪裁相关
+ * 剪裁相关和遮罩相关
  */
 
 import { TitleBar } from '../TitleBar';
@@ -8,78 +8,65 @@ import { TitleBar } from '../TitleBar';
 @Component
 struct ClipDemo {
 
-  @State progressflag1: boolean = true;
-  @State color: Color = 0x01006CDE;
-  @State value: number = 10.0;
-  @State enableBreathingAnimation: boolean = false;
-  @State progress: ProgressMask = new ProgressMask(10.0, 100.0, Color.Gray);
+  progressMaskValue: number = 0.0
+  // ProgressMask - 进度遮罩
+  //   第 1 个参数：当前的进度值
+  //   第 2 个参数：最大的进度值（注：最小进度值为 0.0）
+  //   第 3 个参数：遮罩的颜色
+  @State progressMask: ProgressMask = new ProgressMask(this.progressMaskValue, 100.0, Color.Gray);
 
   build() {
     Column({ space: 10 }) {
       TitleBar()
 
-      Image($r('app.media.startIcon')).width('500px').height('280px')
-      .clip(true) // 如这里不设置clip为true，则Row组件的圆角不会限制其中的Image组件，Image组件的四个角会超出Row
+      // clip(false) - Column 组件的圆角不会限制其内的 Image 组件的显示
+      Column() {
+        Image($r('app.media.son')).width(200).height(50)
+      }
       .borderRadius(20)
-      // 用一个280px直径的圆对图片进行裁剪
-      Image($r('app.media.startIcon'))
-        .clipShape(new Circle({ width: '280px', height: '280px' }))
-        .width('500px').height('280px')
+      .clip(false)
 
-      Text('mask').fontSize(12).width('75%').fontColor('#DCDCDC')
-      // 给图片添加了一个500px*280px的方形遮罩
-      Image($r('app.media.startIcon'))
-        .maskShape(new Rect({ width: '500px', height: '280px' }).fill(Color.Gray))
-        .width('500px').height('280px')
+      // clip(true) - Column 组件的圆角会限制其内的 Image 组件的显示
+      Column() {
+        Image($r('app.media.son')).width(200).height(50)
+      }
+      .borderRadius(20)
+      .clip(true)
 
-      // 给图片添加了一个280px*280px的圆形遮罩
-      Image($r('app.media.startIcon'))
-        .maskShape(new Circle({ width: '280px', height: '280px' }).fill(Color.Gray))
-        .width('500px').height('280px')
+      // clipShape() - 设置剪裁的图形
+      //   剪裁的图形可以是 Circle, Ellipse, Rect, Path
+      Image($r('app.media.son')).width(200).height(50)
+        .clipShape(new Circle({ width: 50, height: 50 }))
 
-      // 给图片添加了一个280px*280px的进度遮罩
-      Image($r('app.media.startIcon'))
-        .width('500px').height('280px')
-        .mask(this.progress)
-        .animation({
-          duration: 2000, // 动画时长
-          curve: Curve.Linear, // 动画曲线
-          delay: 0, // 动画延迟
-          iterations: 1, // 播放次数
-          playMode: PlayMode.Normal // 动画模式
-        }) // 对Button组件的宽高属性进行动画配置
+      // 通过 offset() 指定剪裁图形的位置
+      Image($r('app.media.son')).width(200).height(50)
+        .clipShape(new Circle({ width: 50, height: 50 }).offset({ x: 75, y: 0 }))
 
-      // 更新进度遮罩的进度值
-      Button('updateProgress')
-        .onClick((event?: ClickEvent) => {
-          this.value += 10;
-          this.progress.updateProgress(this.value);
-        }).width(200).height(50).margin(20)
+      // maskShape() - 设置剪裁的图形，以及剪裁图形的遮罩颜色
+      //   剪裁的图形可以是 Circle, Ellipse, Rect, Path
+      //   通过 offset() 指定剪裁图形的位置
+      //   通过 fill() 指定剪裁图形的遮罩颜色（0x000000全透明，0xffffff全不透明）
+      Image($r('app.media.son')).width(200).height(50)
+        .maskShape(new Circle({ width: 50, height: 50 }).offset({ x: 75, y: 0 }).fill(0xcccccc))
 
-      // 更新进度遮罩的颜色
-      Button('updateColor')
-        .onClick((event?: ClickEvent) => {
-          if (this.progressflag1) {
-            this.progress.updateColor(0x9fff0000);
-          } else {
-            this.progress.updateColor(0x9f0000ff);
+      // mask() - 可以指定一个 ProgressMask 类型的遮罩
+      //   注：我这里测试，这个遮罩只能是圆形的
+      Image($r('app.media.son')).width(200).height(200)
+        .borderRadius(100)
+        .mask(this.progressMask)
+      Button('不停地点我')
+        .onClick(() => {
+          this.progressMaskValue += 10.0
+          if (this.progressMaskValue > 100.0) {
+            this.progressMaskValue = 0.0
           }
-          this.progressflag1 = !this.progressflag1
-        }).width(200).height(50).margin(20)
-
-      // 开关呼吸光晕动画
-      Button('enableBreathingAnimation:' + this.enableBreathingAnimation)
-        .onClick((event?: ClickEvent) => {
-          this.enableBreathingAnimation = !this.enableBreathingAnimation
-          this.progress.enableBreathingAnimation(this.enableBreathingAnimation);
-        }).width(200).height(50).margin(20)
-
-      // 恢复进度遮罩
-      Button('click reset!')
-        .onClick((event?: ClickEvent) => {
-          this.value = 0;
-          this.progress.updateProgress(this.value);
-        }).width(200).height(50).margin(20)
+          // 更新 ProgressMask 的进度
+          this.progressMask.updateProgress(this.progressMaskValue)
+          // 更新 ProgressMask 的颜色
+          this.progressMask.updateColor(Math.floor(Math.random() * (0xffffff + 1)));
+          // 当 ProgressMask 的进度到了百分之百时，是否显示光晕动画
+          this.progressMask.enableBreathingAnimation(true);
+        })
     }
   }
 }

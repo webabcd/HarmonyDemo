@@ -75,7 +75,7 @@ struct Index {
       ]),
       new Node1("图形", [
         new Node2("边框", "pages/shape/BorderDemo"),
-        new Node2("剪裁", "pages/shape/ClipDemo"),
+        new Node2("剪裁，遮罩", "pages/shape/ClipDemo"),
       ]),
     ]
     return;
