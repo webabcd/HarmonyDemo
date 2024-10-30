@@ -68,6 +68,7 @@ struct Index {
       ]),
       new Node1("组件（布局类）", [
         new Node2("Column", "pages/component/layout/ColumnDemo"),
+        new Node2("Row", "pages/component/layout/RowDemo"),
       ]),
       new Node1("UI", [
         new Node2("颜色相关", "pages/ui/ColorDemo"),

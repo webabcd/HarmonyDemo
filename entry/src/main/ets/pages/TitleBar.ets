@@ -35,3 +35,33 @@ export struct TitleBar {
     }
   }
 }
+
+@Component
+export struct RadioBar {
+  @State valueList: string[] = [];
+  @State selectedIndex: number = 0;
+
+  onChange?: (selectedIndex: number) => void;
+
+  build() {
+    Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround }) {
+      ForEach(this.valueList, (item: string, index: number) => {
+        Column() {
+          Radio({ value: item, group: 'radioGroup' })
+            .checked(index == this.selectedIndex)
+            .height(24)
+            .width(24)
+            .onChange((isChecked: boolean) => {
+              if (isChecked) {
+                this.selectedIndex = index
+                if (this.onChange) {
+                  this.onChange(this.selectedIndex);
+                }
+              }
+            })
+          Text(item)
+        }
+      })
+    }.padding(10)
+  }
+}

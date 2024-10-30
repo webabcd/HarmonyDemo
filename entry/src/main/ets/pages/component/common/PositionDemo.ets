@@ -9,8 +9,6 @@ import { TitleBar } from '../../TitleBar';
 @Component
 struct CommonStyleDemo {
 
-  private scroller: Scroller = new Scroller()
-
   build() {
     Column({ space: 10 }) {
       TitleBar()

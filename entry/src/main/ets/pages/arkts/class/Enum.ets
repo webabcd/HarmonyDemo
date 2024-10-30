@@ -14,32 +14,41 @@ struct EnumDemo {
 
 {
   // 简单枚举
-  enum Status {ok, error};
-  MyLog.d(`${Status["ok"]}, ${Status["error"]}`); // 0, 1
-  MyLog.d(`${Status[0]}, ${Status[1]}`); // ok, error
+  enum Status {Ok, Error};
+  MyLog.d(`${Status["Ok"]}, ${Status["Error"]}`); // 0, 1
+  MyLog.d(`${Status[0]}, ${Status[1]}`); // Ok, Error
 }
 
 {
   // 简单枚举的赋值
-  enum Status {ok = 100, error = 200};
-  MyLog.d(`${Status["ok"]}, ${Status["error"]}`); // 100, 200
-  MyLog.d(`${Status[100]}, ${Status[200]}`); // ok, error
+  enum Status {Ok = 100, Error = 200};
+  MyLog.d(`${Status["Ok"]}, ${Status["Error"]}`); // 100, 200
+  MyLog.d(`${Status[100]}, ${Status[200]}`); // Ok, Error
 }
 
 {
   // 定义枚举值时可以使用简单的表达式
-  enum Status { ok = 1, error = 1 << 2 };
-  MyLog.d(`${Status.ok}, ${Status.error}`); // 1, 4
+  enum Status { Ok = 1, Error = 1 << 2 };
+  MyLog.d(`${Status.Ok}, ${Status.Error}`); // 1, 4
 }
 
 {
   // 常量枚举
-  const enum Status { ok, error };
-  MyLog.d(`${Status.ok}, ${Status.error}`); // 0, 1
+  const enum Status { Ok, Error };
+  MyLog.d(`${Status.Ok}, ${Status.Error}`); // 0, 1
 }
 
 {
   // 常量枚举的赋值
-  const enum Status { ok = "ok", error = "error" };
-  MyLog.d(`${Status.ok}, ${Status.error}`); // ok, error
+  const enum Status { Ok = "Ok", Error = "Error" };
+  MyLog.d(`${Status.Ok}, ${Status.Error}`); // Ok, Error
 }
+
+{
+  // 字符串转枚举
+  enum Status {Ok, Error};
+  let status = Status['Ok'] as Status
+  MyLog.d(`${status == Status.Ok}`); // true
+}
+
+
