@@ -63,8 +63,8 @@ struct Index {
         new Node2("@Watch, @Track, $$", "pages/state/WatchDemo"),
       ]),
       new Node1("组件（通用的属性方法和事件方法）", [
-        new Node2("尺寸相关（width, height, size, constraintSize, margin, padding）", "pages/component/common/CommonSizeDemo"),
-        new Node2("样式相关（）", "pages/component/common/CommonStyleDemo"),
+        new Node2("尺寸相关（width, height, size, constraintSize, margin, padding）", "pages/component/common/SizeDemo"),
+        new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
       ]),
       new Node1("组件（布局类）", [
         new Node2("Column", "pages/component/layout/ColumnDemo"),

@@ -54,6 +54,11 @@ struct UnitDemo {
         .width(200)
         .height(50)
 
+      // 整型的字符串，单位是 vp
+      Column().backgroundColor(Color.Blue)
+        .width('200')
+        .height('50')
+
       // vp，与屏幕的像素密度相关，逻辑分辨率
       Column().backgroundColor(Color.Blue)
         .width('200vp')
@@ -80,6 +85,23 @@ struct UnitDemo {
       // fp，字体大小，与屏幕的像素密度相关，且与系统字体大小的设置相关
       Text("单位包括 vp, lpx, px, fp, 百分比").width(200).height(50).backgroundColor(Color.Blue).fontColor(Color.White)
         .fontSize('16fp')
+
+      // 从资源文件中引用，配置在 /entry/src/main/resources/base/element/integer.json 文件，其内容如下
+      // {
+      //   "integer": [
+      //     {
+      //       "name": "200",
+      //       "value": 200
+      //     },
+      //     {
+      //       "name": "50",
+      //       "value": 50
+      //     }
+      //   ]
+      // }
+      Column().backgroundColor(Color.Blue)
+        .width($r("app.integer.200"))
+        .height($r("app.integer.50"))
 
       Text(this.message)
     }
