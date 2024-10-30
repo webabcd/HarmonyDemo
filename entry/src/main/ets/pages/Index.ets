@@ -67,8 +67,9 @@ struct Index {
         new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
       ]),
       new Node1("组件（布局类）", [
-        new Node2("Column", "pages/component/layout/ColumnDemo"),
-        new Node2("Row", "pages/component/layout/RowDemo"),
+        new Node2("Column（垂直布局）", "pages/component/layout/ColumnDemo"),
+        new Node2("Row（水平布局）", "pages/component/layout/RowDemo"),
+        new Node2("Stack（堆叠布局）", "pages/component/layout/StackDemo"),
       ]),
       new Node1("UI", [
         new Node2("颜色相关", "pages/ui/ColorDemo"),

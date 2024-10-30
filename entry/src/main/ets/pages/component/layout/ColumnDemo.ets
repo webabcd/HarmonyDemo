@@ -11,7 +11,6 @@ import { TitleBar, RadioBar } from '../../TitleBar';
 @Entry
 @Component
 struct ColumnDemo {
-  @State message: string = 'Hello World';
 
   build() {
     Column() {
