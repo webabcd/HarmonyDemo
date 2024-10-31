@@ -71,6 +71,7 @@ struct Index {
         new Node2("Row（水平布局）", "pages/component/layout/RowDemo"),
         new Node2("Flex（垂直布局或水平布局）", "pages/component/layout/FlexDemo"),
         new Node2("Stack（堆叠布局）", "pages/component/layout/StackDemo"),
+        new Node2("FolderStack（可识别屏幕折叠悬停的堆叠布局）", "pages/component/layout/FolderStackDemo"),
       ]),
       new Node1("UI", [
         new Node2("颜色相关", "pages/ui/ColorDemo"),

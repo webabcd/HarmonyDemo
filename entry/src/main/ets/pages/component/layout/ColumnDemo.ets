@@ -65,7 +65,7 @@ struct MySample2 {
   valueList =  ["Start", "Center", "End"]
 
   build() {
-    // alignItems() - Column 内的每个组件的水平对齐方式
+    // alignItems() - Column 内的每个组件的水平对齐方式（HorizontalAlign 枚举）
     //   Start, Center, End
     Column({space: 5}) {
       RadioBar({valueList: this.valueList, onChange: (selectedIndex: number) => {
@@ -92,7 +92,7 @@ struct MySample3 {
         this.flexAlign = FlexAlign[this.valueList[selectedIndex]]
       }})
 
-      // justifyContent() - Column 内的每个组件的垂直排列方式
+      // justifyContent() - Column 内的每个组件的垂直排列方式（FlexAlign 枚举）
       //   Start - 整体居顶部
       //   Center - 整体居中
       //   End - 整体居底部

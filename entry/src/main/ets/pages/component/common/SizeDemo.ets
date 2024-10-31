@@ -20,8 +20,8 @@ struct CommonSizeDemo {
         .height(20)
         .backgroundColor(Color.Blue)
 
-      // size - 宽和高
-      // 如果设置了 size 且设置了 width 和 height，则以 width 和 height 为准
+      // size - 宽和高（SizeOptions 接口）
+      //   如果设置了 size 且设置了 width 和 height，则以 width 和 height 为准
       Column()
         .size({
           width: 100,
@@ -29,7 +29,7 @@ struct CommonSizeDemo {
         })
         .backgroundColor(Color.Blue)
 
-      // constraintSize - 宽和高的约束（可以指定最大宽高和最小宽高）
+      // constraintSize - 宽和高的约束（ConstraintSizeOptions 接口，可以指定最大宽高和最小宽高）
       Column()
         .width('100%')
         .height('100%')

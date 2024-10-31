@@ -71,7 +71,7 @@ struct MySample2 {
         this.verticalAlign = VerticalAlign[this.valueList[selectedIndex]]
       }})
 
-      // alignItems() - Row 内的每个组件的垂直对齐方式
+      // alignItems() - Row 内的每个组件的垂直对齐方式（HorizontalAlign 枚举）
       //   Top, Center, Bottom
       Row({space: 20}) {
         Column().width(50).height(100).backgroundColor(Color.Blue)
@@ -97,7 +97,7 @@ struct MySample3 {
         this.flexAlign = FlexAlign[this.valueList[selectedIndex]]
       }})
 
-      // justifyContent() - Row 内的每个组件的水平排列方式
+      // justifyContent() - Row 内的每个组件的水平排列方式（FlexAlign 枚举）
       //   Start - 整体居左
       //   Center - 整体居中
       //   End - 整体居右

@@ -14,7 +14,7 @@ struct StackDemo {
     Column({ space: 10 }) {
       TitleBar()
 
-      // alignContent, alignContent() - Stack 内的组件相对于父组件的对齐方式
+      // alignContent, alignContent() - Stack 内的组件相对于父组件的对齐方式（Alignment 枚举）
       //   TopStart, Top, TopEnd, Start, Center, End, BottomStart, Bottom, BottomEnd
       Stack({ alignContent: Alignment.BottomEnd }) {
         Column().width(100).height(50).backgroundColor(Color.Orange)

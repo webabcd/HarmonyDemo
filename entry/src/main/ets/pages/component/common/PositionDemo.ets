@@ -13,7 +13,7 @@ struct CommonStyleDemo {
     Column({ space: 10 }) {
       TitleBar()
 
-      // align() - 组件内的组件相对于父组件的对齐方式
+      // align() - 组件内的组件相对于父组件的对齐方式（Alignment 枚举）
       //   TopStart, Top, TopEnd, Start, Center, End, BottomStart, Bottom, BottomEnd
       Stack() {
         Text('BottomEnd').width('50%').height('80%').backgroundColor(Color.Yellow)
@@ -22,7 +22,7 @@ struct CommonStyleDemo {
       }.width('90%').height(50).backgroundColor(Color.Orange)
       .align(Alignment.BottomEnd)
 
-      // direction() - 组件内的多个组件的排列方向
+      // direction() - 组件内的多个组件的排列方向（Direction 枚举）
       //   Ltr - 从左到右
       //   Rtl - 从右到左
       Row() {

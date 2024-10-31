@@ -49,6 +49,12 @@ struct EnumDemo {
   enum Status {Ok, Error};
   let status = Status['Ok'] as Status
   MyLog.d(`${status == Status.Ok}`); // true
+
+  // 枚举转字符串
+  MyLog.d(`${Status[status]}`); // Ok
+
+  // 枚举值就是整型值
+  MyLog.d(`${status == 0}`); // true
 }
 
 

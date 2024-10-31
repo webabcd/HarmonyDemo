@@ -32,9 +32,9 @@ struct FlexDemo {
 @Component
 struct MySample1 {
   build() {
-    // direction - 布局的方向
+    // direction - 布局的方向（FlexDirection 枚举）
     //   Row, Column, RowReverse, ColumnReverse
-    // space - 子组件的间距
+    // space - 子组件的间距（FlexSpaceOptions 接口）
     //   main - 主轴方向上的子组件的间距
     //   cross - 交叉轴方向上的子组件的间距
     //
@@ -117,13 +117,13 @@ struct MySample4 {
         this.flexAlign = FlexAlign[this.flexAlign_valueList[selectedIndex]]
       }})
 
-      // space - 间距
+      // space - 子组件的间距（FlexSpaceOptions 接口）
       //   main - 主轴方向上的间距
       //   cross - 交叉轴方向上的间距（当 Flex 内的多个组件 wrap 的时候，就会有交叉轴的排列，此值就会生效）
-      // wrap - 当 Flex 内的多个组件所需要的主轴空间超过了 Flex 的主轴的大小，且 Flex 的交叉轴有额外的空间时
+      // wrap - 当 Flex 内的多个组件所需要的主轴空间超过了 Flex 的主轴的大小，且 Flex 的交叉轴有额外的空间时（FlexWrap 枚举）
       //   NoWrap - 不允许 wrap
       //   Wrap - 允许 wrap
-      // alignContent - 当 Flex 内的多个组件 wrap 的时候，此值用于指定他们在交叉轴上的排列方式（一个 FlexAlign 枚举，可以参见 ColumnDemo.ets 或 RowDemo.ets 中的相关说明）
+      // alignContent - 当 Flex 内的多个组件 wrap 的时候，此值用于指定他们在交叉轴上的排列方式（FlexAlign 枚举，可以参见 ColumnDemo.ets 或 RowDemo.ets 中的相关说明）
       Flex({
         space: {
           main: LengthMetrics.vp(10),
