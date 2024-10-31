@@ -16,7 +16,7 @@ struct FolderStackDemo {
 
       TitleBar()
 
-      // upperItems - 一个数组，用于指定当折叠屏悬停并且横屏时，需要显示到上半屏的 id 列表，其余组件会显示到下半屏
+      // upperItems - 一个数组，用于指定当折叠屏悬停并且横屏时，需要显示到上半屏的组件的 id 列表，其余组件会显示到下半屏
       FolderStack({ upperItems: ["upperItems1"] }) {
         // 当折叠屏悬停并且横屏时，下面的 Column 会显示到上半屏
         Column() {

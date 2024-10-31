@@ -71,7 +71,7 @@ struct MySample2 {
         this.verticalAlign = VerticalAlign[this.valueList[selectedIndex]]
       }})
 
-      // alignItems() - Row 内的每个组件的垂直对齐方式（HorizontalAlign 枚举）
+      // alignItems() - Row 内的每个组件的垂直对齐方式（VerticalAlign 枚举）
       //   Top, Center, Bottom
       Row({space: 20}) {
         Column().width(50).height(100).backgroundColor(Color.Blue)

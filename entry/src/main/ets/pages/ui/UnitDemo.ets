@@ -44,6 +44,16 @@ struct UnitDemo {
     Column({ space: 10 }) {
       TitleBar()
 
+      // 'auto' 就是自适应的意思
+      Column() {
+        Column() {
+          Text('123')
+        }.width('auto').height('auto').backgroundColor(Color.Orange)
+      }
+      .width(200)
+      .height(50)
+      .backgroundColor(Color.Blue)
+
       // 百分比，相对于父容器的百分比
       Column().backgroundColor(Color.Blue)
         .width('80%')
