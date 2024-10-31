@@ -57,3 +57,53 @@
 - pages/arkts/advanced/IteratorGenerator
 5. Proxy, Reflect
 - pages/arkts/advanced/ProxyReflect
+
+### 开发基础
+1. ArkUI 基础
+- pages/basic/Hello
+2. @Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）
+- pages/basic/BuilderDemo
+3. @Style 相关装饰器（@Style, @Extend, stateStyles）
+- pages/basic/StyleDemo
+4. 在描述 UI 时使用 if/else, ForEach 语句
+- pages/basic/StatementDemo
+5. 生命周期
+- pages/basic/LifecycleDemo
+
+### 状态管理
+1. @State
+- pages/state/StateDemo
+2. @Prop, @Link, @Provide/@Consume, @Observed/@ObjectLink
+- pages/state/PropDemo
+3. @Watch, @Track, $$
+- pages/state/WatchDemo
+
+### 组件（通用的属性方法和事件方法）
+1. 尺寸相关（width, height, size, constraintSize, margin, padding）
+- pages/component/common/SizeDemo
+2. 位置相关（align, direction, position, markAnchor, offset）
+- pages/component/common/PositionDemo
+
+### 组件（布局类）
+1. Column（垂直布局）
+- pages/component/layout/ColumnDemo
+2. Row（水平布局）
+- pages/component/layout/RowDemo
+3. Flex（垂直布局或水平布局）
+- pages/component/layout/FlexDemo
+4. Stack（堆叠布局）
+- pages/component/layout/StackDemo
+5. FolderStack（可识别屏幕折叠悬停的堆叠布局）
+- pages/component/layout/FolderStackDemo
+
+### UI
+1. 颜色相关
+- pages/ui/ColorDemo
+2. 单位相关
+- pages/ui/UnitDemo
+
+### 图形
+1. 边框
+- pages/shape/BorderDemo
+2. 剪裁，遮罩
+- pages/shape/ClipDemo

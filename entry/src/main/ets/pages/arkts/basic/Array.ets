@@ -27,6 +27,10 @@ struct ArrayDemo {
 
 
   // 遍历
+  for (let i = 0; i < array1.length; i++) {
+    MyLog.d(`${array1[i]}`);
+  }
+  // 遍历
   for (let value of array1) {
     MyLog.d(`${value}`);
   }
