@@ -38,7 +38,8 @@
     "pages/shape/ClipDemo",
     "pages/ui/UnitDemo",
     "pages/component/layout/RowDemo",
-    "pages/component/layout/StackDemo"
+    "pages/component/layout/StackDemo",
+    "pages/component/layout/FlexDemo"
   ],
   "window": {
     "designWidth": 720,

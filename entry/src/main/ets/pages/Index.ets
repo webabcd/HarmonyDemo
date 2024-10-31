@@ -69,6 +69,7 @@ struct Index {
       new Node1("组件（布局类）", [
         new Node2("Column（垂直布局）", "pages/component/layout/ColumnDemo"),
         new Node2("Row（水平布局）", "pages/component/layout/RowDemo"),
+        new Node2("Flex（垂直布局或水平布局）", "pages/component/layout/FlexDemo"),
         new Node2("Stack（堆叠布局）", "pages/component/layout/StackDemo"),
       ]),
       new Node1("UI", [

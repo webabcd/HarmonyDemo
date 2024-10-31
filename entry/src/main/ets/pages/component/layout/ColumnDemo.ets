@@ -4,6 +4,8 @@
  *   reverse() - 是否需要反转排列
  *   alignItems() - Column 内的每个组件的水平对齐方式
  *   justifyContent() - Column 内的每个组件的垂直排列方式
+ *
+ * 注：垂直方向上的多个组件如果超过了 Column 的限制范围，是不会 wrap 的，如果需要 wrap 请参见 FlexDemo.ets 中的说明
  */
 
 import { TitleBar, RadioBar } from '../../TitleBar';
@@ -33,15 +35,25 @@ struct MySample1 {
         Text('1')
         Text('2')
         Text('3')
-      }.width('90%').height(200).backgroundColor(Color.Orange)
+      }
+      .width(300).height(200).backgroundColor(Color.Orange)
 
       // reverse() - 是否需要反转排列
       Column({ space: 20 }) {
         Text('1')
         Text('2')
         Text('3')
-      }.width('90%')
-      .reverse(true).height(200).backgroundColor(Color.Yellow)
+      }
+      .width(300).height(200).backgroundColor(Color.Yellow)
+      .reverse(true)
+
+      // 注：不指定 Column 的宽高的话，则其宽高会跟随其子组件们的尺寸
+      Column() {
+        Text('1')
+        Text('2')
+        Text('3')
+      }
+      .backgroundColor(Color.Red)
     }
   }
 }

@@ -41,13 +41,15 @@ export struct RadioBar {
   @State valueList: string[] = [];
   @State selectedIndex: number = 0;
 
+  groupName: string = 'radioGroup';
+
   onChange?: (selectedIndex: number) => void;
 
   build() {
     Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround }) {
       ForEach(this.valueList, (item: string, index: number) => {
         Column() {
-          Radio({ value: item, group: 'radioGroup' })
+          Radio({ value: item, group: this.groupName })
             .checked(index == this.selectedIndex)
             .height(24)
             .width(24)
