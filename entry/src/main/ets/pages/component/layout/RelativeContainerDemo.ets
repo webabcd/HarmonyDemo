@@ -15,6 +15,7 @@ struct RelativeContainerDemoDemo {
         TabContent() { MySample1() }.tabBar('与指定 id 的组件约束').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('与指定的 guideLine 约束').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('与指定的 barrier 约束').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('链式约束').align(Alignment.Top)
       }
       .barMode(BarMode.Scrollable)
     }
@@ -120,5 +121,97 @@ struct MySample3 {
       // 以 row1, row2 的组合体的下部边界作为屏障
       {id: "barrier2", direction: BarrierDirection.BOTTOM, referencedId:["row1", "row2"]}
     ])
+  }
+}
+
+@Component
+struct MySample4 {
+  build() {
+    // chainMode() - RelativeContainer 内的子组件通过 chainMode() 指定某个方向上的多个子组件的链式排列的模式
+    //   Axis - 方向
+    //     Vertical, Horizontal
+    //   ChainStyle - 链式排列的模式
+    //     SPREAD - 链中的各个组件在约束锚点间均匀分布
+    //     SPREAD_INSIDE - 链中的各个组件在约束锚点间均匀分布，但是首节点的起始部分和尾节点的结束部分与容器的边缘对齐
+    //     PACKED - 链中的各个组件之间无间隙
+    // 注：RelativeContainer 内的某个子组件指定了 chainMode() 则这个子组件就是链头，此链的方向由 Axis 决定，此链的排列模式由 ChainStyle 决定
+    RelativeContainer() {
+      Row(){Text('row1')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "__container__", align: HorizontalAlign.Start},
+        right: {anchor: "row2", align : HorizontalAlign.Start},
+        top: {anchor: "__container__", align: VerticalAlign.Top}
+      })
+      .id("row1")
+      .chainMode(Axis.Horizontal, ChainStyle.SPREAD)
+
+      Row(){Text('row2')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "row1", align: HorizontalAlign.End},
+        right: {anchor: "row3", align : HorizontalAlign.Start},
+        top: {anchor: "row1", align: VerticalAlign.Top}
+      })
+      .id("row2")
+
+      Row(){Text('row3')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "row2", align: HorizontalAlign.End},
+        right: {anchor: "__container__", align : HorizontalAlign.End},
+        top: {anchor: "row1", align: VerticalAlign.Top}
+      })
+      .id("row3")
+
+      Row(){Text('row4')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "__container__", align: HorizontalAlign.Start},
+        right: {anchor: "row5", align : HorizontalAlign.Start},
+        center: {anchor: "__container__", align: VerticalAlign.Center}
+      })
+      .id("row4")
+      .chainMode(Axis.Horizontal, ChainStyle.SPREAD_INSIDE)
+
+      Row(){Text('row5')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "row4", align: HorizontalAlign.End},
+        right: {anchor: "row6", align : HorizontalAlign.Start},
+        top: {anchor: "row4", align: VerticalAlign.Top}
+      })
+      .id("row5")
+
+      Row(){Text('row6')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "row5", align: HorizontalAlign.End},
+        right: {anchor: "__container__", align : HorizontalAlign.End},
+        top: {anchor: "row4", align: VerticalAlign.Top}
+      })
+      .id("row6")
+
+      Row(){Text('row7')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "__container__", align: HorizontalAlign.Start},
+        right: {anchor: "row8", align : HorizontalAlign.Start},
+        bottom: {anchor: "__container__", align: VerticalAlign.Bottom}
+      })
+      .id("row7")
+      .chainMode(Axis.Horizontal, ChainStyle.PACKED)
+
+      Row(){Text('row8')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "row7", align: HorizontalAlign.End},
+        right: {anchor: "row9", align : HorizontalAlign.Start},
+        top: {anchor: "row7", align: VerticalAlign.Top}
+      })
+      .id("row8")
+
+      Row(){Text('row9')}.justifyContent(FlexAlign.Center).width(80).height(80).backgroundColor(Color.Orange)
+      .alignRules({
+        left: {anchor: "row8", align: HorizontalAlign.End},
+        right: {anchor: "__container__", align : HorizontalAlign.End},
+        top: {anchor: "row7", align: VerticalAlign.Top}
+      })
+      .id("row9")
+    }
+    .width(300).height(300)
+    .backgroundColor(Color.Blue)
   }
 }
