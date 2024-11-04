@@ -71,6 +71,9 @@ struct Index {
         new Node2("FolderStack（可识别屏幕折叠悬停的堆叠布局）", "pages/component/layout/FolderStackDemo"),
         new Node2("RelativeContainer（相对布局）", "pages/component/layout/RelativeContainerDemo"),
       ]),
+      new Node1("组件（文本类）", [
+        new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
+      ]),
       new Node1("UI", [
         new Node2("颜色相关", "pages/ui/ColorDemo"),
         new Node2("单位相关", "pages/ui/UnitDemo"),

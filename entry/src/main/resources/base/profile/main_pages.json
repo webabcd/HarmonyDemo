@@ -41,7 +41,8 @@
     "pages/component/layout/StackDemo",
     "pages/component/layout/FlexDemo",
     "pages/component/layout/FolderStackDemo",
-    "pages/component/layout/RelativeContainerDemo"
+    "pages/component/layout/RelativeContainerDemo",
+    "pages/component/text/TextDemo"
   ],
   "window": {
     "designWidth": 720,

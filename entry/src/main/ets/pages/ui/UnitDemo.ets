@@ -4,7 +4,7 @@
  */
 
 import { TitleBar } from '../TitleBar';
-import { display } from '@kit.ArkUI';
+import { display, LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -51,7 +51,7 @@ struct UnitDemo {
         }.width('auto').height('auto').backgroundColor(Color.Orange)
       }
       .width(200)
-      .height(50)
+      .height(30)
       .backgroundColor(Color.Blue)
 
       // 百分比，相对于父容器的百分比
@@ -62,22 +62,22 @@ struct UnitDemo {
       // 整型，单位是 vp
       Column().backgroundColor(Color.Blue)
         .width(200)
-        .height(50)
+        .height(30)
 
       // 整型的字符串，单位是 vp
       Column().backgroundColor(Color.Blue)
         .width('200')
-        .height('50')
+        .height('30')
 
       // vp，与屏幕的像素密度相关，逻辑分辨率
       Column().backgroundColor(Color.Blue)
         .width('200vp')
-        .height('50vp')
+        .height('30vp')
 
       // px，像素，真实分辨率
       Column().backgroundColor(Color.Blue)
         .width('200px')
-        .height('50px')
+        .height('30px')
 
       // lpx，与 designWidth 相关
       // 比如 designWidth 是 720，真实宽度是 1440px，则 1lpx 等于 2px
@@ -90,7 +90,7 @@ struct UnitDemo {
       // }
       Column().backgroundColor(Color.Blue)
         .width('200lpx')
-        .height('50lpx')
+        .height('30lpx')
 
       // fp，字体大小，与屏幕的像素密度相关，且与系统字体大小的设置相关
       Text("单位包括 vp, lpx, px, fp, 百分比").width(200).height(50).backgroundColor(Color.Blue).fontColor(Color.White)
@@ -111,7 +111,22 @@ struct UnitDemo {
       // }
       Column().backgroundColor(Color.Blue)
         .width($r("app.integer.200"))
-        .height($r("app.integer.50"))
+        .height($r("app.integer.30"))
+
+      // 有的地方需要使用 LengthMetrics 类型的值，可以通过类似如下的方式指定
+      //   LengthMetrics.vp()
+      //   LengthMetrics.px()
+      //   LengthMetrics.fp()
+      //   LengthMetrics.lpx()
+      //   LengthMetrics.percent()
+      //   LengthMetrics.resource()
+      Text('HarmonyOS SDK 是面向鸿蒙原生应用和元服务开发的开放能力合集，提供包括应用框架、应用服务、系统、媒体、AI、图形在内的六大领域丰富完备的开放能力，助力构建焕然一新的鸿蒙原生应用和元服务，带来创新易用的全场景体验。')
+        .width(200)
+        .height(60)
+        .fontSize(14)
+        .lineSpacing(LengthMetrics.vp(10))
+        .backgroundColor(Color.Orange)
+        .fontColor(Color.White)
 
       Text(this.message)
     }
