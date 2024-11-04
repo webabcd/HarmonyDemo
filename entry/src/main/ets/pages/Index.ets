@@ -60,7 +60,7 @@ struct Index {
         new Node2("@Watch, @Track, $$", "pages/state/WatchDemo"),
       ]),
       new Node1("组件（通用的属性方法和事件方法）", [
-        new Node2("尺寸相关（width, height, size, constraintSize, margin, padding）", "pages/component/common/SizeDemo"),
+        new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）", "pages/component/common/SizeDemo"),
         new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
       ]),
       new Node1("组件（布局类）", [
@@ -81,6 +81,7 @@ struct Index {
       new Node1("图形", [
         new Node2("边框", "pages/shape/BorderDemo"),
         new Node2("剪裁，遮罩", "pages/shape/ClipDemo"),
+        new Node2("阴影", "pages/shape/ShadowDemo"),
       ]),
     ]
     this.siteMapToMarkdown()

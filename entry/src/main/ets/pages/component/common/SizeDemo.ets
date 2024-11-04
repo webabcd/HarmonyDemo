@@ -1,6 +1,6 @@
 /*
  * 尺寸相关
- * width, height, size, constraintSize, margin, padding
+ * width, height, aspectRatio, size, constraintSize, margin, padding
  */
 
 import { TitleBar } from '../../TitleBar';
@@ -13,14 +13,21 @@ struct CommonSizeDemo {
     Column({ space: 10 }) {
       TitleBar()
 
-      // width - 宽
-      // height - 高
+      // width() - 宽
+      // height() - 高
       Column()
         .width(100)
         .height(20)
         .backgroundColor(Color.Blue)
 
-      // size - 宽和高（SizeOptions 接口）
+      // width() - 宽
+      // aspectRatio() - 宽高比
+      Column()
+        .width(100)
+        .aspectRatio(5)
+        .backgroundColor(Color.Blue)
+
+      // size() - 宽和高（SizeOptions 接口）
       //   如果设置了 size 且设置了 width 和 height，则以 width 和 height 为准
       Column()
         .size({
@@ -29,7 +36,7 @@ struct CommonSizeDemo {
         })
         .backgroundColor(Color.Blue)
 
-      // constraintSize - 宽和高的约束（ConstraintSizeOptions 接口，可以指定最大宽高和最小宽高）
+      // constraintSize() - 宽和高的约束（ConstraintSizeOptions 接口，可以指定最大宽高和最小宽高）
       Column()
         .width('100%')
         .height('100%')
@@ -41,7 +48,7 @@ struct CommonSizeDemo {
         })
         .backgroundColor(Color.Blue)
 
-      // padding - 内边距（可以同时指定 4 个边距，也可以分别指定 top/right/bottom/left）
+      // padding() - 内边距（可以同时指定 4 个边距，也可以分别指定 top/right/bottom/left）
       Column() {
         Column()
           .width('100%')
@@ -53,7 +60,7 @@ struct CommonSizeDemo {
       .height(100)
       .backgroundColor(Color.Blue)
 
-      // margin - 外边距（可以同时指定 4 个边距，也可以分别指定 top/right/bottom/left）
+      // margin() - 外边距（可以同时指定 4 个边距，也可以分别指定 top/right/bottom/left）
       Column() {
         Column()
           .width(50)

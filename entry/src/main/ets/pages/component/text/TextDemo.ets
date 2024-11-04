@@ -14,6 +14,7 @@ struct TextDemo {
 
       Tabs() {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('基础').align(Alignment.Top)
       }
     }
   }
@@ -21,7 +22,6 @@ struct TextDemo {
 
 @Component
 struct MySample1 {
-
   build() {
     Column({space: 10}) {
       /*
@@ -148,6 +148,15 @@ struct MySample1 {
         })
         .ellipsisMode(EllipsisMode.END)
         .wordBreak(WordBreak.NORMAL)
+    }
+  }
+}
+
+@Component
+struct MySample2 {
+  build() {
+    Column({ space: 10 }) {
+
     }
   }
 }
