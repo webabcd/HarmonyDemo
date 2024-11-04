@@ -13,77 +13,81 @@ import utils from '@arkts.utils';
 @Entry
 @Component
 struct Index {
-
   @State selectedNode1: number = -1
   @State siteMap: Node1[] = []
 
   aboutToAppear(): void {
     this.siteMap =
-    [
-      new Node1("ArkTS 基础", [
-        new Node2("基础", "pages/arkts/basic/Basic"),
-        new Node2("数据类型", "pages/arkts/basic/DataType"),
-        new Node2("boolean", "pages/arkts/basic/Boolean"),
-        new Node2("number", "pages/arkts/basic/Number"),
-        new Node2("string", "pages/arkts/basic/String"),
-        new Node2("array", "pages/arkts/basic/Array"),
-        new Node2("set", "pages/arkts/basic/Set"),
-        new Node2("map", "pages/arkts/basic/Map"),
-        new Node2("tuple", "pages/arkts/basic/Tuple"),
-      ]),
-      new Node1("ArkTS 类", [
-        new Node2("enum", "pages/arkts/class/Enum"),
-        new Node2("function", "pages/arkts/class/Function"),
-        new Node2("interface", "pages/arkts/class/Interface"),
-        new Node2("object", "pages/arkts/class/Object"),
-        new Node2("类", "pages/arkts/class/Class"),
-        new Node2("泛型", "pages/arkts/class/Generics"),
-        new Node2("模块", "pages/arkts/module/Main", "pages/arkts/module/a|pages/arkts/module/b|pages/arkts/module/c|pages/arkts/module/d|pages/arkts/module/e|pages/arkts/module/f|pages/arkts/module/g|pages/arkts/module/h|pages/arkts/module/i"),
-      ]),
-      new Node1("ArkTS 进阶", [
-        new Node2("ArrayBuffer", "pages/arkts/advanced/ArrayBuffer"),
-        new Node2("Promise", "pages/arkts/advanced/Promise"),
-        new Node2("async/await", "pages/arkts/advanced/AsyncAwait"),
-        new Node2("iterator, generator", "pages/arkts/advanced/IteratorGenerator"),
-        new Node2("Proxy, Reflect", "pages/arkts/advanced/ProxyReflect"),
-      ]),
-      new Node1("开发基础", [
-        new Node2("ArkUI 基础", "pages/basic/Hello"),
-        new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）", "pages/basic/BuilderDemo"),
-        new Node2("@Style 相关装饰器（@Style, @Extend, stateStyles）", "pages/basic/StyleDemo"),
-        new Node2("在描述 UI 时使用 if/else, ForEach 语句", "pages/basic/StatementDemo"),
-        new Node2("生命周期", "pages/basic/LifecycleDemo"),
-      ]),
-      new Node1("状态管理", [
-        new Node2("@State", "pages/state/StateDemo"),
-        new Node2("@Prop, @Link, @Provide/@Consume, @Observed/@ObjectLink", "pages/state/PropDemo"),
-        new Node2("@Watch, @Track, $$", "pages/state/WatchDemo"),
-      ]),
-      new Node1("组件（通用的属性方法和事件方法）", [
-        new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）", "pages/component/common/SizeDemo"),
-        new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
-      ]),
-      new Node1("组件（布局类）", [
-        new Node2("Column（垂直布局）", "pages/component/layout/ColumnDemo"),
-        new Node2("Row（水平布局）", "pages/component/layout/RowDemo"),
-        new Node2("Flex（垂直布局或水平布局）", "pages/component/layout/FlexDemo"),
-        new Node2("Stack（堆叠布局）", "pages/component/layout/StackDemo"),
-        new Node2("FolderStack（可识别屏幕折叠悬停的堆叠布局）", "pages/component/layout/FolderStackDemo"),
-        new Node2("RelativeContainer（相对布局）", "pages/component/layout/RelativeContainerDemo"),
-      ]),
-      new Node1("组件（文本类）", [
-        new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
-      ]),
-      new Node1("UI", [
-        new Node2("颜色相关", "pages/ui/ColorDemo"),
-        new Node2("单位相关", "pages/ui/UnitDemo"),
-      ]),
-      new Node1("图形", [
-        new Node2("边框", "pages/shape/BorderDemo"),
-        new Node2("剪裁，遮罩", "pages/shape/ClipDemo"),
-        new Node2("阴影", "pages/shape/ShadowDemo"),
-      ]),
-    ]
+      [
+        new Node1("ArkTS 基础", [
+          new Node2("基础", "pages/arkts/basic/Basic"),
+          new Node2("数据类型", "pages/arkts/basic/DataType"),
+          new Node2("boolean", "pages/arkts/basic/Boolean"),
+          new Node2("number", "pages/arkts/basic/Number"),
+          new Node2("string", "pages/arkts/basic/String"),
+          new Node2("array", "pages/arkts/basic/Array"),
+          new Node2("set", "pages/arkts/basic/Set"),
+          new Node2("map", "pages/arkts/basic/Map"),
+          new Node2("tuple", "pages/arkts/basic/Tuple"),
+        ]),
+        new Node1("ArkTS 类", [
+          new Node2("enum", "pages/arkts/class/Enum"),
+          new Node2("function", "pages/arkts/class/Function"),
+          new Node2("interface", "pages/arkts/class/Interface"),
+          new Node2("object", "pages/arkts/class/Object"),
+          new Node2("类", "pages/arkts/class/Class"),
+          new Node2("泛型", "pages/arkts/class/Generics"),
+          new Node2("模块", "pages/arkts/module/Main",
+            "pages/arkts/module/a|pages/arkts/module/b|pages/arkts/module/c|pages/arkts/module/d|pages/arkts/module/e|pages/arkts/module/f|pages/arkts/module/g|pages/arkts/module/h|pages/arkts/module/i"),
+        ]),
+        new Node1("ArkTS 进阶", [
+          new Node2("ArrayBuffer", "pages/arkts/advanced/ArrayBuffer"),
+          new Node2("Promise", "pages/arkts/advanced/Promise"),
+          new Node2("async/await", "pages/arkts/advanced/AsyncAwait"),
+          new Node2("iterator, generator", "pages/arkts/advanced/IteratorGenerator"),
+          new Node2("Proxy, Reflect", "pages/arkts/advanced/ProxyReflect"),
+        ]),
+        new Node1("开发基础", [
+          new Node2("ArkUI 基础", "pages/basic/Hello"),
+          new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）",
+            "pages/basic/BuilderDemo"),
+          new Node2("@Style 相关装饰器（@Style, @Extend, stateStyles）", "pages/basic/StyleDemo"),
+          new Node2("在描述 UI 时使用 if/else, ForEach 语句", "pages/basic/StatementDemo"),
+          new Node2("生命周期", "pages/basic/LifecycleDemo"),
+        ]),
+        new Node1("状态管理", [
+          new Node2("@State", "pages/state/StateDemo"),
+          new Node2("@Prop, @Link, @Provide/@Consume, @Observed/@ObjectLink", "pages/state/PropDemo"),
+          new Node2("@Watch, @Track, $$", "pages/state/WatchDemo"),
+        ]),
+        new Node1("组件（通用的属性方法和事件方法）", [
+          new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）",
+            "pages/component/common/SizeDemo"),
+          new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
+        ]),
+        new Node1("组件（布局类）", [
+          new Node2("Column（垂直布局）", "pages/component/layout/ColumnDemo"),
+          new Node2("Row（水平布局）", "pages/component/layout/RowDemo"),
+          new Node2("Flex（垂直布局或水平布局）", "pages/component/layout/FlexDemo"),
+          new Node2("Stack（堆叠布局）", "pages/component/layout/StackDemo"),
+          new Node2("FolderStack（可识别屏幕折叠悬停的堆叠布局）", "pages/component/layout/FolderStackDemo"),
+          new Node2("RelativeContainer（相对布局）", "pages/component/layout/RelativeContainerDemo"),
+        ]),
+        new Node1("组件（文本类）", [
+          new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
+        ]),
+        new Node1("UI", [
+          new Node2("颜色相关", "pages/ui/ColorDemo"),
+          new Node2("单位相关", "pages/ui/UnitDemo"),
+        ]),
+        new Node1("图形", [
+          new Node2("边框", "pages/shape/BorderDemo"),
+          new Node2("剪裁，遮罩", "pages/shape/ClipDemo"),
+          new Node2("阴影", "pages/shape/ShadowDemo"),
+          new Node2("模糊", "pages/shape/BlurDemo"),
+          new Node2("渐变", "pages/shape/GradientDemo"),
+        ]),
+      ]
     this.siteMapToMarkdown()
     return;
 
@@ -124,10 +128,9 @@ struct Index {
       md += `\n### ${node1.title}\n`
       for (let j = 0; j < node1.childNodes!.length; j++) {
         let node2 = node1.childNodes![j]
-        md += `${ j + 1 }. ${node2.title}\n`
+        md += `${j + 1}. ${node2.title}\n`
         md += `- ${node2.url}\n`
-        if (node2.other != "")
-        {
+        if (node2.other != "") {
           let ary = node2.other.split('|')
           for (let value of ary) {
             md += `- ${value}\n`
@@ -137,64 +140,68 @@ struct Index {
     }
   }
 
+  scroller: Scroller = new Scroller()
+
   build() {
-    Column() {
-      ForEach(this.siteMap, (node1: Node1, index: number) => {
-        Column() {
-          Row() {
-            Text(node1.title)
-              .fontSize(16)
-              .margin({ left: 16 })
+    Scroll(this.scroller) {
+      Column() {
+        ForEach(this.siteMap, (node1: Node1, index: number) => {
+          Column() {
+            Row() {
+              Text(node1.title)
+                .fontSize(16)
+                .margin({ left: 16 })
 
-            Blank()
+              Blank()
 
-            Image(this.selectedNode1 == index ? $r('app.media.ic_down_arrow') : $r('app.media.ic_right_arrow'))
-              .width(24)
-              .height(24)
-              .margin({ right: 6 })
-          }
-          .height(56)
-          .width('100%')
-          .onClick(() => {
-            if (this.selectedNode1 == index) {
-              this.selectedNode1 = -1
-            } else {
-              this.selectedNode1 = index
+              Image(this.selectedNode1 == index ? $r('app.media.ic_down_arrow') : $r('app.media.ic_right_arrow'))
+                .width(24)
+                .height(24)
+                .margin({ right: 6 })
             }
-          })
-
-          if (this.selectedNode1 == index) {
-            ForEach(this.siteMap[this.selectedNode1].childNodes, (node2: Node2) => {
-              Column() {
-                Divider()
-                  .height(1)
-                  .opacity(0.2)
-                  .margin({ left: 42, right: 8 })
-
-                Row() {
-                  Text(node2.title)
-                    .fontSize(16)
-                    .layoutWeight(1)
-                    .margin({ left: 42 })
-                    .align(Alignment.Start)
-
-                  Blank()
-                }
-                .height(48)
-                .width('100%')
-                .onClick(() => {
-                  router.pushUrl({
-                    url: node2.url,
-                    params: {
-                      title: node2.title
-                    }
-                  })
-                })
+            .height(56)
+            .width('100%')
+            .onClick(() => {
+              if (this.selectedNode1 == index) {
+                this.selectedNode1 = -1
+              } else {
+                this.selectedNode1 = index
               }
             })
+
+            if (this.selectedNode1 == index) {
+              ForEach(this.siteMap[this.selectedNode1].childNodes, (node2: Node2) => {
+                Column() {
+                  Divider()
+                    .height(1)
+                    .opacity(0.2)
+                    .margin({ left: 42, right: 8 })
+
+                  Row() {
+                    Text(node2.title)
+                      .fontSize(16)
+                      .layoutWeight(1)
+                      .margin({ left: 42 })
+                      .align(Alignment.Start)
+
+                    Blank()
+                  }
+                  .height(48)
+                  .width('100%')
+                  .onClick(() => {
+                    router.pushUrl({
+                      url: node2.url,
+                      params: {
+                        title: node2.title
+                      }
+                    })
+                  })
+                }
+              })
+            }
           }
-        }
-      })
+        })
+      }
     }
   }
 }

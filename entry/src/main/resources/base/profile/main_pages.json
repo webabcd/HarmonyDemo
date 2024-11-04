@@ -43,7 +43,9 @@
     "pages/component/layout/FolderStackDemo",
     "pages/component/layout/RelativeContainerDemo",
     "pages/component/text/TextDemo",
-    "pages/shape/ShadowDemo"
+    "pages/shape/ShadowDemo",
+    "pages/shape/BlurDemo",
+    "pages/shape/GradientDemo"
   ],
   "window": {
     "designWidth": 720,
