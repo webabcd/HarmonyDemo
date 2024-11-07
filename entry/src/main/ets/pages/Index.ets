@@ -75,6 +75,10 @@ struct Index {
         ]),
         new Node1("组件（文本类）", [
           new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
+          new Node2("Span（文本显示框子组件）", "pages/component/text/SpanDemo"),
+        ]),
+        new Node1("组件（媒体类）", [
+          new Node2("Image（图片）", "pages/component/media/ImageDemo"),
         ]),
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),

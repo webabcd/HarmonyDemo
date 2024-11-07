@@ -48,6 +48,11 @@ struct MySample1 {
        *       DOTTED - 点状线
        *       DASHED - 虚线
        *       WAVY - 波浪线
+       *   textShadow() - 文字阴影（ShadowOptions 接口或者 ShadowOptions 接口集合）
+       *     radius - 阴影的模糊半径
+       *     color - 阴影的颜色
+       *     offsetX - 阴影的 x 轴偏移量
+       *     offsetY - 阴影的 y 轴偏移量
        */
       Text($r('app.string.hello_webabcd'))
         .fontColor(Color.Blue)
@@ -66,6 +71,13 @@ struct MySample1 {
           color: Color.Red,
           style: TextDecorationStyle.SOLID,
         })
+        .textShadow([
+          { radius: 5, color: Color.Red, offsetX: 5, offsetY: 5 },
+          { radius: 5, color: Color.Green, offsetX: 10, offsetY: 5 },
+          { radius: 5, color: Color.Blue, offsetX: 15, offsetY: 5 },
+          { radius: 5, color: Color.Orange, offsetX: 20, offsetY: 5 },
+          { radius: 5, color: Color.Yellow, offsetX: 25, offsetY: 5 }
+        ])
 
       /*
        * textAlign - 文本的水平对齐方式

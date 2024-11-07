@@ -45,7 +45,9 @@
     "pages/component/text/TextDemo",
     "pages/shape/ShadowDemo",
     "pages/shape/BlurDemo",
-    "pages/shape/GradientDemo"
+    "pages/shape/GradientDemo",
+    "pages/component/text/SpanDemo",
+    "pages/component/media/ImageDemo"
   ],
   "window": {
     "designWidth": 720,

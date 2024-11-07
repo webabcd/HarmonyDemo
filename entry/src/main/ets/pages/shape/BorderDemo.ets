@@ -56,6 +56,10 @@ struct BorderDemo {
         .borderColor(Color.Red)
         .borderRadius(5)
         .borderStyle(BorderStyle.Dashed)
+
+      // 通过 borderRadius() 实现圆角矩形
+      Column().width(200).height(100).backgroundColor(Color.Blue)
+        .borderRadius(20)
     }
   }
 }
