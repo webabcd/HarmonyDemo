@@ -51,7 +51,8 @@
     "pages/component/text/ImageSpanDemo",
     "pages/component/text/ContainerSpanDemo",
     "pages/component/text/SymbolSpanDemo",
-    "pages/component/text/SymbolGlyphDemo"
+    "pages/component/text/SymbolGlyphDemo",
+    "pages/component/text/HyperlinkDemo"
   ],
   "window": {
     "designWidth": 720,
