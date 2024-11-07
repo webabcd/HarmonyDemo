@@ -6,6 +6,7 @@
  *   alignItems - 每个子组件的交叉轴方向上的对齐方式
  *   wrap - 当多个子组件所需要的主轴空间超过了 Flex 的主轴的大小，且 Flex 的交叉轴有额外的空间时，是否需要 wrap
  *   alignContent - 当 Flex 内的多个组件 wrap 的时候，指定他们在交叉轴上的排列方式
+ *   layoutWeight() - 主轴方向上占用空间的权重
  */
 
 import { TitleBar, RadioBar } from '../../TitleBar';
@@ -24,6 +25,7 @@ struct FlexDemo {
         TabContent() { MySample2() }.tabBar('垂直布局').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('水平布局').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('wrap').align(Alignment.Top)
+        TabContent() { MySample5() }.tabBar('权重').align(Alignment.Top)
       }
     }
   }
@@ -142,6 +144,50 @@ struct MySample4 {
       .width(200)
       .height(100)
       .backgroundColor(Color.Orange)
+    }
+  }
+}
+
+@Component
+struct MySample5 {
+  build() {
+    Column() {
+
+      /*
+       * layoutWeight() - 主轴方向上占用空间的权重
+       */
+
+      Flex({direction: FlexDirection.Column}) {
+        Column().width('100%').backgroundColor(Color.Red)
+          .height(40)
+
+        Column().width('100%').backgroundColor(Color.Green)
+          .layoutWeight(3)
+
+        Column().width('100%').backgroundColor(Color.Blue)
+          .layoutWeight(1)
+
+        Column().width('100%').backgroundColor(Color.Orange)
+          .layoutWeight(2)
+      }
+      .width('100%')
+      .layoutWeight(1)
+
+      Flex({direction: FlexDirection.Row}) {
+        Column().height('100%').backgroundColor(Color.Red)
+          .width(40)
+
+        Column().height('100%').backgroundColor(Color.Green)
+          .layoutWeight(3)
+
+        Column().height('100%').backgroundColor(Color.Blue)
+          .layoutWeight(1)
+
+        Column().height('100%').backgroundColor(Color.Yellow)
+          .layoutWeight(2)
+      }
+      .width('100%')
+      .layoutWeight(1)
     }
   }
 }

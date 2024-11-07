@@ -4,6 +4,7 @@
  *   reverse() - 是否需要反转排列
  *   alignItems() - Row 内的每个组件的垂直对齐方式
  *   justifyContent() - Row 内的每个组件的水平排列方式
+ *   layoutWeight() - 水平方向上占用空间的权重
  *
  * 注：水平方向上的多个组件如果超过了 Column 的限制范围，是不会 wrap 的，如果需要 wrap 请参见 FlexDemo.ets 中的说明
  */
@@ -22,6 +23,7 @@ struct RowDemo {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('垂直对齐方式').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('水平排列方式').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('权重').align(Alignment.Top)
       }
     }
   }
@@ -113,5 +115,28 @@ struct MySample3 {
       .justifyContent(this.flexAlign)
     }
     .width('100%').height('100%').alignItems(HorizontalAlign.Center)
+  }
+}
+
+@Component
+struct MySample4 {
+  build() {
+    Row() {
+
+      /*
+       * layoutWeight() - 水平方向上占用空间的权重
+       */
+      Column().height('100%').backgroundColor(Color.Red)
+        .width(40)
+
+      Column().height('100%').backgroundColor(Color.Green)
+        .layoutWeight(3)
+
+      Column().height('100%').backgroundColor(Color.Blue)
+        .layoutWeight(1)
+
+      Column().height('100%').backgroundColor(Color.Orange)
+        .layoutWeight(2)
+    }
   }
 }
