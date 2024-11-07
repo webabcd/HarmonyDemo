@@ -47,7 +47,11 @@
     "pages/shape/BlurDemo",
     "pages/shape/GradientDemo",
     "pages/component/text/SpanDemo",
-    "pages/component/media/ImageDemo"
+    "pages/component/media/ImageDemo",
+    "pages/component/text/ImageSpanDemo",
+    "pages/component/text/ContainerSpanDemo",
+    "pages/component/text/SymbolSpanDemo",
+    "pages/component/text/SymbolGlyphDemo"
   ],
   "window": {
     "designWidth": 720,

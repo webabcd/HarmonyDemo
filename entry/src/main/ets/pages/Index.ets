@@ -75,7 +75,11 @@ struct Index {
         ]),
         new Node1("组件（文本类）", [
           new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
-          new Node2("Span（文本显示框子组件）", "pages/component/text/SpanDemo"),
+          new Node2("Span（Text 的文本子组件）", "pages/component/text/SpanDemo"),
+          new Node2("ImageSpan（Text 的图片子组件）", "pages/component/text/ImageSpanDemo"),
+          new Node2("ContainerSpan（Text 的容器子组件）", "pages/component/text/ContainerSpanDemo"),
+          new Node2("SymbolGlyph（图标符号）", "pages/component/text/SymbolGlyphDemo"),
+          new Node2("SymbolSpan（Text 的图标符号子组件）", "pages/component/text/SymbolSpanDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),

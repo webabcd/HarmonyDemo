@@ -1,5 +1,5 @@
 /*
- * Span - 文本显示框子组件（可作为 Text, ContainerSpan 的子组件）
+ * Span - Text 的文本子组件（也可作为 ContainerSpan 的子组件）
  *   会自动继承父 Text 组件的 fontColor, fontSize, fontStyle, fontWeight, decoration, letterSpacing, textCase, fontFamily, textShadow 等属性
  */
 

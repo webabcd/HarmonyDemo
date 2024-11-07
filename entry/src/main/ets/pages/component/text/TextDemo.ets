@@ -275,7 +275,7 @@ struct MySample2 {
         })
 
       /*
-       * 通过 Span 和 ImageSpan 显示一个图文结合的 Text，并指定一个 controller 控制当前 Text
+       * Text 内可以声明多个 Span, ImageSpan, ContainerSpan, SymbolSpan 子组件，详见相关说明
        * bindSelectionMenu() - 使用自定义的 Text 内容选中后的上下文菜单
        *   spanType - 哪种类型的内容被选中后需要弹出自定义的上下文菜单（TextSpanType 枚举）
        *     TEXT - 选中的内容只有文本时
