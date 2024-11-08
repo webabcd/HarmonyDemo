@@ -81,6 +81,7 @@ struct Index {
           new Node2("SymbolGlyph（图标符号）", "pages/component/text/SymbolGlyphDemo"),
           new Node2("SymbolSpan（Text 的图标符号子组件）", "pages/component/text/SymbolSpanDemo"),
           new Node2("Hyperlink（超链接）", "pages/component/text/HyperlinkDemo"),
+          new Node2("RichText（html 文本）", "pages/component/text/RichTextDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),
