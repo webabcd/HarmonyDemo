@@ -17,6 +17,7 @@ struct TextInputDemo {
         TabContent() { MySample2() }.tabBar('输入类型').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('交互').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('事件').align(Alignment.Top)
+        TabContent() { MySample5() }.tabBar('自定义软键盘').align(Alignment.Top)
       }
     }
   }
@@ -41,7 +42,7 @@ struct MySample1 {
        *   以下这些属性的用法和 Text 组件是一样，详见 TextDemo.ets 中的说明
        *     fontColor(), fontSize(), fontStyle(), fontWeight(), fontFamily()
        *     decoration(), textAlign(), lineHeight(), letterSpacing(), textIndent()
-       *     wordBreak(), textOverflow(), minFontSize(), maxFontSize(), heightAdaptivePolicy(), lineBreakStrategy()
+       *     wordBreak(), minFontSize(), maxFontSize(), heightAdaptivePolicy(), lineBreakStrategy()
        *     editMenuOptions()
        *   text - 显示的文本
        *   placeholder - 占位文本
@@ -49,6 +50,7 @@ struct MySample1 {
        *   placeholderFont() - 占位文本的 size, weight, style, family
        *   caretColor() - 光标的颜色
        *   maxLength() - 允许输入的最大字符数
+       *   showCounter() - 是否在右下角显示字符计数器
        */
       TextInput({
         // 通过 $$ 为 TextInput 组件的 text 属性提供数据的双向同步功能
@@ -63,7 +65,6 @@ struct MySample1 {
           family: 'HarmonyOS Sans',
         })
         .caretColor(Color.Red)
-        .maxLength(100)
         .width('90%')
         .height(40)
         .fontSize(14)
@@ -72,6 +73,13 @@ struct MySample1 {
           type: TextDecorationType.Underline,
           color: Color.Red,
           style: TextDecorationStyle.SOLID,
+        })
+        .maxLength(80)
+        .showCounter(true, {
+          // 这里 20 的意思是 maxLength() 的大小乘以 0.2 等于 16，即当输入字符的长度达到 16 后显示计数器
+          thresholdPercentage: 20,
+          // 当输入字符数达到 maxLength() 的大小时，输入框是否显示红色边框
+          highlightBorder: true
         })
 
       /*
@@ -92,13 +100,20 @@ struct MySample1 {
        *   这个最大行数是用于限制输入框的最大高度的，当输入数据超过了最大行数后输入框的高度就不会再变，但是可以继续输入数据，然后通过上下滑动查看数据
        * onContentScroll() - 内容滚动时的回调
        *   totalOffsetX, totalOffsetY - 滚动的偏移量
+       * textOverflow() - 文本溢出后的显示方式（仅在设置了 maxLines() 之后有效）
+       *   TextOverflow.Clip - 直接截断
+       *   TextOverflow.Ellipsis - 溢出部分用省略号代替
        */
       TextInput().width('90%').height(40)
         .style(TextInputStyle.Inline)
-        .maxLines(5)
+        .maxLines(3)
         .onContentScroll((totalOffsetX: number, totalOffsetY: number) => {
           this.text = `onContentScroll: ${totalOffsetX}, ${totalOffsetY}`
         })
+      TextInput().width('90%').height(40)
+        .style(TextInputStyle.Inline)
+        .maxLines(3)
+        .textOverflow(TextOverflow.Ellipsis)
 
       /*
        * caretStyle() - 光标的样式
@@ -136,7 +151,7 @@ struct MySample1 {
       TextInput().width('90%').height(60).fontSize(14).fontColor(Color.Black)
         .showUnderline(true)
         .underlineColor({
-          normal: Color.Orange,
+          normal: Color.Black,
           typing: Color.Green,
           error: Color.Red,
           disable: Color.Gray
@@ -341,5 +356,49 @@ struct MySample4 {
 
       Text(this.message).fontSize(16)
     }
+  }
+}
+
+@Component
+struct MySample5 {
+
+  controller: TextInputController = new TextInputController()
+  @State inputValue: string = ""
+
+  // 自定义软键盘组件
+  @Builder
+  CustomKeyboardBuilder() {
+    Column() {
+      Row() {
+        Button('x').onClick(() => {
+          // 关闭自定义键盘
+          this.controller.stopEditing()
+        }).margin(10)
+      }
+
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+          GridItem() {
+            Button(item.toString()).width(110)
+              .onClick(() => {
+                this.inputValue += item
+              })
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor(Color.Gray)
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      TextInput({ controller: this.controller, text: this.inputValue }).borderWidth(1).borderColor(Color.Blue)
+        /*
+         * customKeyboard() - 绑定自定义软键盘
+         *   supportAvoidance - 弹出自定义软键盘时，输入框是否需要自动避让以避免被软键盘覆盖
+         */
+        .customKeyboard(this.CustomKeyboardBuilder(), {
+          supportAvoidance: true
+        })
+    }.height('95%').justifyContent(FlexAlign.End)
   }
 }
