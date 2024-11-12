@@ -51,6 +51,7 @@ struct MySample1 {
        *   caretColor() - 光标的颜色
        *   maxLength() - 允许输入的最大字符数
        *   showCounter() - 是否在右下角显示字符计数器
+       *   selectionMenuHidden() - 选中文本后是否不弹出上下文菜单
        */
       TextInput({
         // 通过 $$ 为 TextInput 组件的 text 属性提供数据的双向同步功能
@@ -81,6 +82,7 @@ struct MySample1 {
           // 当输入字符数达到 maxLength() 的大小时，输入框是否显示红色边框
           highlightBorder: true
         })
+        .selectionMenuHidden(false)
 
       /*
        * 设置 TextInput 的边框和背景色
@@ -100,6 +102,10 @@ struct MySample1 {
        *   这个最大行数是用于限制输入框的最大高度的，当输入数据超过了最大行数后输入框的高度就不会再变，但是可以继续输入数据，然后通过上下滑动查看数据
        * onContentScroll() - 内容滚动时的回调
        *   totalOffsetX, totalOffsetY - 滚动的偏移量
+       * barState() - 滚动条的显示模式（BarState 枚举）
+       *   Off - 不显示
+       *   On - 内容可滚动的时候则显示，且不消失
+       *   Auto - 内容可滚动的时候且被触摸了则显示，然后 2 秒后消失
        * textOverflow() - 文本溢出后的显示方式（仅在设置了 maxLines() 之后有效）
        *   TextOverflow.Clip - 直接截断
        *   TextOverflow.Ellipsis - 溢出部分用省略号代替
@@ -110,6 +116,7 @@ struct MySample1 {
         .onContentScroll((totalOffsetX: number, totalOffsetY: number) => {
           this.text = `onContentScroll: ${totalOffsetX}, ${totalOffsetY}`
         })
+        .barState(BarState.Auto)
       TextInput().width('90%').height(40)
         .style(TextInputStyle.Inline)
         .maxLines(3)
@@ -171,7 +178,8 @@ struct MySample2 {
       Text(this.text)
 
       /*
-       * type() - 输入框允许输入的数据的类型，以及弹出的软键盘的类型
+       * type() - 输入框允许输入的数据的类型，以及弹出的软键盘的类型（InputType 枚举）
+       *   Normal, Number, PhoneNumber, Email, Password, NUMBER_PASSWORD, USER_NAME, NEW_PASSWORD, NUMBER_DECIMAL, URL
        * contentType() - 弹出的软键盘上的自动填充类型
        * enableAutoFill() - 是否启用自动填充功能
        * enterKeyType() - 软键盘的回车的类型（EnterKeyType 枚举）
@@ -368,25 +376,25 @@ struct MySample5 {
   // 自定义软键盘组件
   @Builder
   CustomKeyboardBuilder() {
-    Column() {
+    Column({ space: 10 }) {
       Row() {
-        Button('x').onClick(() => {
+        Button('X').width(100).fontColor(Color.White).backgroundColor(Color.Blue).onClick(() => {
           // 关闭自定义键盘
           this.controller.stopEditing()
-        }).margin(10)
+        })
       }
 
       Grid() {
         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
           GridItem() {
-            Button(item.toString()).width(110)
+            Button(item.toString()).width(100).fontColor(Color.White).backgroundColor(Color.Blue)
               .onClick(() => {
                 this.inputValue += item
               })
           }
         })
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-    }.backgroundColor(Color.Gray)
+    }.backgroundColor(Color.Orange)
   }
 
   build() {

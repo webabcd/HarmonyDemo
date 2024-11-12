@@ -18,7 +18,7 @@ struct ArrayDemo {
   let array1: number[] = [1, 2, 3, ]; // 支持尾随逗号
   let array2: Array<number> = [1, 2, 3];
   let array3: Array<number | string | boolean> = [1, "2", true];
-  let array4 = [1, 2, 3];
+  let array4 = [1, 2, 3, "abc", true];
   let array5 = Array.of(1, 2, 3);
   let array6 = Array.from([1, 2, 3]);
   // 空位为 undefined
