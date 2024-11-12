@@ -70,6 +70,29 @@ struct DataTypeDemo {
   MyLog.d(typeof a); // number
   a = "abc";
   MyLog.d(typeof a); // string
+
+  // 函数的参数和返回值之类的都可以使用联合类型
+  let fun1 = (x: number | string): number | string | void => {
+    if (typeof x === 'number') {
+      return x * 2;
+    } else if (typeof x === 'string') {
+      return `hello ${x}`;
+    } else {
+      // void
+    }
+  }
+  MyLog.d(`${fun1(100)}, ${fun1("webabcd")}`); // 200, hello webabcd
+
+  let b: number | undefined;
+  if (Math.random() > 0.5) {
+    b = 10;
+  } else {
+    b = undefined
+  }
+  // 注：如果运行时才能确定变量的具体类型，且函数参数的支持类型并不能覆盖变量的所有可能的类型时，则调用函数时必须要先判断传入变量的类型，否则会编译时报错
+  if (typeof b == 'number') {
+    MyLog.d(`${fun1(b)}`); // 20
+  }
 }
 
 {

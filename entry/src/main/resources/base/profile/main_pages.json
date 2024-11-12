@@ -53,7 +53,9 @@
     "pages/component/text/SymbolSpanDemo",
     "pages/component/text/SymbolGlyphDemo",
     "pages/component/text/HyperlinkDemo",
-    "pages/component/text/RichTextDemo"
+    "pages/component/text/RichTextDemo",
+    "pages/component/text/TextInputDemo",
+    "pages/component/text/StyledStringDemo"
   ],
   "window": {
     "designWidth": 720,

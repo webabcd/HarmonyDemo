@@ -13,7 +13,7 @@ struct SpanDemo {
       TitleBar()
 
       Column() {
-        Text() {
+        Text("如果在 Text 中设置了 Span 之类的子组件，则这里的文本是不会被显示的") {
           Span('hello').fontSize(32)
 
           /*

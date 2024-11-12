@@ -113,7 +113,7 @@ struct UnitDemo {
         .width($r("app.integer.200"))
         .height($r("app.integer.30"))
 
-      // 有的地方需要使用 LengthMetrics 类型的值，可以通过类似如下的方式指定
+      // LengthMetrics - 用于设置长度属性，有的地方需要使用 LengthMetrics 类型的值，可以通过类似如下的方式指定
       //   LengthMetrics.vp()
       //   LengthMetrics.px()
       //   LengthMetrics.fp()

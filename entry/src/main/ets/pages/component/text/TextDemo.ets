@@ -18,6 +18,7 @@ struct TextDemo {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('内容选择').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('自定义字体').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('交互').align(Alignment.Top)
       }
     }
   }
@@ -190,7 +191,7 @@ struct MySample2 {
 
   @State message: string = ''
 
-  // TextController 是控制 Text 的，声明式编程通常都会用这种方式
+  // TextController 是用于和 Text 交互的，声明式编程通常都会用这种方式
   controller: TextController = new TextController();
 
   // 用于扩展 Text 默认的内容选中后的上下文菜单
@@ -259,10 +260,10 @@ struct MySample2 {
        *   SELECTABLE_UNFOCUSABLE, SELECTABLE_FOCUSABLE, UNSELECTABLE
        * selection() - 通过指定起始位置和结束位置，设置当前被选中的内容
        * copyOption() - 复制 Text 中被选中的内容时的行为（CopyOptions 枚举）
-       *   None - 不支持复制
+       *   None - 不支持复制（默认值，此时不允许选中 Text 中的内容）
        *   InApp - 应用内复制
        *   LocalDevice - 设备内复制
-       *   CROSS_DEVICE11 - 跨设备复制
+       *   CROSS_DEVICE - 跨设备复制
        * onCopy() - 选中的内容复制后触发的事件
        */
       Text('HarmonyOS SDK 是面向鸿蒙原生应用和元服务开发的开放能力合集，提供包括应用框架、应用服务、系统、媒体、AI、图形在内的六大领域丰富完备的开放能力，助力构建焕然一新的鸿蒙原生应用和元服务，带来创新易用的全场景体验。')
@@ -371,6 +372,84 @@ struct MySample3 {
       Text("webabcd webabcd").fontSize(36)
         // 指定自定义的字体名称，从而使用已注册的自定义字体
         .fontFamily('my-font')
+    }
+  }
+}
+
+@Component
+struct MySample4 {
+
+  // TextController 是用于和 Text 交互的，声明式编程通常都会用这种方式
+  controller: TextController = new TextController()
+
+  @State message: string = "abc\nxyz"
+
+  build() {
+    Column({ space: 10 }) {
+
+      // 创建 Text 的时候指定 TextController，后续就可以通过这个 TextController 和这个 Text 交互了
+      Text('abcdefghijklmnopqrstuvwxyz\nabcdefghijklmnopqrstuvwxyz\nabcdefghijklmnopqrstuvwxyz', {
+        controller: this.controller
+      })
+        .margin({ top: 30 })
+        .backgroundColor(Color.Orange)
+        .padding(10)
+        .fontSize(16)
+        .textSelectable(TextSelectableMode.SELECTABLE_UNFOCUSABLE)
+        .selection(3, 10)
+        .copyOption(CopyOptions.InApp)
+
+      Button('关闭上下文菜单 closeSelectionMenu()')
+        .onClick(() => {
+          /*
+           * TextController - 用于和绑定的 Text 之间的交互
+           *   closeSelectionMenu() - 关闭上下文菜单
+           */
+          this.controller.closeSelectionMenu()
+        })
+
+      Button('获取布局相关信息 getLayoutManager()')
+        .onClick(() => {
+          /*
+           * TextController - 用于和绑定的 Text 之间的交互
+           *   getLayoutManager() - 获取布局管理对象
+           *     getLineCount() - 获取内容的总行数
+           *     getLineMetrics() - 获取指定行的布局相关信息
+           *       startIndex - 当前行的起始字符，在整个文本中的索引位置
+           *       endIndex - 当前行的结束字符，在整个文本中的索引位置
+           *       ascent - 基线到当前行的字符顶部的距离（单位 px）
+           *       descent - 基线到当前行的字符底部的距离（单位 px）
+           *       baseline - 基线到整个文本顶部的距离（单位 px）
+           *       topHeight - 当前行的顶部到整个文本的顶部的距离（单位 px）
+           *       width - 当前行的宽（单位 px）
+           *       height - 当前行的高（单位 px）
+           *       left - 当前行的左侧边缘与 Text 组件的左侧边缘之间的距离（单位 px）
+           *       lineNumber - 当前行的行索引位置
+           */
+          let layoutManager: LayoutManager = this.controller.getLayoutManager()
+
+          let lineCount = layoutManager.getLineCount()
+          this.message = `lineCount:${lineCount}\n`
+
+          // 获取第 3 行的布局相关信息
+          let lineMetrics = layoutManager.getLineMetrics(2)
+          this.message += `startIndex:${lineMetrics.startIndex}, endIndex:${lineMetrics.endIndex},
+          ascent:${lineMetrics.ascent}, descent:${lineMetrics.descent}, baseline:${lineMetrics.baseline}, topHeight:${lineMetrics.topHeight},
+          width:${lineMetrics.width}, height:${lineMetrics.height}, left:${lineMetrics.left}, lineNumber:${lineMetrics.lineNumber}\n`
+
+          let position = layoutManager.getGlyphPositionAtCoordinate(100, 30)
+          this.message += `position:${position.position}, affinity:${position.affinity}`
+        })
+
+      Text(this.message).fontSize(16)
+
+      Button('更新属性字符串 setStyledString()')
+        .onClick(() => {
+          /*
+           * TextController - 用于和绑定的 Text 之间的交互
+           *   setStyledString() - 设置 StyledString（请参见 StyledStringDemo.ets 中的相关说明）
+           */
+        })
     }
   }
 }
