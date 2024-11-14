@@ -20,6 +20,8 @@ struct GradientDemo {
         TabContent() { MySample2() }.tabBar('放射渐变').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('扫描式渐变').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }

@@ -19,6 +19,8 @@ struct TextInputDemo {
         TabContent() { MySample4() }.tabBar('事件').align(Alignment.Top)
         TabContent() { MySample5() }.tabBar('自定义软键盘').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }
@@ -322,22 +324,22 @@ struct MySample4 {
          */
 
         .onWillInsert((info: InsertValue) => {
-          this.message += `onWillInsert: ${info.insertValue}, ${info.insertOffset}\n`
+          this.message += `onWillInsert, insertValue:${info.insertValue}, insertOffset:${info.insertOffset}\n`
           // 返回 true 则代表允许此次输入，然后会调用 onDidInsert()
           // 返回 false 则代表拒绝此次输入，之后也不会调用 onDidInsert()
           return false;
         })
         .onDidInsert((info: InsertValue) => {
-          this.message += `onDidInsert: ${info.insertValue}, ${info.insertOffset}\n`
+          this.message += `onDidInsert, insertValue:${info.insertValue}, insertOffset:${info.insertOffset}\n`
         })
         .onWillDelete((info: DeleteValue) => {
-          this.message += `onWillDelete: ${info.deleteValue}, ${info.deleteValue}, ${info.direction}\n`
+          this.message += `onWillDelete, deleteValue:${info.deleteValue}, deleteValue:${info.deleteValue}, direction:${info.direction}\n`
           // 返回 true 则代表允许此次删除，然后会调用 onDidDelete()
           // 返回 false 则代表拒绝此次删除，之后也不会调用 onDidDelete()
           return true;
         })
         .onDidDelete((info: DeleteValue) => {
-          this.message += `onDidDelete: ${info.deleteValue}, ${info.deleteValue}, ${info.direction}\n`
+          this.message += `onDidDelete, deleteValue:${info.deleteValue}, deleteValue:${info.deleteValue}, direction:${info.direction}\n`
         })
         .onChange((value: string) => {
           this.message += `onChange: ${value}\n`
@@ -357,7 +359,7 @@ struct MySample4 {
           this.message += `onEditChange: ${isEditing}\n`
         })
         .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => {
-            this.message += `onSubmit: ${enterKey}, text: ${event.text}\n`
+            this.message += `onSubmit, enterKey:${enterKey}, text:${event.text}\n`
             // 默认在 onSubmit() 之后输入框会变为非编辑状态，如果调用 keepEditableState() 则可以保持编辑状态
             event.keepEditableState()
         })

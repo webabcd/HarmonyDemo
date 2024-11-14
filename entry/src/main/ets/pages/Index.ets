@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("组件（文本类）", [
-          new Node2("Search（搜索框）", "pages/component/text/SearchDemo"),
+          new Node2("RichEditor（富文本编辑器）", "pages/component/text/RichEditorDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -89,6 +89,7 @@ struct Index {
           new Node2("TextInput（文本输入框）", "pages/component/text/TextInputDemo"),
           new Node2("TextArea（多行文本输入框）", "pages/component/text/TextAreaDemo"),
           new Node2("Search（搜索框）", "pages/component/text/SearchDemo"),
+          new Node2("RichEditor（富文本编辑器）", "pages/component/text/RichEditorDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),

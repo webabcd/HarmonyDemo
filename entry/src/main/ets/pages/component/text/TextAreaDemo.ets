@@ -32,6 +32,9 @@ struct TextAreaDemo {
        *   textOverflow() - 文本溢出后的显示方式（仅在设置了 maxLines() 之后有效）
        *     TextOverflow.Clip - 直接截断
        *     TextOverflow.Ellipsis - 溢出部分用省略号代替
+       *   enablePreviewText() - 是否启用预上屏（需要输入法支持）
+       *     预上屏的意思是：当用户输入特定的触发文本（如“hel”）时，输入框在当前位置上会显示预上屏内容（如“hello world”），然后点击回车之后就可以正式上屏了
+       *     注：预上屏的内容不会触发 onWillInsert, onDidInsert, onWillDelete, onDidDelete 回调
        *
        * 注：其他用法和 Text, TextInput 差不多，详见 TextDemo.ets, TextInputDemo.ets 中的说明
        */
@@ -55,6 +58,7 @@ struct TextAreaDemo {
           this.message = `onContentScroll: ${totalOffsetX}, ${totalOffsetY}`
         })
         .barState(BarState.Auto)
+        .enablePreviewText(true)
 
       TextArea({
         text: 'HarmonyOS SDK 是面向鸿蒙原生应用和元服务开发的开放能力合集，提供包括应用框架、应用服务、系统、媒体、AI、图形在内的六大领域丰富完备的开放能力，助力构建焕然一新的鸿蒙原生应用和元服务，带来创新易用的全场景体验。',

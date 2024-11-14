@@ -27,6 +27,8 @@ struct FlexDemo {
         TabContent() { MySample4() }.tabBar('wrap').align(Alignment.Top)
         TabContent() { MySample5() }.tabBar('权重').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }

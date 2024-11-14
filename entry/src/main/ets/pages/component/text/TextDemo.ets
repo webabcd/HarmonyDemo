@@ -20,6 +20,8 @@ struct TextDemo {
         TabContent() { MySample3() }.tabBar('自定义字体').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('交互').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }
@@ -277,7 +279,7 @@ struct MySample2 {
 
       /*
        * Text 内可以声明多个 Span, ImageSpan, ContainerSpan, SymbolSpan 子组件，详见相关说明
-       * bindSelectionMenu() - 使用自定义的 Text 内容选中后的上下文菜单
+       * bindSelectionMenu() - 使用自定义的上下文菜单
        *   spanType - 哪种类型的内容被选中后需要弹出自定义的上下文菜单（TextSpanType 枚举）
        *     TEXT - 选中的内容只有文本时
        *     IMAGE - 选中的内容只有图片时
@@ -289,7 +291,7 @@ struct MySample2 {
        *     SELECT - 鼠标选择
        *   options - 用于设置一些回调函数
        *     onAppear - 自定义菜单弹出时的回调
-       *     onDisappear -
+       *     onDisappear - 自定义菜单关闭时的回调
        *   onTextSelectionChange - 选中内容发生变化时的回调
        *     selectionStart - 选中内容的起始位置
        *     selectionEnd - 选中内容的结束位置
@@ -317,7 +319,7 @@ struct MySample2 {
       })
 
       /*
-       * editMenuOptions() - 扩展 Text 默认的内容选中后的上下文菜单
+       * editMenuOptions() - 扩展默认的上下文菜单
        *   onCreateMenu - 扩展上下文菜单的具体逻辑
        *   onMenuItemClick - 上下文菜单中的某一菜单项被点击后的回调
        *     menuItem - 被点击的菜单项

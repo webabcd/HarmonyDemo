@@ -18,6 +18,8 @@ struct ImageDemo {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('拉伸').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }

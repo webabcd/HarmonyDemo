@@ -29,8 +29,8 @@ struct ClassDemo {
       this.name = name;
       this.id = id;
     }
-    // 方法
-    hello() {
+    // 方法（返回类型可以省略）
+    hello(): string {
       return `id:${this.id} name:${this.name}`;
     }
 

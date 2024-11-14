@@ -25,6 +25,8 @@ struct RowDemo {
         TabContent() { MySample3() }.tabBar('水平排列方式').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('权重').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }

@@ -1,5 +1,5 @@
 /*
- * RichText - html 文本（底层用的是 web 组件显示的，资源占用较高）
+ * RichText - html 文本（底层用的是 web 组件显示的，资源占用较高，为了避免资源占用推荐使用 RichEditor 组件）
  */
 
 import { TitleBar } from '../../TitleBar'

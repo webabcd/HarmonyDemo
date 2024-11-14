@@ -57,7 +57,8 @@
     "pages/component/text/TextInputDemo",
     "pages/component/text/StyledStringDemo",
     "pages/component/text/TextAreaDemo",
-    "pages/component/text/SearchDemo"
+    "pages/component/text/SearchDemo",
+    "pages/component/text/RichEditorDemo"
   ],
   "window": {
     "designWidth": 720,

@@ -17,6 +17,7 @@ struct RelativeContainerDemoDemo {
         TabContent() { MySample3() }.tabBar('与指定的 barrier 约束').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('链式约束').align(Alignment.Top)
       }
+      .scrollable(true)
       .barMode(BarMode.Scrollable)
     }
   }

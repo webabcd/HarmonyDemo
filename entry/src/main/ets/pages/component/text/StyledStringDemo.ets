@@ -20,6 +20,8 @@ struct StyledStringDemo {
         TabContent() { MySample1() }.tabBar('StyledString').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('MutableStyledString').align(Alignment.Top)
       }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
     }
   }
 }
