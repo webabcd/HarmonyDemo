@@ -19,8 +19,8 @@ struct Index {
   aboutToAppear(): void {
     this.siteMap =
       [
-        new Node1("组件（文本类）", [
-          new Node2("RichEditor（富文本编辑器）", "pages/component/text/RichEditorDemo"),
+        new Node1("临时测试用", [
+          new Node2("图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）", "pages/shape/ShapeDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -104,6 +104,7 @@ struct Index {
           new Node2("阴影", "pages/shape/ShadowDemo"),
           new Node2("模糊", "pages/shape/BlurDemo"),
           new Node2("渐变", "pages/shape/GradientDemo"),
+          new Node2("图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）", "pages/shape/ShapeDemo"),
         ]),
       ]
     this.siteMapToMarkdown()

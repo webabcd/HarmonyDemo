@@ -2,9 +2,7 @@
  * Image - 图片
  */
 
-import { MyLog, RadioBar, TitleBar } from '../../TitleBar'
-import { LengthMetrics } from '@kit.ArkUI'
-import { font } from '@kit.ArkUI'
+import { RadioBar, TitleBar } from '../../TitleBar'
 
 @Entry
 @Component
