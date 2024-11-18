@@ -56,6 +56,8 @@ struct StyleDemo {
     .backgroundColor(Color.Orange)
   }
 
+  @State checkbox_selected: boolean = false
+
   build() {
     Column({ space: 10 }) {
       TitleBar()
@@ -81,21 +83,60 @@ struct StyleDemo {
 
       // stateStyles 用于分别指定各种状态的样式，也支持在 @Styles 或 @Extend 中设置
       // 状态有 normal, pressed, selected, disabled, focused
-      Text('Text1')
-        .myExtend1()
+      Text('Text1').width('100%').height(40).fontColor(Color.White).fontSize(24)
         .stateStyles({
           normal: {
             .backgroundColor(Color.Black)
+          },
+          focused: {
+            .backgroundColor(Color.Blue)
           },
           pressed: {
             .backgroundColor(Color.Orange)
           },
         })
-      Text('Text2')
-        .myExtend1()
+        // 注：设置了 onClick() 的组件才能获取焦点，才能走到 focused 状态
+        .onClick(() => {
+
+        })
+      Text('Text2').width('100%').height(40).fontColor(Color.White).fontSize(24)
         .stateStyles({
           normal: this.normalStyle,
           pressed: this.pressedStyle,
+        })
+      Text('Text3').width('100%').height(40).fontColor(Color.White).fontSize(24)
+        .stateStyles({
+          disabled: {
+            .backgroundColor(Color.Orange)
+          },
+        })
+        // 注：当 enabled(false) 时，则会走到 disabled 状态
+        .enabled(false)
+      Checkbox().width(50).height(50).shape(CheckBoxShape.ROUNDED_SQUARE)
+        // 通过 select(true) 可以让 Checkbox 组件走到 selected 状态
+        // 注：
+        // 支持 selected 状态的组件有 Checkbox, CheckboxGroup, Radio, Toggle, ListItem, GridItem, MenuItem
+        // 需要通过组件的相关方法才能让组件走到 selected 状态，仅通过用户行为走不到 selected 状态
+        //   Checkbox 的 select() 方法
+        //   CheckboxGroup 的 selectAll() 方法
+        //   Radio 的 checked() 方法
+        //   Toggle 的 isOn() 方法
+        //   ListItem 的 selected() 方法
+        //   GridItem 的 selected() 方法
+        //   MenuItem 的 selected() 方法
+        .select(this.checkbox_selected)
+        .onClick(() => {
+          this.checkbox_selected = !this.checkbox_selected
+        })
+        .stateStyles({
+          normal: {
+            .borderWidth(1)
+            .borderColor(Color.Red)
+          },
+          selected: {
+            .borderWidth(10)
+            .borderColor(Color.Green)
+          },
         })
 
     }.width('100%').height('100%')
