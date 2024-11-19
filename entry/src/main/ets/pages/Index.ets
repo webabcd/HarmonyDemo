@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Button（按钮）", "pages/component/button/ButtonDemo"),
+          new Node2("CheckboxGroup（多选框组）", "pages/component/selection/CheckboxGroupDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -90,6 +90,13 @@ struct Index {
           new Node2("TextArea（多行文本输入框）", "pages/component/text/TextAreaDemo"),
           new Node2("Search（搜索框）", "pages/component/text/SearchDemo"),
           new Node2("RichEditor（富文本编辑器）", "pages/component/text/RichEditorDemo"),
+        ]),
+        new Node1("组件（按钮类）", [
+          new Node2("Button（按钮）", "pages/component/button/ButtonDemo"),
+        ]),
+        new Node1("组件（选择类）", [
+          new Node2("Toggle（开关，选择框，切换按钮）", "pages/component/selection/ToggleDemo"),
+          new Node2("Checkbox（多选框）", "pages/component/selection/CheckboxDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),

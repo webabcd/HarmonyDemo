@@ -130,17 +130,17 @@ class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
   // 返回指定的自定义按钮
   applyContent() : WrappedBuilder<[ButtonConfiguration]>
   {
-    return wrapBuilder(myButton)
+    return wrapBuilder(buildButton)
   }
 }
 
 // 自定义按钮
-@Builder function myButton(config: ButtonConfiguration) {
+@Builder function buildButton(config: ButtonConfiguration) {
   /*
    * ButtonConfiguration - 自定义按钮的相关信息
-   *   enabled - 按钮是否可用
+   *   enabled - 是否可用
    *   pressed - 按钮是否被按下
-   *   triggerClick() - 触发按钮的点击事件
+   *   triggerClick() - 触发按钮的 onClick 回调
    */
   Column({space:5}) {
     Rect({ width: 100, height: 50 })
@@ -149,7 +149,8 @@ class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
       .gesture(
         TapGesture()
           .onAction((event: GestureEvent) => {
-            config. triggerClick(event.fingerList[0].localX, event.fingerList[0].localY)
+            // triggerClick() 的两个参数可以在 Button 的 onClick() 中通过 event.x 和 event.y 获取到
+            config.triggerClick(event.fingerList[0].localX, event.fingerList[0].localY)
         }))
     Text(`enabled: ${config.enabled}`)
     Text(`pressed: ${config.pressed}`)
