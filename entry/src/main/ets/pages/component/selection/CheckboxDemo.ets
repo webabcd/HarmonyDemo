@@ -2,7 +2,7 @@
  * Checkbox - 多选框
  */
 
-import { TitleBar, RadioBar } from '../../TitleBar';
+import { TitleBar } from '../../TitleBar';
 
 @Entry
 @Component
@@ -26,11 +26,16 @@ struct MySample1 {
 
   @State message:string = ""
 
+  @Builder indicatorBuilder() {
+    Image($r("app.media.app_icon"))
+  }
+
   build() {
     Column({ space: 10 }) {
       /*
        * Checkbox - 多选框
        *   name - 多选框的名字
+       *   indicatorBuilder - 自定义选中状态时多选框中的内容（指定一个 CustomBuilder）
        *   select() - 是否是选中状态
        *   selectedColor() - 选中时的背景色
        *   backgroundColor() - 未选中时的背景色
@@ -64,6 +69,7 @@ struct MySample1 {
           this.message = `checkbox2: ${value}`
         })
 
+      // 通过 mark() 自定义选中状态时多选框中的对钩的样式
       Checkbox(({ name: 'checkbox3' })).width(50).height(50)
         .select(true)
         .selectedColor(Color.Red)
@@ -76,6 +82,17 @@ struct MySample1 {
           strokeColor: Color.Blue,
           size: 30,
           strokeWidth: 5
+        })
+
+      // 通过 indicatorBuilder 自定义选中状态时多选框中的内容
+      Checkbox(({
+        name: 'checkbox4',
+        indicatorBuilder:() => { this.indicatorBuilder() }
+      }))
+        .width(50)
+        .height(50)
+        .onChange((value: boolean) => {
+          this.message = `checkbox4: ${value}`
         })
 
       Text(this.message).fontSize(16)
@@ -126,6 +143,7 @@ class MyCheckboxStyle implements ContentModifier<CheckBoxConfiguration> {
   /*
    * CheckBoxConfiguration - 自定义 Checkbox 的相关信息
    *   enabled - 是否可用
+   *   contentModifier - 绑定的 ContentModifier 对象
    *   name - 多选框的名字
    *   selected - 是否是选中状态
    *   triggerChange() - 触发 Checkbox 的 onChange() 回调

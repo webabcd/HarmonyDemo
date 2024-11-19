@@ -63,7 +63,8 @@
     "pages/component/button/ButtonDemo",
     "pages/component/selection/ToggleDemo",
     "pages/component/selection/CheckboxDemo",
-    "pages/component/selection/CheckboxGroupDemo"
+    "pages/component/selection/CheckboxGroupDemo",
+    "pages/component/selection/RadioDemo"
   ],
   "window": {
     "designWidth": 720,

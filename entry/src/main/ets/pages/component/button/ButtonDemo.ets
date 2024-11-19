@@ -139,6 +139,7 @@ class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
   /*
    * ButtonConfiguration - 自定义按钮的相关信息
    *   enabled - 是否可用
+   *   contentModifier - 绑定的 ContentModifier 对象
    *   pressed - 按钮是否被按下
    *   triggerClick() - 触发按钮的 onClick 回调
    */

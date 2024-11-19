@@ -2,7 +2,7 @@
  * Toggle - 包括开关，选择框和切换按钮
  */
 
-import { TitleBar, RadioBar } from '../../TitleBar';
+import { TitleBar } from '../../TitleBar';
 
 @Entry
 @Component
@@ -137,6 +137,7 @@ class MySwitchStyle implements ContentModifier<ToggleConfiguration> {
   /*
    * ToggleConfiguration - 自定义 Toggle 的相关信息
    *   enabled - 是否可用
+   *   contentModifier - 绑定的 ContentModifier 对象
    *   isOn - 是否是打开状态
    *   triggerChange() - 触发 Toggle 的 onChange() 回调
    */
