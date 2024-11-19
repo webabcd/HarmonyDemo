@@ -135,7 +135,7 @@ class MySwitchStyle implements ContentModifier<ToggleConfiguration> {
 // 自定义 Switch
 @Builder function buildSwitch(config: ToggleConfiguration) {
   /*
-   * ToggleConfiguration - 自定义按钮的相关信息
+   * ToggleConfiguration - 自定义 Toggle 的相关信息
    *   enabled - 是否可用
    *   isOn - 是否是打开状态
    *   triggerChange() - 触发 Toggle 的 onChange() 回调
