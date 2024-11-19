@@ -42,9 +42,7 @@ struct CheckboxGroupDemo {
        *   name - 多选框的名字
        *   group - 组名
        *
-       * 注：
-       * 1、组名相同的 Checkbox 和 CheckboxGroup 是一组
-       * 2、通过 contentModifier() 实现自定义 CheckboxGroup 的方法与自定义 Checkbox 是一样的，详见 CheckboxDemo.ets 中的说明
+       * 注：组名相同的 Checkbox 和 CheckboxGroup 是一组
        */
       CheckboxGroup({ group: 'checkboxGroup' }).width(50).height(50)
         .selectAll(true)
