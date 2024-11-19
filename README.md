@@ -119,6 +119,26 @@
 - pages/component/text/RichTextDemo
 10. TextInput（文本输入框）
 - pages/component/text/TextInputDemo
+11. TextArea（多行文本输入框）
+- pages/component/text/TextAreaDemo
+12. Search（搜索框）
+- pages/component/text/SearchDemo
+13. RichEditor（富文本编辑器）
+- pages/component/text/RichEditorDemo
+
+### 组件（按钮类）
+1. Button（按钮）
+- pages/component/button/ButtonDemo
+
+### 组件（选择类）
+1. Toggle（开关，选择框，切换按钮）
+- pages/component/selection/ToggleDemo
+2. Radio（单选框）
+- pages/component/selection/RadioDemo
+3. Checkbox（多选框）
+- pages/component/selection/CheckboxDemo
+4. CheckboxGroup（多选框组）
+- pages/component/selection/CheckboxGroupDemo
 
 ### 组件（媒体类）
 1. Image（图片）
@@ -141,3 +161,5 @@
 - pages/shape/BlurDemo
 5. 渐变
 - pages/shape/GradientDemo
+6. 图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）
+- pages/shape/ShapeDemo

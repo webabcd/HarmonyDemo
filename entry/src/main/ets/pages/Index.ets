@@ -116,7 +116,7 @@ struct Index {
           new Node2("图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）", "pages/shape/ShapeDemo"),
         ]),
       ]
-    this.siteMapToMarkdown()
+    let md = this.siteMapToMarkdown()
     return;
 
     /*
@@ -166,6 +166,7 @@ struct Index {
         }
       }
     }
+    return md
   }
 
   scroller: Scroller = new Scroller()
