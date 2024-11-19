@@ -39,7 +39,7 @@ struct MySample1 {
        *     CIRCLE - 圆形
        *     ROUNDED_SQUARE - 圆角方形
        *   onChange() - 选中状态发生变化时的回调
-       *   mark() - 多选框对钩的样式（MarkStyle 接口）
+       *   mark() - 多选框中的对钩的样式（MarkStyle 接口）
        *     strokeColor - 对钩的颜色
        *     size - 对钩的大小
        *     strokeWidth - 对钩的画笔宽度
@@ -74,7 +74,7 @@ struct MySample1 {
         })
         .mark({
           strokeColor: Color.Blue,
-          size: 20,
+          size: 30,
           strokeWidth: 5
         })
 
