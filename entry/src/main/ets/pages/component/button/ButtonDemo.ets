@@ -80,7 +80,7 @@ struct MySample2 {
 
   build() {
     Column({ space: 10 }) {
-      // 通过 Button 的 labelStyle() 自定义按钮显示的文字的样式，相关参数的说明可以参看 TextDemo.ets
+      // 通过 Button 的 labelStyle() 自定义按钮显示的文字的样式，相关参数的说明可以参看 component/text/TextDemo.ets
       Button("button")
         .width(100)
         .labelStyle({

@@ -6,7 +6,9 @@
  *   justifyContent() - Column 内的每个组件的垂直排列方式
  *   layoutWeight() - 垂直方向上占用空间的权重
  *
- * 注：垂直方向上的多个组件如果超过了 Column 的限制范围，是不会 wrap 的，如果需要 wrap 请参见 FlexDemo.ets 中的说明
+ * 注：
+ * 1、垂直方向上的多个组件如果超过了 Column 的限制范围，是不会 wrap 的，如果需要 wrap 请参见 FlexDemo.ets 中的说明
+ * 2、如果需要空白处自动填满，可以使用 Blank 组件，详见 BlankDemo.ets 中的说明
  */
 
 import { TitleBar, RadioBar } from '../../TitleBar';

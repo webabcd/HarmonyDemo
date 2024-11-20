@@ -7,6 +7,8 @@
  *   wrap - 当多个子组件所需要的主轴空间超过了 Flex 的主轴的大小，且 Flex 的交叉轴有额外的空间时，是否需要 wrap
  *   alignContent - 当 Flex 内的多个组件 wrap 的时候，指定他们在交叉轴上的排列方式
  *   layoutWeight() - 主轴方向上占用空间的权重
+ *
+ * 注：如果需要空白处自动填满，可以使用 Blank 组件，详见 BlankDemo.ets 中的说明
  */
 
 import { TitleBar, RadioBar } from '../../TitleBar';
