@@ -20,7 +20,6 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool"),
         ]),
         new Node1("ArkTS 基础", [
@@ -103,6 +102,8 @@ struct Index {
         ]),
         new Node1("组件（展示类）", [
           new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),
+          new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
+          new Node2("Divider（分隔线）", "pages/component/display/DividerDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),

@@ -67,7 +67,8 @@
     "pages/component/selection/RadioDemo",
     "pages/arkts/concurrent/TaskPool",
     "pages/component/display/BadgeDemo",
-    "pages/component/display/BlankDemo"
+    "pages/component/display/BlankDemo",
+    "pages/component/display/DividerDemo"
   ],
   "window": {
     "designWidth": 720,
