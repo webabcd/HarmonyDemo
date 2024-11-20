@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Badge（）", "pages/component/display/BadgeDemo"),
+          new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool"),
         ]),
         new Node1("ArkTS 基础", [
@@ -100,6 +100,9 @@ struct Index {
           new Node2("Radio（单选框）", "pages/component/selection/RadioDemo"),
           new Node2("Checkbox（多选框）", "pages/component/selection/CheckboxDemo"),
           new Node2("CheckboxGroup（多选框组）", "pages/component/selection/CheckboxGroupDemo"),
+        ]),
+        new Node1("组件（展示类）", [
+          new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),
