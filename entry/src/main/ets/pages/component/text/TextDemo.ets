@@ -289,7 +289,7 @@ struct MySample2 {
        *     RIGHT_CLICK - 右键
        *     LONG_PRESS - 长按
        *     SELECT - 鼠标选择
-       *   options - 用于设置一些回调函数
+       *   options - 选项
        *     onAppear - 自定义菜单弹出时的回调
        *     onDisappear - 自定义菜单关闭时的回调
        *   onTextSelectionChange - 选中内容发生变化时的回调

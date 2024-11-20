@@ -137,3 +137,29 @@ f4(1, 2, )
   }})
   MyLog.d(result); // webabcd 44
 }
+
+// 回调函数的示例
+{
+  type CallbackFunction1 = (n: number) => void
+  let f1 = (callback: CallbackFunction1): void => {
+    setTimeout(() => {
+      callback(100)
+    }, 1000)
+  }
+  f1((n) => {
+    MyLog.d(`${n}`) // 100
+  })
+
+  let f2 = (x: number, callback1: (a: number, b: number) => number, callback2: (a: number, b: number) => number): void => {
+    setTimeout(() => {
+      let result1 = callback1(x + 2, x + 3)
+      let result2 = callback2(x * 2, x * 3)
+      MyLog.d(`${result1}, ${result2}`) // 205, 500
+    }, 1000)
+  }
+  f2(100, (a, b) => {
+    return a + b
+  }, (a, b) => {
+    return a + b
+  })
+}

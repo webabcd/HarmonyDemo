@@ -64,7 +64,9 @@
     "pages/component/selection/ToggleDemo",
     "pages/component/selection/CheckboxDemo",
     "pages/component/selection/CheckboxGroupDemo",
-    "pages/component/selection/RadioDemo"
+    "pages/component/selection/RadioDemo",
+    "pages/arkts/concurrent/TaskPool",
+    "pages/component/display/BadgeDemo"
   ],
   "window": {
     "designWidth": 720,

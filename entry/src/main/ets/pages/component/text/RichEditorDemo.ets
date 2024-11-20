@@ -359,7 +359,7 @@ struct MySample3 {
        *   TextResponseType - 调出上下文菜单的方式（ResponseType 枚举）
        *     RightClick - 右键
        *     LongPress - 长按
-       *   options - 用于设置一些回调函数
+       *   options - 选项
        *     onAppear - 自定义菜单弹出时的回调
        *     onDisappear - 自定义菜单关闭时的回调
        */
