@@ -146,6 +146,10 @@ struct PromiseDemo {
   }).finally(() => {
     MyLog.d("finally 7"); // finally 7
   });
+  // 如果在 then() 中没有指定 reject 的话，则在 catch() 中既可以捕获到 reject 异常也可以捕获到 throw 异常
+  p7.then().catch((exception:Error) => {
+    MyLog.d(`${exception}`) // rejected 7 或 exception 7
+  })
 
 
   const p9 = [
