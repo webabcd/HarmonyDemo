@@ -119,6 +119,7 @@ struct TaskPool {
       Button("button4")
         .fontSize(16)
         .onClick(async () => {
+          this.message = "ing"
           this.message = await sample4()
         })
     }
