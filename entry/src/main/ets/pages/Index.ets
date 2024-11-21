@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool"),
+          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/MyFunctionAndClass"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -49,6 +49,9 @@ struct Index {
           new Node2("async/await", "pages/arkts/advanced/AsyncAwait"),
           new Node2("iterator, generator", "pages/arkts/advanced/IteratorGenerator"),
           new Node2("Proxy, Reflect", "pages/arkts/advanced/ProxyReflect"),
+        ]),
+        new Node1("ArkTS 多线程", [
+          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/MyFunctionAndClass"),
         ]),
         new Node1("开发基础", [
           new Node2("ArkUI 基础", "pages/basic/Hello"),
