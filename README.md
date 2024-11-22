@@ -58,6 +58,14 @@
 5. Proxy, Reflect
 - pages/arkts/advanced/ProxyReflect
 
+### ArkTS 多线程
+1. TaskPool
+- pages/arkts/concurrent/TaskPool
+- pages/arkts/concurrent/MyFunctionAndClass
+2. Worker
+- pages/arkts/concurrent/Worker
+- /entry/src/main/ets/workers/myworker
+
 ### 开发基础
 1. ArkUI 基础
 - pages/basic/Hello
@@ -139,6 +147,18 @@
 - pages/component/selection/CheckboxDemo
 4. CheckboxGroup（多选框组）
 - pages/component/selection/CheckboxGroupDemo
+
+### 组件（展示类）
+1. Badge（标记）
+- pages/component/display/BadgeDemo
+2. Blank（空白）
+- pages/component/display/BlankDemo
+3. Divider（分隔线）
+- pages/component/display/DividerDemo
+
+### 组件（弹出类）
+1. AlertDialog（警告弹框）
+- pages/component/flyout/AlertDialogDemo
 
 ### 组件（媒体类）
 1. Image（图片）

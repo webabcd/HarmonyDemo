@@ -58,6 +58,14 @@
 5. Proxy, Reflect
 - pages/arkts/advanced/ProxyReflect
 
+### ArkTS 多线程
+1. TaskPool
+- pages/arkts/concurrent/TaskPool
+- pages/arkts/concurrent/MyFunctionAndClass
+2. Worker
+- pages/arkts/concurrent/Worker
+- /entry/src/main/ets/workers/myworker
+
 ### 开发基础
 1. ArkUI 基础
 - pages/basic/Hello
@@ -79,7 +87,7 @@
 - pages/state/WatchDemo
 
 ### 组件（通用的属性方法和事件方法）
-1. 尺寸相关（width, height, size, constraintSize, margin, padding）
+1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）
 - pages/component/common/SizeDemo
 2. 位置相关（align, direction, position, markAnchor, offset）
 - pages/component/common/PositionDemo
@@ -95,6 +103,66 @@
 - pages/component/layout/StackDemo
 5. FolderStack（可识别屏幕折叠悬停的堆叠布局）
 - pages/component/layout/FolderStackDemo
+6. RelativeContainer（相对布局）
+- pages/component/layout/RelativeContainerDemo
+
+### 组件（文本类）
+1. Text（文本显示框）
+- pages/component/text/TextDemo
+2. StyledString（设置文本以及文本的不同位置的不同样式）
+- pages/component/text/StyledStringDemo
+3. Span（Text 的文本子组件）
+- pages/component/text/SpanDemo
+4. ImageSpan（Text 的图片子组件）
+- pages/component/text/ImageSpanDemo
+5. ContainerSpan（Text 的容器子组件）
+- pages/component/text/ContainerSpanDemo
+6. SymbolGlyph（图标符号）
+- pages/component/text/SymbolGlyphDemo
+7. SymbolSpan（Text 的图标符号子组件）
+- pages/component/text/SymbolSpanDemo
+8. Hyperlink（超链接）
+- pages/component/text/HyperlinkDemo
+9. RichText（html 文本）
+- pages/component/text/RichTextDemo
+10. TextInput（文本输入框）
+- pages/component/text/TextInputDemo
+11. TextArea（多行文本输入框）
+- pages/component/text/TextAreaDemo
+12. Search（搜索框）
+- pages/component/text/SearchDemo
+13. RichEditor（富文本编辑器）
+- pages/component/text/RichEditorDemo
+
+### 组件（按钮类）
+1. Button（按钮）
+- pages/component/button/ButtonDemo
+
+### 组件（选择类）
+1. Toggle（开关，选择框，切换按钮）
+- pages/component/selection/ToggleDemo
+2. Radio（单选框）
+- pages/component/selection/RadioDemo
+3. Checkbox（多选框）
+- pages/component/selection/CheckboxDemo
+4. CheckboxGroup（多选框组）
+- pages/component/selection/CheckboxGroupDemo
+
+### 组件（展示类）
+1. Badge（标记）
+- pages/component/display/BadgeDemo
+2. Blank（空白）
+- pages/component/display/BlankDemo
+3. Divider（分隔线）
+- pages/component/display/DividerDemo
+
+### 组件（弹出类）
+1. AlertDialog（警告弹框）
+- pages/component/flyout/AlertDialogDemo
+
+### 组件（媒体类）
+1. Image（图片）
+- pages/component/media/ImageDemo
 
 ### UI
 1. 颜色相关
@@ -107,3 +175,11 @@
 - pages/shape/BorderDemo
 2. 剪裁，遮罩
 - pages/shape/ClipDemo
+3. 阴影
+- pages/shape/ShadowDemo
+4. 模糊
+- pages/shape/BlurDemo
+5. 渐变
+- pages/shape/GradientDemo
+6. 图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）
+- pages/shape/ShapeDemo

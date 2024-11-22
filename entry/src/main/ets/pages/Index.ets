@@ -52,6 +52,7 @@ struct Index {
         ]),
         new Node1("ArkTS 多线程", [
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/MyFunctionAndClass"),
+          new Node2("Worker", "pages/arkts/concurrent/Worker", "/entry/src/main/ets/workers/myworker"),
         ]),
         new Node1("开发基础", [
           new Node2("ArkUI 基础", "pages/basic/Hello"),
