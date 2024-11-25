@@ -195,3 +195,64 @@ struct ClassDemo {
   MyLog.d(a.hello()); // hello:webabcd
   MyLog.d(a.hello2()); // hello:webabcd
 }
+
+// 关于 ? 与 ! 的用法
+{
+  class Person {
+    public name: string
+    constructor(name:string) {
+      this.name = name
+    }
+    hello() {
+      return `hello:${this.name}`;
+    }
+    static create(name:string | undefined) {
+      if (name === undefined) {
+        return undefined;
+      }
+      return new Person(name);
+    }
+  }
+
+  let a = Person.create('webabcd');
+  let b = Person.create(undefined);
+
+  // 编译时报错
+  // MyLog.d(`${a.hello()}`);
+
+  MyLog.d(`${a?.hello()}`); // hello:webabcd
+
+  MyLog.d(`${a!.hello()}`); // hello:webabcd
+
+  // 编译时报错
+  // MyLog.d(`${b.hello()}`);
+
+  MyLog.d(`${b?.hello()}`); // undefined
+
+  // 运行时报错
+  // MyLog.d(`${b!.hello()}`);
+}
+
+// 关于 ?.() 的用法
+{
+  interface Person {
+    name: string;
+    hello?: () => string;
+  }
+  const person1: Person = {
+    name: "webabcd",
+    hello() {
+      return `hello: ${this.name}`;
+    }
+  }
+  const person2: Person = {
+    name: "wanglei",
+  };
+
+  // 编译时报错
+  // MyLog.d(`${person1.hello()}`)
+  // MyLog.d(`${person2.hello()}`)
+
+  MyLog.d(`${person1.hello?.()}`) // hello: webabcd
+  MyLog.d(`${person2.hello?.()}`) // undefined
+}

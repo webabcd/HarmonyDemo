@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Worker", "pages/arkts/concurrent/Worker"),
+          new Node2("关键帧动画", "pages/animation/KeyframeAnimateDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -126,6 +126,12 @@ struct Index {
           new Node2("模糊", "pages/shape/BlurDemo"),
           new Node2("渐变", "pages/shape/GradientDemo"),
           new Node2("图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）", "pages/shape/ShapeDemo"),
+          new Node2("图形变换（transform, rotate, translate, scale, skew）", "pages/shape/TransformDemo"),
+        ]),
+        new Node1("动画", [
+          new Node2("属性动画", "pages/animation/AnimationDemo"),
+          new Node2("显式动画", "pages/animation/AnimationToDemo"),
+          new Node2("关键帧动画", "pages/animation/KeyframeAnimateDemo"),
         ]),
       ]
     let md = this.siteMapToMarkdown()

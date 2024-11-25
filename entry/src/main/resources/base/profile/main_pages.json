@@ -70,7 +70,11 @@
     "pages/component/display/BlankDemo",
     "pages/component/display/DividerDemo",
     "pages/arkts/concurrent/Worker",
-    "pages/component/flyout/AlertDialogDemo"
+    "pages/component/flyout/AlertDialogDemo",
+    "pages/animation/AnimationDemo",
+    "pages/shape/TransformDemo",
+    "pages/animation/AnimationToDemo",
+    "pages/animation/KeyframeAnimateDemo"
   ],
   "window": {
     "designWidth": 720,
