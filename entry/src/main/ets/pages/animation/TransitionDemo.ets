@@ -42,7 +42,7 @@ struct MySample1 {
       if (this.flag) {
         /*
          * transition() - 用于指定组件的过渡动画（即组件插入或移除时的过渡效果）
-         *   effect - 效果
+         *   effect - 效果（一个 TransitionEffect 对象）
          *     TransitionEffect.IDENTITY - 无过渡效果
          *     TransitionEffect.OPACITY - 出现效果为透明度 0 变为 1，消失效果为透明度 1 变为 0
          *     TransitionEffect.SLIDE - 出现效果为左侧滑入，消失效果为右侧滑出

@@ -43,7 +43,7 @@ struct MySample1 {
 
       Text(this.message).fontSize(16)
 
-      Button('button')
+      Button('button1')
         .onClick(() => {
           /*
            * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
@@ -100,6 +100,26 @@ struct MySample1 {
             cancel: () => {
               this.message += 'cancel\n'
             },
+          })
+        })
+
+      Button('button2')
+        .onClick(() => {
+          /*
+           * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
+           * 以 AlertDialogParam 为例
+           *   transition - 自定义弹框的显示消失的动画效果（TransitionEffect 对象）
+           *     注：关于 TransitionEffect 的使用请参见 TransitionDemo.ets 中的说明
+           */
+          this.getUIContext().showAlertDialog({
+            title: 'title',
+            message: 'message',
+            transition:TransitionEffect.asymmetric(
+              // 弹框出现时的过渡动画效果
+              TransitionEffect.SLIDE.animation({ duration: 1000 }),
+              // 弹框消失时的过渡动画效果
+              TransitionEffect.OPACITY.animation({ duration: 1000 })
+            )
           })
         })
     }
