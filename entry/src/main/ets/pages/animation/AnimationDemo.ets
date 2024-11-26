@@ -3,6 +3,8 @@
  *
  * 通过 animation() 实现属性动画（当某些属性的值发生变化时，执行对应的动画效果）
  * 支持的属性有 width, height, backgroundColor, opacity, scale, rotate, translate 等
+ *
+ * 关于 scale, rotate, translate 请参见 /component/shape/TransformDemo.ets 中的说明
  */
 
 import { RadioBar, TitleBar } from '../TitleBar'

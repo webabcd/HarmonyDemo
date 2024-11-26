@@ -74,7 +74,10 @@
     "pages/animation/AnimationDemo",
     "pages/shape/TransformDemo",
     "pages/animation/AnimationToDemo",
-    "pages/animation/KeyframeAnimateDemo"
+    "pages/animation/KeyframeAnimateDemo",
+    "pages/animation/MotionPathDemo",
+    "pages/animation/TransitionDemo",
+    "pages/animation/GeometryTransitionDemo"
   ],
   "window": {
     "designWidth": 720,
