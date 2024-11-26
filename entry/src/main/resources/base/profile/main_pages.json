@@ -77,7 +77,10 @@
     "pages/animation/KeyframeAnimateDemo",
     "pages/animation/MotionPathDemo",
     "pages/animation/TransitionDemo",
-    "pages/animation/GeometryTransitionDemo"
+    "pages/animation/GeometryTransitionDemo",
+    "pages/animation/PageTransitionDemo",
+    "pages/animation/PageTransitionDemo_1",
+    "pages/animation/PageTransitionDemo_2"
   ],
   "window": {
     "designWidth": 720,
