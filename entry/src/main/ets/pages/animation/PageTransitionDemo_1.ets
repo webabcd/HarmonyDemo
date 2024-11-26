@@ -1,5 +1,5 @@
 /*
- * 页面转场效果
+ * 页面转场效果（即页面路由切换时的动画）
  */
 
 import { TitleBar } from '../TitleBar';

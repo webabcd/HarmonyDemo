@@ -183,3 +183,24 @@
 - pages/shape/GradientDemo
 6. 图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）
 - pages/shape/ShapeDemo
+7. 图形变换（transform, rotate, translate, scale, skew）
+- pages/shape/TransformDemo
+
+### 动画
+1. 属性动画
+- pages/animation/AnimationDemo
+2. 显式动画
+- pages/animation/AnimationToDemo
+3. 关键帧动画
+- pages/animation/KeyframeAnimateDemo
+4. 路径动画
+- pages/animation/MotionPathDemo
+5. 单个组件显示和消失时的过渡动画
+- pages/animation/TransitionDemo
+6. 一组件显示一组件消失时的过渡动画
+- pages/animation/GeometryTransitionDemo
+7. 页面转场效果
+- pages/animation/PageTransitionDemo
+- pages/animation/PageTransitionDemo_1
+- pages/animation/PageTransitionDemo_2
+- pages/animation/PageTransitionDemo_3

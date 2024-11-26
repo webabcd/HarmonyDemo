@@ -3,11 +3,10 @@
  */
 
 import { TitleBar } from '../TitleBar';
-import { router } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct PageTransitionDemo_2 {
+struct PageTransitionDemo_3 {
 
   build() {
     Column() {
@@ -25,16 +24,13 @@ struct PageTransitionDemo_2 {
          *     curve - 动画曲线，即动画的缓动类型（参见 AnimationDemo.ets 中的说明）
          */
         Image($r("app.media.app_icon"))
-          .width('20%')
-          .height('20%')
+          .width('80%')
+          .height('80%')
           .objectFit(ImageFit.Fill)
           .sharedTransition('group1', {
             delay: 0,
             duration: 1500,
             curve: Curve.Linear
-          })
-          .onClick(() => {
-            router.pushUrl({ url: 'pages/animation/PageTransitionDemo_3', params: { title: "页面转场效果_测试页 3" } })
           })
       }
       .width('100%')
