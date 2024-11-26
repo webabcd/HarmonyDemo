@@ -40,7 +40,7 @@ struct MySample1 {
   build() {
     // direction - 布局的方向（FlexDirection 枚举）
     //   Row, Column, RowReverse, ColumnReverse
-    // space - 子组件的间距（FlexSpaceOptions 接口）
+    // space - 子组件的间距（一个 FlexSpaceOptions 对象）
     //   main - 主轴方向上的子组件的间距
     //   cross - 交叉轴方向上的子组件的间距
     //
@@ -123,7 +123,7 @@ struct MySample4 {
         this.flexAlign = FlexAlign[this.flexAlign_valueList[selectedIndex]]
       }})
 
-      // space - 子组件的间距（FlexSpaceOptions 接口）
+      // space - 子组件的间距（一个 FlexSpaceOptions 对象）
       //   main - 主轴方向上的间距
       //   cross - 交叉轴方向上的间距（当 Flex 内的多个组件 wrap 的时候，就会有交叉轴的排列，此值就会生效）
       // wrap - 当 Flex 内的多个组件所需要的主轴空间超过了 Flex 的主轴的大小，且 Flex 的交叉轴有额外的空间时（FlexWrap 枚举）

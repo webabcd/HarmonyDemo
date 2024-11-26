@@ -43,7 +43,7 @@ struct MySample1 {
       }})
 
       /*
-       * animation() - 属性动画（AnimateParam 接口）
+       * animation() - 属性动画（指定一个 AnimateParam 对象）
        *   duration - 动画时长（单位：毫秒）
        *   tempo - 动画速度，默认值为 1.0，越大越快，越小越慢
        *   curve - 动画曲线，即动画的缓动类型（Curve 枚举）

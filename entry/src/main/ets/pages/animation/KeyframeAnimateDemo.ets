@@ -23,11 +23,11 @@ struct KeyframeAnimateDemo {
           this.myScale = 1;
           /*
            * this.getUIContext().keyframeAnimateTo() - 关键帧动画
-           *   param - 动画参数（KeyframeAnimateParam 接口）
+           *   param - 动画参数（KeyframeAnimateParam 对象）
            *     delay - 动画的延迟播放时间（单位：毫秒）
            *     iterations - 动画的播放次数（0 代表无动画，-1 代表无线循环）
            *     onFinish - 动画播放完成后的回调
-           *   keyframes - 关键帧状态集合（KeyframeState 接口集合）
+           *   keyframes - 关键帧状态集合（KeyframeState 对象集合）
            *     duration - 此关键帧时间点与上一个关键帧时间点之间的时长（单位：毫秒）
            *     curve - 动画曲线，即动画的缓动类型（参见 AnimationDemo.ets 中的说明）
            *     event - 在此处指定此关键帧需要达到的状态

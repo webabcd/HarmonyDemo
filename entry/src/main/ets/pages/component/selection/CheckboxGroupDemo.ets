@@ -27,13 +27,13 @@ struct CheckboxGroupDemo {
        *   checkboxShape() - 多选框组的形状（CheckBoxShape 枚举）
        *     CIRCLE - 圆形
        *     ROUNDED_SQUARE - 圆角方形
-       *   onChange() - 选中状态发生变化时的回调（回调参数是一个 CheckboxGroupResult 接口）
+       *   onChange() - 选中状态发生变化时的回调（回调参数是一个 CheckboxGroupResult 对象）
        *     name - 当前同组的所有被选中的 Checkbox 的名字数组
        *     status - 当前 CheckboxGroup 的状态（SelectStatus）
        *       All - 选中状态
        *       Part - 部分选中状态
        *       None - 未选中状态
-       *   mark() - 多选框组中的对钩的样式（MarkStyle 接口）
+       *   mark() - 多选框组中的对钩的样式（一个 MarkStyle 对象）
        *     strokeColor - 对钩的颜色
        *     size - 对钩的大小
        *     strokeWidth - 对钩的画笔宽度

@@ -318,7 +318,7 @@ struct MySample4 {
          * onSubmit() - 按下回车键时的回调
          *   enterKey - 软键盘的回车的类型（EnterKeyType 枚举）
          *     Go, Search, Send, Next, Done, PREVIOUS, NEW_LINE
-         *   event - 事件参数（SubmitEvent 接口）
+         *   event - 事件参数（一个 SubmitEvent 对象）
          *     text - 当前的文本内容
          *     keepEditableState() - 保持编辑状态（注：默认在 onSubmit() 之后会变为非编辑状态）
          */

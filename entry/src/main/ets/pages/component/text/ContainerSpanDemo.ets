@@ -12,7 +12,7 @@ struct ContainerSpanDemo {
       TitleBar()
 
       /*
-       * textBackgroundStyle() - ContainerSpan 的背景样式（TextBackgroundStyle 接口）
+       * textBackgroundStyle() - ContainerSpan 的背景样式（一个 TextBackgroundStyle 对象）
        *   color - 背景颜色
        *   radius - 背景的圆角半径
        */

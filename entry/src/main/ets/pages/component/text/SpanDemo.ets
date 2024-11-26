@@ -17,7 +17,7 @@ struct SpanDemo {
           Span('hello').fontSize(32)
 
           /*
-           * textBackgroundStyle() - 文本的背景样式（TextBackgroundStyle 接口）
+           * textBackgroundStyle() - 文本的背景样式（一个 TextBackgroundStyle 对象）
            *   color - 背景颜色
            *   radius - 背景的圆角半径
            */

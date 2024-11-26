@@ -51,7 +51,7 @@ struct MySample1 {
        *       DOTTED - 点状线
        *       DASHED - 虚线
        *       WAVY - 波浪线
-       *   textShadow() - 文字阴影（ShadowOptions 接口或者 ShadowOptions 接口集合）
+       *   textShadow() - 文字阴影（ShadowOptions 对象或者 ShadowOptions 对象集合）
        *     radius - 阴影的模糊半径
        *     color - 阴影的颜色
        *     offsetX - 阴影的 x 轴偏移量

@@ -63,7 +63,7 @@ struct MySample1 {
            *   textStyle - 可以指定弹框内容文本的断行方式
            *   showInSubWindow - 是否新开子窗口显示弹窗（比如小窗显示 app 时，如果新开子窗口显示弹窗，则这个弹窗会显示在 app 所属窗口之外）
            *   autoCancel - 点击非弹框区域时是否自动隐藏
-           *   onWillDismiss - 通过用户行为关闭弹窗之前的回调（回调参数是一个 DismissDialogAction 接口）
+           *   onWillDismiss - 通过用户行为关闭弹窗之前的回调（回调参数是一个 DismissDialogAction 对象）
            *     reason - 弹窗将要关闭的原因
            *       PRESS_BACK - 点击返回按钮，手机侧边左滑/右滑，键盘 esc 键
            *       TOUCH_OUTSIDE - 点击非弹框区域

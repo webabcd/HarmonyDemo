@@ -15,7 +15,7 @@ struct ImageSpanDemo {
        * verticalAlign() - 图片基于当前行高的对齐方式（ImageSpanAlignment 枚举）
        *   BASELINE, BOTTOM, CENTER, TOP
        * objectFit() - 拉伸方式（参见 /component/media/ImageDemo.ets 中的相关说明）
-       * textBackgroundStyle() - 图片的背景样式（TextBackgroundStyle 接口）
+       * textBackgroundStyle() - 图片的背景样式（一个 TextBackgroundStyle 对象）
        *   color - 背景颜色
        *   radius - 背景的圆角半径
        */

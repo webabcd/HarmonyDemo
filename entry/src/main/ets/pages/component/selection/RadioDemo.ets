@@ -44,7 +44,7 @@ struct MySample1 {
        *   indicatorBuilder - 自定义选中状态时单选框中的内容（指定一个 CustomBuilder）
        *     前提是 indicatorType 设置为 RadioIndicatorType.CUSTOM
        *   checked() - 是否是选中状态
-       *   radioStyle() - 单选框样式（RadioStyle 接口）
+       *   radioStyle() - 单选框样式（一个 RadioStyle 对象）
        *     checkedBackgroundColor - 选中状态时的背景色
        *     uncheckedBorderColor - 未选中状态时的边框的颜色
        *     indicatorColor - 选中状态时的对钩的颜色

@@ -28,7 +28,7 @@ struct MySample1 {
       /*
        * Button - 按钮
        *   label - 文字
-       *   options - 选项（ButtonOptions 接口）
+       *   options - 选项（一个 ButtonOptions 对象）
        *     type - 按钮类型（ButtonType 枚举）
        *       Normal - 普通
        *       Circle - 圆形

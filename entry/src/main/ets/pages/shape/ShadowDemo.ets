@@ -26,7 +26,7 @@ struct ShadowDemo {
       .shadow(ShadowStyle.OUTER_DEFAULT_MD)
 
       /*
-       * shadow() - 可以指定自定义的阴影效果（ShadowOptions 接口）
+       * shadow() - 可以指定自定义的阴影效果（一个 ShadowOptions 对象）
        *   radius - 阴影半径
        *   color - 阴影颜色
        *   offsetX - 阴影 X 轴方向上的偏移量
