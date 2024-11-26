@@ -17,7 +17,7 @@ struct MotionPathDemo {
       TitleBar()
 
       Path({ width: 200, height: 200 })
-        .commands('M100 15 L123.51 80.71 L195 85 L139.29 134.29 L141.42 195 L100 150 L58.58 195 L60.71 134.29 L25 85 L86.49 80.71 Z')
+        .commands('M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z')
         .stroke(Color.Red)
         .strokeWidth(1)
         .fill(Color.Transparent)
@@ -32,7 +32,7 @@ struct MotionPathDemo {
          *   rotatable - 组件在动画过程中是否跟随路径进行旋转
          */
         .motionPath({
-          path: 'M100 15 L123.51 80.71 L195 85 L139.29 134.29 L141.42 195 L100 150 L58.58 195 L60.71 134.29 L25 85 L86.49 80.71 Z',
+          path: 'M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z',
           from: 0.0,
           to: 1.0,
           rotatable: true

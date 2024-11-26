@@ -2,7 +2,8 @@
  * 显式动画
  *
  * animateTo() - 显式动画，建议使用 this.getUIContext().animateTo()
- *   指定动画效果，以及需要做动画的属性的值
+ *   指定动画效果，以及需要做动画的变量的目标值
+ *   注：做动画的变量只有应用于 width, height, backgroundColor, opacity, scale, rotate, translate 等属性才会有效
  * animateToImmediately() - 高优先级的 animateTo()
  *
  * 关于动画效果请参见 AnimationDemo.ets 中的说明
@@ -59,7 +60,7 @@ struct MySample1 {
             onFinish: () => {
               this.translateY = 0
             }
-          }, () => { // 设置需要做动画的属性的值
+          }, () => { // 设置需要做动画的变量的目标值
             this.translateY = 200
           })
         })

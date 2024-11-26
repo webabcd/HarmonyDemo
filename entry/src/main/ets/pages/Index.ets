@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1|pages/animation/PageTransitionDemo_2|pages/animation/PageTransitionDemo_3"),
+          new Node2("Progress（进度条）", "pages/component/progress/ProgressDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -103,6 +103,9 @@ struct Index {
           new Node2("Radio（单选框）", "pages/component/selection/RadioDemo"),
           new Node2("Checkbox（多选框）", "pages/component/selection/CheckboxDemo"),
           new Node2("CheckboxGroup（多选框组）", "pages/component/selection/CheckboxGroupDemo"),
+        ]),
+        new Node1("组件（进度类）", [
+          new Node2("Progress（进度条）", "pages/component/progress/ProgressDemo"),
         ]),
         new Node1("组件（展示类）", [
           new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),

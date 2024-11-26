@@ -238,8 +238,9 @@ struct MySample8 {
        */
       Path({ width: 200, height: 200 })
         // 这个命令与 svg(Scalable Vector Graphics) 的 path 是一样的
-        .commands('M100 15 L123.51 80.71 L195 85 L139.29 134.29 L141.42 195 L100 150 L58.58 195 L60.71 134.29 L25 85 L86.49 80.71 Z')
+        .commands('M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z')
         .stroke(Color.Red)
+        .fill(Color.Transparent)
         .strokeWidth(5)
     }
   }
