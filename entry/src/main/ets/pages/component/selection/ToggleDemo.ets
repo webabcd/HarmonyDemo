@@ -103,7 +103,7 @@ struct MySample2 {
       // 通过 contentModifier() 实现自定义 Toggle（指定一个实现了 ContentModifier 接口的对象）
       Toggle({ type: ToggleType.Switch})
         .enabled(true)
-        .contentModifier(new MySwitchStyle(Color.Red, Color.Green))
+        .contentModifier(new MySwitchModifier(Color.Red, Color.Green))
         .onChange((isOn: boolean) => {
           this.message = `isOn: ${isOn}`
         })
@@ -114,7 +114,7 @@ struct MySample2 {
 }
 
 // 实现 ContentModifier 接口
-class MySwitchStyle implements ContentModifier<ToggleConfiguration> {
+class MySwitchModifier implements ContentModifier<ToggleConfiguration> {
 
   // 自定义属性
   selectedColor: Color = Color.White
@@ -143,7 +143,7 @@ class MySwitchStyle implements ContentModifier<ToggleConfiguration> {
    */
   Column({ space: 10 }) {
     Circle({ width: 150, height: 150 })
-      .fill(config.isOn ? (config.contentModifier as MySwitchStyle).selectedColor : (config.contentModifier as MySwitchStyle).unselectedColor)
+      .fill(config.isOn ? (config.contentModifier as MySwitchModifier).selectedColor : (config.contentModifier as MySwitchModifier).unselectedColor)
     Button('打开')
       .onClick(() => {
         // triggerChange() 的参数可以在 Toggle 的 onChange() 中通过 isOn 获取到

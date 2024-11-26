@@ -107,7 +107,7 @@ struct MySample2 {
     Column({ space: 20 }) {
       Radio({ value: 'radio1', group: 'radioGroup'})
         // 通过 contentModifier() 实现自定义 Radio（指定一个实现了 ContentModifier 接口的对象）
-        .contentModifier(new MyRadioStyle(Color.Red, Color.Green))
+        .contentModifier(new MyRadioModifier(Color.Red, Color.Green))
         .onChange((value: boolean) => {
           this.message = `radio1: ${value}`
         })
@@ -118,7 +118,7 @@ struct MySample2 {
 }
 
 // 实现 ContentModifier 接口
-class MyRadioStyle implements ContentModifier<RadioConfiguration> {
+class MyRadioModifier implements ContentModifier<RadioConfiguration> {
 
   // 自定义属性
   checkedColor: Color = Color.White
@@ -148,7 +148,7 @@ class MyRadioStyle implements ContentModifier<RadioConfiguration> {
    */
   Column({ space: 10 }) {
     Circle({ width: 150, height: 150 })
-      .fill(config.checked ? (config.contentModifier as MyRadioStyle).checkedColor : (config.contentModifier as MyRadioStyle).uncheckedColor)
+      .fill(config.checked ? (config.contentModifier as MyRadioModifier).checkedColor : (config.contentModifier as MyRadioModifier).uncheckedColor)
     Button(`选中 ${config.value}`)
       .onClick(() => {
         // triggerChange() 的参数可以在 Radio 的 onChange() 中通过 isChecked 获取到

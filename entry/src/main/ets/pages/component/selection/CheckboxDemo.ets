@@ -109,7 +109,7 @@ struct MySample2 {
     Column({ space: 20 }) {
       Checkbox({ name: 'myCheckbox' })
         // 通过 contentModifier() 实现自定义 Checkbox（指定一个实现了 ContentModifier 接口的对象）
-        .contentModifier(new MyCheckboxStyle(Color.Red, Color.Green))
+        .contentModifier(new MyCheckboxModifier(Color.Red, Color.Green))
         .onChange((value: boolean) => {
           this.message = `myCheckbox: ${value}`
         })
@@ -120,7 +120,7 @@ struct MySample2 {
 }
 
 // 实现 ContentModifier 接口
-class MyCheckboxStyle implements ContentModifier<CheckBoxConfiguration> {
+class MyCheckboxModifier implements ContentModifier<CheckBoxConfiguration> {
 
   // 自定义属性
   selectedColor: Color = Color.White
@@ -150,7 +150,7 @@ class MyCheckboxStyle implements ContentModifier<CheckBoxConfiguration> {
    */
   Column({ space: 10 }) {
     Circle({ width: 150, height: 150 })
-      .fill(config.selected ? (config.contentModifier as MyCheckboxStyle).selectedColor : (config.contentModifier as MyCheckboxStyle).unselectedColor)
+      .fill(config.selected ? (config.contentModifier as MyCheckboxModifier).selectedColor : (config.contentModifier as MyCheckboxModifier).unselectedColor)
     Button('选中')
       .onClick(() => {
         // triggerChange() 的参数可以在 Checkbox 的 onChange() 中通过 value 获取到

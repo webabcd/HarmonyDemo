@@ -107,7 +107,7 @@ struct MySample2 {
 
       // 通过 contentModifier() 实现自定义按钮（指定一个实现了 ContentModifier 接口的对象）
       Button()
-        .contentModifier(new MyButtonStyle(Color.Orange))
+        .contentModifier(new MyButtonModifier(Color.Orange))
         .onClick((event) => {
           this.message = `x:${event.x}, y:${event.y}`
         })
@@ -118,7 +118,7 @@ struct MySample2 {
 }
 
 // 实现 ContentModifier 接口
-class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
+class MyButtonModifier implements ContentModifier<ButtonConfiguration> {
 
   // 自定义属性
   myColor:Color = Color.Black
@@ -146,7 +146,7 @@ class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
   Column({space:5}) {
     Rect({ width: 100, height: 50 })
       // 获取自定义按钮的自定义属性
-      .fill((config.contentModifier as MyButtonStyle).myColor)
+      .fill((config.contentModifier as MyButtonModifier).myColor)
       .gesture(
         TapGesture()
           .onAction((event: GestureEvent) => {

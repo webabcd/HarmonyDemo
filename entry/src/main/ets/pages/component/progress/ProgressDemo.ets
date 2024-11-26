@@ -449,13 +449,13 @@ struct MySample6 {
         total: 3,
       })
         // 通过 contentModifier() 实现自定义 Progress（指定一个实现了 ContentModifier 接口的对象）
-        .contentModifier(new MyProgressStyle(Color.Red))
+        .contentModifier(new MyProgressModifier(Color.Red))
     }
   }
 }
 
 // 实现 ContentModifier 接口
-class MyProgressStyle implements ContentModifier<ProgressConfiguration> {
+class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
 
   // 自定义属性
   color: Color = Color.White
@@ -486,17 +486,17 @@ class MyProgressStyle implements ContentModifier<ProgressConfiguration> {
       Flex({ justifyContent: FlexAlign.SpaceBetween }) {
         Path()
           .commands('M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z')
-          .fill(config.enabled && config.value >=1 ? (config.contentModifier as MyProgressStyle).color : Color.White)
+          .fill(config.enabled && config.value >=1 ? (config.contentModifier as MyProgressModifier).color : Color.White)
           .stroke(Color.Black)
           .strokeWidth(3)
         Path()
           .commands('M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z')
-          .fill(config.enabled && config.value >=2 ? (config.contentModifier as MyProgressStyle).color : Color.White)
+          .fill(config.enabled && config.value >=2 ? (config.contentModifier as MyProgressModifier).color : Color.White)
           .stroke(Color.Black)
           .strokeWidth(3)
         Path()
           .commands('M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z')
-          .fill(config.enabled && config.value >=3 ? (config.contentModifier as MyProgressStyle).color : Color.White)
+          .fill(config.enabled && config.value >=3 ? (config.contentModifier as MyProgressModifier).color : Color.White)
           .stroke(Color.Black)
           .strokeWidth(3)
       }
