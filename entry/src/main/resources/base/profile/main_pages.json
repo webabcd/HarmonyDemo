@@ -84,7 +84,8 @@
     "pages/animation/PageTransitionDemo_3",
     "pages/component/progress/ProgressDemo",
     "pages/component/progress/LoadingProgressDemo",
-    "pages/component/progress/SliderDemo"
+    "pages/component/progress/SliderDemo",
+    "pages/ui/ComponentInfoDemo"
   ],
   "window": {
     "designWidth": 720,

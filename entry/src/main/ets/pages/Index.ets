@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Slider（可拖动进度条）", "pages/component/progress/SliderDemo"),
+          new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -123,6 +123,7 @@ struct Index {
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),
           new Node2("单位相关", "pages/ui/UnitDemo"),
+          new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
         ]),
         new Node1("图形", [
           new Node2("边框", "pages/shape/BorderDemo"),
