@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
+          new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -94,6 +94,7 @@ struct Index {
           new Node2("TextArea（多行文本输入框）", "pages/component/text/TextAreaDemo"),
           new Node2("Search（搜索框）", "pages/component/text/SearchDemo"),
           new Node2("RichEditor（富文本编辑器）", "pages/component/text/RichEditorDemo"),
+          new Node2("Marquee（跑马灯）", "pages/component/text/MarqueeDemo"),
         ]),
         new Node1("组件（按钮类）", [
           new Node2("Button（按钮）", "pages/component/button/ButtonDemo"),
@@ -113,6 +114,7 @@ struct Index {
           new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),
           new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
           new Node2("Divider（分隔线）", "pages/component/display/DividerDemo"),
+          new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
