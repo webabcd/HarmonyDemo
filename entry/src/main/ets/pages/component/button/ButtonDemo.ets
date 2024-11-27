@@ -33,7 +33,7 @@ struct MySample1 {
        *       Normal - 普通
        *       Circle - 圆形
        *       Capsule - 胶囊（圆角矩形）
-       *     stateEffect - 是否启用按下时的效果
+       *     stateEffect - 是否启用按下时的效果（如果想自定义按钮按下后的效果，可以参见 /basic/StyleDemo.ets 中的说明）
        *     buttonStyle - 按钮样式（ButtonStyleMode 枚举）
        *       NORMAL - 普通
        *       TEXTUAL - 纯文本，无颜色
