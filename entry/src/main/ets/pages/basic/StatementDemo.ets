@@ -32,6 +32,9 @@ struct StatementDemo {
       ForEach(this.list, (item: string) => {
         Text(item)
       })
+      ForEach(this.list, (item: string, index: number) => {
+        Text(`${index} ${item}`)
+      })
 
     }.width('100%').height('100%')
   }

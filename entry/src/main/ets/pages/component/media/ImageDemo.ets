@@ -39,7 +39,12 @@ struct MySample1 {
        *   alt - 用于指定图片在加载过程中的占位图
        */
 
+      // 显示资源中的图片文件
       Image($r('app.media.son'))
+        .width(100).height(100)
+
+      // 显示指定目录下的图片文件（注：文件需要放在 /src/main/ets 目录下，然后通过类似如下的方式引用）
+      Image('/pages/component/media/son.jpg')
         .width(100).height(100)
 
       // 支持 base64 字符串

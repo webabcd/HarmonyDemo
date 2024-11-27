@@ -230,13 +230,12 @@ struct MySample3 {
 
   build() {
     Column() {
-      Slider({
-        value: 10,
-      })
+
+      Slider({ value: 10, })
         .onChange((value: number, mode: SliderChangeMode) => {
           this.message = `value:${value}, mode:${mode}`
         })
-          // 通过 contentModifier() 实现自定义 Slider（指定一个实现了 ContentModifier 接口的对象）
+        // 通过 contentModifier() 实现自定义 Slider（指定一个实现了 ContentModifier 接口的对象）
         .contentModifier(new MySliderModifier(Color.Orange))
     }
   }

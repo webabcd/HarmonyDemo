@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
+          new Node2("Rating（评分框）", "pages/component/selection/RatingDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -98,12 +98,14 @@ struct Index {
         ]),
         new Node1("组件（按钮类）", [
           new Node2("Button（按钮）", "pages/component/button/ButtonDemo"),
+          new Node2("ProgressButton（可显示下载进度的下载按钮）", "pages/component/button/ProgressButtonDemo"),
         ]),
         new Node1("组件（选择类）", [
           new Node2("Toggle（开关，选择框，切换按钮）", "pages/component/selection/ToggleDemo"),
           new Node2("Radio（单选框）", "pages/component/selection/RadioDemo"),
           new Node2("Checkbox（多选框）", "pages/component/selection/CheckboxDemo"),
           new Node2("CheckboxGroup（多选框组）", "pages/component/selection/CheckboxGroupDemo"),
+          new Node2("Rating（评分框）", "pages/component/selection/RatingDemo"),
         ]),
         new Node1("组件（进度类）", [
           new Node2("Progress（进度条）", "pages/component/progress/ProgressDemo"),
