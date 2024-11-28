@@ -53,11 +53,11 @@ struct MySample1 {
            *     Top, Center, Bottom, Default, TopStart, TopEnd, CenterStart, CenterEnd, BottomStart, BottomEnd
            *   offset - 相对原有位置的偏移量
            *     dx, dy - 水平方向和垂直方向的偏移量
+           *   gridCount - 占用的网格数（默认值为 4），会影响弹框的宽度，高度是自适应的
+           *   width, height - 指定弹框的宽和高，指定之后则 gridCount 就无效了
            *   borderWidth, borderColor, borderStyle - 边框相关设置
            *   backgroundColor, backgroundBlurStyle, shadow - 背景颜色，模糊效果，阴影效果
            *   cornerRadius - 圆角半径
-           *   gridCount - 占用的网格数（默认值为 4），会影响弹框的宽度，高度是自适应的
-           *   width, height - 指定弹框的宽和高，指定之后则 gridCount 就无效了
            *   isModal - 是否是模态窗口（模态窗口有遮罩层，非模态窗口无遮罩层）
            *   maskRect - 模态窗口时，遮罩层的位置和大小
            *   textStyle - 可以指定弹框内容文本的断行方式
@@ -81,13 +81,13 @@ struct MySample1 {
             gridCount: 4,
             // width: 300,
             // height: 200,
-            cornerRadius: 10,
             borderWidth: 2,
             borderColor: Color.Blue,
             borderStyle: BorderStyle.Solid,
             backgroundColor: Color.Orange,
             backgroundBlurStyle: BlurStyle.Thin,
             shadow: ShadowStyle.OUTER_DEFAULT_MD,
+            cornerRadius: 10,
             isModal: true,
             maskRect: {x:0, y:0, width:'100%', height:'100%'},
             textStyle: { wordBreak: WordBreak.BREAK_ALL },
