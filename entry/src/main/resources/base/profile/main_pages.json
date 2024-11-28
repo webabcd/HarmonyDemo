@@ -90,7 +90,8 @@
     "pages/component/display/QRCodeDemo",
     "pages/component/button/ProgressButtonDemo",
     "pages/component/selection/RatingDemo",
-    "pages/component/selection/SelectDemo"
+    "pages/component/selection/SelectDemo",
+    "pages/component/flyout/ActionSheetDemo"
   ],
   "window": {
     "designWidth": 720,
