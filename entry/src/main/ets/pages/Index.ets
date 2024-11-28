@@ -130,7 +130,7 @@ struct Index {
           new Node2("颜色相关", "pages/ui/ColorDemo"),
           new Node2("单位相关", "pages/ui/UnitDemo"),
           new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
-          new Node2("样式相关（@Style, @Extend, stateStyles）", "pages/ui/StyleDemo"),
+          new Node2("样式相关", "pages/ui/StyleDemo", "pages/ui/MyButtonModifier.ets"),
         ]),
         new Node1("图形", [
           new Node2("边框", "pages/shape/BorderDemo"),
@@ -148,7 +148,7 @@ struct Index {
           new Node2("路径动画", "pages/animation/MotionPathDemo"),
           new Node2("单个组件显示和消失时的过渡动画", "pages/animation/TransitionDemo"),
           new Node2("一组件显示一组件消失时的过渡动画", "pages/animation/GeometryTransitionDemo"),
-          new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1|pages/animation/PageTransitionDemo_2|pages/animation/PageTransitionDemo_3"),
+          new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1.ets|pages/animation/PageTransitionDemo_2.ets|pages/animation/PageTransitionDemo_3.ets"),
         ]),
       ]
     let md = this.siteMapToMarkdown()

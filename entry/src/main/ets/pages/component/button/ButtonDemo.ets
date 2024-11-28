@@ -38,7 +38,7 @@ struct MySample1 {
        *       NORMAL - 普通
        *       TEXTUAL - 纯文本，无颜色
        *       EMPHASIZED - 效果突出的按钮
-       *     controlSize - 按钮尺寸（ControlSize 枚举
+       *     controlSize - 按钮尺寸（ControlSize 枚举）
        *       NORMAL - 普通
        *       SMALL - 小按钮
        *     role - 按钮角色（ButtonRole 枚举）
@@ -81,6 +81,8 @@ struct MySample2 {
   build() {
     Column({ space: 10 }) {
       // 通过 Button 的 labelStyle() 自定义按钮显示的文字的样式，相关参数的说明可以参看 component/text/TextDemo.ets
+      // backgroundColor() - 按钮背景的颜色
+      // foregroundColor() - 按钮文字的颜色
       Button("button")
         .width(100)
         .labelStyle({
@@ -96,6 +98,8 @@ struct MySample2 {
             style: FontStyle.Italic
           }
         })
+        .backgroundColor(Color.Black)
+        .foregroundColor(Color.White)
 
       // 通过在 Button 内声明子组件的方式，自定义按钮的显示内容
       Button({ type: ButtonType.Normal, stateEffect: true }) {
