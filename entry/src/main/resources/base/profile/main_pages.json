@@ -93,7 +93,8 @@
     "pages/component/selection/SelectDemo",
     "pages/component/flyout/ActionSheetDemo",
     "pages/component/flyout/CustomDialogDemo",
-    "pages/ui/MyButtonModifier"
+    "pages/ui/MyButtonAttributeModifier",
+    "pages/ui/ThemeDemo"
   ],
   "window": {
     "designWidth": 720,

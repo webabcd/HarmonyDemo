@@ -1,6 +1,6 @@
 // 本例用于演示如何通过 AttributeModifier 的方式使用其他文件中定义的样式
 // 引用了此文件的代码在 StyleDemo.ets
-export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class MyButtonAttributeModifier implements AttributeModifier<ButtonAttribute> {
   isDark: boolean = false
 
   /*

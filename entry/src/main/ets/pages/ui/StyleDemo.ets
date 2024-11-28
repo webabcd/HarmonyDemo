@@ -3,7 +3,7 @@
  */
 
 import { TitleBar } from '../TitleBar';
-import { MyButtonModifier } from './MyButtonModifier'
+import { MyButtonAttributeModifier } from './MyButtonAttributeModifier'
 
 // @Styles 用于定义通用属性和通用事件（可以在组件内部定义，也可以在全局定义）
 // @Styles 装饰的函数不能有参数，只能在当前文件中使用（也就是说不支持 export，如果想实现 export 功能，请参见 AttributeModifier 的说明）
@@ -39,8 +39,8 @@ struct StyleDemo {
 
   // @Styles 和 @Extend 只能在当前文件中使用，即不支持 export
   // 如果想要使用其他文件中定义的样式，建议使用 AttributeModifier 的方式
-  // 相关的样式定义在 MyButtonModifier.ets
-  @State myButtonModifier: MyButtonModifier = new MyButtonModifier()
+  // 相关的样式定义在 MyButtonAttributeModifier.ets
+  @State myButtonAttributeModifier: MyButtonAttributeModifier = new MyButtonAttributeModifier()
 
   // @Styles 用于定义通用属性和通用事件（可以在组件内部定义，也可以在全局定义）
   // @Styles 装饰的函数不能有参数，只能在当前文件中使用
@@ -147,9 +147,9 @@ struct StyleDemo {
 
       // 通过 AttributeModifier 的方式使用其他文件中定义的样式
       Button("Button")
-        .attributeModifier(this.myButtonModifier)
+        .attributeModifier(this.myButtonAttributeModifier)
         .onClick(() => {
-          this.myButtonModifier.isDark = !this.myButtonModifier.isDark
+          this.myButtonAttributeModifier.isDark = !this.myButtonAttributeModifier.isDark
         })
 
     }.width('100%').height('100%')
