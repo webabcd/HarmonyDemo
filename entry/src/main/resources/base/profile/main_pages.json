@@ -89,7 +89,8 @@
     "pages/component/text/MarqueeDemo",
     "pages/component/display/QRCodeDemo",
     "pages/component/button/ProgressButtonDemo",
-    "pages/component/selection/RatingDemo"
+    "pages/component/selection/RatingDemo",
+    "pages/component/selection/SelectDemo"
   ],
   "window": {
     "designWidth": 720,

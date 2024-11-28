@@ -34,9 +34,10 @@ struct MySample1 {
        * Text - 文本显示框
        *   content - 需要显示的内容，如果来自 resource 则在 /entry/src/main/resources/base/element/string.json 配置
        *   fontColor() - 字体颜色
-       *   font() - 可以指定 size, weight, style, family
+       *   font() - 可以指定 size, weight（取值在 100 - 900 之间，取值越大字体越粗，默认值为 400）, style, family
        *   fontSize() - 字体大小（设置了此值，则 font 的 size 无效）
        *   fontWeight() - 字体粗细（设置了此值，则 font 的 weight 无效）
+       *     取值在 100 - 900 之间，取值越大字体越粗，默认值为 400
        *   fontStyle() - 字体斜体（设置了此值，则 font 的 style 无效）
        *   fontFamily() - 字体（设置了此值，则 font 的 family 无效）
        *   decoration() - 下划线/中划线/上划线

@@ -104,8 +104,6 @@ class MyRatingModifier implements ContentModifier<RatingConfiguration> {
    * RatingConfiguration - 自定义 Rating 的相关信息
    *   rating - 评分值
    *   indicator - 是否仅用于显示
-   *     true - 仅用于显示评分，无法进行评分
-   *     false - 可以进行评分
    *   stars - 星星的总数量
    *   stepSize - 评分的步长
    *   triggerChange() - 触发 Rating 的 onChange() 回调

@@ -8,19 +8,24 @@ import { TitleBar } from '../../TitleBar'
 @Component
 struct SymbolGlyphDemo {
 
-  @State triggerValue: number = 0;
-  @State flag: boolean = true;
-  aboutToAppear() {
-    setInterval(() => {
-      this.flag = !this.flag;
-      this.triggerValue = this.triggerValue + 1;
-    }, 5000);
-  }
-
   build() {
     Column({ space: 10 }) {
       TitleBar()
+      Tabs() {
+        TabContent() { MySample1() }.tabBar('aaa').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('bbb').align(Alignment.Top)
+      }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
+    }
+  }
+}
 
+@Component
+struct MySample1 {
+
+  build() {
+    Column({ space: 10 }) {
       /*
        * SymbolGlyph() - 图标符号
        *   value - 指定一个系统内置的图标资源
@@ -31,12 +36,6 @@ struct SymbolGlyphDemo {
        *     NONE - 无效果
        *     SCALE - 缩放动画效果
        *     HIERARCHICAL - 层级渐变动画效果
-       *   symbolEffect() - 图标的动画效果
-       *     symbolEffect - 效果对象
-       *       HierarchicalSymbolEffect() - 层级渐变动画效果
-       *       ReplaceSymbolEffect() - 图标发生变化时的动画效果
-       *     isActive - 是否启用效果
-       *     triggerValue - 一个 number 值，当此值发生变化时触发效果
        */
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
@@ -54,18 +53,70 @@ struct SymbolGlyphDemo {
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
         .fontSize(100)
         .effectStrategy(SymbolEffectStrategy.HIERARCHICAL)
+    }
+  }
+}
+
+@Component
+struct MySample2 {
+
+  @State triggerValue: number = 0;
+  @State flag: boolean = true;
+  aboutToAppear() {
+    setInterval(() => {
+      this.flag = !this.flag;
+      this.triggerValue = this.triggerValue + 1;
+    }, 2000);
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      /*
+       * SymbolGlyph() - 图标符号
+       *   symbolEffect() - 图标的动画效果
+       *     symbolEffect - 效果对象
+       *       HierarchicalSymbolEffect() - 层级渐变动画效果
+       *       ScaleSymbolEffect() - 缩放动画效果
+       *       BounceSymbolEffect() - 缩放且回弹的动画效果
+       *       ReplaceSymbolEffect() - 图标变化时的动画效果
+       *     isActive - 是否启用效果
+       *     triggerValue - 一个 number 值，当此值发生变化时触发效果
+       */
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
         .fontSize(100)
+        // 无限循环的层级渐变动画效果
         .symbolEffect(
           new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE),
           true
         )
 
+      SymbolGlyph($r('sys.symbol.ohos_wifi'))
+        .fontSize(100)
+        .symbolEffect(
+          // 当 triggerValue 发生变化时，会触发层级渐变动画效果
+          new HierarchicalSymbolEffect(EffectFillStyle.CUMULATIVE),
+          this.triggerValue
+        )
+
+      SymbolGlyph($r('sys.symbol.ohos_wifi'))
+        .fontSize(100)
+        .symbolEffect(
+          new ScaleSymbolEffect(),
+          this.triggerValue
+        )
+
+      SymbolGlyph($r('sys.symbol.ohos_wifi'))
+        .fontSize(100)
+        .symbolEffect(
+          new BounceSymbolEffect(),
+          this.triggerValue
+        )
+
       SymbolGlyph(this.flag ? $r('sys.symbol.ohos_wifi') : $r('sys.symbol.ohos_star'))
         .fontSize(100)
         .symbolEffect(
-          new ReplaceSymbolEffect(EffectScope.WHOLE),
+          new ReplaceSymbolEffect(),
           this.triggerValue
         )
     }

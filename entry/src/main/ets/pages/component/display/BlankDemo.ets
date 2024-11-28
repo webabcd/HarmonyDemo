@@ -21,7 +21,7 @@ struct BlankDemo {
 
       /*
        * Blank - 空白（用于自动拉伸，从而填满 Row/Column/Flex 的剩余空间）
-       *   min - 自动拉伸过程中的最小值
+       *   min - 自动拉伸过程中的最小值（默认值为 0）
        */
       Row() {
         Text('abc').fontSize(24).fontColor(Color.White)
