@@ -91,7 +91,8 @@
     "pages/component/button/ProgressButtonDemo",
     "pages/component/selection/RatingDemo",
     "pages/component/selection/SelectDemo",
-    "pages/component/flyout/ActionSheetDemo"
+    "pages/component/flyout/ActionSheetDemo",
+    "pages/component/flyout/CustomDialogDemo"
   ],
   "window": {
     "designWidth": 720,

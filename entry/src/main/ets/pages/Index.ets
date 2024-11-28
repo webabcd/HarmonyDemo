@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("ActionSheet（列表弹框）", "pages/component/flyout/ActionSheetDemo"),
+          new Node2("CustomDialog（自定义弹框）", "pages/component/flyout/CustomDialogDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -122,6 +122,7 @@ struct Index {
         new Node1("组件（弹出类）", [
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
           new Node2("ActionSheet（列表弹框）", "pages/component/flyout/ActionSheetDemo"),
+          new Node2("CustomDialog（自定义弹框）", "pages/component/flyout/CustomDialogDemo"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),
