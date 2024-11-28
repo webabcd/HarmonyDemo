@@ -1,5 +1,5 @@
 /*
- * @Style 相关装饰器（@Style, @Extend, stateStyles）
+ * 样式相关（@Style, @Extend, stateStyles）
  */
 
 import { TitleBar } from '../TitleBar';

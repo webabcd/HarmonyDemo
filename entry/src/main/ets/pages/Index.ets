@@ -58,7 +58,6 @@ struct Index {
           new Node2("ArkUI 基础", "pages/basic/Hello"),
           new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）",
             "pages/basic/BuilderDemo"),
-          new Node2("@Style 相关装饰器（@Style, @Extend, stateStyles）", "pages/basic/StyleDemo"),
           new Node2("在描述 UI 时使用 if/else, ForEach 语句", "pages/basic/StatementDemo"),
           new Node2("生命周期", "pages/basic/LifecycleDemo"),
         ]),
@@ -131,6 +130,7 @@ struct Index {
           new Node2("颜色相关", "pages/ui/ColorDemo"),
           new Node2("单位相关", "pages/ui/UnitDemo"),
           new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
+          new Node2("样式相关（@Style, @Extend, stateStyles）", "pages/ui/StyleDemo"),
         ]),
         new Node1("图形", [
           new Node2("边框", "pages/shape/BorderDemo"),
