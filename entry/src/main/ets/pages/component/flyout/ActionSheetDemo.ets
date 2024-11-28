@@ -19,7 +19,7 @@ struct ActionSheetDemo {
 
       Text(this.message).fontSize(16)
 
-      Button('button1')
+      Button('click me')
         .onClick(() => {
           /*
            * ActionSheet.show() - 弹出列表弹框，建议使用 this.getUIContext().showActionSheet()

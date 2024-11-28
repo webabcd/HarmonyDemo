@@ -43,7 +43,7 @@ struct MySample1 {
 
       Text(this.message).fontSize(16)
 
-      Button('button1')
+      Button('click me')
         .onClick(() => {
           /*
            * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
@@ -103,7 +103,7 @@ struct MySample1 {
           })
         })
 
-      Button('button2')
+      Button('click me')
         .onClick(() => {
           /*
            * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
@@ -136,7 +136,7 @@ struct MySample2 {
 
       Text(this.message).fontSize(16)
 
-      Button('button')
+      Button('click me')
         .onClick(() => {
           /*
            * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
@@ -180,7 +180,7 @@ struct MySample3 {
 
       Text(this.message).fontSize(16)
 
-      Button('button')
+      Button('click me')
         .onClick(() => {
           /*
            * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
@@ -235,7 +235,7 @@ struct MySample4 {
 
       Text(this.message).fontSize(16)
 
-      Button('button')
+      Button('click me')
         .onClick(() => {
           /*
            * AlertDialog.show() - 弹出警告弹框，建议使用 this.getUIContext().showAlertDialog()
