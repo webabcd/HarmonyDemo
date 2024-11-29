@@ -262,6 +262,7 @@ class MySliderModifier implements ContentModifier<SliderConfiguration> {
   /*
    * SliderConfiguration - 自定义 Slider 的相关信息
    *   enabled - 是否可用
+   *   contentModifier - 绑定的 ContentModifier 对象
    *   value - 当前值
    *   min - 最小值
    *   max - 最大值

@@ -102,6 +102,8 @@ class MyRatingModifier implements ContentModifier<RatingConfiguration> {
 @Builder function buildRating(config: RatingConfiguration) {
   /*
    * RatingConfiguration - 自定义 Rating 的相关信息
+   *   enabled - 是否可用
+   *   contentModifier - 绑定的 ContentModifier 对象
    *   rating - 评分值
    *   indicator - 是否仅用于显示
    *   stars - 星星的总数量

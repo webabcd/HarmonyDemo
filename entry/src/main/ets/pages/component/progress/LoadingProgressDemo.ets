@@ -87,6 +87,7 @@ class MyLoadingProgressModifier implements ContentModifier<LoadingProgressConfig
   /*
    * LoadingProgressConfiguration - 自定义 LoadingProgress 的相关信息
    *   enabled - 是否可用
+   *   contentModifier - 绑定的 ContentModifier 对象
    *   enableLoading() - 是否显示加载框动画
    *     true - 显示加载框动画
    *     false - 隐藏加载框动画，但是会占位，且不影响边框之类的显示
