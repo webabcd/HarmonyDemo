@@ -1,5 +1,5 @@
 /*
- * DatePickerDialogDemo - 日期滑动选择弹窗
+ * DatePickerDialog - 日期滑动选择弹窗
  */
 
 import { TitleBar } from '../../TitleBar'
