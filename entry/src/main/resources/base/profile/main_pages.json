@@ -99,7 +99,11 @@
     "pages/component/flyout/CustomDialogDemo_ConfirmDialog",
     "pages/component/flyout/CustomDialogDemo_AlertDialog",
     "pages/component/flyout/CustomDialogDemo_LoadingDialog",
-    "pages/component/flyout/CustomDialogDemo_CustomContentDialog"
+    "pages/component/flyout/CustomDialogDemo_CustomContentDialog",
+    "pages/component/flyout/CalendarPickerDialogDemo",
+    "pages/component/flyout/DatePickerDialogDemo",
+    "pages/component/flyout/TimePickerDialogDemo",
+    "pages/component/flyout/TextPickerDialogDemo"
   ],
   "window": {
     "designWidth": 720,
