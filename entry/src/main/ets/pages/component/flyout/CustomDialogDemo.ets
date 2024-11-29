@@ -6,6 +6,8 @@
  *   builder - 通过 @CustomDialog 装饰的自定义弹框
  *   open() - 打开
  *   close() - 关闭
+ *
+ * 注：有一些内置的 @CustomDialog 装饰的自定义弹框，分别是 TipsDialog, SelectDialog, ConfirmDialog, AlertDialog, LoadingDialog, CustomContentDialog 等
  */
 
 import { TitleBar } from '../../TitleBar'

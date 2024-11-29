@@ -93,7 +93,13 @@
     "pages/component/selection/SelectDemo",
     "pages/component/flyout/ActionSheetDemo",
     "pages/component/flyout/CustomDialogDemo",
-    "pages/ui/ThemeDemo"
+    "pages/ui/ThemeDemo",
+    "pages/component/flyout/CustomDialogDemo_TipsDialog",
+    "pages/component/flyout/CustomDialogDemo_SelectDialog",
+    "pages/component/flyout/CustomDialogDemo_ConfirmDialog",
+    "pages/component/flyout/CustomDialogDemo_AlertDialog",
+    "pages/component/flyout/CustomDialogDemo_LoadingDialog",
+    "pages/component/flyout/CustomDialogDemo_CustomContentDialog"
   ],
   "window": {
     "designWidth": 720,

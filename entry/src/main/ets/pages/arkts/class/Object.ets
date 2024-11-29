@@ -76,7 +76,7 @@ struct ObjectDemo {
   }
 
   let a = new MyClass("webabcd", 44)
-  
+
   Object.keys(a).forEach(key => {
     MyLog.d(`Key:${key}, value: ${Reflect.get(a, key)}`);
     // Key:name, value: webabcd

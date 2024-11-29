@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("主题相关", "pages/ui/ThemeDemo", "pages/ui/MyTheme.ets"),
+          new Node2("CustomDialog 之 TipsDialog（图文弹框）", "pages/component/flyout/CustomDialogDemo_TipsDialog"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -122,6 +122,12 @@ struct Index {
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
           new Node2("ActionSheet（列表弹框）", "pages/component/flyout/ActionSheetDemo"),
           new Node2("CustomDialog（自定义弹框）", "pages/component/flyout/CustomDialogDemo"),
+          new Node2("CustomDialog 之 TipsDialog（图文弹框）", "pages/component/flyout/CustomDialogDemo_TipsDialog"),
+          new Node2("CustomDialog 之 SelectDialog（列表弹框）", "pages/component/flyout/CustomDialogDemo_SelectDialog"),
+          new Node2("CustomDialog 之 ConfirmDialog（信息确认弹框）", "pages/component/flyout/CustomDialogDemo_ConfirmDialog"),
+          new Node2("CustomDialog 之 AlertDialog（警告弹框）", "pages/component/flyout/CustomDialogDemo_AlertDialog"),
+          new Node2("CustomDialog 之 LoadingDialog（加载弹框）", "pages/component/flyout/CustomDialogDemo_LoadingDialog"),
+          new Node2("CustomDialog 之 CustomContentDialog（自定义内容弹框）", "pages/component/flyout/CustomDialogDemo_CustomContentDialog"),
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),
