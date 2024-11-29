@@ -6,7 +6,7 @@ import { TitleBar } from '../../TitleBar'
 
 @Entry
 @Component
-struct TimePickerDialogDemo {
+struct TextPickerDialogDemo {
 
   @State message:string = ""
 
