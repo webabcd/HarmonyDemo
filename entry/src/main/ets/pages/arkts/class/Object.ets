@@ -63,3 +63,23 @@ struct ObjectDemo {
   // bind() 之后为函数传参
   MyLog.d(a.plus.bind(b)(3, 4)) // wanglei 7
 }
+
+// 遍历对象的所有属性
+{
+  class MyClass {
+    public name: string;
+    public age: number;
+    public constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age
+    }
+  }
+
+  let a = new MyClass("webabcd", 44)
+  
+  Object.keys(a).forEach(key => {
+    MyLog.d(`Key:${key}, value: ${Reflect.get(a, key)}`);
+    // Key:name, value: webabcd
+    // Key:age, value: 44
+  });
+}
