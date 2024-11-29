@@ -103,7 +103,11 @@
     "pages/component/flyout/CalendarPickerDialogDemo",
     "pages/component/flyout/DatePickerDialogDemo",
     "pages/component/flyout/TimePickerDialogDemo",
-    "pages/component/flyout/TextPickerDialogDemo"
+    "pages/component/flyout/TextPickerDialogDemo",
+    "pages/component/selection/CalendarPickerDemo",
+    "pages/component/selection/DatePickerDemo",
+    "pages/component/selection/TimePickerDemo",
+    "pages/component/selection/TextPickerDemo"
   ],
   "window": {
     "designWidth": 720,

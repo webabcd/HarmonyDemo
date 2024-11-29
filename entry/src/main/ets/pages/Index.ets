@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("CalendarPickerDialog（日历选择弹窗）", "pages/component/flyout/CalendarPickerDialogDemo"),
+          new Node2("CalendarPicker（日历选择框）", "pages/component/selection/CalendarPickerDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -106,6 +106,10 @@ struct Index {
           new Node2("CheckboxGroup（多选框组）", "pages/component/selection/CheckboxGroupDemo"),
           new Node2("Rating（评分框）", "pages/component/selection/RatingDemo"),
           new Node2("Select（下拉菜单）", "pages/component/selection/SelectDemo"),
+          new Node2("CalendarPicker（日历选择框）", "pages/component/selection/CalendarPickerDemo"),
+          new Node2("DatePicker（日期选择框）", "pages/component/selection/DatePickerDemo"),
+          new Node2("TimePicker（时间选择框）", "pages/component/selection/TimePickerDemo"),
+          new Node2("TextPicker（文本选择框）", "pages/component/selection/TextPickerDemo"),
         ]),
         new Node1("组件（进度类）", [
           new Node2("Progress（进度条）", "pages/component/progress/ProgressDemo"),
