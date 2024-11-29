@@ -5,10 +5,10 @@
 
 import { TitleBar } from '../TitleBar';
 import { ThemeControl } from '@kit.ArkUI';
-import { myAppTheme, myAppTheme2 } from './MyTheme';
+import { myCustomTheme, myCustomTheme2 } from './MyTheme';
 
 // 设置当前的默认主题（需要在页面实例化之前执行）
-ThemeControl.setDefaultTheme(myAppTheme)
+ThemeControl.setDefaultTheme(myCustomTheme)
 
 @Entry
 @Component
@@ -57,7 +57,7 @@ struct ThemeDemo {
        * }
        */
       WithTheme({
-        theme: myAppTheme2,
+        theme: myCustomTheme2,
       }) {
         Column() {
           Button('button')
@@ -66,7 +66,7 @@ struct ThemeDemo {
       }
 
       WithTheme({
-        theme: myAppTheme2,
+        theme: myCustomTheme2,
         colorMode: ThemeColorMode.LIGHT,
       }) {
         Column() {
@@ -80,7 +80,7 @@ struct ThemeDemo {
 
       // 注：Previewer 不支持深色模式，需要用模拟器或真机
       WithTheme({
-        theme: myAppTheme2,
+        theme: myCustomTheme2,
         colorMode: ThemeColorMode.DARK,
       }) {
         Column() {
