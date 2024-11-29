@@ -71,11 +71,9 @@
 - pages/basic/Hello
 2. @Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）
 - pages/basic/BuilderDemo
-3. @Style 相关装饰器（@Style, @Extend, stateStyles）
-- pages/basic/StyleDemo
-4. 在描述 UI 时使用 if/else, ForEach 语句
+3. 在描述 UI 时使用 if/else, ForEach 语句
 - pages/basic/StatementDemo
-5. 生命周期
+4. 生命周期
 - pages/basic/LifecycleDemo
 
 ### 状态管理
@@ -133,10 +131,14 @@
 - pages/component/text/SearchDemo
 13. RichEditor（富文本编辑器）
 - pages/component/text/RichEditorDemo
+14. Marquee（跑马灯）
+- pages/component/text/MarqueeDemo
 
 ### 组件（按钮类）
 1. Button（按钮）
 - pages/component/button/ButtonDemo
+2. ProgressButton（可显示下载进度的下载按钮）
+- pages/component/button/ProgressButtonDemo
 
 ### 组件（选择类）
 1. Toggle（开关，选择框，切换按钮）
@@ -147,6 +149,26 @@
 - pages/component/selection/CheckboxDemo
 4. CheckboxGroup（多选框组）
 - pages/component/selection/CheckboxGroupDemo
+5. Rating（评分框）
+- pages/component/selection/RatingDemo
+6. Select（下拉菜单）
+- pages/component/selection/SelectDemo
+7. CalendarPicker（日历选择框）
+- pages/component/selection/CalendarPickerDemo
+8. DatePicker（日期选择框）
+- pages/component/selection/DatePickerDemo
+9. TimePicker（时间选择框）
+- pages/component/selection/TimePickerDemo
+10. TextPicker（文本选择框）
+- pages/component/selection/TextPickerDemo
+
+### 组件（进度类）
+1. Progress（进度条）
+- pages/component/progress/ProgressDemo
+2. LoadingProgress（加载框）
+- pages/component/progress/LoadingProgressDemo
+3. Slider（可拖动进度条）
+- pages/component/progress/SliderDemo
 
 ### 组件（展示类）
 1. Badge（标记）
@@ -155,10 +177,36 @@
 - pages/component/display/BlankDemo
 3. Divider（分隔线）
 - pages/component/display/DividerDemo
+4. QRCode（二维码）
+- pages/component/display/QRCodeDemo
 
 ### 组件（弹出类）
 1. AlertDialog（警告弹框）
 - pages/component/flyout/AlertDialogDemo
+2. ActionSheet（列表弹框）
+- pages/component/flyout/ActionSheetDemo
+3. CustomDialog（自定义弹框）
+- pages/component/flyout/CustomDialogDemo
+4. CustomDialog 之 TipsDialog（图文弹框）
+- pages/component/flyout/CustomDialogDemo_TipsDialog
+5. CustomDialog 之 SelectDialog（列表弹框）
+- pages/component/flyout/CustomDialogDemo_SelectDialog
+6. CustomDialog 之 ConfirmDialog（信息确认弹框）
+- pages/component/flyout/CustomDialogDemo_ConfirmDialog
+7. CustomDialog 之 AlertDialog（警告弹框）
+- pages/component/flyout/CustomDialogDemo_AlertDialog
+8. CustomDialog 之 LoadingDialog（加载弹框）
+- pages/component/flyout/CustomDialogDemo_LoadingDialog
+9. CustomDialog 之 CustomContentDialog（自定义内容弹框）
+- pages/component/flyout/CustomDialogDemo_CustomContentDialog
+10. CalendarPickerDialog（日历选择弹窗）
+- pages/component/flyout/CalendarPickerDialogDemo
+11. DatePickerDialog（日期滑动选择弹窗）
+- pages/component/flyout/DatePickerDialogDemo
+12. TimePickerDialog（时间滑动选择弹窗）
+- pages/component/flyout/TimePickerDialogDemo
+13. TextPickerDialog（文本滑动选择弹窗）
+- pages/component/flyout/TextPickerDialogDemo
 
 ### 组件（媒体类）
 1. Image（图片）
@@ -169,6 +217,14 @@
 - pages/ui/ColorDemo
 2. 单位相关
 - pages/ui/UnitDemo
+3. 获取组件的尺寸和位置
+- pages/ui/ComponentInfoDemo
+4. 样式相关
+- pages/ui/StyleDemo
+- pages/ui/MyButtonAttributeModifier.ets
+5. 主题相关
+- pages/ui/ThemeDemo
+- pages/ui/MyTheme.ets
 
 ### 图形
 1. 边框
@@ -201,6 +257,6 @@
 - pages/animation/GeometryTransitionDemo
 7. 页面转场效果
 - pages/animation/PageTransitionDemo
-- pages/animation/PageTransitionDemo_1
-- pages/animation/PageTransitionDemo_2
-- pages/animation/PageTransitionDemo_3
+- pages/animation/PageTransitionDemo_1.ets
+- pages/animation/PageTransitionDemo_2.ets
+- pages/animation/PageTransitionDemo_3.ets
