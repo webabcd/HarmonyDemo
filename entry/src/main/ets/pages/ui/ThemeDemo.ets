@@ -4,7 +4,7 @@
  */
 
 import { TitleBar } from '../TitleBar';
-import { ThemeControl, Colors } from '@kit.ArkUI';
+import { ThemeControl } from '@kit.ArkUI';
 import { myAppTheme, myAppTheme2 } from './MyTheme';
 
 // 设置当前的默认主题（需要在页面实例化之前执行）
@@ -72,6 +72,9 @@ struct ThemeDemo {
         Column() {
           // 使用自定义的浅色模式的相关颜色（来自 resources/base/element/color.json）
           Text("Text").backgroundColor($r('app.color.color_demo'))
+          // 使用系统默认主题的浅色模式的 background_primary 颜色
+          Column().width(200).height(50).borderWidth(5).borderColor(Color.Red)
+            .backgroundColor($r('sys.color.background_primary'))
         }
       }
 
@@ -83,6 +86,9 @@ struct ThemeDemo {
         Column() {
           // 使用自定义的深色模式的相关颜色（来自 resources/dark/element/dark.json）
           Text("Text").backgroundColor($r('app.color.color_demo'))
+          // 使用系统默认主题的深色模式的 background_primary 颜色
+          Column().width(200).height(50).borderWidth(5).borderColor(Color.Red)
+            .backgroundColor($r('sys.color.background_primary'))
         }
       }
     }
