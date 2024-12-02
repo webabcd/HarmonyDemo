@@ -97,10 +97,10 @@ struct Index {
         ]),
         new Node1("组件（按钮类）", [
           new Node2("Button（按钮）", "pages/component/button/ButtonDemo"),
+          new Node2("Toggle（开关，选择框，切换按钮）", "pages/component/button/ToggleDemo"),
           new Node2("ProgressButton（可显示下载进度的下载按钮）", "pages/component/button/ProgressButtonDemo"),
         ]),
         new Node1("组件（选择类）", [
-          new Node2("Toggle（开关，选择框，切换按钮）", "pages/component/selection/ToggleDemo"),
           new Node2("Radio（单选框）", "pages/component/selection/RadioDemo"),
           new Node2("Checkbox（多选框）", "pages/component/selection/CheckboxDemo"),
           new Node2("CheckboxGroup（多选框组）", "pages/component/selection/CheckboxGroupDemo"),

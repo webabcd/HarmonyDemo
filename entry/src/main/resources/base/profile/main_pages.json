@@ -61,7 +61,7 @@
     "pages/component/text/RichEditorDemo",
     "pages/shape/ShapeDemo",
     "pages/component/button/ButtonDemo",
-    "pages/component/selection/ToggleDemo",
+    "pages/component/button/ToggleDemo",
     "pages/component/selection/CheckboxDemo",
     "pages/component/selection/CheckboxGroupDemo",
     "pages/component/selection/RadioDemo",
