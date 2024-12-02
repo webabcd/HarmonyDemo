@@ -256,7 +256,7 @@ struct MySample3 {
   build() {
     Column({ space: 10 }) {
       /*
-       * bindPopup() - 弹出框（与组件绑定的 Popup）
+       * bindPopup() - 弹出框（与组件绑定的自定义的 Popup）
        *   show - 是否显示
        *   popup - 弹出框（一个 PopupOptions 对象）
        *     builder - 自定义弹出框内容（指定一个 @Builder 装饰的函数）
