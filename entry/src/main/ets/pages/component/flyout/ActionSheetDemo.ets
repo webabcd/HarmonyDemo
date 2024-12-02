@@ -30,7 +30,7 @@ struct ActionSheetDemo {
            *     dx, dy - 水平方向和垂直方向的偏移量
            *   width, height - 指定弹框的宽和高
            *   borderWidth, borderColor, borderStyle - 边框相关设置
-           *   backgroundColor, backgroundBlurStyle, shadow - 背景颜色，模糊效果，阴影效果
+           *   backgroundColor, backgroundBlurStyle, shadow - 背景颜色，背景的模糊效果，阴影效果
            *   cornerRadius - 圆角半径
            *   isModal - 是否是模态窗口（模态窗口有遮罩层，非模态窗口无遮罩层）
            *   maskRect - 模态窗口时，遮罩层的位置和大小

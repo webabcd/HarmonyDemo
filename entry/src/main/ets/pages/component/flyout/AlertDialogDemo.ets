@@ -56,7 +56,7 @@ struct MySample1 {
            *   gridCount - 占用的网格数（默认值为 4），会影响弹框的宽度，高度是自适应的
            *   width, height - 指定弹框的宽和高，指定之后则 gridCount 就无效了
            *   borderWidth, borderColor, borderStyle - 边框相关设置
-           *   backgroundColor, backgroundBlurStyle, shadow - 背景颜色，模糊效果，阴影效果
+           *   backgroundColor, backgroundBlurStyle, shadow - 背景颜色，背景的模糊效果，阴影效果
            *   cornerRadius - 圆角半径
            *   isModal - 是否是模态窗口（模态窗口有遮罩层，非模态窗口无遮罩层）
            *   maskRect - 模态窗口时，遮罩层的位置和大小

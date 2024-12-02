@@ -71,7 +71,7 @@ struct MySample1 {
        *   optionWidth() - 选项列表框的宽度
        *   optionHeight() - 选项列表框的最大高度（内容超过最大高度后，则可滚动）
        *   menuBackgroundColor() - 选项列表框的背景颜色
-       *   menuBackgroundBlurStyle() - 选项列表框的模糊效果
+       *   menuBackgroundBlurStyle() - 选项列表框的背景的模糊效果
        *   menuAlign() - 选项列表框相对于主按钮的对齐方式
        *     alignType - 对齐方式（MenuAlignType 枚举）
        *       START, CENTER, END
