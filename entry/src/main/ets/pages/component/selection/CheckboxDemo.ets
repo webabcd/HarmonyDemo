@@ -35,7 +35,7 @@ struct MySample1 {
       /*
        * Checkbox - 多选框
        *   name - 多选框的名字
-       *   indicatorBuilder - 自定义选中状态时多选框中的内容（指定一个 CustomBuilder）
+       *   indicatorBuilder - 自定义选中状态时多选框中的内容（指定一个 @Builder 装饰的函数）
        *   select() - 是否是选中状态
        *   selectedColor() - 选中时的背景色
        *   backgroundColor() - 未选中时的背景色

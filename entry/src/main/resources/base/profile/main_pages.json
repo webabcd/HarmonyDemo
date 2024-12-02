@@ -109,7 +109,8 @@
     "pages/component/selection/TimePickerDemo",
     "pages/component/selection/TextPickerDemo",
     "pages/component/display/TextClockDemo",
-    "pages/component/display/TextTimerDemo"
+    "pages/component/display/TextTimerDemo",
+    "pages/component/flyout/PopupDemo"
   ],
   "window": {
     "designWidth": 720,

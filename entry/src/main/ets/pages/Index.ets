@@ -20,8 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("TextClock（系统时间实时显示框）", "pages/component/display/TextClockDemo"),
-          new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
+          new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -126,6 +125,7 @@ struct Index {
           new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
         ]),
         new Node1("组件（弹出类）", [
+          new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
           new Node2("ActionSheet（列表弹框）", "pages/component/flyout/ActionSheetDemo"),
           new Node2("CustomDialog（自定义弹框）", "pages/component/flyout/CustomDialogDemo"),
