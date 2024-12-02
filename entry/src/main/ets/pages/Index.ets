@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("CounterComponent（计数器组件框）", "pages/component/selection/CounterComponentDemo"),
+          new Node2("Chip（带文字和图标的支持双状态的按钮）", "pages/component/button/ChipDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -99,6 +99,7 @@ struct Index {
           new Node2("Button（按钮）", "pages/component/button/ButtonDemo"),
           new Node2("Toggle（开关，选择框，切换按钮）", "pages/component/button/ToggleDemo"),
           new Node2("ProgressButton（可显示下载进度的下载按钮）", "pages/component/button/ProgressButtonDemo"),
+          new Node2("Chip（带文字和图标的支持双状态的按钮）", "pages/component/button/ChipDemo"),
         ]),
         new Node1("组件（选择类）", [
           new Node2("Radio（单选框）", "pages/component/selection/RadioDemo"),

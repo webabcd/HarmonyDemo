@@ -113,7 +113,8 @@
     "pages/component/flyout/PopupDemo",
     "pages/component/progress/GaugeDemo",
     "pages/component/selection/CounterDemo",
-    "pages/component/selection/CounterComponentDemo"
+    "pages/component/selection/CounterComponentDemo",
+    "pages/component/button/ChipDemo"
   ],
   "window": {
     "designWidth": 720,

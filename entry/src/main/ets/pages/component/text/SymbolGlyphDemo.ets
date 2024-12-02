@@ -1,8 +1,9 @@
 /*
- * SymbolGlyph - 图标符号
+ * SymbolGlyph, SymbolGlyphModifier - 图标符号
  */
 
 import { TitleBar } from '../../TitleBar'
+import { Chip, SymbolGlyphModifier } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -26,6 +27,7 @@ struct MySample1 {
 
   build() {
     Column({ space: 10 }) {
+
       /*
        * SymbolGlyph() - 图标符号
        *   value - 指定一个系统内置的图标资源
@@ -36,23 +38,36 @@ struct MySample1 {
        *     NONE - 无效果
        *     SCALE - 缩放动画效果
        *     HIERARCHICAL - 层级渐变动画效果
+       *
+       * SymbolGlyphModifier() - 图标符号
+       *   其他 UI 组件如果需要使用图标符号，一般会通过 SymbolGlyphModifier 实现
        */
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
         .fontWeight(FontWeight.Normal)
-        .fontSize(100)
+        .fontSize(80)
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         .fontColor([Color.Orange])
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         .effectStrategy(SymbolEffectStrategy.SCALE)
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         .effectStrategy(SymbolEffectStrategy.HIERARCHICAL)
+
+      Chip({
+        label: { text: 'label' },
+        size: { width: 200, height:50 },
+        allowClose: false,
+        prefixSymbol: {
+          normal: new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'))
+            .fontSize(24).fontColor([Color.Orange])
+        },
+      })
     }
   }
 }
@@ -84,7 +99,7 @@ struct MySample2 {
        */
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         // 无限循环的层级渐变动画效果
         .symbolEffect(
           new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE),
@@ -92,7 +107,7 @@ struct MySample2 {
         )
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         .symbolEffect(
           // 当 triggerValue 发生变化时，会触发层级渐变动画效果
           new HierarchicalSymbolEffect(EffectFillStyle.CUMULATIVE),
@@ -100,21 +115,21 @@ struct MySample2 {
         )
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         .symbolEffect(
           new ScaleSymbolEffect(),
           this.triggerValue
         )
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(100)
+        .fontSize(80)
         .symbolEffect(
           new BounceSymbolEffect(),
           this.triggerValue
         )
 
       SymbolGlyph(this.flag ? $r('sys.symbol.ohos_wifi') : $r('sys.symbol.ohos_star'))
-        .fontSize(100)
+        .fontSize(80)
         .symbolEffect(
           new ReplaceSymbolEffect(),
           this.triggerValue
