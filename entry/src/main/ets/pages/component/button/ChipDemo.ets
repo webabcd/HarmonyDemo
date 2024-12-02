@@ -42,9 +42,9 @@ struct ChipDemo {
        *     size - 尺寸（width 和 height）
        *     fillColor - 填充色
        *     activatedFontColor - 激活状态时的颜色
-       *   prefixSymbol, suffixSymbol - 文字的左侧图标符号和右侧图标符号
-       *     normal - 普通状态的图标符号
-       *     activated - 激活状态的图标符号
+       *   prefixSymbol, suffixSymbol - 文字的左侧符号图标和右侧符号图标
+       *     normal - 普通状态的符号图标
+       *     activated - 激活状态的符号图标
        *   activated - 是否是激活状态
        *   backgroundColor - 普通状态的背景颜色
        *   activatedBackgroundColor - 激活状态的背景颜色

@@ -49,7 +49,7 @@ struct MySample1 {
        *   aboutToDelete(), onDeleteComplete() - 删除字符前和删除字符后的一对回调
        * RichEditorController - 富文本编辑器的 controller
        *   addTextSpan() - 添加文本 span
-       *   addSymbolSpan() - 添加图标符号 span
+       *   addSymbolSpan() - 添加符号图标 span
        *   addImageSpan() - 添加图片 span
        *   addBuilderSpan() - 插入自定义组件 span
        *   updateSpanStyle() - 更新指定范围的文本 span 的样式
@@ -97,7 +97,7 @@ struct MySample1 {
             content += (item as RichEditorImageSpanResult).valueResourceStr;
             content += "\n"
           }
-          // 当前 span 是图标符号 span
+          // 当前 span 是符号图标 span
           else if(typeof(item as RichEditorTextSpanResult)['symbolSpanStyle'] != 'undefined') {
             content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
             content += "\n"
@@ -158,7 +158,7 @@ struct MySample1 {
                   }
                 }
               })
-            // 添加图标符号 span，并指定其样式
+            // 添加符号图标 span，并指定其样式
             this.controller.addSymbolSpan($r("sys.symbol.wifi"),
               {
                 style:

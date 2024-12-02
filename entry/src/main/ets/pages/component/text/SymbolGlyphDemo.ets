@@ -1,5 +1,5 @@
 /*
- * SymbolGlyph, SymbolGlyphModifier - 图标符号
+ * SymbolGlyph, SymbolGlyphModifier - 符号图标
  */
 
 import { TitleBar } from '../../TitleBar'
@@ -29,7 +29,7 @@ struct MySample1 {
     Column({ space: 10 }) {
 
       /*
-       * SymbolGlyph() - 图标符号
+       * SymbolGlyph() - 符号图标
        *   value - 指定一个系统内置的图标资源
        *   fontWeight() - 图标的粗细
        *   fontSize() - 图标的大小
@@ -39,8 +39,8 @@ struct MySample1 {
        *     SCALE - 缩放动画效果
        *     HIERARCHICAL - 层级渐变动画效果
        *
-       * SymbolGlyphModifier() - 图标符号
-       *   其他 UI 组件如果需要使用图标符号，一般会通过 SymbolGlyphModifier 实现
+       * SymbolGlyphModifier() - 符号图标
+       *   其他 UI 组件如果需要使用符号图标，一般会通过 SymbolGlyphModifier 实现
        */
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
@@ -87,7 +87,7 @@ struct MySample2 {
   build() {
     Column({ space: 10 }) {
       /*
-       * SymbolGlyph() - 图标符号
+       * SymbolGlyph() - 符号图标
        *   symbolEffect() - 图标的动画效果
        *     symbolEffect - 效果对象
        *       HierarchicalSymbolEffect() - 层级渐变动画效果

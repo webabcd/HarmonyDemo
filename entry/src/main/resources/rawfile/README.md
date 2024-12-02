@@ -115,9 +115,9 @@
 - pages/component/text/ImageSpanDemo
 5. ContainerSpan（Text 的容器子组件）
 - pages/component/text/ContainerSpanDemo
-6. SymbolGlyph（图标符号）
+6. SymbolGlyph（符号图标）
 - pages/component/text/SymbolGlyphDemo
-7. SymbolSpan（Text 的图标符号子组件）
+7. SymbolSpan（Text 的符号图标子组件）
 - pages/component/text/SymbolSpanDemo
 8. Hyperlink（超链接）
 - pages/component/text/HyperlinkDemo

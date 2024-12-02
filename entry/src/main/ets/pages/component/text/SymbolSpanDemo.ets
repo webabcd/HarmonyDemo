@@ -1,5 +1,5 @@
 /*
- * SymbolSpan - Text 的图标符号子组件
+ * SymbolSpan - Text 的符号图标子组件
  */
 
 import { TitleBar } from '../../TitleBar'
@@ -15,7 +15,7 @@ struct SymbolSpanDemo {
         Span('span').fontSize(32)
 
         /*
-         * SymbolSpan - Text 的图标符号子组件
+         * SymbolSpan - Text 的符号图标子组件
          *   value - 指定一个系统内置的图标资源
          *   fontWeight() - 图标的粗细
          *   fontSize() - 图标的大小
