@@ -20,7 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("CalendarPicker（日历选择框）", "pages/component/selection/CalendarPickerDemo"),
+          new Node2("TextClock（系统时间实时显示框）", "pages/component/display/TextClockDemo"),
+          new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -121,6 +122,8 @@ struct Index {
           new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
           new Node2("Divider（分隔线）", "pages/component/display/DividerDemo"),
           new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
+          new Node2("TextClock（系统时间实时显示框）", "pages/component/display/TextClockDemo"),
+          new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),

@@ -107,7 +107,9 @@
     "pages/component/selection/CalendarPickerDemo",
     "pages/component/selection/DatePickerDemo",
     "pages/component/selection/TimePickerDemo",
-    "pages/component/selection/TextPickerDemo"
+    "pages/component/selection/TextPickerDemo",
+    "pages/component/display/TextClockDemo",
+    "pages/component/display/TextTimerDemo"
   ],
   "window": {
     "designWidth": 720,
