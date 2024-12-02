@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Gauge（环形表进度条）", "pages/component/progress/GaugeDemo"),
+          new Node2("CounterComponent（计数器组件框）", "pages/component/selection/CounterComponentDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -110,6 +110,8 @@ struct Index {
           new Node2("DatePicker（日期选择框）", "pages/component/selection/DatePickerDemo"),
           new Node2("TimePicker（时间选择框）", "pages/component/selection/TimePickerDemo"),
           new Node2("TextPicker（文本选择框）", "pages/component/selection/TextPickerDemo"),
+          new Node2("Counter（计数器框）", "pages/component/selection/CounterDemo"),
+          new Node2("CounterComponent（计数器组件框）", "pages/component/selection/CounterComponentDemo"),
         ]),
         new Node1("组件（进度类）", [
           new Node2("Progress（进度条）", "pages/component/progress/ProgressDemo"),
