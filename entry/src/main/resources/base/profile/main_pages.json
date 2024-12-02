@@ -110,7 +110,8 @@
     "pages/component/selection/TextPickerDemo",
     "pages/component/display/TextClockDemo",
     "pages/component/display/TextTimerDemo",
-    "pages/component/flyout/PopupDemo"
+    "pages/component/flyout/PopupDemo",
+    "pages/component/progress/GaugeDemo"
   ],
   "window": {
     "designWidth": 720,

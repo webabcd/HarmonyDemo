@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
+          new Node2("Gauge（环形表进度条）", "pages/component/progress/GaugeDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -115,6 +115,7 @@ struct Index {
           new Node2("Progress（进度条）", "pages/component/progress/ProgressDemo"),
           new Node2("LoadingProgress（加载框）", "pages/component/progress/LoadingProgressDemo"),
           new Node2("Slider（可拖动进度条）", "pages/component/progress/SliderDemo"),
+          new Node2("Gauge（环形表进度条）", "pages/component/progress/GaugeDemo"),
         ]),
         new Node1("组件（展示类）", [
           new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),
