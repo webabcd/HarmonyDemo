@@ -28,9 +28,7 @@ struct ChipDemo {
        *     Rtl - 从右到左布局
        *   borderRadius - 圆角半径
        *   enabled - 是否可用
-       *   allowClose - 是否显示关闭按钮（点击此按钮后，会从当前页面移除相关的 Chip 组件）
-       *   onClose - 点击关闭按钮后的回调
-       *   onClicked - 点击 Chip 组件时的回调
+       *   allowClose - 是否显示关闭按钮（点击此按钮后，会移除当前 Chip 组件）
        *   label - 按钮文字
        *     text - 文字内容
        *     fontSize, fontColor, fontFamily - 字体样式
@@ -48,6 +46,8 @@ struct ChipDemo {
        *   activated - 是否是激活状态
        *   backgroundColor - 普通状态的背景颜色
        *   activatedBackgroundColor - 激活状态的背景颜色
+       *   onClose - 点击关闭按钮后的回调
+       *   onClicked - 点击 Chip 组件时的回调
        */
 
       Chip({
@@ -63,7 +63,7 @@ struct ChipDemo {
         },
         onClicked:() => {
           this.message = "onClicked()"
-        }
+        },
       })
 
       Chip({
