@@ -114,7 +114,8 @@
     "pages/component/progress/GaugeDemo",
     "pages/component/selection/CounterDemo",
     "pages/component/selection/CounterComponentDemo",
-    "pages/component/button/ChipDemo"
+    "pages/component/button/ChipDemo",
+    "pages/component/button/ChipGroupDemo"
   ],
   "window": {
     "designWidth": 720,
