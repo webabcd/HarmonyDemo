@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("ExceptionPrompt（异常提示框）", "pages/component/display/ExceptionPromptDemo"),
+          new Node2("DataPanel（数据面板）", "pages/component/display/DataPanelDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -126,9 +126,10 @@ struct Index {
           new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
           new Node2("Divider（分隔线）", "pages/component/display/DividerDemo"),
           new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
-          new Node2("ExceptionPrompt（异常提示框）", "pages/component/display/ExceptionPromptDemo"),
           new Node2("TextClock（系统时间实时显示框）", "pages/component/display/TextClockDemo"),
           new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
+          new Node2("ExceptionPrompt（异常提示框）", "pages/component/display/ExceptionPromptDemo"),
+          new Node2("DataPanel（数据面板）", "pages/component/display/DataPanelDemo"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
@@ -242,7 +243,7 @@ struct Index {
 
               Blank()
 
-              Image(this.selectedNode1 == index ? $r('app.media.ic_down_arrow') : $r('app.media.ic_right_arrow'))
+              Image(this.selectedNode1 == index ? $r('app.media.ic_arrow_down') : $r('app.media.ic_arrow_right'))
                 .width(24)
                 .height(24)
                 .margin({ right: 6 })

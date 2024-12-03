@@ -116,7 +116,8 @@
     "pages/component/selection/CounterComponentDemo",
     "pages/component/button/ChipDemo",
     "pages/component/button/ChipGroupDemo",
-    "pages/component/display/ExceptionPromptDemo"
+    "pages/component/display/ExceptionPromptDemo",
+    "pages/component/display/DataPanelDemo"
   ],
   "window": {
     "designWidth": 720,

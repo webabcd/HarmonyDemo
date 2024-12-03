@@ -15,7 +15,7 @@ export struct TitleBar {
   build() {
     Column() {
       Row() {
-        Image($r('app.media.ic_left_arrow'))
+        Image($r('app.media.ic_arrow_left'))
           .width(20)
           .height(20)
           .margin({ left: 26 })

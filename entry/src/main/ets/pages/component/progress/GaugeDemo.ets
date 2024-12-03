@@ -50,7 +50,7 @@ struct MySample1 {
        *   description() - 自定义的说明内容（指定一个 @Builder 装饰的函数），其会显示在组件的底部
        *     不指定的话则会在底部显示 min 值和 max 值，如果不想显示的话就指定为 null 即可
        *   indicator() - 指针样式（指定为 null 则不显示）
-       *     icon - 指针图标
+       *     icon - 指针图标（必须是 svg 格式）
        *     space - 指针距离环外侧的距离
        *   colors - 进度条颜色
        *     也可以指定一个颜色数组，最多可以显示 9 段不同的颜色，并指定每段颜色所占的比重
@@ -84,8 +84,8 @@ struct MySample1 {
       .endAngle(150)
       .strokeWidth(10)
       .indicator({
-        icon: $r('app.media.app_icon'),
-        space: 15
+        icon: $r('app.media.ic_arrow_up'),
+        space: 15,
       })
       .colors([
         [new LinearGradient([{ color: Color.Red, offset: 0 }, { color: Color.Green, offset: 1 }]), 1],
