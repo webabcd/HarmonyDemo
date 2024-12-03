@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("ChipGroup（Chip 组）", "pages/component/button/ChipGroupDemo"),
+          new Node2("ExceptionPrompt（异常提示框）", "pages/component/display/ExceptionPromptDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -126,6 +126,7 @@ struct Index {
           new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
           new Node2("Divider（分隔线）", "pages/component/display/DividerDemo"),
           new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
+          new Node2("ExceptionPrompt（异常提示框）", "pages/component/display/ExceptionPromptDemo"),
           new Node2("TextClock（系统时间实时显示框）", "pages/component/display/TextClockDemo"),
           new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
         ]),
