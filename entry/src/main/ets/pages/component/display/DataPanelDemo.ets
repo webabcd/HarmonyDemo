@@ -1,5 +1,5 @@
 /*
- * DataPanel - 数据面板（可以展示多条数据的占比情况）
+ * DataPanel - 数据面板（用于展示多条数据的占比情况）
  */
 
 import { TitleBar } from '../../TitleBar';
@@ -29,7 +29,7 @@ struct MySample1 {
     Column({ space: 10 }) {
 
       /*
-       * DataPanel - 数据面板（可以展示多条数据的占比情况）
+       * DataPanel - 数据面板（用于展示多条数据的占比情况）
        *   max - 数据的总值
        *   values - 数据值列表，最多 9 个
        *   type - 面板类型（DataPanelType 枚举）
