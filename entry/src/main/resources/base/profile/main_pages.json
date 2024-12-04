@@ -118,7 +118,8 @@
     "pages/component/button/ChipGroupDemo",
     "pages/component/display/ExceptionPromptDemo",
     "pages/component/display/DataPanelDemo",
-    "pages/component/layout/ScrollDemo"
+    "pages/component/layout/ScrollDemo",
+    "pages/component/list/ListDemo"
   ],
   "window": {
     "designWidth": 720,
