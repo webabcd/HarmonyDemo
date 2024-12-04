@@ -52,7 +52,7 @@ struct MySample1 {
        *   color() - 进度条前景色
        *   backgroundColor() - 进度条背景色
        *   style() - 样式（对于 ProgressType.Linear 来说，这是一个 ProgressStyleOptions 对象）
-       *     strokeWidth - 进度条宽度
+       *     strokeWidth - 进度条的画笔宽度
        *     strokeRadius - 进度条两端的圆角半径
        *     enableSmoothEffect - 进度条的值变化时，是否通过动画平滑过渡（默认值为 true）
        *     enableScanEffect - 是否在前景色中显示扫描效果（默认值为 false）
@@ -136,7 +136,7 @@ struct MySample2 {
        *   color() - 进度条前景色
        *   backgroundColor() - 进度条背景色
        *   style() - 样式（对于 ProgressType.Ring 来说，这是一个 RingStyleOptions 对象）
-       *     strokeWidth - 进度条宽度
+       *     strokeWidth - 进度条的画笔宽度
        *     shadow - 是否显示阴影
        *     status - 环形进度条类型
        *       LOADING - 进度不可知
@@ -294,7 +294,7 @@ struct MySample4 {
        *   color() - 进度条前景色
        *   backgroundColor() - 进度条背景色
        *   style() - 样式（对于 ProgressType.ScaleRing 来说，这是一个 ScaleRingStyleOptions 对象）
-       *     strokeWidth - 进度条宽度
+       *     strokeWidth - 进度条的画笔宽度
        *     scaleCount - 刻度数量
        *     scaleWidth - 刻度宽度
        *     enableSmoothEffect - 进度条的值变化时，是否通过动画平滑过渡（默认值为 true）

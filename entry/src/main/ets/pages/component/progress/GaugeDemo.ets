@@ -42,7 +42,7 @@ struct MySample1 {
        *   value() - 进度条的当前值，如果指定了此值则会覆盖上面的那个 value 指定的值
        *   startAngle() - 环形表的起始点的角度（默认值为 0）
        *   endAngle() - 环形表的结束点的角度（默认值为 360）
-       *   strokeWidth() - 进度条宽度
+       *   strokeWidth() - 进度条的画笔宽度
        *   trackShadow() - 进度条阴影
        *     radius - 阴影的模糊半径
        *     offsetX - 阴影的 x 轴偏移量

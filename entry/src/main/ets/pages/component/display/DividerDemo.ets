@@ -14,7 +14,7 @@ struct DividerDemo {
 
       /*
        * Divider - 分隔线
-       *   strokeWidth() - 宽度
+       *   strokeWidth() - 分隔线的画笔宽度
        *   color() - 颜色
        *   vertical - 是否是垂直分隔线
        *   lineCap() - 分隔线两端的处理方式（LineCapStyle 枚举）
