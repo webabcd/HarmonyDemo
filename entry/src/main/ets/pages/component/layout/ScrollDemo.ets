@@ -241,6 +241,8 @@ struct MySample5 {
        *   onScrollEdge - 滚动到边缘时的回调
        *     side - 边缘类型（Edge 枚举）
        *       Top, Bottom, Start, End
+       *   onReachStart - 滚动到顶部时的回调
+       *   onReachEnd - 滚动到底部时的回调
        */
       Scroll() {
         Column() {
@@ -275,6 +277,14 @@ struct MySample5 {
       })
       .onScrollEdge((side: Edge) => {
         this.message = `onScrollEdge side:${side}`
+        MyLog.d(this.message)
+      })
+      .onReachStart(() => {
+        this.message = `onReachStart`
+        MyLog.d(this.message)
+      })
+      .onReachEnd(() => {
+        this.message = `onReachEnd`
         MyLog.d(this.message)
       })
       .width('100%')
