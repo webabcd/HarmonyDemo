@@ -1,5 +1,5 @@
 /*
- * List - 列表
+ * List - 列表基础
  *
  * 注：List 是一个可滚动组件，相关特性请参见 /component/layout/ScrollDemo.ets 中的说明
  */
