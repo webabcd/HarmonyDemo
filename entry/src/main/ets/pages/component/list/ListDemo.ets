@@ -246,6 +246,7 @@ struct MySample4 {
          *       extraOffset - 在当前位置上的偏移距离
          *   getItemRect() - 获取指定索引位置的 item 的位置和大小（仅 Grid, List, WaterFlow 有效）
          *     x, y, width, height
+         *     注：指定的 item 必须要完整地显示在可视区才能获取到正确的值，否则返回的都是 0
          */
 
         Button('scrollToIndex')
@@ -258,7 +259,7 @@ struct MySample4 {
                 extraOffset: LengthMetrics.vp(0)
               })
           })
-        Button('getItemRect(3)') // 必须完整地显示在可视区，否则都是 0
+        Button('getItemRect(3)')
           .onClick(() => {
             const itemRect = this.listScroller.getItemRect(3)
             this.message = `getItemRect(3) x:${itemRect.x}, y:${itemRect.y}, width:${itemRect.width}, height:${itemRect.height}`
