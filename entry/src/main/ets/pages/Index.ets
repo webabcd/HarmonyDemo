@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("DataPanel（数据面板）", "pages/component/display/DataPanelDemo"),
+          new Node2("Scroll（可滚动容器）", "pages/component/layout/ScrollDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -78,6 +78,7 @@ struct Index {
           new Node2("Stack（堆叠布局）", "pages/component/layout/StackDemo"),
           new Node2("FolderStack（可识别屏幕折叠悬停的堆叠布局）", "pages/component/layout/FolderStackDemo"),
           new Node2("RelativeContainer（相对布局）", "pages/component/layout/RelativeContainerDemo"),
+          new Node2("Scroll（可滚动容器）", "pages/component/layout/ScrollDemo"),
         ]),
         new Node1("组件（文本类）", [
           new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
