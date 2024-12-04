@@ -4,7 +4,7 @@
  * 注：List 是一个可滚动组件，相关特性请参见 /component/layout/ScrollDemo.ets 中的说明
  */
 
-import { MyLog, TitleBar } from '../../TitleBar';
+import { TitleBar } from '../../TitleBar';
 import { LengthMetrics } from '@kit.ArkUI';
 
 @Entry
