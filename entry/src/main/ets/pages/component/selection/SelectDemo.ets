@@ -75,7 +75,7 @@ struct MySample1 {
        *   menuAlign() - 选项列表框相对于主按钮的对齐方式
        *     alignType - 对齐方式（MenuAlignType 枚举）
        *       START, CENTER, END
-       *     offset - 在原有位置上的偏移距离
+       *     offset - 在当前位置上的偏移距离
        *
        *   onSelect() - 选中某一项后的回调
        *     index - 选中项的索引位置

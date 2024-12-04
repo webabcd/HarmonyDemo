@@ -127,7 +127,7 @@ struct MySample2 {
        *       Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight, LeftTop, LeftBottom, RightTop, RightBottom
        *     showInSubWindow - 是否新开子窗口显示弹窗（比如小窗显示 app 时，如果新开子窗口显示弹窗，则这个弹窗会显示在 app 所属窗口之外）
        *     targetSpace - 弹出框在原有位置的基础上与绑定的组件之间的距离
-       *     offset - 弹出框在原有位置的基础上的偏移距离
+       *     offset - 弹出框在当前位置的基础上的偏移距离
 
        *     mask - 弹出框的遮罩层的颜色
        *     popupColor - 弹出框的背景色

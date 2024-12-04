@@ -336,13 +336,13 @@ struct MySample6 {
          *     next: true 则滚动到下一页
          *     next: false 则滚动到上一页
          *   scrollTo() - 滚动到指定的位置（有动画）
-         *   scrollToIndex() - 滚动到指定索引位置的项（仅 Grid, List, WaterFlow 有效）
+         *   scrollToIndex() - 滚动到指定索引位置的 item（仅 Grid, List, WaterFlow 有效）
          *   fling() - 指定初始加速度并滚动
          *     负数则往下滚动，正数则往上滚动
          *   currentOffset() - 获取当前的滚动位置
          *     xOffset, yOffset
          *   isAtEnd() - 是否滚动到底部了
-         *   getItemRect() - 获取指定索引位置的项的位置和大小（仅 Grid, List, WaterFlow 有效）
+         *   getItemRect() - 获取指定索引位置的 item 的位置和大小（仅 Grid, List, WaterFlow 有效）
          */
 
         Button('scrollBy 150')
