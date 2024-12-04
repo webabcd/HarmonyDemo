@@ -358,7 +358,7 @@ struct MySample6 {
               }
             })
           })
-        Button('fling -1000')
+        Button('fling(-1000)')
           .onClick(() => {
             this.scroller.fling(-1000)
           })
