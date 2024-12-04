@@ -42,7 +42,7 @@ struct MySample1 {
        *   listDirection() - item 们的排列方向（Axis.Vertical 或 Axis.Horizontal）
        *   chainAnimation() - 拖动时是否启用链式联动效果
        *     手指拖动过程中，手指拖动的 ListItem 会驱动相邻的 ListItem 做弹簧联动效果（前提是必须是单列模式，且边缘效果为 EdgeEffect.Spring 时）
-       *   onScrollIndex() - item 滚入或滚出可视区时的回调
+       *   onScrollIndex() - item 滚入或滚出可视区时，或者可视区中间显示的 item 发生变化时的回调
        *     start - 可视区内第一个 item 的索引位置
        *     end - 可视区内最后一个 item 的索引位置
        *     center - 可视区内中间 item 的索引位置
