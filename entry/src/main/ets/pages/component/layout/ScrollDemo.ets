@@ -18,6 +18,7 @@ struct ScrollDemo {
         TabContent() { MySample4() }.tabBar('paging').align(Alignment.Top)
         TabContent() { MySample5() }.tabBar('事件相关').align(Alignment.Top)
         TabContent() { MySample6() }.tabBar('Scroller 相关').align(Alignment.Top)
+        TabContent() { MySample7() }.tabBar('自定义 ScrollBar').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -375,5 +376,61 @@ struct MySample6 {
     .width('100%')
     .height('100%')
     .backgroundColor(Color.Yellow)
+  }
+}
+
+@Component
+struct MySample7 {
+
+  scroller: Scroller = new Scroller()
+  private array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  build() {
+    Column() {
+      Stack({ alignContent: Alignment.TopStart }) {
+        Scroll(this.scroller) {
+          Column() {
+            ForEach(this.array, (item: number) => {
+              Text(item.toString()).width('80%').height(200)
+                .fontSize(48).textAlign(TextAlign.Center).margin(10)
+                .backgroundColor(Color.Orange).borderRadius(20)
+            })
+          }
+        }
+        .scrollBar(BarState.Off)
+        .width('100%')
+        .height('100%')
+
+        /*
+         * ScrollBar - 自定义滚动条（List, Grid, Scroll 等可滚动组件均可使用此方法自定义滚动条）
+         *   scroller - 需要绑定的 Scroller（关联的可滚动组件也要绑定同一个 Scroller）
+         *   direction - 滚动方向（ScrollBarDirection 枚举）
+         *     Vertical, Horizontal
+         *   state - 滚动条状态（BarState 枚举）
+         *     Off - 不显示
+         *     On - 显示
+         *     Auto - 触摸时显示（2 秒后消失）
+         *   width() - 滚动条宽度
+         *   backgroundColor() - 滚动条的轨道颜色
+         *   子组件 - 自定义滚动条滑块
+         */
+        ScrollBar({
+          scroller: this.scroller,
+          direction: ScrollBarDirection.Vertical,
+          state: BarState.On
+        }) {
+          Column()
+            .width(20)
+            .height(100)
+            .borderRadius(10)
+            .backgroundColor(Color.Blue)
+        }
+        .width(20)
+        .backgroundColor(Color.Gray)
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.Yellow)
+    }
   }
 }
