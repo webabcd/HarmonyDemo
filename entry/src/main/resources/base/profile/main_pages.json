@@ -119,7 +119,8 @@
     "pages/component/display/ExceptionPromptDemo",
     "pages/component/display/DataPanelDemo",
     "pages/component/layout/ScrollDemo",
-    "pages/component/list/ListDemo"
+    "pages/component/list/ListDemo",
+    "pages/component/list/ListDemo2"
   ],
   "window": {
     "designWidth": 720,
