@@ -57,4 +57,17 @@ struct EnumDemo {
   MyLog.d(`${status == 0}`); // true
 }
 
+{
+  enum Permission {
+    None = 0,
+    Read = 1,     // 0001
+    Write = 2,    // 0010
+    Publish = 4,  // 0100
+    Full = 7,     // 0111
+  }
 
+  // 通过按位或（|）实现 flag 型的枚举
+  MyLog.d(`${(Permission.Read | Permission.Write)}`); // 3
+  MyLog.d(`${(Permission.Read | Permission.Write | Permission.Publish)}`); // 7
+  MyLog.d(`${(Permission.Full)}`); // 7
+}
