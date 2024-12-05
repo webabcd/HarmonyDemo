@@ -228,9 +228,23 @@ struct MySample2 {
          *       END - 组与可视区的底端对齐
          *     options - 选项
          *       extraOffset - 在当前位置上的偏移距离
+         *
          *   getItemRect() - 获取指定索引位置的组的位置和大小（仅 Grid, List, WaterFlow 有效）
-         *     x, y, width, height
+         *     返回值包括 x, y, width, height
          *     注：指定的组必须要显示在可视区才能获取到正确的值，否则返回的都是 0
+         *   scrollToItemInGroup() - 滚动到指定索引位置的组的指定索引位置的 item
+         *     index - 需要滚动到的 item 的所属组的索引位置
+         *     indexInGroup - 需要滚动到的 item 在其所属组中的索引位置
+         *     smooth - 是否平滑滚动
+         *     align - 滚动到的 item 与可视区的对齐方式（ScrollAlign 枚举）
+         *       START - item 与可视区的顶端对齐
+         *       CENTER - item 与可视区的中间对齐
+         *       END - item 与可视区的底端对齐
+         *   getItemRectInGroup() - 获取指定索引位置的组的指定索引位置的 item 的位置和大小
+         *     index - 需要获取的 item 的所属组的索引位置
+         *     indexInGroup - 需要获取的 item 在其所属组中的索引位置
+         *     返回值包括 x, y, width, height
+         *     注：指定的 item 必须要显示在可视区才能获取到正确的值，否则返回的都是 0
          */
 
         Button('scrollToIndex')
@@ -248,6 +262,21 @@ struct MySample2 {
             const itemRect = this.listScroller.getItemRect(1)
             this.message =
               `getItemRect(1) x:${itemRect.x}, y:${itemRect.y}, width:${itemRect.width}, height:${itemRect.height}`
+          })
+
+        Button('scrollToItemInGroup')
+          .onClick(() => {
+            this.listScroller.scrollToItemInGroup(
+              2,
+              1,
+              true,
+              ScrollAlign.START)
+          })
+        Button('getItemRectInGroup(2, 1)')
+          .onClick(() => {
+            const itemRect = this.listScroller.getItemRectInGroup(2, 1)
+            this.message =
+              `getItemRectInGroup(2, 1) x:${itemRect.x}, y:${itemRect.y}, width:${itemRect.width}, height:${itemRect.height}`
           })
 
         Text(this.message).fontSize(16).fontColor(Color.White).backgroundColor(Color.Blue)

@@ -245,7 +245,7 @@ struct MySample4 {
          *     options - 选项
          *       extraOffset - 在当前位置上的偏移距离
          *   getItemRect() - 获取指定索引位置的 item 的位置和大小（仅 Grid, List, WaterFlow 有效）
-         *     x, y, width, height
+         *     返回值包括 x, y, width, height
          *     注：指定的 item 必须要显示在可视区才能获取到正确的值，否则返回的都是 0
          */
 
