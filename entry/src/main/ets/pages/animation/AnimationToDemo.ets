@@ -9,7 +9,7 @@
  * 关于动画效果请参见 AnimationDemo.ets 中的说明
  */
 
-import { RadioBar, TitleBar } from '../TitleBar'
+import { TitleBar } from '../TitleBar'
 
 @Entry
 @Component
@@ -129,7 +129,7 @@ struct MySample3 {
         .translate({ y: this.translateY })
 
       /*
-       * animateTo() - 高优先级的 animateTo()
+       * animateToImmediately() - 高优先级的 animateTo()
        */
       Button('button')
         .onClick(() => {
