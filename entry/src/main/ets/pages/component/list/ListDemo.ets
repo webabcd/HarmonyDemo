@@ -46,9 +46,8 @@ struct MySample1 {
        *     start - 可视区内第一个 item 的索引位置
        *     end - 可视区内最后一个 item 的索引位置
        *     center - 可视区内中间 item 的索引位置
-       *   onScrollVisibleContentChange() - item 滚入或滚出可视区时的回调
-       *     start.index - 可视区内第一个 item 的索引位置
-       *     end.index - 可视区内最后一个 item 的索引位置
+       *
+       * ListItem() - list 内的每个 item
        */
       List({
         space: 20,
@@ -68,9 +67,6 @@ struct MySample1 {
       .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((start: number, end: number, center: number) => {
         this.message = `onScrollIndex start:${start}, end:${end}, center:${center}`
-      })
-      .onScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo) => {
-        this.message = `onScrollVisibleContentChange start:${start.index}, end:${end.index}`
       })
       .width('100%')
       .height('100%')
@@ -109,7 +105,7 @@ struct MySample2 {
        *     注：当 chainAnimation(true) 时不会显示分隔线
        *   contentStartOffset() - 顶部 item 与顶部边缘之间的间距
        *   contentEndOffset() - 底部 item 与底部边缘之间的间距
-       *   childrenMainSize() - 指定 item 的主轴方向上的大小
+       *   childrenMainSize() - 指定每个 item 的主轴方向上的不同的大小
        *     value - 主轴方向上的默认大小
        *     splice(), update() - 更新不同位置的 item 的主轴方向上的大小
        *     注：当每个 item 在轴方向上的大小不一致时，需要额外通过此方式指定他们的大小，这样在调用 scrollToIndex(), scrollTo(), currentOffset() 等时才不会有问题
@@ -218,6 +214,10 @@ struct MySample4 {
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
+      /*
+       * List - 列表
+       *   scroller - 指定 List 需要绑定的 ListScroller
+       */
       List({ scroller: this.listScroller }) {
         ForEach(this.array, (item: number) => {
           ListItem() {
