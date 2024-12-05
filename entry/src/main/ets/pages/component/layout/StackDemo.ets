@@ -22,7 +22,7 @@ struct StackDemo {
       Stack() {
         Column().width(100).height(50).backgroundColor(Color.Orange)
       }.width('100%').height(150).backgroundColor(Color.Blue)
-      .alignContent(Alignment.TopStart)
+      .alignContent(Alignment.TopStart) // 会覆盖上面的 alignContent 参数的值
 
       // zIndex - Z 轴方向上的排列顺序
       //   无 zIndex 时，Stack 内后面的组件会显示在前面
