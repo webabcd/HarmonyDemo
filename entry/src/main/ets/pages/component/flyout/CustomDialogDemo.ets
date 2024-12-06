@@ -25,7 +25,7 @@ struct CustomDialogDemo {
    *   title, subtitle, message - 标题，子标题，内容
    *   alignment - 显示位置（DialogAlignment 枚举）
    *     Top, Center, Bottom, Default, TopStart, TopEnd, CenterStart, CenterEnd, BottomStart, BottomEnd
-   *   offset - 相对原有位置的偏移量
+   *   offset - 相对当前位置的偏移量
    *     dx, dy - 水平方向和垂直方向的偏移量
    *   gridCount - 占用的网格数（默认值为 4），会影响弹框的宽度，高度是自适应的
    *   width, height - 指定弹框的宽和高，指定之后则 gridCount 就无效了
