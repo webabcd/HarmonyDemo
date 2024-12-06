@@ -47,7 +47,7 @@ struct MySample1 {
        *     end - 可视区内最后一个 item 的索引位置
        *     center - 可视区内中间 item 的索引位置
        *
-       * ListItem() - list 内的每个 item
+       * ListItem - list 内的每个 item
        */
       List({
         space: 20,
