@@ -33,7 +33,7 @@ struct ActionSheetDemo {
            *   backgroundColor, backgroundBlurStyle, shadow - 背景颜色，背景的模糊效果，阴影效果
            *   cornerRadius - 圆角半径
            *   isModal - 是否是模态窗口（模态窗口有遮罩层，非模态窗口无遮罩层）
-           *   maskRect - 模态窗口时，遮罩层的位置和大小
+           *   maskRect - 模态窗口时，遮罩层的位置和大小（在遮罩层区域内的事件不透传，在遮罩层区域外的事件会透传）
            *   showInSubWindow - 是否新开子窗口显示弹窗（比如小窗显示 app 时，如果新开子窗口显示弹窗，则这个弹窗会显示在 app 的所属窗口之外）
            *   autoCancel - 点击非弹框区域时是否自动隐藏
            *   onWillDismiss - 通过用户行为关闭弹窗之前的回调（回调参数是一个 DismissDialogAction 对象）

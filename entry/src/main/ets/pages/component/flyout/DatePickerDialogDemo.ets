@@ -32,7 +32,7 @@ struct DatePickerDialogDemo {
            *   alignment - 显示位置（DialogAlignment 枚举）
            *     Top, Center, Bottom, Default, TopStart, TopEnd, CenterStart, CenterEnd, BottomStart, BottomEnd
            *   offset - 相对原有位置的偏移量
-           *   maskRect - 遮罩层的位置和大小
+           *   maskRect - 遮罩层的位置和大小（在遮罩层区域内的事件不透传，在遮罩层区域外的事件会透传）
            *   backgroundColor - 弹窗的背景
            *   selectedTextStyle - 选中日期的文本样式
            *   disappearTextStyle - 选中日期的最上和最下的日期的文本样式
