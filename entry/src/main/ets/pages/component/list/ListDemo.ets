@@ -5,7 +5,7 @@
  */
 
 import { TitleBar } from '../../TitleBar';
-import { LengthMetrics } from '@kit.ArkUI';
+import { ComposeListItem, IconType, LengthMetrics, promptAction } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -17,8 +17,9 @@ struct ListDemo {
       Tabs() {
         TabContent() { MySample1() }.tabBar('基础1').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('基础2').align(Alignment.Top)
-        TabContent() { MySample3() }.tabBar('多行多列').align(Alignment.Top)
-        TabContent() { MySample4() }.tabBar('ListScroller 相关').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('ComposeListItem').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('多行多列').align(Alignment.Top)
+        TabContent() { MySample5() }.tabBar('ListScroller 相关').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -141,6 +142,58 @@ struct MySample2 {
 
 @Component
 struct MySample3 {
+  build() {
+    Column() {
+      List({ space: 10 }) {
+        /*
+         * ComposeListItem - 增加了一些内置功能的 ListItem
+         *   contentItem - 中间及左侧的内容
+         *   operateItem - 右侧的内容
+         */
+        ComposeListItem({
+          contentItem: ({
+            iconStyle: IconType.HEAD_SCULPTURE, // 用于指定图标的大小
+            icon: $r('app.media.app_icon'),
+            primaryText: 'primaryText',
+            secondaryText: 'secondaryText',
+            description: 'description'
+          }),
+          operateItem: ({
+            icon: {
+              value: $r('app.media.ic_settings'),
+              action: () => {
+                promptAction.showToast({ message: 'icon clicked' });
+              }
+            },
+            text: 'text'
+          })
+        })
+        ComposeListItem({
+          operateItem: ({
+            arrow: { value: $r('app.media.ic_arrow_right'), action: () => { } },
+            text: 'text'
+          })
+        })
+        ComposeListItem({
+          operateItem: ({
+            switch: { isCheck: true, onChange: (value: boolean) => { } },
+          })
+        })
+        ComposeListItem({
+          operateItem: ({
+            checkbox: { isCheck: false, onChange: (value: boolean) => { } },
+          })
+        })
+        ComposeListItem({
+          operateItem: ({ image: $r('app.media.ic_settings') })
+        })
+      }
+    }
+  }
+}
+
+@Component
+struct MySample4 {
 
   private array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
@@ -201,7 +254,7 @@ struct MySample3 {
 }
 
 @Component
-struct MySample4 {
+struct MySample5 {
 
   @State message: string = ""
 

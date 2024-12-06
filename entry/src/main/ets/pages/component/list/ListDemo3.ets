@@ -187,7 +187,7 @@ struct MySample2 {
 }
 
 @Component
-struct MySample3{
+struct MySample3 {
 
   @State message: string = ""
   @State message2: string = ""

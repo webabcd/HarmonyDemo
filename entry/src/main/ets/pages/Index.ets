@@ -180,6 +180,7 @@ struct Index {
           new Node2("单个组件显示和消失时的过渡动画", "pages/animation/TransitionDemo"),
           new Node2("一组件显示一组件消失时的过渡动画", "pages/animation/GeometryTransitionDemo"),
           new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1.ets|pages/animation/PageTransitionDemo_2.ets|pages/animation/PageTransitionDemo_3.ets"),
+          new Node2("Curve", "pages/animation/CurveDemo"),
         ]),
       ]
     let md = this.siteMapToMarkdown()
