@@ -44,7 +44,7 @@ struct MySample1 {
        * 1、先参看 TransitionDemo.ets 中的说明
        * 2、如果几何形状没有变化，则用不到 geometryTransition()
        * 3、以本例来说，要想几何形状的变化之间有过渡动画效果，除了指定 geometryTransition() 外
-       * 对 flag 的变化也要做动画处理（此处动画的时长就是几何变化动画的时长），类似如下
+       * 对 flag 的变化也要做动画处理（此处动画的时长对应的是几何形状变化的动画的时长），类似如下
        * animateTo({ duration: 1000 }, () => {
        *   this.flag = !this.flag;
        * })
