@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Curve", "pages/animation/CurveDemo"),
+          new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -133,6 +133,7 @@ struct Index {
           new Node2("DataPanel（数据面板）", "pages/component/display/DataPanelDemo"),
         ]),
         new Node1("组件（弹出类）", [
+          new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),
           new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
           new Node2("ActionSheet（列表弹框）", "pages/component/flyout/ActionSheetDemo"),
