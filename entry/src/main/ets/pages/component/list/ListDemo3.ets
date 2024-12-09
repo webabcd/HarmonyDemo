@@ -96,7 +96,7 @@ struct MySample2 {
          *     from - 拖动中的 item 的起始索引位置
          *     to - 拖动中的 item 的目标索引位置
          */
-        ForEach(this.array, (item: string) => {
+        ForEach(this.array, (item: number) => {
           ListItem() {
             Text(item.toString()).height(100).width('100%')
               .fontSize(48).fontColor(Color.White).textAlign(TextAlign.Center)
