@@ -123,7 +123,9 @@
     "pages/component/list/ListDemo2",
     "pages/component/list/ListDemo3",
     "pages/animation/CurveDemo",
-    "pages/component/flyout/PromptActionDemo"
+    "pages/component/flyout/PromptActionDemo",
+    "pages/component/list/ListDemo4",
+    "pages/component/layout/RefreshDemo"
   ],
   "window": {
     "designWidth": 720,
