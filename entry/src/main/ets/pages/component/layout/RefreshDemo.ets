@@ -19,6 +19,7 @@ struct RefreshDemo {
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
     }
   }
 }

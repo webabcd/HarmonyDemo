@@ -22,6 +22,7 @@ struct ScrollDemo {
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
     }
   }
 }

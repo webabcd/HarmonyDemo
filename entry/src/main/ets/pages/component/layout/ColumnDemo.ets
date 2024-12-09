@@ -34,6 +34,7 @@ struct ColumnDemo {
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
     }
   }
 }

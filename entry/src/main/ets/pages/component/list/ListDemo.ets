@@ -23,6 +23,7 @@ struct ListDemo {
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
     }
   }
 }

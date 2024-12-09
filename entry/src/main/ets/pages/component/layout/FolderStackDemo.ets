@@ -56,6 +56,7 @@ struct FolderStackDemo {
         this.message_HoverEventParam += `windowStatusType: ${status.windowStatusType}`
       })
       .backgroundColor(Color.Yellow)
+      .layoutWeight(1)
     }
   }
 }

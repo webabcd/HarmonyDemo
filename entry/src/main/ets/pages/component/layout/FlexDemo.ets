@@ -37,6 +37,7 @@ struct FlexDemo {
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
     }
   }
 }
