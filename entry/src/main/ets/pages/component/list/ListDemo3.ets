@@ -103,7 +103,7 @@ struct MySample2 {
               .backgroundColor(Color.Orange).borderRadius(20)
           }
           .margin({ left: 20, right: 20 })
-        }, (item: string) => item)
+        })
           .onMove((from:number, to:number) => {
             // 根据用户的操作排序数据
             let tmp = this.array.splice(from, 1);
