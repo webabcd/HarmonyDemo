@@ -13,8 +13,9 @@ struct ListDemo3 {
       TitleBar()
       Tabs() {
         TabContent() { MySample1() }.tabBar('多选').align(Alignment.Top)
-        TabContent() { MySample2() }.tabBar('排序').align(Alignment.Top)
-        TabContent() { MySample3() }.tabBar('横滑，删除，添加').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('ForEach 拖动排序').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('自定义拖动排序').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('横滑，删除，添加').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -80,6 +81,45 @@ struct MySample1 {
 @Component
 struct MySample2 {
 
+  @State message: string = ""
+  @State private array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      List({ space: 20, initialIndex: 0 }) {
+        /*
+         * List - 编辑列表
+         * 本例用于演示，如何通过 ForEach 的方式实现 ListItem 的拖动排序
+         *
+         * ForEach() 的第 3 个参数用于 List 的 ListItem 的拖动排序
+         *   onMove() - List 内的 ForEach() 内的 ListItem 的拖动排序操作后的回调
+         *     from - 拖动中的 item 的起始索引位置
+         *     to - 拖动中的 item 的目标索引位置
+         */
+        ForEach(this.array, (item: string) => {
+          ListItem() {
+            Text(item.toString()).height(100).width('100%')
+              .fontSize(48).fontColor(Color.White).textAlign(TextAlign.Center)
+              .backgroundColor(Color.Orange).borderRadius(20)
+          }
+          .margin({ left: 20, right: 20 })
+        }, (item: string) => item)
+          .onMove((from:number, to:number) => {
+            // 根据用户的操作排序数据
+            let tmp = this.array.splice(from, 1);
+            this.array.splice(to, 0, tmp[0])
+          })
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.Yellow)
+    }
+  }
+}
+
+@Component
+struct MySample3 {
+
   @State private array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   @State dragItem: number = -1 // 拖动中的 item 的索引位置
@@ -111,7 +151,7 @@ struct MySample2 {
     Stack() {
       /*
        * List - 编辑列表
-       * 本例用于演示，如何通过自己写代码的方式实现 ListItem 的拖动排序
+       * 本例用于演示，如何通过自定义的方式实现 ListItem 的拖动排序
        *
        * 注：我这里测试发现 List 的 onItemDragStart(), onItemDragEnter(), onItemDragMove(), onItemDragLeave(), onItemDrop() 均无效
        */
@@ -150,7 +190,7 @@ struct MySample2 {
                   // 计算拖动中的 ListItem 的位移距离
                   this.offsetY = event.offsetY - this.prevOffsetY
 
-                  // 排序数据
+                  // 根据用户的操作排序数据
                   if (this.offsetY > this.itemHeight / 2) {
                     animateTo({ curve: Curve.Ease }, () => {
                       this.offsetY -= this.itemHeight
@@ -188,7 +228,7 @@ struct MySample2 {
 }
 
 @Component
-struct MySample3 {
+struct MySample4 {
 
   @State message: string = ""
   @State message2: string = ""
