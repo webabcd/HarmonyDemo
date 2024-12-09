@@ -7,7 +7,7 @@ import { LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct ListDemo {
+struct ListDemo2 {
 
   build() {
     Column() {

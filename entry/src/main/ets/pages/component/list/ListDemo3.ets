@@ -6,7 +6,7 @@ import { TitleBar } from '../../TitleBar';
 
 @Entry
 @Component
-struct ListDemo {
+struct ListDemo3 {
 
   build() {
     Column() {
