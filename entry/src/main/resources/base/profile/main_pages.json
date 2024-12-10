@@ -125,7 +125,8 @@
     "pages/animation/CurveDemo",
     "pages/component/flyout/PromptActionDemo",
     "pages/component/list/ListDemo4",
-    "pages/component/layout/RefreshDemo"
+    "pages/component/layout/RefreshDemo",
+    "pages/component/list/ListDemo5"
   ],
   "window": {
     "designWidth": 720,

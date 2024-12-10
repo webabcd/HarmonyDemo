@@ -29,8 +29,7 @@ struct StatementDemo {
         })
 
       // UI 描述中支持 ForEach 语句
-      // ForEach() 的第 3 个参数用于 List 的 ListItem 的拖动排序，详见 /component/list/ListDemo3.ets 中的说明
-      // ForEach() 的性能优化的应用，详见 /component/list/ListDemo4.ets 中的说明
+      // ForEach() 的详细应用，请详见 /component/list/ListDemo5.ets 中的说明
       ForEach(this.list, (item: string) => {
         Text(item)
       })
