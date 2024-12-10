@@ -23,7 +23,8 @@ struct MyPage {
 
   // @BuilderParam 的作用就是用来指向 @Builder
   // 通过修改 @BuilderParam 的指向，则可以显示不同的组件
-  @BuilderParam myBuilderParam: () => void = this.myComponent;
+  // 注：组件中的 @BuilderParam 可以叠加 @Require，其代表在构造组件的时候必须要传参
+  @Require @BuilderParam myBuilderParam: () => void = this.myComponent;
 
   build() {
     Column() {

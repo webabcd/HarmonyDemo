@@ -18,9 +18,9 @@ import { TitleBar } from '../TitleBar';
 // 通过 struct 定义组件（不支持继承，请通过组合的方式来实现组件的复用以及界面的构建）
 struct Hello {
 
-  // 定义普通变量，更新此变量不会触发 UI 刷新
+  // 定义普通变量（声明时必须初始化）
   name: String = "webabcd"
-  // @State 表示组件中的状态变量，状态变量变化会触发 UI 刷新
+  // @State 表示组件中的状态变量（声明时必须初始化），状态变量变化会触发相关 UI 刷新
   @State message: string = 'Hello World';
 
   // 定义普通函数
@@ -46,7 +46,7 @@ struct Hello {
         .fontSize(16)
         .fontColor(Color.Blue)
       /*
-       * Button 是一个按钮组件（不用 new）
+       * Button 是一个按钮组件（构造 UI 组件的时候不用 new）
        *   组件参数有啥，可通过快捷键 ctrl + p 查看，比如 Button 的参数有 label 和 options
        *   本例的 options 参数是一个 ButtonOptions 接口，这个接口里有什么参数，可以在 {} 中通过快捷键 ctrl + alt + space 查看
        *   其中的 width(), height() 等是属性方法，支持链式调用
@@ -58,7 +58,7 @@ struct Hello {
         .width(90)
         .height(40)
         .onClick(() => {
-          // 修改 @State 变量，会触发 UI 刷新
+          // 修改 @State 变量，会触发相关 UI 刷新
           this.message = this.hello()
         })
       // 使用组件内部 @Builder 函数中定义的组件
