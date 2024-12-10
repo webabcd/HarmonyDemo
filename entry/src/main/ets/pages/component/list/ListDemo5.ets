@@ -150,7 +150,7 @@ struct MySample2 {
 
       Button('在位置 0 处添加一项')
         .onClick(() => {
-          this.array.unshift(Math.floor(Math.random() * Math.floor(1000)))
+          this.array.unshift(Math.floor(Math.random() * 1000))
         })
     }
   }

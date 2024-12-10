@@ -282,7 +282,7 @@ struct MySample3 {
       Column({space:10}) {
         Button('在位置 0 处添加一项')
           .onClick(() => {
-            this.array.unshift(Math.floor(Math.random() * Math.floor(1000)))
+            this.array.unshift(Math.floor(Math.random() * 1000))
           })
 
         Text(this.message).fontSize(16).fontColor(Color.White).backgroundColor(Color.Blue)
