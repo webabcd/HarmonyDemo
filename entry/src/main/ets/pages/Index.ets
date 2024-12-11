@@ -20,7 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("List（ForEach 的应用）", "pages/component/list/ListDemo5"),
+          new Node2("MVVM", "pages/state/mvvm/MVVMDemo"),
+          new Node2("v2 @ObservedV2/@Trace", "pages/state/v2/ObservedV2Demo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -63,8 +64,11 @@ struct Index {
         ]),
         new Node1("状态管理", [
           new Node2("@State", "pages/state/StateDemo"),
-          new Node2("@Prop, @Link, @Provide/@Consume, @Observed/@ObjectLink", "pages/state/PropDemo"),
-          new Node2("@Watch, @Track, $$", "pages/state/WatchDemo"),
+          new Node2("@Prop", "pages/state/PropDemo"),
+          new Node2("@Link", "pages/state/LinkDemo"),
+          new Node2("@ObjectLink/@Observed", "pages/state/ObjectLinkDemo"),
+          new Node2("@Provide/@Consume", "pages/state/ProvideConsumeDemo"),
+          new Node2("@Require, @Watch, @Track, $$", "pages/state/WatchDemo"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
           new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）",
@@ -158,6 +162,7 @@ struct Index {
           new Node2("List（分组列表）", "pages/component/list/ListDemo2"),
           new Node2("List（编辑列表）", "pages/component/list/ListDemo3"),
           new Node2("List（下拉刷新，上拉加载）", "pages/component/list/ListDemo4"),
+          new Node2("List（ForEach 的应用）", "pages/component/list/ListDemo5"),
         ]),
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),
