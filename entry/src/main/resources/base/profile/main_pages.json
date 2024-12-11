@@ -126,7 +126,11 @@
     "pages/component/flyout/PromptActionDemo",
     "pages/component/list/ListDemo4",
     "pages/component/layout/RefreshDemo",
-    "pages/component/list/ListDemo5"
+    "pages/component/list/ListDemo5",
+    "pages/state/mvvm/MVVMDemo",
+    "pages/state/LinkDemo",
+    "pages/state/ObjectLinkDemo",
+    "pages/state/ProvideDemo"
   ],
   "window": {
     "designWidth": 720,

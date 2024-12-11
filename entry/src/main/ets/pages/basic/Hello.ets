@@ -85,7 +85,8 @@ struct Hello {
 @Component
 struct MyComponent {
   // 组件参数，在调用此组件的时候可以传递此参数
-  message = ""
+  // 如果用 @Require 装饰，则代表在构造组件的时候必须要传参
+  @Require message = ""
   build() {
     Text(`MyComponent ${this.message}`)
       .fontSize(24)

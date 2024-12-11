@@ -1,12 +1,11 @@
 /*
- * @Prop - 用于父组件 @State 到子组件 @Prop 的单向同步
+ * @Link - 用于父组件 @State 与子组件 @Link 之间的双向同步
  *
  * 注：
- * 1、两个同步的变量之间是深拷贝的关系，会有相关的内存消耗
- * 2、支持对象的属性的父到子的单向同步，但是不支持对象的嵌套属性的父到子的单向同步
- * 3、组件中的 @Prop 装饰的变量可以初始化，也可以不初始化
- * 4、组件中的 @Prop 装饰的变量变化后，会更新当前组件中绑定了此变量的组件，这一点和 @State 是一样的
- * 5、组件中的 @State 和 @Prop 都可以叠加 @Require，其代表在构造组件的时候必须要传参
+ * 1、两个同步的变量是通过同一个地址共享的
+ * 2、支持对象的属性的双向同步，但是不支持对象的嵌套属性的双向同步
+ * 3、组件中的 @Link 装饰的变量不能初始化
+ * 4、组件中的 @Link 装饰的变量变化后，会更新当前组件中绑定了此变量的组件，这一点和 @State 是一样的
  */
 
 import { TitleBar } from '../TitleBar';
@@ -33,17 +32,17 @@ struct MyComponent1 {
 
   // 父的 age1 变化，不会触发子的 age1 的变化
   // 子的 age1 变化，不会触发父的 age1 的变化
-  @Require @State age1: number = 0;
+  @State age1: number = 0;
 
   // 父的 age2 变化，会触发子的 age2 的变化
-  // 子的 age2 变化，不会触发父的 age2 的变化
-  @Require @Prop age2: number;
+  // 子的 age2 变化，会触发父的 age2 的变化
+  @Link age2: number;
 
-  // 对象的属性也支持父到子的单向同步
-  @Require @Prop person1: Person;
+  // 对象的属性也支持父与子的双向同步
+  @Link person1: Person;
 
-  // 对象的嵌套属性不支持父到子的单向同步
-  @Require @Prop person2: Person;
+  // 对象的嵌套属性不支持父与子的双向同步
+  @Link person2: Person;
 
   build() {
     Column({ space: 10 }) {
@@ -65,7 +64,7 @@ struct MyComponent1 {
 // 用于演示父
 @Entry
 @Component
-struct PropDemo {
+struct LinkDemo {
 
   @State age1: number = 0
   @State age2: number = 0
