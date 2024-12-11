@@ -1,6 +1,7 @@
 /*
- * @Watch - 用于为状态变量指定变化后的回调函数
- * @Track - 对象的属性通过其装饰后可触发 UI 的更新
+ * @Require - 用于说明在构造组件的时候必须要传参，支持无装饰变量，以及 @Prop, @State, @Provide, @BuilderParam 装饰的变量
+ * @Watch - 用于为 @State, @Prop, @Link 装饰的状态变量指定变化后的回调函数
+ * @Track - 用于让对象的指定的属性变化后触发相关 UI 的更新（同对象的其他属性的变化不会触发相关 UI 的更新）
  * $$ - 用于为部分内置组件提供数据的双向同步功能
  */
 
@@ -9,7 +10,7 @@ import { TitleBar } from '../TitleBar';
 @Component
 struct MyComponent {
   // 通过 @Watch('xxx') 为状态变量指定名为 xxx 的回调函数
-  @Prop @Watch('onCountUpdated') count: number;
+  @Require @Prop @Watch('onCountUpdated') count: number;
   @State total: number = 0;
 
   // 通过 @Watch('onCountUpdated') 指定的名为 onCountUpdated 的回调函数
@@ -23,10 +24,10 @@ struct MyComponent {
 }
 
 class Person {
-  // 因为 name 有 @Track 装饰，所以 name 的变化会触发 UI 的更新（当然，前提是你的相关的对象需要是一个 @State 之类的状态变量）
-  // 注：如果整个类都没有 @Track 装饰器，则所有属性的变化都会触发 UI 的更新
+  // 因为 name 有 @Track 装饰，所以 name 的变化会刷新绑定了此对象的组件（当然，前提是你的相关的对象需要是一个 @State 之类的状态变量）
+  // 注：如果整个类都没有 @Track 装饰器，则所有属性的变化都会刷新绑定了此对象的组件
   @Track name: string;
-  // 当前类其他属性有 @Track 装饰，但是这个 age 没有 @Track 装饰，所以 age 的变化不会触发 UI 的更新
+  // 当前类其他属性有 @Track 装饰，但是这个 age 没有 @Track 装饰，所以 age 的变化不会刷新绑定了此对象的组件
   // 注：这种情况下 age 是不能显示到 UI 上的，否则会出现异常
   age: number;
   constructor(name: string, age: number) {

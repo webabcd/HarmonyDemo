@@ -130,7 +130,7 @@
     "pages/state/mvvm/MVVMDemo",
     "pages/state/LinkDemo",
     "pages/state/ObjectLinkDemo",
-    "pages/state/ProvideDemo"
+    "pages/state/ProvideConsumeDemo"
   ],
   "window": {
     "designWidth": 720,
