@@ -22,6 +22,8 @@ struct Index {
         new Node1("临时测试用", [
           new Node2("MVVM", "pages/state/mvvm/MVVMDemo"),
           new Node2("v2 @ObservedV2/@Trace", "pages/state/v2/ObservedV2Demo"),
+          new Node2("v2 @Local", "pages/state/v2/LocalDemo"),
+          new Node2("v2 @Param", "pages/state/v2/ParamDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),

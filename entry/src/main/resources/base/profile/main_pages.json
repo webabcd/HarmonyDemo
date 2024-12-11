@@ -131,7 +131,9 @@
     "pages/state/LinkDemo",
     "pages/state/ObjectLinkDemo",
     "pages/state/ProvideConsumeDemo",
-    "pages/state/v2/ObservedV2Demo"
+    "pages/state/v2/ObservedV2Demo",
+    "pages/state/v2/LocalDemo",
+    "pages/state/v2/ParamDemo"
   ],
   "window": {
     "designWidth": 720,
