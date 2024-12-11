@@ -8,6 +8,7 @@
  */
 
 import { TitleBar } from '../TitleBar';
+import { promptAction } from '@kit.ArkUI';
 
 // @ 开头的被称为装饰器，比如 @Entry, @Component, @State 等
 
@@ -67,7 +68,11 @@ struct Hello {
       myBuilder2()
       // 使用 @Component 的自定义组件，并为组件传递参数
       MyComponent({
-        message: "abc"
+        message: "abc",
+        // 回调函数
+        onCallback: () => {
+          this.message = 'MyComponent callback'
+        }
       })
     }.width('100%').height('100%')
   }
@@ -87,9 +92,16 @@ struct MyComponent {
   // 组件参数，在调用此组件的时候可以传递此参数
   // 如果用 @Require 装饰，则代表在构造组件的时候必须要传参
   @Require message = ""
+
+  // 定义回调函数
+  onCallback?: () => void;
+
   build() {
-    Text(`MyComponent ${this.message}`)
-      .fontSize(24)
-      .fontColor(Color.Red)
+    Button(`MyComponent ${this.message}`)
+      .onClick(() => {
+        if (this.onCallback) {
+          this.onCallback()
+        }
+      })
   }
 }
