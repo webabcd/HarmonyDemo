@@ -17,7 +17,6 @@ ets 的全称是 extended typescript
 通过 Previewer 可以快速查看 UI 效果，修改代码后不用重新编译即可快速看到修改后的效果，类似 flutter 的 hot reload，但是很多功能都无法使用
 通过 Simulator 可以使用较完整的功能，但是它不支持 hot reload
 
-
 /entry/src/main/resources/base/profile/main_pages.json 文件
-定义了 app 中包含的所有的页面路径，其中的第一条页面路径为 app 的入口
+定义了 app 中包含的所有的页面路径（页面中的 @Entry 装饰的组件为入口组件），其中的第一条页面路径为 app 的入口
 

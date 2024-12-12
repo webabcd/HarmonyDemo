@@ -20,9 +20,18 @@ class Person {
   @Trace age: number;
   // 当 Person 类的 name 或 age 发生变化时的回调（如果有嵌套属性的话，就类似 xxx.xxx.xxx 即可）
   @Monitor("name", "age")
-  onPropertyChange() {
+  onPropertyChange(monitor: IMonitor) {
     // 通过日志可以看到 name 和 age 的变化，会在此处监听到
     MyLog.d(`Person name:${this.name}, age:${this.age}`)
+    // 通过如下方式可以遍历所有被监听的属性的变化，并拿到之前的值和之后的值
+    monitor.dirty.forEach((path: string) => {
+      MyLog.d(`Person ${path} before:${monitor.value(path)?.before}, now:${monitor.value(path)?.now}`)
+    })
+  }
+  @Monitor("age")
+  onAgeChange(monitor: IMonitor) {
+    // 如果只监听一个属性的变化，则可以通过如下方式拿到之前的值和之后的值
+    MyLog.d(`Person age before:${monitor.value()?.before}, now:${monitor.value()?.now}`)
   }
   constructor(name: string, age: number) {
     this.name = name;
@@ -38,9 +47,18 @@ struct MonitorDemo {
   @Local age: number = 44;
   // 当 MonitorDemo 组件的 name 或 age 发生变化时的回调
   @Monitor("name", "age")
-  onPropertyChange() {
+  onPropertyChange(monitor: IMonitor) {
     // 通过日志可以看到 name 和 age 的变化，会在此处监听到
     MyLog.d(`MonitorDemo name:${this.name}, age:${this.age}`)
+    // 通过如下方式可以遍历所有被监听的变量的变化，并拿到之前的值和之后的值
+    monitor.dirty.forEach((path: string) => {
+      MyLog.d(`MonitorDemo ${path} before:${monitor.value(path)?.before}, now:${monitor.value(path)?.now}`)
+    })
+  }
+  @Monitor("age")
+  onAgeChange(monitor: IMonitor) {
+    // 如果只监听一个变量的变化，则可以通过如下方式拿到之前的值和之后的值
+    MyLog.d(`MonitorDemo age before:${monitor.value()?.before}, now:${monitor.value()?.now}`)
   }
   person: Person = new Person("webabcd", 44)
 
