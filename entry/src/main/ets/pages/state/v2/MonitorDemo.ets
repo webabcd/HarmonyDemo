@@ -2,8 +2,8 @@
  * v2 @Provider()/@Consumer() - v2 版状态管理
  *   @Require - 用于说明在构造组件的时候必须要传参，支持无装饰变量，以及 @Param 装饰的变量
  *   @Monitor - 用于监听指定的变量或属性，并提供回调函数
- *     1、可以监听 @Local, @Param, @Provider, @Consumer, @Computed 装饰的状态变量（如果变量是一个对象，只能监听到对象本身的变化）
- *     2、可以监听 @ObservedV2 类的 @Trace 属性的变化
+ *     1、可以在组件中监听 @Local, @Param, @Provider, @Consumer, @Computed 装饰的状态变量（如果变量是一个 @ObservedV2 对象，那也可以监听它的 @Trace 属性）
+ *     2、可以在对象中监听 @ObservedV2 类的 @Trace 属性的变化
  *     3、无法监听 array, set, map 之类的增删改
  *   @Computed - 用于装饰 getter
  *     当 @Computed 装饰的 getter 中使用的变量发生变化时，如果多次调用 @Computed 装饰的 getter，则这个 getter 中的逻辑只会被执行一次
@@ -55,10 +55,11 @@ struct MonitorDemo {
       MyLog.d(`MonitorDemo ${path} before:${monitor.value(path)?.before}, now:${monitor.value(path)?.now}`)
     })
   }
-  @Monitor("age")
+  // 通过这个方式可以监听对象的属性的变化
+  @Monitor("person.age")
   onAgeChange(monitor: IMonitor) {
     // 如果只监听一个变量的变化，则可以通过如下方式拿到之前的值和之后的值
-    MyLog.d(`MonitorDemo age before:${monitor.value()?.before}, now:${monitor.value()?.now}`)
+    MyLog.d(`MonitorDemo person.age before:${monitor.value()?.before}, now:${monitor.value()?.now}`)
   }
   person: Person = new Person("webabcd", 44)
 
