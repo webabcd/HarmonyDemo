@@ -9,9 +9,7 @@
  *     当 @Computed 装饰的 getter 中使用的变量发生变化时，如果多次调用 @Computed 装饰的 getter，则这个 getter 中的逻辑只会被执行一次
  *   !! - 自定义双向绑定
  *
- * 注：
- * 1、v2 版状态管理与 v1 版状态管理（比如 @State 之类的）不可混用
- * 2、使用 v2 版状态管理的组件要用 @ComponentV2 装饰
+ * 注：使用 v2 版状态管理的组件要用 @ComponentV2 装饰
  */
 
 import { MyLog, TitleBar } from '../../TitleBar';

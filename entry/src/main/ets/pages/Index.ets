@@ -70,7 +70,7 @@ struct Index {
           new Node2("@Require, @Watch, @Track, $$", "pages/state/WatchDemo"),
           new Node2("v2 @ObservedV2/@Trace", "pages/state/v2/ObservedV2Demo"),
           new Node2("v2 @Local", "pages/state/v2/LocalDemo"),
-          new Node2("v2 @Param, @Event", "pages/state/v2/ParamDemo"),
+          new Node2("v2 @Param, @Once, @Event", "pages/state/v2/ParamDemo"),
           new Node2("v2 @Provider()/@Consumer()", "pages/state/v2/ProviderConsumerDemo"),
           new Node2("v2 @Require, @Monitor, @Computed, !!", "pages/state/v2/MonitorDemo"),
         ]),

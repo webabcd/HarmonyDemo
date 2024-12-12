@@ -8,9 +8,7 @@
  * 3、无法监测对象的属性的变化，需要的话可以使用 @ObservedV2/@Trace，请参见 /state/v2/ObservedV2Demo.ets 中的说明
  * 4、@Local 装饰的变量声明时必须初始化，且不允许构造组件时从外部初始化 @Local 装饰的变量
  *
- * 注：
- * 1、v2 版状态管理与 v1 版状态管理（比如 @State 之类的）不可混用
- * 2、使用 v2 版状态管理的组件要用 @ComponentV2 装饰
+ * 注：使用 v2 版状态管理的组件要用 @ComponentV2 装饰
  */
 
 import { TitleBar } from '../../TitleBar';

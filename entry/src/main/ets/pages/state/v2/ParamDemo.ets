@@ -1,7 +1,8 @@
 /*
- * v2 @Param, @Event - v2 版状态管理
+ * v2 @Param, @Once, @Event - v2 版状态管理
  *   @Local 装饰的变量可以监测组件内变量本身的变化，有变化则刷新绑定了此变量的组件（参见 LocalDemo.ets 中的说明）
  *   @Param 装饰的变量用于父到子的同步，子收到变化后会刷新子的绑定了此变量的组件
+ *   @Once 必须要结合 @Param 一起使用，代表只能父到子同步一次
  *   @Event 装饰用于定义回调函数，以便自定义子到父的数据传递
  *
  * 说明：
@@ -10,9 +11,7 @@
  * 3、v2 组件中定义回调函数时，要通过 @Event 装饰，否则无法在构造组件时从外部传参
  * 4、如需监测对象的属性的变化，请参见 /state/v2/ObservedV2Demo.ets 中的说明
  *
- * 注：
- * 1、v2 版状态管理与 v1 版状态管理（比如 @State 之类的）不可混用
- * 2、使用 v2 版状态管理的组件要用 @ComponentV2 装饰
+ * 注：使用 v2 版状态管理的组件要用 @ComponentV2 装饰
  */
 
 import { TitleBar } from '../../TitleBar';
@@ -31,6 +30,10 @@ class Person {
 struct MyComponent1 {
   @Require @Param person: Person = new Person("", 0)
   @Event onCallback: (person: Person) => void = (person: Person) => {};
+
+  // 像下面这样 @Param @Once 代表只能父到子同步一次，这里指的是 person 本身只能父到子同步一次
+  // 而 person 是 @ObservedV2 的且其属性是 @Trace 的，所以它的属性的双向同步是不受影响的
+  // @Require @Param @Once person: Person = new Person("", 0)
 
   build() {
     Column({ space: 10 }) {
