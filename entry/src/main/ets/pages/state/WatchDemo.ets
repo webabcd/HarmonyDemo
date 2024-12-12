@@ -45,7 +45,6 @@ struct WatchDemo {
   @State person: Person = new Person('webabcd', 44);
 
   @State text: string = 'abc'
-  controller: TextInputController = new TextInputController()
 
   build() {
     Column({ space: 10 }) {
@@ -75,7 +74,6 @@ struct WatchDemo {
       // 注：只有部分组件的部分属性才支持此功能，比如 Checkbox 的 select 属性，Slider 的 value 属性等，详见各个组件的相关文档
       TextInput({
         text: $$this.text,
-        controller: this.controller
       })
     }
   }
