@@ -32,7 +32,7 @@ class Person {
 @Component
 struct MyComponent1 {
 
-  // 子通过 @Consume('xxx') 标记的属性会与前辈的 @Provide 标记的名为 xxx 属性做双向同步
+  // 子通过 @Consume('xxx') 装饰的属性会与前辈的 @Provide 装饰的名为 xxx 属性做双向同步
   // 如果子的属性与前辈的属性的名称相同，则 @Consume('xxx') 可以简写为 @Consume
   @Consume age: number;
   @Consume person1: Person;
@@ -65,7 +65,7 @@ struct MyComponent1 {
 @Component
 struct ProvideDemo {
 
-  // 父通过 @Provide('xxx') 标记的属性会与后代的 @Consume 标记的名为 xxx 属性做双向同步
+  // 父通过 @Provide('xxx') 装饰的属性会与后代的 @Consume 装饰的名为 xxx 属性做双向同步
   // 如果父的属性与后代的属性的名称相同，则 @Provide('xxx') 可以简写为 @Provide
   @Provide age: number = 0;
   @Provide person1: Person = new Person(new Name("webabcd"), 44)

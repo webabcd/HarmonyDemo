@@ -21,9 +21,7 @@ struct Index {
       [
         new Node1("临时测试用", [
           new Node2("MVVM", "pages/state/mvvm/MVVMDemo"),
-          new Node2("v2 @ObservedV2/@Trace", "pages/state/v2/ObservedV2Demo"),
-          new Node2("v2 @Local", "pages/state/v2/LocalDemo"),
-          new Node2("v2 @Param", "pages/state/v2/ParamDemo"),
+          new Node2("v2 @Require, @Monitor, @Computed, !!", "pages/state/v2/ParamDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -71,6 +69,10 @@ struct Index {
           new Node2("@ObjectLink/@Observed", "pages/state/ObjectLinkDemo"),
           new Node2("@Provide/@Consume", "pages/state/ProvideConsumeDemo"),
           new Node2("@Require, @Watch, @Track, $$", "pages/state/WatchDemo"),
+          new Node2("v2 @ObservedV2/@Trace", "pages/state/v2/ObservedV2Demo"),
+          new Node2("v2 @Local", "pages/state/v2/LocalDemo"),
+          new Node2("v2 @Param, @Event", "pages/state/v2/ParamDemo"),
+          new Node2("v2 @Provider()/@Consumer()", "pages/state/v2/ProviderConsumerDemo"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
           new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）",

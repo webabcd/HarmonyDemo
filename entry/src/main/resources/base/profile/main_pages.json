@@ -133,7 +133,9 @@
     "pages/state/ProvideConsumeDemo",
     "pages/state/v2/ObservedV2Demo",
     "pages/state/v2/LocalDemo",
-    "pages/state/v2/ParamDemo"
+    "pages/state/v2/ParamDemo",
+    "pages/state/v2/MonitorDemo",
+    "pages/state/v2/ProviderConsumerDemo"
   ],
   "window": {
     "designWidth": 720,
