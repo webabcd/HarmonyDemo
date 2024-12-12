@@ -1,11 +1,16 @@
 /*
- * @Provider()/@Consumer() - 用于父组件 @Provider() 与子组件 @Consumer() 之间的双向同步
+ * v2 @Provider()/@Consumer() - v2 版状态管理
+ *   用于父组件 @Provider() 与子组件 @Consumer() 之间的双向同步
  *
  * 注：
  * 1、@Provider() 在其所在组件为祖先节点的整棵树下，与其所有后代节点的 @Consumer() 共享
  * 2、如果需要对象的属性的双向同步，则可以结合 @ObservedV2/@Trace 一起实现，参见 /state/v2/ObservedV2Demo.ets 中的说明
  * 3、需要同步的变量之间是通过指定的名称绑定的，而不是通过传参绑定的
  * 4、@Provider()/@Consumer() 装饰的变量变化后，会更新当前组件中绑定了此变量的组件
+ *
+ * 注：
+ * 1、v2 版状态管理与 v1 版状态管理（比如 @State 之类的）不可混用
+ * 2、使用 v2 版状态管理的组件要用 @ComponentV2 装饰
  */
 
 import { TitleBar } from '../../TitleBar';
