@@ -1,5 +1,5 @@
 /*
- * v2 @Provider()/@Consumer() - v2 版状态管理
+ * v2 @Require, @Monitor, @Computed, !! - v2 版状态管理
  *   @Require - 用于说明在构造组件的时候必须要传参，支持无装饰变量，以及 @Param 装饰的变量
  *   @Monitor - 用于监听指定的变量或属性，并提供回调函数
  *     1、可以在组件中监听 @Local, @Param, @Provider, @Consumer, @Computed 装饰的状态变量（如果变量是一个 @ObservedV2 对象，那也可以监听它的 @Trace 属性）
