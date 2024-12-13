@@ -76,6 +76,33 @@ struct ClassDemo {
 }
 
 {
+  class Animal {
+    name:string;
+    constructor(name:string) {
+      this.name = name;
+    }
+    hello():string {
+      return `hello`;
+    }
+  }
+  // 类通过 extends 继承
+  class Dog extends Animal {
+    constructor(name:string) {
+      // 调用父类的构造函数
+      super("dog name:" + name);
+    }
+    hello():string {
+      // 调用父类的方法
+      return `${super.hello()}`;
+    }
+  }
+
+  let dog:Dog = new Dog("collie");
+  MyLog.d(dog.name); // dog name:collie
+  MyLog.d(dog.hello()); // hello
+}
+
+{
   // 抽象类不允许被实例化
   abstract class Animal {
     public name: string;
