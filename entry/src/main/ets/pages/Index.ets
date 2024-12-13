@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("MVVM", "pages/state/mvvm/MVVMDemo"),
+          new Node2("MVVM", "pages/state/mvvm/MVVMDemo", "pages/state/mvvm/model/MyModel.ets|pages/state/mvvm/view/MyTopView.ets|pages/state/mvvm/view/MyBottomView.ets|pages/state/mvvm/view/MyListView.ets|pages/state/mvvm/viewmodel/MyViewModel.ets"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -73,7 +73,7 @@ struct Index {
           new Node2("v2 @Param, @Once, @Event", "pages/state/v2/ParamDemo"),
           new Node2("v2 @Provider()/@Consumer()", "pages/state/v2/ProviderConsumerDemo"),
           new Node2("v2 @Require, @Monitor, @Computed, !!", "pages/state/v2/MonitorDemo"),
-          new Node2("MVVM", "pages/state/mvvm/MVVMDemo"),
+          new Node2("MVVM", "pages/state/mvvm/MVVMDemo", "pages/state/mvvm/model/MyModel.ets|pages/state/mvvm/view/MyTopView.ets|pages/state/mvvm/view/MyBottomView.ets|pages/state/mvvm/view/MyListView.ets|pages/state/mvvm/viewmodel/MyViewModel.ets"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
           new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）",
