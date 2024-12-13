@@ -135,7 +135,9 @@
     "pages/state/v2/LocalDemo",
     "pages/state/v2/ParamDemo",
     "pages/state/v2/MonitorDemo",
-    "pages/state/v2/ProviderConsumerDemo"
+    "pages/state/v2/ProviderConsumerDemo",
+    "pages/component/list/ListDemo6",
+    "pages/component/list/ListDemo7"
   ],
   "window": {
     "designWidth": 720,

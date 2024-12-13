@@ -12,8 +12,9 @@ struct ListDemo5 {
     Column() {
       TitleBar()
       Tabs() {
-        TabContent() { MySample1() }.tabBar('排序').align(Alignment.Top)
+        TabContent() { MySample1() }.tabBar('拖动排序').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('性能优化').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('大量数据').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -52,6 +53,7 @@ struct MySample1 {
         })
           .onMove((from:number, to:number) => {
             // 根据用户的操作排序数据
+            // 注：这里的代码仅用于更新数据源，而界面上的排序是由框架自己实现的（也就是说即使没有下面的代码，也不影响界面上的排序）
             let tmp = this.array.splice(from, 1);
             this.array.splice(to, 0, tmp[0])
           })
@@ -63,6 +65,26 @@ struct MySample1 {
   }
 }
 
+@Component
+struct MyItem {
+  type: string = ""
+  item: string = "";
+
+  aboutToAppear() {
+    // 每次 item 创建都会打印这个日志，可以通过此日志理解 ForEach() 的第 3 个参数的意义
+    MyLog.d(`${this.type} item:${this.item}`)
+  }
+
+  build() {
+    ListItem() {
+      Text(this.item).width('100%')
+        .fontSize(24).textAlign(TextAlign.Center)
+        .backgroundColor(Color.Orange).borderRadius(20)
+        .height(50)
+    }
+    .margin({ left: 20, right: 20 })
+  }
+}
 @Component
 struct MySample2 {
 
@@ -85,9 +107,7 @@ struct MySample2 {
 
         List({ space: 20 }) {
           ForEach(this.array, (item: number) => {
-            MyItem({
-              type: 'keyGenerator1',
-              item: `${item}`
+            MyItem({ type: 'keyGenerator1', item: `${item}`
             })
           },
             /*
@@ -107,10 +127,7 @@ struct MySample2 {
 
         List({ space: 20 }) {
           ForEach(this.array, (item: number) => {
-            MyItem({
-              type: 'keyGenerator2',
-              item: `${item}`
-            })
+            MyItem({ type: 'keyGenerator2', item: `${item}` })
           },
             /*
              * 自定义 ForEach() 的键值生成逻辑
@@ -127,10 +144,7 @@ struct MySample2 {
 
         List({ space: 20 }) {
           ForEach(this.array, (item: number) => {
-            MyItem({
-              type: 'keyGenerator3',
-              item: `${item}`
-            })
+            MyItem({ type: 'keyGenerator3', item: `${item}` })
           },
             /*
              * 自定义 ForEach() 的键值生成逻辑
@@ -157,22 +171,40 @@ struct MySample2 {
 }
 
 @Component
-struct MyItem {
-  type: string = ""
-  item: string = "";
+struct MySample3 {
 
-  aboutToAppear() {
-    // 每次 item 创建都会打印这个日志，可以通过此日志理解 ForEach() 的第 3 个参数的意义
-    MyLog.d(`${this.type} item:${this.item}`)
-  }
+  @State array: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
 
   build() {
-    ListItem() {
-      Text(this.item).width('100%')
-        .fontSize(24).textAlign(TextAlign.Center)
-        .backgroundColor(Color.Orange).borderRadius(20)
-        .height(50)
+    Stack({ alignContent: Alignment.TopStart }) {
+      Column() {
+
+        /*
+         * List - ForEach 的应用
+         * 测试本例会发现，显示 List 后每个 ListItem 都会 onAppear()
+         * 当显示大量数据时会占用较多的资源
+         * 如果想要 ListItem 根据 List 的滚动位置，按需 onAppear() 和 onDisAppear() 则可以使用 LazyForEach（请参见 ListDemo6.ets 中的说明）
+         */
+
+        List({ space: 20 }) {
+          ForEach(this.array, (item: string, index: number) => {
+            ListItem() {
+              Text(item).width('100%')
+                .fontSize(48).textAlign(TextAlign.Center)
+                .backgroundColor(Color.Orange).borderRadius(20)
+                .height(100)
+            }
+            .margin({ left: 20, right: 20 })
+            .onAppear(() => {
+              MyLog.d(`onAppear: ${index}`)
+            })
+            .onDisAppear(() => {
+              MyLog.d(`onDisAppear: ${index}`)
+            })
+          }, (item: string) => item)
+        }
+        .backgroundColor(Color.Yellow)
+      }
     }
-    .margin({ left: 20, right: 20 })
   }
 }
