@@ -98,11 +98,11 @@ struct BuilderDemo {
       }, this.message)
 
       MyPage({
-        // this.myBuilder5 是 @Builder 装饰的，会导致 this.myBuilder5 内的 this 指向的是 BuilderDemo 对象
+        // this.myBuilder5 是 @Builder 装饰的，会导致 this.myBuilder5 内的 this 指向的是 MyPage 对象
         myBuilderParam: this.myBuilder5
       })
       MyPage({
-        // this.myBuilder6 是 @LocalBuilder 装饰的，会导致 this.myBuilder6 内的 this 指向的是 MyPage 对象
+        // this.myBuilder6 是 @LocalBuilder 装饰的，会导致 this.myBuilder6 内的 this 指向的是 BuilderDemo 对象
         myBuilderParam: this.myBuilder6
       })
       MyPage() {
