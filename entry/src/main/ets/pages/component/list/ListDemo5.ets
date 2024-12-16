@@ -85,6 +85,7 @@ struct MyItem {
     .margin({ left: 20, right: 20 })
   }
 }
+
 @Component
 struct MySample2 {
 
