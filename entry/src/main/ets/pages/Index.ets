@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("List（Repeat 的应用）", "pages/component/list/ListDemo7"),
+          new Node2("@AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）", "pages/animation/AnimatableExtendDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -189,13 +189,14 @@ struct Index {
         ]),
         new Node1("动画", [
           new Node2("属性动画", "pages/animation/AnimationDemo"),
+          new Node2("@AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）", "pages/animation/AnimatableExtendDemo"),
           new Node2("显式动画", "pages/animation/AnimationToDemo"),
           new Node2("关键帧动画", "pages/animation/KeyframeAnimateDemo"),
           new Node2("路径动画", "pages/animation/MotionPathDemo"),
           new Node2("单个组件显示和消失时的过渡动画", "pages/animation/TransitionDemo"),
           new Node2("一组件显示一组件消失时的过渡动画", "pages/animation/GeometryTransitionDemo"),
           new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1.ets|pages/animation/PageTransitionDemo_2.ets|pages/animation/PageTransitionDemo_3.ets"),
-          new Node2("Curve", "pages/animation/CurveDemo"),
+          new Node2("Curve（动画曲线）", "pages/animation/CurveDemo"),
         ]),
       ]
     let md = this.siteMapToMarkdown()

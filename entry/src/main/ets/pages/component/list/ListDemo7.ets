@@ -26,8 +26,8 @@ struct ListDemo7 {
 
 @ComponentV2
 struct MyItem1 {
-  @Param @Require type: string;
-  @Param @Require item: string;
+  @Param type: string = "";
+  @Param item: string = "";
 
   aboutToAppear() {
     MyLog.d(`${this.type} aboutToAppear:${this.item}`)
@@ -98,7 +98,7 @@ struct MySample1 {
 
 @ComponentV2
 struct MyItem2 {
-  @Param @Require item: string;
+  @Param item: string = "";
 
   aboutToAppear() {
     MyLog.d(`aboutToAppear:${this.item}`)

@@ -2,7 +2,8 @@
  * 属性动画
  *
  * 通过 animation() 实现属性动画（当某些属性的值发生变化时，执行对应的动画效果）
- * 支持的属性有 width, height, backgroundColor, opacity, scale, rotate, translate 等
+ * 支持的属性有 width, height, backgroundColor, opacity, scale, rotate, translate 等，这些属性称之为可动画属性
+ * 如果想让不可动画属性支持 animation() 动画，则可以通过 @AnimatableExtend 结合 AnimatableArithmetic<T> 实现，详见 AnimatableExtendDemo.ets 中的说明
  *
  * 关于 scale, rotate, translate 请参见 /component/shape/TransformDemo.ets 中的说明
  */
