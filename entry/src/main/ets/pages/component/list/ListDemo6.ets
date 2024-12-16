@@ -84,14 +84,14 @@ struct MySample1 {
           MyItem({
             item:`${item}`
           })
-          .onAppear(() => {
-            // item 挂载到组件树上时
-            MyLog.d(`onAppear:${index}`)
-          })
-          .onDisAppear(() => {
-            // item 从组件树上卸载时
-            MyLog.d(`onDisAppear:${index}`)
-          })
+            .onAppear(() => {
+              // item 挂载到组件树上时
+              MyLog.d(`onAppear:${index}`)
+            })
+            .onDisAppear(() => {
+              // item 从组件树上卸载时
+              MyLog.d(`onDisAppear:${index}`)
+            })
         }, (item: string, index: number) => item)
           .onMove((from:number, to:number) => {
             // 注：这里的代码仅用于更新数据源，而界面上的排序是由框架自己实现的（也就是说即使没有下面的代码，也不影响界面上的排序）
