@@ -30,11 +30,11 @@ struct MyItem {
   item: string = "";
 
   aboutToAppear() {
-    MyLog.d(`aboutToAppear :${this.item}`)
+    MyLog.d(`aboutToAppear:${this.item}`)
   }
 
   aboutToDisappear(): void {
-    MyLog.d(`aboutToDisappear :${this.item}`)
+    MyLog.d(`aboutToDisappear:${this.item}`)
   }
 
   build() {
@@ -45,6 +45,14 @@ struct MyItem {
         .height(50)
     }
     .margin({ left: 20, right: 20 })
+    .onAppear(() => {
+      // item 挂载到组件树上时
+      MyLog.d(`onAppear:${this.item}`)
+    })
+    .onDisAppear(() => {
+      // item 从组件树上卸载时
+      MyLog.d(`onDisAppear:${this.item}`)
+    })
   }
 }
 @Component
@@ -84,14 +92,6 @@ struct MySample1 {
           MyItem({
             item:`${item}`
           })
-            .onAppear(() => {
-              // item 挂载到组件树上时
-              MyLog.d(`onAppear:${index}`)
-            })
-            .onDisAppear(() => {
-              // item 从组件树上卸载时
-              MyLog.d(`onDisAppear:${index}`)
-            })
         }, (item: string, index: number) => item)
           .onMove((from:number, to:number) => {
             // 注：这里的代码仅用于更新数据源，而界面上的排序是由框架自己实现的（也就是说即使没有下面的代码，也不影响界面上的排序）
