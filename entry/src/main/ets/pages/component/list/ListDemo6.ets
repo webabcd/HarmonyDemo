@@ -98,7 +98,7 @@ struct MySample1 {
             this.data.moveData_withoutNotify(from, to)
           })
       }
-      .cachedCount(2)
+      .cachedCount(5)
     }
     .margin({ left: 20, right: 20 })
   }
