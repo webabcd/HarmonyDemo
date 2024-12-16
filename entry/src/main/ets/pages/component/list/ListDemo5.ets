@@ -72,7 +72,7 @@ struct MyItem {
 
   aboutToAppear() {
     // 每次 item 创建都会打印这个日志，可以通过此日志理解 ForEach() 的第 3 个参数的意义
-    MyLog.d(`${this.type} item:${this.item}`)
+    MyLog.d(`${this.type} aboutToAppear:${this.item}`)
   }
 
   build() {
@@ -99,8 +99,10 @@ struct MySample2 {
          * 本例用于演示，如何通过 ForEach() 的第 3 个参数做性能优化
          *
          * ForEach() 的第 3 个参数用于生成 item 的键值
-         * 每个 item 在渲染时
+         * 开始时，ForEach() 中的每个 item 都会被挂载到组件树上，即每个 item 都会走到 onAppear()
+         * 然后每个 item 在渲染时会遵循如下规则
          * 1、内存中没有对应的键值的 item，则会新建 item 后渲染
+         * 注：新建 item 时会走到组件的 aboutToAppear()，然后这个 item 就会以其键值为标识被保存到内存中
          * 2、内存中有对应的键值的 item，且之前未被渲染，则直接渲染这个 item
          * 3、内存中有对应的键值的 item，且之前已被渲染，则不再做任何渲染
          */
@@ -115,8 +117,7 @@ struct MySample2 {
              * 根据打印的日志理解
              * 点击本例的按钮，在位置 0 处添加一项，会导致所有 item 的键值都发生变化
              *
-             * 所以，开发时要注意，如果默认的键值生成逻辑会导致相同的 item 在某些情况下生成不同的键值，
-             * 那么就应该通过自定义键值生成逻辑做优化，一般来说用每个 item 的唯一标识做键值会比较好
+             * 所以，实际开发时建议用每个 item 的唯一标识做键值
              */
             (item: object, index: number) => {
               return index + '__' + JSON.stringify(item);
@@ -134,8 +135,7 @@ struct MySample2 {
              * 根据打印的日志理解
              * 点击本例的按钮，在位置 0 处添加一项，不会导致其他 item 的键值发生变化
              *
-             * 所以，开发时要注意，如果默认的键值生成逻辑会导致相同的 item 在某些情况下生成不同的键值，
-             * 那么就应该通过自定义键值生成逻辑做优化，一般来说用每个 item 的唯一标识做键值会比较好
+             * 所以，实际开发时建议用每个 item 的唯一标识做键值
              */
             (item: number) => item.toString())
         }
@@ -151,8 +151,9 @@ struct MySample2 {
              * 根据打印的日志理解
              * 本例的 List 永远都只会渲染 5 个 item 且每个 item 的显示内容不变
              * 即使点击本例的按钮，在位置 0 处添加一项后，也只会渲染 5 个 item 且每个 item 的显示内容不变（item 的顺序可能会有变化）
-             *
              * 开发时要注意这个问题
+             *
+             * 所以，实际开发时建议用每个 item 的唯一标识做键值
              */
             (item: number) => {
               return (item % 5).toString()
@@ -181,7 +182,7 @@ struct MySample3 {
 
         /*
          * List - ForEach 的应用
-         * 测试本例会发现，显示 List 后每个 ListItem 都会 onAppear()
+         * 测试本例会发现，开始时每个 item 都会被挂载到组件树上，即每个 item 都会走到 onAppear()
          * 当显示大量数据时会占用较多的资源
          * 如果想要 ListItem 根据 List 的滚动位置，按需 onAppear() 和 onDisAppear() 则可以使用 LazyForEach（请参见 ListDemo6.ets 中的说明）
          */
@@ -189,17 +190,16 @@ struct MySample3 {
         List({ space: 20 }) {
           ForEach(this.array, (item: string, index: number) => {
             ListItem() {
-              Text(item).width('100%')
-                .fontSize(48).textAlign(TextAlign.Center)
-                .backgroundColor(Color.Orange).borderRadius(20)
-                .height(100)
+              MyItem({ type: 'xxx', item: `${item}` })
             }
             .margin({ left: 20, right: 20 })
             .onAppear(() => {
-              MyLog.d(`onAppear: ${index}`)
+              // item 挂载到组件树上时
+              MyLog.d(`onAppear:${index}`)
             })
             .onDisAppear(() => {
-              MyLog.d(`onDisAppear: ${index}`)
+              // item 从组件树上卸载时
+              MyLog.d(`onDisAppear:${index}`)
             })
           }, (item: string) => item)
         }

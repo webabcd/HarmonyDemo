@@ -1,8 +1,8 @@
 /*
  * List - LazyForEach 的应用
  *
- * LazyForEach 支持懒加载（仅在 List, Grid, Swiper, WaterFlow 中有效）
- * 懒加载的意思就是，一个显示大量数据的 List 滚动后，会挂载（onAppear）正在显示的 item，且会卸载（onDisAppear）未显示的 item，从而减少资源占用
+ * LazyForEach 支持懒挂载（仅在 List, Grid, Swiper, WaterFlow 中有效）
+ * 懒挂载的意思就是，一个显示大量数据的 List 滚动后，会挂载（onAppear）正在显示的 item，且会卸载（onDisAppear）未显示的 item，从而减少资源占用
  */
 
 import { MyLog, TitleBar } from '../../TitleBar';
@@ -25,7 +25,28 @@ struct ListDemo6 {
   }
 }
 
+@Component
+struct MyItem {
+  item: string = "";
 
+  aboutToAppear() {
+    MyLog.d(`aboutToAppear :${this.item}`)
+  }
+
+  aboutToDisappear(): void {
+    MyLog.d(`aboutToDisappear :${this.item}`)
+  }
+
+  build() {
+    ListItem() {
+      Text(this.item).width('100%')
+        .fontSize(24).textAlign(TextAlign.Center)
+        .backgroundColor(Color.Orange).borderRadius(20)
+        .height(50)
+    }
+    .margin({ left: 20, right: 20 })
+  }
+}
 @Component
 struct MySample1 {
 
@@ -45,27 +66,31 @@ struct MySample1 {
 
       /*
        * List - 列表
-       *   cachedCount() - 指定预加载的 item 的数量
-       *     要支持 item 的预加载，需要使用 LazyForEach
-       *     每次除了挂载可视区的 item 外，还会在上和下分别预加载指定数量的 item（其他的 item 会被卸载）
+       *   cachedCount() - 指定预挂载的 item 的数量
+       *     要支持 item 的预挂载，需要使用 LazyForEach
+       *     每次除了挂载可视区的 item 外，还会在上和下分别预挂载指定数量的 item（其他的 item 会被卸载）
        *
-       * LazyForEach 的第 3 个参数是 keyGenerator 用于生成 item 的键值，其作用请参见 ListDemo5.ets 中的说明
-       * LazyForEach 的 onMove() 用于实现拖动排序，请参见 ListDemo5.ets 中的说明
+       * LazyForEach - 在 ForEach 的基础上支持懒挂载
+       *   LazyForEach 的第 3 个参数是 keyGenerator 用于生成 item 的键值，其作用请参见 ListDemo5.ets 中的说明
+       *   LazyForEach 的 onMove() 用于实现拖动排序，请参见 ListDemo5.ets 中的说明
+       *
+       * 注：
+       * 1、item 被创建时会走到 aboutToAppear，item 被销毁时会走到 aboutToDisappear
+       * 2、item 挂载到组件树上时会走到 onAppear，item 从组件树上卸载时会走到 onDisAppear
+       * 3、item 从组件树上卸载之后，就会被销毁，下次再使用时会重新创建
        */
       List({ space: 10 }) {
         LazyForEach(this.data, (item: string, index: number) => {
-          ListItem() {
-            Text(item.toString()).height(50).width('100%')
-              .fontSize(24).fontColor(Color.White).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).borderRadius(20)
-          }
+          MyItem({
+            item:`${item}`
+          })
           .onAppear(() => {
-            // item 加载时
-            MyLog.d(`onAppear: ${index}`)
+            // item 挂载到组件树上时
+            MyLog.d(`onAppear:${index}`)
           })
           .onDisAppear(() => {
-            // item 卸载时
-            MyLog.d(`onDisAppear: ${index}`)
+            // item 从组件树上卸载时
+            MyLog.d(`onDisAppear:${index}`)
           })
         }, (item: string, index: number) => item)
           .onMove((from:number, to:number) => {
