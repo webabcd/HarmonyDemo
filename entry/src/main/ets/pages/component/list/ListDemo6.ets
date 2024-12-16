@@ -70,7 +70,7 @@ struct MySample1 {
        *     要支持 item 的预挂载，需要使用 LazyForEach
        *     每次除了挂载可视区的 item 外，还会在上和下分别预挂载指定数量的 item（其他的 item 会被卸载）
        *
-       * LazyForEach - 在 ForEach 的基础上支持懒挂载
+       * LazyForEach - 在 ForEach 的基础上支持懒挂载（数据来自一个 IDataSource 对象）
        *   LazyForEach 的第 3 个参数是 keyGenerator 用于生成 item 的键值，其作用请参见 ListDemo5.ets 中的说明
        *   LazyForEach 的 onMove() 用于实现拖动排序，请参见 ListDemo5.ets 中的说明
        *
@@ -105,7 +105,7 @@ struct MySample1 {
 }
 
 // 实现 IDataSource 接口，用于管理 listener 监听，以及通知 LazyForEach 做相关操作并刷新
-// 注：这个类仅用于通知 LazyForEach 做相关操作并刷新，但是它并不会更新数据源
+// 注：这个类用于为 LazyForEach 提供数据，以及于通知 LazyForEach 做相关操作并刷新，但是它并不会更新数据源
 class BasicDataSource implements IDataSource {
 
   private listeners: DataChangeListener[] = [];
