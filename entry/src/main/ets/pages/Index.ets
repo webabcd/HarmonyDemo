@@ -169,6 +169,7 @@ struct Index {
           new Node2("List（下拉刷新，上拉加载）", "pages/component/list/ListDemo4"),
           new Node2("List（ForEach 的应用）", "pages/component/list/ListDemo5"),
           new Node2("List（LazyForEach 的应用）", "pages/component/list/ListDemo6"),
+          new Node2("List（Repeat 的应用）", "pages/component/list/ListDemo7"),
         ]),
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),

@@ -37,6 +37,17 @@ struct StatementDemo {
         Text(`${index} ${item}`)
       })
 
+      // UI 描述中支持 LazyForEach 语句，要求数据必须来自一个 IDataSource 对象，且仅在 List, Grid, Swiper, WaterFlow 中有效
+      // LazyForEach() 的详细应用，请详见 /component/list/ListDemo6.ets 中的说明
+      // LazyForEach()
+
+      // UI 描述中支持 Repeat 语句
+      // Repeat() 的详细应用，请详见 /component/list/ListDemo7.ets 中的说明
+      Repeat<string>(this.list)
+        .each((obj: RepeatItem<string>) => {
+          Text(`${obj.index} ${obj.item}`)
+        })
+
     }.width('100%').height('100%')
   }
 }
