@@ -56,13 +56,22 @@ struct MySample1 {
        * 注：只有在 rowsTemplate 和 columnsTemplate 都不设置时，layoutDirection, maxCount, minCount, cellLength 才会生效
        *
        * GridItem - grid 内的每个 item
+       *   style - 样式（GridItemStyle 枚举）
+       *     NONE - 无样式
+       *     PLAIN - 自带 hover（鼠标悬停）和 press（按下）样式
        */
       Grid() {
+        GridItem({style:GridItemStyle.NONE}) {
+          Text('aaa').fontSize(16).width(80).height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+        }.backgroundColor(Color.Orange)
+        GridItem({style:GridItemStyle.PLAIN}) {
+          Text('bbb').fontSize(16).width(80).height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+        }.backgroundColor(Color.Orange)
+
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(16).width(80).height(40).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(16).width(80).height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .layoutDirection(GridDirection.Row)
@@ -76,9 +85,8 @@ struct MySample1 {
       Grid() {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(16).width(80).height(40).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(16).width(80).height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .layoutDirection(GridDirection.Row)
@@ -119,9 +127,8 @@ struct MySample2 {
         ForEach(this.array, (arr: string[]) => {
           ForEach(arr, (item: string) => {
             GridItem() {
-              Text(item).fontSize(16).width('100%').height('100%').textAlign(TextAlign.Center)
-                .backgroundColor(Color.Orange).fontColor(Color.White)
-            }
+              Text(item).fontSize(16).width('100%').height('100%').textAlign(TextAlign.Center).fontColor(Color.White)
+            }.backgroundColor(Color.Orange)
           }, (item: string) => item)
         }, (arr: string[], index: number) => index.toString())
       }
@@ -163,9 +170,8 @@ struct MySample3 {
       Grid() {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(16).width('100%').height(40).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(16).width('100%').height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .columnsTemplate('repeat(auto-fill, 120)')
@@ -177,9 +183,8 @@ struct MySample3 {
       Grid() {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(16).width('100%').height(40).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(16).width('100%').height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .columnsTemplate('repeat(auto-fit, 120)')
@@ -191,9 +196,8 @@ struct MySample3 {
       Grid() {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(16).width('100%').height(40).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(16).width('100%').height(40).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .columnsTemplate('repeat(auto-stretch, 120)')
