@@ -138,7 +138,8 @@
     "pages/state/v2/ProviderConsumerDemo",
     "pages/component/list/ListDemo6",
     "pages/component/list/ListDemo7",
-    "pages/animation/AnimatableExtendDemo"
+    "pages/animation/AnimatableExtendDemo",
+    "pages/basic/ReusableDemo"
   ],
   "window": {
     "designWidth": 720,

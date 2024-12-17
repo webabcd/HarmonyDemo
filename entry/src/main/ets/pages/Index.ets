@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("@AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）", "pages/animation/AnimatableExtendDemo"),
+          new Node2("List（LazyForEach 的应用）", "pages/component/list/ListDemo6"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -58,8 +58,9 @@ struct Index {
           new Node2("ArkUI 基础", "pages/basic/Hello"),
           new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）",
             "pages/basic/BuilderDemo"),
-          new Node2("在描述 UI 时使用 if/else, ForEach 语句", "pages/basic/StatementDemo"),
+          new Node2("在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句", "pages/basic/StatementDemo"),
           new Node2("生命周期", "pages/basic/LifecycleDemo"),
+          new Node2("@Reusable（组件复用）", "pages/basic/ReusableDemo"),
         ]),
         new Node1("状态管理", [
           new Node2("@State", "pages/state/StateDemo"),

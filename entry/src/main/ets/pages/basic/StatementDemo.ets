@@ -1,5 +1,5 @@
 /*
- * 在描述 UI 时使用 if/else, ForEach 语句
+ * 在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句
  */
 
 import { TitleBar } from '../TitleBar';
