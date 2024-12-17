@@ -75,7 +75,7 @@ class Point implements AnimatableArithmetic<Point> {
     return new Point(this.x * scale, this.y * scale)
   }
   equals(p: Point): boolean {
-    return this.x === p.x && this.y === p.y
+    return this.x == p.x && this.y == p.y
   }
 }
 /*

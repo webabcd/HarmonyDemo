@@ -73,9 +73,9 @@ struct DataTypeDemo {
 
   // 函数的参数和返回值之类的都可以使用联合类型
   let fun1 = (x: number | string): number | string | void => {
-    if (typeof x === 'number') {
+    if (typeof x == 'number') {
       return x * 2;
-    } else if (typeof x === 'string') {
+    } else if (typeof x == 'string') {
       return `hello ${x}`;
     } else {
       // void
@@ -131,9 +131,9 @@ struct DataTypeDemo {
   type NameMethod = () => string;
   type NameOrMethod = Name | NameMethod;
   let f1 = (p: NameOrMethod): Name => {
-    if (typeof p === 'string') {
+    if (typeof p == 'string') {
       return p;
-    } else if (typeof p === 'function') {
+    } else if (typeof p == 'function') {
       return p();
     }
     return "不可能";

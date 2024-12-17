@@ -109,9 +109,9 @@ f4(1, 2, )
 {
   // 虽然不支持函数重载，但是可以通过如下方式达到函数重载的效果
   let myFunc = (x: number | string): number | string | void => {
-    if (typeof x === 'number') {
+    if (typeof x == 'number') {
       return x * 2;
-    } else if (typeof x === 'string') {
+    } else if (typeof x == 'string') {
       return `hello ${x}`;
     } else {
       // void

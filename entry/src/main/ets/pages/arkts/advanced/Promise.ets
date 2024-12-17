@@ -161,7 +161,7 @@ struct PromiseDemo {
   Promise.allSettled(p9).then(results => {
     results.forEach(result => {
       // 状态是 fulfilled 或 rejected
-      if (result.status === 'fulfilled') {
+      if (result.status == 'fulfilled') {
         // 状态是 fulfilled 时，可以通过 value 获取 resolve 的值
         MyLog.d(result.value); // p9_1_resolve p9_3_resolve
       } else {

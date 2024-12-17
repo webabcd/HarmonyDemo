@@ -170,7 +170,7 @@ struct MySample2 {
             if (index > 9) {
               return 'template0'
             } else {
-              return (index % 2 === 0) ? 'template1' : 'template2';
+              return (index % 2 == 0) ? 'template1' : 'template2';
             }
           })
           // 为指定的模板 id 构造指定的组件
