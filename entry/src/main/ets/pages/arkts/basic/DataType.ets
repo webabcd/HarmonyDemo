@@ -37,6 +37,7 @@ struct DataTypeDemo {
 }
 
 {
+  // 在 undefined 和 null 做比较时，== 会做类型转换，=== 不会做类型转换
   MyLog.d(`${undefined == null}, ${undefined === null}`); // true, false
   MyLog.d(`${typeof null == 'object'}, ${typeof undefined == 'undefined'}`); // true, true
   MyLog.d(`${Number(null)}, ${Number(undefined)}`); // 0, NaN
