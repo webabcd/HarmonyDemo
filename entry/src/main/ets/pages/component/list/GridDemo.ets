@@ -8,7 +8,7 @@ import { TitleBar } from '../../TitleBar';
 
 @Entry
 @Component
-struct ListDemo {
+struct GridDemo {
 
   build() {
     Column() {
