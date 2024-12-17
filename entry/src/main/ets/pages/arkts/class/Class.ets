@@ -234,7 +234,7 @@ struct ClassDemo {
       return `hello:${this.name}`;
     }
     static create(name:string | undefined) {
-      if (name === undefined) {
+      if (name == undefined) {
         return undefined;
       }
       return new Person(name);
