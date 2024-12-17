@@ -140,7 +140,8 @@
     "pages/component/list/ListDemo7",
     "pages/animation/AnimatableExtendDemo",
     "pages/basic/ReusableDemo",
-    "pages/component/progress/SwipeRefresherDemo"
+    "pages/component/progress/SwipeRefresherDemo",
+    "pages/component/list/GridDemo"
   ],
   "window": {
     "designWidth": 720,
