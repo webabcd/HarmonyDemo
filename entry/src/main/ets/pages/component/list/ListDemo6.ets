@@ -75,7 +75,7 @@ struct MySample1 {
       /*
        * List - 列表
        *   cachedCount() - 指定预挂载的 item 的数量
-       *     要支持 item 的预挂载，需要使用 LazyForEach
+       *     要支持 item 的预挂载，需要使用 LazyForEach 或 Repeat
        *     每次除了挂载可视区的 item 外，还会在上和下分别预挂载指定数量的 item（其他的 item 会被卸载）
        *
        * LazyForEach - 在 ForEach 的基础上支持懒挂载（数据来自一个 IDataSource 对象）
