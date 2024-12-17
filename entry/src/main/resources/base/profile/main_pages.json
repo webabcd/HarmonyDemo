@@ -139,7 +139,8 @@
     "pages/component/list/ListDemo6",
     "pages/component/list/ListDemo7",
     "pages/animation/AnimatableExtendDemo",
-    "pages/basic/ReusableDemo"
+    "pages/basic/ReusableDemo",
+    "pages/component/progress/SwipeRefresherDemo"
   ],
   "window": {
     "designWidth": 720,
