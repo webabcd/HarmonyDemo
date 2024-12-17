@@ -14,12 +14,14 @@ struct GridDemo2 {
     Column() {
       TitleBar()
       Tabs() {
-        // 通过 onGetRectByIndex 布局
+        // 通过 Grid 的 onGetRectByIndex 布局
         TabContent() { MySample1() }.tabBar('布局1').align(Alignment.Top)
-        // 通过 irregularIndexes 布局
+        // 通过 Grid 的 irregularIndexes 布局
         TabContent() { MySample2() }.tabBar('布局2').align(Alignment.Top)
-        // 通过 irregularIndexes 和 onGetIrregularSizeByIndex 布局
+        // 通过 Grid 的 irregularIndexes 和 onGetIrregularSizeByIndex 布局
         TabContent() { MySample3() }.tabBar('布局3').align(Alignment.Top)
+        // 通过 GridItem 的 rowStart(), rowEnd(), columnStart(), columnEnd() 布局
+        TabContent() { MySample4() }.tabBar('布局4').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -62,9 +64,8 @@ struct MySample1 {
       }) {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(24).width('100%').height("100%").textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(24).width('100%').height("100%").textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr 1fr')
@@ -97,9 +98,8 @@ struct MySample2 {
       }) {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(24).width('100%').height(100).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(24).width('100%').height(100).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr 1fr 1fr')
@@ -143,12 +143,49 @@ struct MySample3 {
       }) {
         ForEach(this.array, (item: string) => {
           GridItem() {
-            Text(item).fontSize(24).width('100%').height(100).textAlign(TextAlign.Center)
-              .backgroundColor(Color.Orange).fontColor(Color.White)
-          }
+            Text(item).fontSize(24).width('100%').height(100).textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr 1fr 1fr')
+      .columnsGap(10)
+      .rowsGap(10)
+      .backgroundColor(Color.Yellow)
+    }
+  }
+}
+
+@Component
+struct MySample4 {
+
+  @State array: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
+
+  build() {
+    Column() {
+      /*
+       * Grid - 网格
+       *
+       * GridItem - grid 内的每个 item
+       *   rowStart(), rowEnd(), columnStart(), columnEnd() - 指定当前 item 的显示位置和占用空间
+       */
+      Grid() {
+        GridItem() {
+          Text('xxx').fontSize(24).width('100%').height('100%').textAlign(TextAlign.Center).fontColor(Color.White)
+        }.backgroundColor(Color.Orange)
+        // 当前 item 的左上角在 1 行 2 列的网格，右下角在 3 行 4 列的网格
+        .rowStart(1)
+        .columnStart(2)
+        .rowEnd(3)
+        .columnEnd(4)
+
+        ForEach(this.array, (item: string) => {
+          GridItem() {
+            Text(item).fontSize(24).width('100%').height('100%').textAlign(TextAlign.Center).fontColor(Color.White)
+          }.backgroundColor(Color.Orange)
+        }, (item: string) => item)
+      }
+      .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
+      .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(10)
       .backgroundColor(Color.Yellow)
