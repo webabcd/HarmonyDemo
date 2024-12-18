@@ -142,7 +142,8 @@
     "pages/basic/ReusableDemo",
     "pages/component/progress/SwipeRefresherDemo",
     "pages/component/list/GridDemo",
-    "pages/component/list/GridDemo2"
+    "pages/component/list/GridDemo2",
+    "pages/component/list/GridDemo3"
   ],
   "window": {
     "designWidth": 720,
