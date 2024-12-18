@@ -37,9 +37,9 @@ struct MySample1 {
          * 本例用于演示，如何通过 ForEach 的方式实现 ListItem 的拖动排序
          * 另外，如果需要更多的拖动排序效果，可以通过自定义的方式实现 ListItem 的拖动排序，详见 /component/list/ListDemo3.ets 中的说明
          *
-         * ForEach() 的 onMove() 用于启用 List 的 ListItem 的拖动操作
-         *   也就是说，调用 ForEach() 的 onMove() 后，ListItem 就会支持拖动操作
-         *   onMove() - List 内的 ForEach() 内的 ListItem 的拖动操作后的回调，可以在此处写具体的数据排序逻辑
+         * ForEach() 的 onMove() 用于启用 List 的 ListItem 的拖动排序
+         *   也就是说，调用 ForEach() 的 onMove() 后，ListItem 就会支持拖动排序
+         *   onMove() - List 内的 ForEach() 内的 ListItem 的拖动排序后的回调，可以在此处写具体的数据排序逻辑
          *     from - 拖动中的 item 的起始索引位置
          *     to - 拖动中的 item 的目标索引位置
          */
@@ -53,7 +53,7 @@ struct MySample1 {
         })
           .onMove((from:number, to:number) => {
             // 根据用户的操作排序数据
-            // 注：这里的代码仅用于更新数据源，而界面上的排序是由框架自己实现的（也就是说即使没有下面的代码，也不影响界面上的排序）
+            // 注：这里的代码仅用于更新数据源，而界面上的排序是由框架的 ForEach() 的 onMove() 自己实现的（也就是说即使没有下面的代码，也不影响界面上的排序）
             let tmp = this.array.splice(from, 1);
             this.array.splice(to, 0, tmp[0])
           })
