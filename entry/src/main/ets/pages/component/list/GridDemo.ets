@@ -1,7 +1,12 @@
 /*
  * Grid - 网格基础
  *
- * 注：Grid 是一个可滚动组件，相关特性请参见 /component/layout/ScrollDemo.ets 中的说明
+ * 注：
+ * 1、Grid 是一个可滚动组件，相关特性请参见 /component/layout/ScrollDemo.ets 中的说明
+ * 2、Grid 的下拉刷新和上拉加载可以参考 /component/list/ListDemo4.ets 中的说明
+ * 3、Grid 结合 ForEach 的应用可以参考 /component/list/ListDemo5.ets 中的说明（但是不支持通过 ForEach 的 onMove() 拖动排序）
+ * 4、Grid 结合 LazyForEach 的应用可以参考 /component/list/ListDemo6.ets 中的说明
+ * 5、Grid 结合 Repeat 的应用可以参考 /component/list/ListDemo7.ets 中的说明
  */
 
 import { TitleBar } from '../../TitleBar';

@@ -80,17 +80,17 @@ struct MySample1 {
 @Component
 struct MySample2 {
 
-  @State private array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  @State private array: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-  @State dragItem: number = -1 // 拖动中的 item 的索引位置
+  @State dragItem: string | undefined = undefined // 拖动中的 item 的内容
   @State offsetY: number = 0 // 拖动中的 item 的位移距离
   @State prevOffsetY: number = 0
 
   private itemHeight: number = 120 // 每个 item 的高度
 
   // 指定的 item 的缩放倍数
-  itemScale(item: number): number {
-    if (this.dragItem == -1) {
+  itemScale(item: string): number {
+    if (this.dragItem == undefined) {
       return 1
     }
 
@@ -101,8 +101,8 @@ struct MySample2 {
     }
   }
 
-  // 排序数据
-  itemMove(index: number, newIndex: number): void {
+  // 排序数据（this.array 是 @State 装饰的，更新后会刷新绑定的组件）
+  exchangeData(index: number, newIndex: number): void {
     let tmp = this.array.splice(index, 1)
     this.array.splice(newIndex, 0, tmp[0])
   }
@@ -117,7 +117,7 @@ struct MySample2 {
        * 注：我这里测试发现 List 的 onItemDragStart(), onItemDragEnter(), onItemDragMove(), onItemDragLeave(), onItemDrop() 均无效
        */
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.array, (item: number) => {
+        ForEach(this.array, (item: string) => {
           ListItem() {
             Text(item.toString()).height(100).width('100%')
               .fontSize(48).fontColor(Color.White).textAlign(TextAlign.Center)
@@ -137,7 +137,7 @@ struct MySample2 {
                 })
                 .onActionEnd(() => {
                   animateTo({ curve: Curve.Ease, duration: 500 }, () => {
-                    this.dragItem = -1
+                    this.dragItem = undefined
                   })
                 }),
               PanGesture({ fingers: 1 })
@@ -156,25 +156,27 @@ struct MySample2 {
                     animateTo({ curve: Curve.Ease }, () => {
                       this.offsetY -= this.itemHeight
                       this.prevOffsetY += this.itemHeight
-                      this.itemMove(index, index + 1)
+                      // 排序数据（this.array 是 @State 装饰的，更新后会刷新绑定的组件）
+                      this.exchangeData(index, index + 1)
                     })
                   } else if (this.offsetY < -this.itemHeight / 2) {
                     animateTo({ curve: Curve.Ease }, () => {
                       this.offsetY += this.itemHeight
                       this.prevOffsetY -= this.itemHeight
-                      this.itemMove(index, index - 1)
+                      // 排序数据（this.array 是 @State 装饰的，更新后会刷新绑定的组件）
+                      this.exchangeData(index, index - 1)
                     })
                   }
                 })
                 .onActionEnd((event: GestureEvent) => {
                   animateTo({ curve: Curve.Ease, duration: 500 }, () => {
-                    this.dragItem = -1
+                    this.dragItem = undefined
                     this.offsetY = 0
                   })
                 }))
               .onCancel(() => {
                 animateTo({ curve: Curve.Ease, duration: 500 }, () => {
-                  this.dragItem = -1
+                  this.dragItem = undefined
                   this.offsetY = 0
                 })
               })
