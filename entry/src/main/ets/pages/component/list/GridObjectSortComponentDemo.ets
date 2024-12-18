@@ -25,7 +25,7 @@ struct GridObjectSortComponentDemo {
    *   addAreaTitle - 未添加区域的标题
    */
   @State options: GridObjectSortComponentOptions = {
-    type: GridObjectSortComponentType.TEXT,
+    type: GridObjectSortComponentType.IMAGE_TEXT,
     imageSize: 48,
     normalTitle: 'normalTitle',
     editTitle: 'editTitle',
