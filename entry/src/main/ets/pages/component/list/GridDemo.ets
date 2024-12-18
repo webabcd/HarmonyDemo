@@ -112,7 +112,7 @@ struct MySample2 {
        *
        * Grid - 网格
        *   columnsTemplate() - 列宽
-       *     比如 '1fr 1fr 3fr' 就是分 3 列，第1列占1/5，第2列占1/5，第3列占3/5
+       *     比如 '1fr 1fr 3fr' 就是分 3 列，第1列占1/5，第2列占1/5，第3列占3/5（注：这里的 fr 是 fraction 的缩写）
        *     比如 'repeat(auto-fill, 120)' 就是设置固定列宽为 120，然后自动计算列数
        *     比如 'repeat(auto-fit, 120)' 就是设置最小列宽为 120，然后自动计算列数和实际列宽（会保证 item 与 grid 的左右边缘对齐）
        *     比如 'repeat(auto-stretch, 120)' 就是设置固定列宽为 120，并以 columnsGap 为最小列间距，然后自动计算列数和实际列间距（会保证 item 与 grid 的左右边缘对齐）
