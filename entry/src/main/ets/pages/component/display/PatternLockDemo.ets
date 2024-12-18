@@ -9,7 +9,6 @@ import { LengthUnit } from '@kit.ArkUI';
 @Component
 struct PatternLockDemo {
 
-  @State passwords: Number[] = []
   @State message: string = 'please input password!'
 
   /*
@@ -28,9 +27,8 @@ struct PatternLockDemo {
       Text(this.message)
 
       Button('reset').onClick(() => {
-        // 重置密码锁
+        // 重置手势锁
         this.patternLockController.reset()
-        this.passwords = []
         this.message = ''
       })
 
