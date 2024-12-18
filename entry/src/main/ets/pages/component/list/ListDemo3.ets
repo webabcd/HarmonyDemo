@@ -102,7 +102,7 @@ struct MySample2 {
   }
 
   // 排序数据（this.array 是 @State 装饰的，更新后会刷新绑定的组件）
-  exchangeData(index: number, newIndex: number): void {
+  moveData(index: number, newIndex: number): void {
     let tmp = this.array.splice(index, 1)
     this.array.splice(newIndex, 0, tmp[0])
   }
@@ -157,14 +157,14 @@ struct MySample2 {
                       this.offsetY -= this.itemHeight
                       this.prevOffsetY += this.itemHeight
                       // 排序数据（this.array 是 @State 装饰的，更新后会刷新绑定的组件）
-                      this.exchangeData(index, index + 1)
+                      this.moveData(index, index + 1)
                     })
                   } else if (this.offsetY < -this.itemHeight / 2) {
                     animateTo({ curve: Curve.Ease }, () => {
                       this.offsetY += this.itemHeight
                       this.prevOffsetY -= this.itemHeight
                       // 排序数据（this.array 是 @State 装饰的，更新后会刷新绑定的组件）
-                      this.exchangeData(index, index - 1)
+                      this.moveData(index, index - 1)
                     })
                   }
                 })
