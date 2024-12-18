@@ -144,7 +144,8 @@
     "pages/component/list/GridDemo",
     "pages/component/list/GridDemo2",
     "pages/component/list/GridDemo3",
-    "pages/component/list/GridObjectSortComponentDemo"
+    "pages/component/list/GridObjectSortComponentDemo",
+    "pages/component/display/PatternLockDemo"
   ],
   "window": {
     "designWidth": 720,

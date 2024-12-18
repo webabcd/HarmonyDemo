@@ -138,11 +138,12 @@ struct Index {
           new Node2("Badge（标记）", "pages/component/display/BadgeDemo"),
           new Node2("Blank（空白）", "pages/component/display/BlankDemo"),
           new Node2("Divider（分隔线）", "pages/component/display/DividerDemo"),
-          new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
           new Node2("TextClock（系统时间实时显示框）", "pages/component/display/TextClockDemo"),
           new Node2("TextTimer（计时器框）", "pages/component/display/TextTimerDemo"),
           new Node2("ExceptionPrompt（异常提示框）", "pages/component/display/ExceptionPromptDemo"),
           new Node2("DataPanel（数据面板）", "pages/component/display/DataPanelDemo"),
+          new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
+          new Node2("PatternLock（手势锁）", "pages/component/display/PatternLockDemo"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),
