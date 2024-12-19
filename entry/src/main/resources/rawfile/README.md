@@ -71,10 +71,12 @@
 - pages/basic/Hello
 2. @Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）
 - pages/basic/BuilderDemo
-3. 在描述 UI 时使用 if/else, ForEach 语句
+3. 在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句
 - pages/basic/StatementDemo
 4. 生命周期
 - pages/basic/LifecycleDemo
+5. @Reusable（组件复用）
+- pages/basic/ReusableDemo
 
 ### 状态管理
 1. @State
@@ -101,6 +103,11 @@
 - pages/state/v2/MonitorDemo
 12. MVVM
 - pages/state/mvvm/MVVMDemo
+- pages/state/mvvm/model/MyModel.ets
+- pages/state/mvvm/view/MyTopView.ets
+- pages/state/mvvm/view/MyBottomView.ets
+- pages/state/mvvm/view/MyListView.ets
+- pages/state/mvvm/viewmodel/MyViewModel.ets
 
 ### 组件（通用的属性方法和事件方法）
 1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）
@@ -197,9 +204,11 @@
 - pages/component/progress/ProgressDemo
 2. LoadingProgress（加载框）
 - pages/component/progress/LoadingProgressDemo
-3. Slider（可拖动进度条）
+3. SwipeRefresher（加载框）
+- pages/component/progress/SwipeRefresherDemo
+4. Slider（可拖动进度条）
 - pages/component/progress/SliderDemo
-4. Gauge（环形表进度条）
+5. Gauge（环形表进度条）
 - pages/component/progress/GaugeDemo
 
 ### 组件（展示类）
@@ -209,16 +218,18 @@
 - pages/component/display/BlankDemo
 3. Divider（分隔线）
 - pages/component/display/DividerDemo
-4. QRCode（二维码）
-- pages/component/display/QRCodeDemo
-5. TextClock（系统时间实时显示框）
+4. TextClock（系统时间实时显示框）
 - pages/component/display/TextClockDemo
-6. TextTimer（计时器框）
+5. TextTimer（计时器框）
 - pages/component/display/TextTimerDemo
-7. ExceptionPrompt（异常提示框）
+6. ExceptionPrompt（异常提示框）
 - pages/component/display/ExceptionPromptDemo
-8. DataPanel（数据面板）
+7. DataPanel（数据面板）
 - pages/component/display/DataPanelDemo
+8. QRCode（二维码）
+- pages/component/display/QRCodeDemo
+9. PatternLock（手势锁）
+- pages/component/display/PatternLockDemo
 
 ### 组件（弹出类）
 1. promptAction（toast, menu, dialog, custom）
@@ -267,6 +278,22 @@
 - pages/component/list/ListDemo4
 5. List（ForEach 的应用）
 - pages/component/list/ListDemo5
+6. List（LazyForEach 的应用）
+- pages/component/list/ListDemo6
+7. List（Repeat 的应用）
+- pages/component/list/ListDemo7
+8. Grid（网格基础）
+- pages/component/list/GridDemo
+9. Grid（网格布局）
+- pages/component/list/GridDemo2
+10. Grid（滚动，多选，拖动排序，双指缩放并修改列数）
+- pages/component/list/GridDemo3
+11. GridObjectSortComponent（图标网格，支持增加、删除和排序）
+- pages/component/list/GridObjectSortComponentDemo
+12. TreeView（树状列表）
+- pages/component/list/TreeViewDemo
+13. AlphabetIndexer（单字符二级联动列表）
+- pages/component/list/AlphabetIndexerDemo
 
 ### UI
 1. 颜色相关
@@ -301,20 +328,22 @@
 ### 动画
 1. 属性动画
 - pages/animation/AnimationDemo
-2. 显式动画
+2. @AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）
+- pages/animation/AnimatableExtendDemo
+3. 显式动画
 - pages/animation/AnimationToDemo
-3. 关键帧动画
+4. 关键帧动画
 - pages/animation/KeyframeAnimateDemo
-4. 路径动画
+5. 路径动画
 - pages/animation/MotionPathDemo
-5. 单个组件显示和消失时的过渡动画
+6. 单个组件显示和消失时的过渡动画
 - pages/animation/TransitionDemo
-6. 一组件显示一组件消失时的过渡动画
+7. 一组件显示一组件消失时的过渡动画
 - pages/animation/GeometryTransitionDemo
-7. 页面转场效果
+8. 页面转场效果
 - pages/animation/PageTransitionDemo
 - pages/animation/PageTransitionDemo_1.ets
 - pages/animation/PageTransitionDemo_2.ets
 - pages/animation/PageTransitionDemo_3.ets
-8. Curve
+9. Curve（动画曲线）
 - pages/animation/CurveDemo

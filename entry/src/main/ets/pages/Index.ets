@@ -177,6 +177,8 @@ struct Index {
           new Node2("Grid（网格布局）", "pages/component/list/GridDemo2"),
           new Node2("Grid（滚动，多选，拖动排序，双指缩放并修改列数）", "pages/component/list/GridDemo3"),
           new Node2("GridObjectSortComponent（图标网格，支持增加、删除和排序）", "pages/component/list/GridObjectSortComponentDemo"),
+          new Node2("TreeView（树状列表）", "pages/component/list/TreeViewDemo"),
+          new Node2("AlphabetIndexer（单字符二级联动列表）", "pages/component/list/AlphabetIndexerDemo"),
         ]),
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),
