@@ -74,8 +74,8 @@ struct MySample1 {
 
       /*
        * List - 列表
-       *   cachedCount() - 指定预挂载的 item 的数量
-       *     要支持 item 的预挂载，需要使用 LazyForEach 或 Repeat
+       *   cachedCount() - 指定预挂载的 item 的数量（仅 LazyForEach 或 Repeat 结合 List, Grid, Swiper, WaterFlow 时有效）
+       *     要支持 item 的预挂载，需要使用 LazyForEach 或 Repeat（关于 List 结合 Repeat 的应用请参见 /component/list/ListDemo7.ets 中的说明）
        *     每次除了挂载可视区的 item 外，还会在上和下分别预挂载指定数量的 item（其他的 item 会被卸载）
        *
        * LazyForEach - 在 ForEach 的基础上支持懒挂载（数据来自一个 IDataSource 对象）

@@ -50,6 +50,7 @@ struct MySample1 {
        * 本例用于演示如何通过 layoutDirection, maxCount, minCount, cellLength 布局，不可滚动
        *
        * Grid - 网格
+       *   cachedCount() - 指定预挂载的 item 的数量（参见 /component/list/ListDemo6.ets 中的说明）
        *   layoutDirection() - 每个 item 排列的主轴方向（GridDirection 枚举）
        *     Row - 每个 item 水平方向从左到右排列，填满后则换行
        *     Column, RowReverse, ColumnReverse

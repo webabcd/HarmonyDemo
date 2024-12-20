@@ -147,7 +147,9 @@
     "pages/component/list/GridObjectSortComponentDemo",
     "pages/component/display/PatternLockDemo",
     "pages/component/list/TreeViewDemo",
-    "pages/component/list/AlphabetIndexerDemo"
+    "pages/component/list/AlphabetIndexerDemo",
+    "pages/component/list/SwiperDemo",
+    "pages/component/list/WaterFlowDemo"
   ],
   "window": {
     "designWidth": 720,

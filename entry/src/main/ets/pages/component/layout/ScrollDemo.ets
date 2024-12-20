@@ -116,8 +116,8 @@ struct MySample2 {
             }
           }
           .scrollBar(BarState.Off)
-          // 向下滚动时，先是父 Scroll 整体滚动，当文本框 aaa 滚出屏幕后，子 Scroll 继续滚动
-          // 向上滚动时，先是子 Scroll 滚动，当滚动到子 Scroll 的边缘后，再父 Scroll 整体滚动
+          // 向下滚动时（手势向上），先是父 Scroll 整体滚动，当文本框 aaa 滚出屏幕后，子 Scroll 继续滚动
+          // 向上滚动时（手势向下），先是子 Scroll 滚动，当滚动到子 Scroll 的边缘后，再父 Scroll 整体滚动
           .nestedScroll({
             scrollForward: NestedScrollMode.PARENT_FIRST,
             scrollBackward: NestedScrollMode.SELF_FIRST
