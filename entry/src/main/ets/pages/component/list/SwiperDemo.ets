@@ -7,8 +7,7 @@
  * 3、Swiper 结合 Repeat 的应用可以参考 /component/list/ListDemo7.ets 中的说明
  */
 
-import { TitleBar } from '../../TitleBar';
-import { ComposeListItem, IconType, LengthMetrics, promptAction } from '@kit.ArkUI';
+import { MyLog, TitleBar } from '../../TitleBar';
 
 @Entry
 @Component
@@ -232,7 +231,6 @@ struct MySample3 {
   @State message2: string = ""
   @State message3: string = ""
   @State message4: string = ""
-  @State message5: string = ""
 
   build() {
     Column({ space: 5 }) {
@@ -254,8 +252,10 @@ struct MySample3 {
        *     index - 当前显示的子组件的索引位置
        *   onContentDidScroll() - 页面滚动时的回调
        *     selectedIndex - 启动滚动的子组件的索引位置
-       *     index - 可视区内的右侧的子组件的索引位置
-       *     position - 滚动的进度（左边往右边滚动时是 1 到 0，右边往左边滚动时是 0 到 1）
+       *     index - 可视区内的子组件的索引位置
+       *     position - index 对应的子组件相对于 selectedIndex 对应的子组件的起始位置的移动比例
+       *       比如 0 1 2 当前显示的是 1，那么 0 的位置就是 -1，1 的位置就是 0，2 的位置就是 1
+       *       比如 0 1 2 当前显示的是 1.5，那么 1 的位置就是 -0.5，2 的位置就是 0.5
        *     mainAxisLength - index 对应的子组件的主轴方向上的长度
        */
       Swiper(this.swiperController) {
@@ -277,7 +277,7 @@ struct MySample3 {
         this.message4 = `onAnimationEnd index:${index}`
       })
       .onContentDidScroll((selectedIndex: number, index: number, position: number, mainAxisLength: number) => {
-        this.message5 = `onContentDidScroll index:${index}, selectedIndex:${selectedIndex}, position:${position}, mainAxisLength:${mainAxisLength}`
+        MyLog.d(`onContentDidScroll index:${index}, selectedIndex:${selectedIndex}, position:${position}, mainAxisLength:${mainAxisLength}`)
       })
       .curve(Curve.Linear)
       .duration(5000).nextMargin(20)
@@ -306,7 +306,6 @@ struct MySample3 {
       Text(this.message2)
       Text(this.message3)
       Text(this.message4)
-      Text(this.message5)
     }
     .alignItems(HorizontalAlign.Start)
   }
@@ -324,8 +323,6 @@ struct MySample4 {
   @State scaleList: number[] = []
   @State translateList: number[] = []
   @State zIndexList: number[] = []
-
-  @State message: string = ""
 
   aboutToAppear(): void {
     for (let i = 0; i < this.array.length; i++) {
@@ -345,8 +342,10 @@ struct MySample4 {
        *     timeout - 经测试，不知道是干啥用的
        *     transition - 通过回调的 SwiperContentTransitionProxy 自定义切换动画
        *       selectedIndex - 启动动画的子组件的索引位置
-       *       index - 可视区内的右侧的子组件的索引位置
-       *       position - 滚动的进度（左边往右边切换时是 1 到 0，右边往左边切换时是 0 到 1）
+       *       index - 可视区内的子组件的索引位置
+       *       position - index 对应的子组件相对于 selectedIndex 对应的子组件的起始位置的移动比例
+       *         比如 0 1 2 当前显示的是 1，那么 0 的位置就是 -1，1 的位置就是 0，2 的位置就是 1
+       *         比如 0 1 2 当前显示的是 1.5，那么 1 的位置就是 -0.5，2 的位置就是 0.5
        *       mainAxisLength - index 对应的子组件的主轴方向上的长度
        *       finishTransition() - 经测试，不知道是干啥用的
        */
@@ -362,15 +361,15 @@ struct MySample4 {
       }
       .customContentTransition({
         transition: (proxy: SwiperContentTransitionProxy) => {
-          this.message = `index:${proxy.index}, selectedIndex:${proxy.selectedIndex}, position:${proxy.position}, mainAxisLength:${proxy.mainAxisLength}`
-          if (proxy.position <= 0 || proxy.position >= 1) {
-            // 启动动画的子组件滚出去之后
-            this.opacityList[proxy.selectedIndex] = 1.0
-            this.scaleList[proxy.selectedIndex] = 1.0
-            this.translateList[proxy.selectedIndex] = 0.0
-            this.zIndexList[proxy.selectedIndex] = 0
+          MyLog.d(`index:${proxy.index}, selectedIndex:${proxy.selectedIndex}, position:${proxy.position}, mainAxisLength:${proxy.mainAxisLength}`)
+          if (proxy.position <= 0) {
+            // 可视区内的左侧的子组件
+            this.opacityList[proxy.index] = 1.0
+            this.scaleList[proxy.index] = 1.0
+            this.translateList[proxy.index] = 0.0
+            this.zIndexList[proxy.index] = 0
           } else {
-            // 可视区内的右侧的子组件，在滚动到当前 position 时
+            // 可视区内的右侧的子组件，滚动到当前 position 时
             this.opacityList[proxy.index] = 1 - proxy.position
             this.scaleList[proxy.index] = this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position)
             this.translateList[proxy.index] = - proxy.position * proxy.mainAxisLength + (1 - this.scaleList[proxy.index]) * proxy.mainAxisLength / 2.0
@@ -378,8 +377,6 @@ struct MySample4 {
           }
         }
       })
-
-      Text(this.message)
     }
     .alignItems(HorizontalAlign.Start)
   }
