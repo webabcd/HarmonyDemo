@@ -74,6 +74,7 @@ struct Index {
           new Node2("v2 @Param, @Once, @Event", "pages/state/v2/ParamDemo"),
           new Node2("v2 @Provider()/@Consumer()", "pages/state/v2/ProviderConsumerDemo"),
           new Node2("v2 @Require, @Monitor, @Computed, !!", "pages/state/v2/MonitorDemo"),
+          new Node2("v2 UIUtils.makeObserved()", "pages/state/v2/MakeObservedDemo"),
           new Node2("MVVM", "pages/state/mvvm/MVVMDemo", "pages/state/mvvm/model/MyModel.ets|pages/state/mvvm/view/MyTopView.ets|pages/state/mvvm/view/MyBottomView.ets|pages/state/mvvm/view/MyListView.ets|pages/state/mvvm/viewmodel/MyViewModel.ets"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
