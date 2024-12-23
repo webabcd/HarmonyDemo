@@ -48,7 +48,7 @@ struct CommonSizeDemo {
         })
         .backgroundColor(Color.Blue)
 
-      // padding() - 内边距（可以同时指定 4 个边距，也可以分别指定 top/right/bottom/left）
+      // padding() - 内边距（可以指定一个内边距值，也可以分别指定 top/right/bottom/left）
       Column() {
         Column()
           .width('100%')
@@ -60,7 +60,7 @@ struct CommonSizeDemo {
       .height(100)
       .backgroundColor(Color.Blue)
 
-      // margin() - 外边距（可以同时指定 4 个边距，也可以分别指定 top/right/bottom/left）
+      // margin() - 外边距（可以指定一个外边距值，也可以分别指定 top/right/bottom/left）
       Column() {
         Column()
           .width(50)

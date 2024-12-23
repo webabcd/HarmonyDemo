@@ -47,6 +47,7 @@ struct MySample1 {
      *   initialOffset() - 滚动的初始偏移量
      *   friction() - 手动滑动时，滚动的摩擦系数，值越大越难滚
      *     非可穿戴设备默认值为 0.6，可穿戴设备默认值为 0.9
+     *   flingSpeedLimit() - 跟手滑动时，松手后的的最大初始速度，默认值 12000
      *   edgeEffect() - 滚动到边缘时的效果
      *     edgeEffect - 效果（EdgeEffect 枚举）
      *       Spring - 弹性效果
@@ -74,6 +75,7 @@ struct MySample1 {
       yOffset: 100,
     })
     .friction(0.6)
+    .flingSpeedLimit(12000)
     .edgeEffect(EdgeEffect.Spring, {
       alwaysEnabled: false
     })
