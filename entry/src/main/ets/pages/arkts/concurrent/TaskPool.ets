@@ -11,7 +11,7 @@
 
 import { TitleBar, MyLog } from '../../TitleBar';
 import { taskpool } from '@kit.ArkTS';
-import { myFunction, MyClass } from './MyFunctionAndClass';
+import { myFunction, MyClass } from './SendableDemo_MyFunctionAndClass';
 
 // @Concurrent 表示函数可以被创建为一个被任务池执行的任务
 @Concurrent

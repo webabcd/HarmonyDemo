@@ -167,3 +167,38 @@ struct DataTypeDemo {
   }
   f1(new Dog("dog"));
 }
+
+{
+  class Person {
+    public name: string;
+    constructor(name: string) {
+      this.name = name;
+    }
+  }
+
+  // 引用类型
+  let person = new Person("abc")
+  let f1 = (p: Person) => {
+    p.name = "xyz" // 修改的是 person 的 name， 此时 p 的引用和 person 的引用是相同的
+    p = new Person("zzz") // 修改了 p 的引用，此后 p 的引用和 person 的引用不同了
+  }
+  f1(person)
+  MyLog.d(person.name) // xyz
+
+  // 引用类型
+  let a = [1, 2, 3]
+  let f2 = (arr: number[]) => {
+    arr[0] = 100 // 修改的是 a 的第一个元素， 此时 a 的引用和 arr 的引用是相同的
+    arr = [7, 8, 9] // 修改了 arr 的引用，此后 a 的引用和 arr 的引用不同了
+  }
+  f2(a)
+  MyLog.d(a.toString()) // 100,2,3
+
+  // 值类型
+  let b = '123'
+  let f3 = (str: string) => {
+    str = '789' // str 是 b 的副本
+  }
+  f3(b)
+  MyLog.d(b) // 123
+}
