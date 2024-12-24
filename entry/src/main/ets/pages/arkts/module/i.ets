@@ -1,2 +1,4 @@
+import { MyLog } from '../../TitleBar';
+
 let myName = "i am webabcd";
-console.log(myName);
+MyLog.d(myName);

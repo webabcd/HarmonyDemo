@@ -11,5 +11,5 @@ export class MyClass2 {
   }
 }
 
-// 单例模式，保证全进程唯一
+// 保证多线程唯一
 export let myClass2 = new MyClass2(0);
