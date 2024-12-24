@@ -150,7 +150,11 @@
     "pages/component/list/AlphabetIndexerDemo",
     "pages/component/list/SwiperDemo",
     "pages/component/list/WaterFlowDemo",
-    "pages/state/v2/MakeObservedDemo"
+    "pages/state/v2/MakeObservedDemo",
+    "pages/arkts/concurrent/SendableDemo",
+    "pages/arkts/concurrent/ArrayBufferDemo",
+    "pages/arkts/concurrent/UseSharedDemo",
+    "pages/arkts/concurrent/ASONDemo"
   ],
   "window": {
     "designWidth": 720,

@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-
+          new Node2("ArrayBuffer", "pages/arkts/concurrent/ArrayBufferDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -41,7 +41,7 @@ struct Index {
           new Node2("类", "pages/arkts/class/Class"),
           new Node2("泛型", "pages/arkts/class/Generics"),
           new Node2("模块", "pages/arkts/module/Main",
-            "pages/arkts/module/a|pages/arkts/module/b|pages/arkts/module/c|pages/arkts/module/d|pages/arkts/module/e|pages/arkts/module/f|pages/arkts/module/g|pages/arkts/module/h|pages/arkts/module/i"),
+            "pages/arkts/module/a.ets|pages/arkts/module/b.ets|pages/arkts/module/c.ets|pages/arkts/module/d.ets|pages/arkts/module/e.ets|pages/arkts/module/f.ets|pages/arkts/module/g.ets|pages/arkts/module/h.ets|pages/arkts/module/i.ets|pages/arkts/module/j.ets|pages/arkts/module/k.ets|pages/arkts/module/l.ets"),
         ]),
         new Node1("ArkTS 进阶", [
           new Node2("ArrayBuffer", "pages/arkts/advanced/ArrayBuffer"),
@@ -51,8 +51,11 @@ struct Index {
           new Node2("Proxy, Reflect", "pages/arkts/advanced/ProxyReflect"),
         ]),
         new Node1("ArkTS 多线程", [
-          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/MyFunctionAndClass"),
+          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/SendableDemo_MyFunctionAndClass.ets"),
           new Node2("Worker", "pages/arkts/concurrent/Worker", "/entry/src/main/ets/workers/myworker"),
+          new Node2("@Sendable（多线程共享对象）", "pages/arkts/concurrent/SendableDemo"),
+          new Node2("use shared（多线程引用相同的模块只被加载一次）", "pages/arkts/concurrent/UseSharedDemo", "pages/arkts/concurrent/UseSharedDemo_1.ets|pages/arkts/concurrent/UseSharedDemo_2.ets"),
+          new Node2("ASON（对 @Sendable 对象做序列化和反序列化）", "pages/arkts/concurrent/ASONDemo"),
         ]),
         new Node1("开发基础", [
           new Node2("ArkUI 基础", "pages/basic/Hello"),
