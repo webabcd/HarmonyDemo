@@ -1,6 +1,6 @@
 /*
- * FolderStack - 可识别屏幕折叠悬停的堆叠布局（继承自 Stack）
- *   主要要用于，当折叠屏悬停并且横屏时，让指定的组件显示到上半屏，其他组件显示到下半屏
+ * FolderStack - 可识别折叠屏悬停并且横屏的堆叠布局（继承自 Stack）
+ *   主要用于，当折叠屏悬停并且横屏时，让指定的组件显示到上半屏，其他组件显示到下半屏
  */
 
 import { TitleBar } from '../../TitleBar'
@@ -8,6 +8,7 @@ import { TitleBar } from '../../TitleBar'
 @Entry
 @Component
 struct FolderStackDemo {
+
   @State message_FoldStatus: string = 'FoldStatus'
   @State message_HoverEventParam: string = 'HoverEventParam'
 
@@ -20,7 +21,7 @@ struct FolderStackDemo {
       FolderStack({ upperItems: ["upperItems1"] }) {
         // 当折叠屏悬停并且横屏时，下面的 Column 会显示到上半屏
         Column() {
-          Text(`${this.message_FoldStatus}\n${this.message_HoverEventParam}`).height("100%").width("100%").textAlign(TextAlign.Center).fontSize(12)
+          Text(`${this.message_FoldStatus}\n${this.message_HoverEventParam}`).height("100%").width("100%").textAlign(TextAlign.Center).fontSize(24)
         }.backgroundColor(Color.Orange).width("100%").height("100%").id("upperItems1")
 
         // 当折叠屏悬停并且横屏时，下面的两个 Column 会显示到下半屏
@@ -56,7 +57,6 @@ struct FolderStackDemo {
         this.message_HoverEventParam += `windowStatusType: ${status.windowStatusType}`
       })
       .backgroundColor(Color.Yellow)
-      .layoutWeight(1)
     }
   }
 }
