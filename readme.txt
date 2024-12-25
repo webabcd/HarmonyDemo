@@ -20,3 +20,9 @@ ets 的全称是 extended typescript
 /entry/src/main/resources/base/profile/main_pages.json 文件
 定义了 app 中包含的所有的页面路径（页面中的 @Entry 装饰的组件为入口组件），其中的第一条页面路径为 app 的入口
 
+xs（Extra Small） - 水平宽度 0vp - 320vp（左闭右开）
+sm（Small） - 水平宽度 320vp - 520vp（左闭右开）
+md（Medium） - 水平宽度 520vp - 840vp（左闭右开）
+lg（Large） - 水平宽度 840vp - 无限大
+xl（Extra Large） - 自定义
+xxl（Extra Extra Large） - 自定义

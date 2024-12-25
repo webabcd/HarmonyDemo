@@ -153,7 +153,11 @@
     "pages/state/v2/MakeObservedDemo",
     "pages/arkts/concurrent/SendableDemo",
     "pages/arkts/concurrent/UseSharedDemo",
-    "pages/arkts/concurrent/ASONDemo"
+    "pages/arkts/concurrent/ASONDemo",
+    "pages/arkts/concurrent/TaskPool2",
+    "pages/component/layout/GridRowDemo",
+    "pages/component/layout/ColumnSplitDemo",
+    "pages/component/layout/RowSplitDemo"
   ],
   "window": {
     "designWidth": 720,
