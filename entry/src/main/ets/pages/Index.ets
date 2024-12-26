@@ -20,7 +20,6 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("FoldSplitContainer（）", "pages/component/layout/FoldSplitContainerDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -95,10 +94,11 @@ struct Index {
           new Node2("GridRow（栅格布局）", "pages/component/layout/GridRowDemo"),
           new Node2("ColumnSplit（垂直分栏布局）", "pages/component/layout/ColumnSplitDemo"),
           new Node2("RowSplit（水平分栏布局）", "pages/component/layout/RowSplitDemo"),
+          new Node2("FolderStack（折叠屏悬停状态的堆叠布局）", "pages/component/layout/FolderStackDemo"),
+          new Node2("FoldSplitContainer（折叠屏分栏布局）", "pages/component/layout/FoldSplitContainerDemo"),
           new Node2("Scroll（可滚动容器）", "pages/component/layout/ScrollDemo"),
           new Node2("Refresh（下拉刷新容器）", "pages/component/layout/RefreshDemo"),
           new Node2("SideBarContainer（侧边栏容器）", "pages/component/layout/SideBarContainerDemo"),
-          new Node2("FolderStack（可识别折叠屏悬停并且横屏的堆叠布局）", "pages/component/layout/FolderStackDemo"),
         ]),
         new Node1("组件（文本类）", [
           new Node2("Text（文本显示框）", "pages/component/text/TextDemo"),
