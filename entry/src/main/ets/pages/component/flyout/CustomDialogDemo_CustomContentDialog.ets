@@ -18,7 +18,7 @@ struct CustomDialogDemo_CustomContentDialog {
    * CustomDialog 之 CustomContentDialog（自定义内容弹框）
    *   primaryTitle - 标题1
    *   secondaryTitle - 标题2
-   *   contentBuilder - 指定一个 @Builder 装饰的自定义内容
+   *   contentBuilder - 自定义内容（指定一个自定义组件）
    *   contentAreaPadding - 自定义内容所属区域的内边距
    *   buttons - 按钮集合（ButtonOptions 对象集合）
    *     value - 按钮上显示的文字

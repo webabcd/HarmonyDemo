@@ -227,7 +227,7 @@ struct MySample3 {
        *
        * ListItem - list 内的每个 item
        *   swipeAction() - 横滑操作
-       *     start, end - 横滑后 item 左侧的组件和右侧的组件（可以指定一个 @Builder 装饰的函数，或者一个 SwipeActionItem 对象）
+       *     start, end - 横滑后 item 左侧的组件和右侧的组件（可以指定一个自定义组件，或者一个 SwipeActionItem 对象）
        *       builder - 需要显示的自定义组件
        *       actionAreaDistance - 左滑时，完整显示了 end 组件后，再至少滑动 actionAreaDistance（默认值为 56）指定的距离且抬起手指后，则触发 onAction 回调
        *       onAction - 左滑删除手势完成后的回调

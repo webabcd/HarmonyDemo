@@ -259,7 +259,7 @@ struct MySample3 {
        * bindPopup() - 弹出框（与组件绑定的自定义的 Popup）
        *   show - 是否显示
        *   popup - 弹出框（一个 PopupOptions 对象）
-       *     builder - 自定义弹出框内容（指定一个 @Builder 装饰的函数）
+       *     builder - 自定义弹出框内容（指定一个自定义组件）
        */
       Button('click me')
         .onClick(() => {

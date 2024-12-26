@@ -250,7 +250,7 @@ struct MySample4 {
 
       /*
        * promptAction.openCustomDialog() - 弹出自定义弹出框
-       *   builder - 自定义弹出框内容（指定一个 @Builder 装饰的函数）
+       *   builder - 自定义弹出框内容（指定一个自定义组件）
        *   isModal - 是否是模态窗口（模态窗口有遮罩层，非模态窗口无遮罩层）
        *   showInSubWindow - 是否新开子窗口显示弹窗（比如小窗显示 app 时，如果新开子窗口显示弹窗，则这个弹窗会显示在 app 的所属窗口之外）
        *   maskRect - 遮罩层的位置和大小（在遮罩层区域内的事件不透传，在遮罩层区域外的事件会透传）

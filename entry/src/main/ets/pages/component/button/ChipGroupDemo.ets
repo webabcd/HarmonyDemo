@@ -65,7 +65,7 @@ struct ChipGroupDemo {
        *   chipGroupPadding - 边距相关
        *     top - 整个 chip 组的顶部内边距
        *     bottom - 整个 chip 组的底部内边距
-       *   suffix - 整个 chip 组的最右侧的内容（指定一个 @Builder 装饰的函数）
+       *   suffix - 整个 chip 组的最右侧的内容（指定一个自定义组件）
        *   onChange - 组内 chip 是否激活的状态发生变化时的回调
        *     selectedIndexes - 激活状态的 chip 的索引位置的集合
        */

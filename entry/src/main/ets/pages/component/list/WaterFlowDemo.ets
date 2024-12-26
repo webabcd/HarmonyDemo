@@ -95,7 +95,7 @@ struct MySample1 {
     Column() {
       /*
        * WaterFlow - 瀑布流列表
-       *   footer - 自定义 footer（指定一个 @Builder 装饰的函数）
+       *   footer - 自定义 footer（指定一个自定义组件）
        *   cachedCount() - 指定预挂载的 item 的数量（参见 /component/list/ListDemo6.ets 中的说明）
        *   columnsTemplate(), rowsTemplate(), columnsGap(), rowsGap() - 与 Grid 的相关用法一样（详见 /component/list/GridDemo.ets 中的说明）
        *   layoutDirection() - 布局方向（FlexDirection 枚举）

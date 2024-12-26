@@ -41,7 +41,7 @@ struct MySample1 {
        *     TICK - 对钩
        *     DOT - 圆圈
        *     CUSTOM - 自定义
-       *   indicatorBuilder - 自定义选中状态时单选框中的内容（指定一个 @Builder 装饰的函数）
+       *   indicatorBuilder - 自定义选中状态时单选框中的内容（指定一个自定义组件）
        *     前提是 indicatorType 设置为 RadioIndicatorType.CUSTOM
        *   checked() - 是否是选中状态
        *   radioStyle() - 单选框样式（一个 RadioStyle 对象）

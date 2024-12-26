@@ -47,7 +47,7 @@ struct MySample1 {
        *     radius - 阴影的模糊半径
        *     offsetX - 阴影的 x 轴偏移量
        *     offsetY - 阴影的 y 轴偏移量
-       *   description() - 自定义的说明内容（指定一个 @Builder 装饰的函数），其会显示在组件的底部
+       *   description() - 自定义的说明内容（指定一个自定义组件），其会显示在组件的底部
        *     不指定的话则会在底部显示 min 值和 max 值，如果不想显示的话就指定为 null 即可
        *   indicator() - 指针样式（指定为 null 则不显示）
        *     icon - 指针图标（必须是 svg 格式）

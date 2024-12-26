@@ -167,7 +167,7 @@ struct MySample3 {
     Stack({ alignContent: Alignment.TopStart }) {
       /*
        * Refresh - 下拉刷新容器（让任意子组件支持下拉刷新操作）
-       *   builder - 自定义下拉刷新容器（指定一个 @Builder 装饰的函数）
+       *   builder - 自定义下拉刷新容器（指定一个自定义组件）
        */
       Refresh({
         refreshing: $$this.isRefreshing,
