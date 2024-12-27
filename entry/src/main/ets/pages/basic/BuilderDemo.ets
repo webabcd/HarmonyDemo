@@ -8,7 +8,7 @@ interface MyInterface {
   message: string;
 }
 
-// @Builder 表示函数会返回一个组件（可以在组件内部定义，也可以在全局定义）
+// @Builder 表示函数会返回一个或多个组件（可以在组件内部定义，也可以在全局定义）
 @Builder function myBuilder1(param:MyInterface) {
   Text(`myBuilder1 ${param.message}`)
     .fontSize(24)
@@ -47,10 +47,13 @@ struct BuilderDemo {
   // @State 表示组件中的状态变量，状态变量变化会触发 UI 刷新
   @State message: string = 'aaa';
 
-  // @Builder 表示函数会返回一个组件（可以在组件内部定义，也可以在全局定义）
+  // @Builder 表示函数会返回一个或多个组件（可以在组件内部定义，也可以在全局定义）
   // 在 @Builder 内如果使用了 @State 变量，则变量的变化会导致此 @Builder 的刷新
   @Builder myBuilder2() {
-    Text(`myBuilder2 ${this.message}`)
+    Text(`myBuilder2_1 ${this.message}`)
+      .fontSize(24)
+      .fontColor(Color.Orange)
+    Text(`myBuilder2_2 ${this.message}`)
       .fontSize(24)
       .fontColor(Color.Orange)
   }

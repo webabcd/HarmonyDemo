@@ -28,7 +28,7 @@ struct Hello {
   hello(): string {
     return `hello: ${this.name}`
   }
-  // @Builder 表示函数会返回一个组件（可以在组件内部定义，也可以在全局定义）
+  // @Builder 表示函数会返回一个或多个组件（可以在组件内部定义，也可以在全局定义）
   @Builder myBuilder1() {
     Text(this.message)
       .fontSize(24)
@@ -78,7 +78,7 @@ struct Hello {
   }
 }
 
-// @Builder 表示函数会返回一个组件（可以在组件内部定义，也可以在全局定义）
+// @Builder 表示函数会返回一个或多个组件（可以在组件内部定义，也可以在全局定义）
 @Builder function myBuilder2() {
   // 声明一个需要返回的组件，如果有复杂逻辑的话，可以在这里声明一个 @Component 装饰的自定义组件
   Text("myBuilder2")

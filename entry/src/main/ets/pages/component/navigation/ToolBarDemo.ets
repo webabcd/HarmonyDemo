@@ -60,6 +60,7 @@ struct ToolBarDemo {
       },
     })
   }
+
   build() {
     Column({space:10}) {
       TitleBar()
