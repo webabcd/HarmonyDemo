@@ -157,6 +157,7 @@ struct Index {
         new Node1("组件（弹出类）", [
           new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),
           new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
+          new Node2("Menu（上下文菜单）", "pages/component/flyout/MenuDemo"),
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
           new Node2("ActionSheet（列表弹框）", "pages/component/flyout/ActionSheetDemo"),
           new Node2("CustomDialog（自定义弹框）", "pages/component/flyout/CustomDialogDemo"),

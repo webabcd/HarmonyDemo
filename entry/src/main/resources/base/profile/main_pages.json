@@ -159,7 +159,8 @@
     "pages/component/layout/ColumnSplitDemo",
     "pages/component/layout/RowSplitDemo",
     "pages/component/layout/FoldSplitContainerDemo",
-    "pages/component/layout/SideBarContainerDemo"
+    "pages/component/layout/SideBarContainerDemo",
+    "pages/component/flyout/MenuDemo"
   ],
   "window": {
     "designWidth": 720,
