@@ -14,15 +14,18 @@ struct StackDemo {
     Column({ space: 10 }) {
       TitleBar()
 
-      // alignContent, alignContent() - Stack 内的组件相对于父组件的对齐方式（Alignment 枚举）
+      // alignContent - Stack 内的组件相对于父组件的对齐方式（Alignment 枚举）
       //   TopStart, Top, TopEnd, Start, Center, End, BottomStart, Bottom, BottomEnd
       Stack({ alignContent: Alignment.BottomEnd }) {
         Column().width(100).height(50).backgroundColor(Color.Orange)
-      }.width('100%').height(150).backgroundColor(Color.Blue)
+      }.width('100%').height(100).backgroundColor(Color.Blue)
+
+      // alignContent() - Stack 内的组件相对于父组件的对齐方式（Alignment 枚举）
+      //   TopStart, Top, TopEnd, Start, Center, End, BottomStart, Bottom, BottomEnd
       Stack() {
         Column().width(100).height(50).backgroundColor(Color.Orange)
-      }.width('100%').height(150).backgroundColor(Color.Blue)
-      .alignContent(Alignment.TopStart) // 会覆盖上面的 alignContent 参数的值
+      }.width('100%').height(100).backgroundColor(Color.Blue)
+      .alignContent(Alignment.TopStart)
 
       // zIndex - Z 轴方向上的排列顺序
       //   无 zIndex 时，Stack 内后面的组件会显示在前面

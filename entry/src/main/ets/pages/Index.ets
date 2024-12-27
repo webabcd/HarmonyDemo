@@ -20,6 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("ToolBar（工具栏）", "pages/component/navigation/ToolBarDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -153,6 +154,9 @@ struct Index {
           new Node2("DataPanel（数据面板）", "pages/component/display/DataPanelDemo"),
           new Node2("QRCode（二维码）", "pages/component/display/QRCodeDemo"),
           new Node2("PatternLock（手势锁）", "pages/component/display/PatternLockDemo"),
+        ]),
+        new Node1("组件（导航类）", [
+          new Node2("ToolBar（工具栏）", "pages/component/navigation/ToolBarDemo"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),

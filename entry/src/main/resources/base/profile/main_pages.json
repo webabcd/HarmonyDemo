@@ -160,7 +160,8 @@
     "pages/component/layout/RowSplitDemo",
     "pages/component/layout/FoldSplitContainerDemo",
     "pages/component/layout/SideBarContainerDemo",
-    "pages/component/flyout/MenuDemo"
+    "pages/component/flyout/MenuDemo",
+    "pages/component/navigation/ToolBarDemo"
   ],
   "window": {
     "designWidth": 720,
