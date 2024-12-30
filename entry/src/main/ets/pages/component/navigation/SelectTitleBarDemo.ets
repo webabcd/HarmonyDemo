@@ -5,7 +5,8 @@
 import { SelectTitleBar, SymbolGlyphModifier } from '@kit.ArkUI'
 import { TitleBar } from '../../TitleBar';
 
-interface MenuItems {
+// 对应 SelectTitleBarMenuItem
+interface MenuItem {
   value: Resource;
   isEnabled?: boolean;
   action?: () => void
@@ -22,6 +23,7 @@ struct SelectTitleBarDemo {
       true
     )
 
+  // 左侧下拉菜单的选项集合
   options:Array<SelectOption> = [
     { value: 'aaa', icon: $r("app.media.app_icon") },
     { value: 'bbb', icon: $r("app.media.app_icon") },
@@ -29,7 +31,8 @@ struct SelectTitleBarDemo {
     { value: 'ddd', symbolIcon: this.symbolModifier }
   ]
 
-  menuItems:Array<MenuItems> = [
+  // 右侧的菜单项集合
+  menuItems:Array<MenuItem> = [
     {
       value:$r('app.media.app_icon'),
       isEnabled:true,
