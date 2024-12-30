@@ -1,5 +1,6 @@
 /*
- * ToolBar - 工具栏（最多显示 5 个选项，超过的会放到“更多”选项里）
+ * ToolBar - 工具栏
+ * 最多可以显示 5 个选项，超过的选项会放到右侧的“更多”选项里
  */
 
 import { ToolBar, ToolBarOptions, ItemState } from '@kit.ArkUI'

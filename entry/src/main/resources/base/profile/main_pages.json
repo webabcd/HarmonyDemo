@@ -161,7 +161,11 @@
     "pages/component/layout/FoldSplitContainerDemo",
     "pages/component/layout/SideBarContainerDemo",
     "pages/component/flyout/MenuDemo",
-    "pages/component/navigation/ToolBarDemo"
+    "pages/component/navigation/ToolBarDemo",
+    "pages/component/navigation/TabTitleBarDemo",
+    "pages/component/navigation/SelectTitleBarDemo",
+    "pages/component/navigation/EditableTitleBarDemo",
+    "pages/component/navigation/ComposeTitleBarDemo"
   ],
   "window": {
     "designWidth": 720,

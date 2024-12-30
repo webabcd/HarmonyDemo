@@ -21,6 +21,7 @@ struct Index {
       [
         new Node1("临时测试用", [
           new Node2("ToolBar（工具栏）", "pages/component/navigation/ToolBarDemo"),
+          new Node2("TabTitleBar（页签标题栏）", "pages/component/navigation/TabTitleBarDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [

@@ -127,6 +127,33 @@ struct DataTypeDemo {
 }
 
 {
+  class Class1 {
+    title: string = "";
+  }
+  class Class2 {
+    title: string;
+    constructor(title: string) {
+      this.title = title
+    }
+  }
+
+  let f1 = (p: Class1): string => {
+    return p.title;
+  }
+  // 通过 as 断言绕过编译时的类型检查，两个虽然没有任何关系但是形状相同的对象，也是可以正常转换的
+  let r1 = f1(new Class2("abc") as Class1)
+  MyLog.d(r1)
+
+  let f2 = (p: Array<Class1>): string => {
+    return p.map(x => x.title).join(',');
+  }
+  // 支持鸭子类型（duck typing）的概念，即如果它走起来像鸭子，叫起来也像鸭子，那我们就可以认为它是鸭子
+  // 本例传递的是 Class2 数组，但是函数参数需要的是 Class1 数组， 因为 Class1 和 Class2 的形状相同，依据 duck typing 这种场景是可以正常转换的
+  let r2 = f2([new Class2("a"), new Class2("b"), new Class2("c")])
+  MyLog.d(r2)
+}
+
+{
   // 通过 type 指定类型别名
   type Name = string;
   type NameMethod = () => string;
