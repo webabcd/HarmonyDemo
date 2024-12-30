@@ -7,7 +7,7 @@ import { ComposeTitleBar } from '@kit.ArkUI';
 import { TitleBar } from '../../TitleBar';
 
 // 对应 ComposeTitleBarMenuItem
-interface menuItem {
+interface MenuItem {
   value: Resource;
   isEnabled?: boolean;
   action?: () => void
@@ -18,7 +18,7 @@ interface menuItem {
 struct ComposeTitleBarDemo {
 
   // 右侧的菜单项集合
-  menuItems: Array<menuItem> = [
+  menuItems: Array<MenuItem> = [
     {
       value: $r('app.media.app_icon'),
       isEnabled: true,
