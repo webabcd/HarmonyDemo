@@ -13,7 +13,7 @@ struct ListDemo5 {
       TitleBar()
       Tabs() {
         TabContent() { MySample1() }.tabBar('拖动排序').align(Alignment.Top)
-        TabContent() { MySample2() }.tabBar('性能优化').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('键值').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('大量数据').align(Alignment.Top)
       }
       .scrollable(true)
@@ -97,7 +97,7 @@ struct MySample2 {
 
         /*
          * List - ForEach 的应用
-         * 本例用于演示，如何通过 ForEach() 的第 3 个参数做性能优化
+         * 本例用于演示，如何通过 ForEach() 的第 3 个参数生成 item 的键值
          *
          * ForEach() 的第 3 个参数用于生成 item 的键值
          * 开始时，ForEach() 中的每个 item 都会被挂载到组件树上，即每个 item 都会走到 onAppear()
