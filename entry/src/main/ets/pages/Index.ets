@@ -20,7 +20,6 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("SubHeader（子标题栏）", "pages/component/navigation/SubHeaderDemo"),
           new Node2("安全区域", "pages/ui/SafeAreaDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
@@ -228,6 +227,9 @@ struct Index {
           new Node2("一组件显示一组件消失时的过渡动画", "pages/animation/GeometryTransitionDemo"),
           new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1.ets|pages/animation/PageTransitionDemo_2.ets|pages/animation/PageTransitionDemo_3.ets"),
           new Node2("Curve（动画曲线）", "pages/animation/CurveDemo"),
+        ]),
+        new Node1("资源", [
+          new Node2("图标资源", "pages/resource/IconDemo"),
         ]),
       ]
     let md = this.siteMapToMarkdown()
