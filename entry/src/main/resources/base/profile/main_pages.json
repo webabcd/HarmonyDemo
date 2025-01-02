@@ -166,7 +166,8 @@
     "pages/component/navigation/SelectTitleBarDemo",
     "pages/component/navigation/EditableTitleBarDemo",
     "pages/component/navigation/ComposeTitleBarDemo",
-    "pages/ui/SafeAreaDemo"
+    "pages/ui/SafeAreaDemo",
+    "pages/component/navigation/SubHeaderDemo"
   ],
   "window": {
     "designWidth": 720,

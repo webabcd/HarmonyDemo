@@ -1,5 +1,5 @@
 /*
- * ComposeTitleBar - 普通标题栏
+ * ComposeTitleBar - 主标题栏
  * 自带返回按钮，支持标题、子标题、左侧一个图标按钮和右侧多个图标按钮
  */
 
@@ -47,7 +47,7 @@ struct ComposeTitleBarDemo {
       TitleBar()
 
       /*
-       * ComposeTitleBar - 普通标题栏
+       * ComposeTitleBar - 主标题栏
        *   title - 标题
        *   subtitle - 子标题
        *   menuItems - 右侧的菜单项集合（一个 ComposeTitleBarMenuItem 对象数组），最多显示 3 项，超过的会放到右侧的“更多”里

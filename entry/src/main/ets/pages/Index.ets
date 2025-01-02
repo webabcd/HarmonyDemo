@@ -20,9 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("SubHeader（子标题栏）", "pages/component/navigation/SubHeaderDemo"),
           new Node2("安全区域", "pages/ui/SafeAreaDemo"),
-
-
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -158,7 +157,8 @@ struct Index {
           new Node2("PatternLock（手势锁）", "pages/component/display/PatternLockDemo"),
         ]),
         new Node1("组件（导航类）", [
-          new Node2("ComposeTitleBar（普通标题栏）", "pages/component/navigation/ComposeTitleBarDemo"),
+          new Node2("ComposeTitleBar（主标题栏）", "pages/component/navigation/ComposeTitleBarDemo"),
+          new Node2("SubHeader（子标题栏）", "pages/component/navigation/SubHeaderDemo"),
           new Node2("EditableTitleBar（编辑型标题栏）", "pages/component/navigation/EditableTitleBarDemo"),
           new Node2("SelectTitleBar（带下拉标题栏）", "pages/component/navigation/SelectTitleBarDemo"),
           new Node2("TabTitleBar（页签标题栏）", "pages/component/navigation/TabTitleBarDemo"),
