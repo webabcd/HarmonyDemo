@@ -70,3 +70,40 @@ struct BasicDemo {
 
   MyLog.d(`${a}, ${b}, ${c}, ${d}, ${e}, ${f}, ${g}`); // 10, 5, 5, 0, 5, 5, 10
 }
+
+// ! ?
+{
+  class Person {
+    public name: string
+    constructor(name:string) {
+      this.name = name;
+    }
+  }
+
+  let getPerson = (type: number): Person | undefined | null => {
+    if (type == 1) {
+      return new Person("webabcd")
+    } else if (type == 2) {
+      return undefined
+    } else {
+      return null
+    }
+  }
+
+  let a = getPerson(1)
+  // MyLog.d(`${a.name}`); // 编译时报错
+  MyLog.d(`${a?.name}`); // webabcd
+  MyLog.d(`${a!.name}`); // webabcd
+
+  let b = getPerson(2)
+  // MyLog.d(`${b.name}`); // 编译时报错
+  MyLog.d(`${b?.name}`); // undefined
+  MyLog.d(`${b?.name || "xxx"}`); // xxx
+  // MyLog.d(`${b!.name}`); // 运行时报错
+
+  let c = getPerson(3)
+  // MyLog.d(`${c.name}`); // 编译时报错
+  MyLog.d(`${c?.name}`); // undefined
+  MyLog.d(`${c?.name || "xxx"}`); // xxx
+  // MyLog.d(`${c!.name}`); // 运行时报错
+}

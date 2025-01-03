@@ -42,14 +42,14 @@ struct InterfaceDemo {
     hello?: (name: string) => string; // 通过 ? 定义可选方法
   };
 
-  // 变量的形状必须和接口的形状保持一致，且可选属性和可选方法可以不定义
-  class MyPersion1 implements IPerson {
+  // 类的形状必须和接口的形状保持一致，且可选属性和可选方法可以不定义
+  class MyPerson1 implements IPerson {
     public name: string;
     public constructor(name: string) {
       this.name = name;
     }
   }
-  class MyPersion2 implements IPerson {
+  class MyPerson2 implements IPerson {
     public name: string;
     public age: number;
     public constructor(name: string, age: number) {
