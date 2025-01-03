@@ -9,7 +9,7 @@ export struct TitleBar {
 
   aboutToAppear() {
     const params = router.getParams() as Record<string, string>;
-    this.title = params.title || '';
+    this.title = params?.title || '';
   }
 
   build() {
