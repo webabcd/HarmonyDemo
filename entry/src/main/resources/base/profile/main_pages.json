@@ -168,7 +168,11 @@
     "pages/component/navigation/ComposeTitleBarDemo",
     "pages/ui/SafeAreaDemo",
     "pages/component/navigation/SubHeaderDemo",
-    "pages/resource/IconDemo"
+    "pages/resource/IconDemo",
+    "pages/component/navigation/StepperDemo",
+    "pages/component/navigation/NavigatorDemo",
+    "pages/component/navigation/pages/NavigatorDemo_Page1",
+    "pages/component/navigation/pages/NavigatorDemo_Page2"
   ],
   "window": {
     "designWidth": 720,
