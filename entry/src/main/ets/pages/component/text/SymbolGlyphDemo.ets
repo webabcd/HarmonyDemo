@@ -13,8 +13,8 @@ struct SymbolGlyphDemo {
     Column({ space: 10 }) {
       TitleBar()
       Tabs() {
-        TabContent() { MySample1() }.tabBar('aaa').align(Alignment.Top)
-        TabContent() { MySample2() }.tabBar('bbb').align(Alignment.Top)
+        TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('效果').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -38,6 +38,9 @@ struct MySample1 {
        *     NONE - 无效果
        *     SCALE - 缩放动画效果
        *     HIERARCHICAL - 层级渐变动画效果
+       *   renderingStrategy() - 图标的渲染策略
+       *     SINGLE - 单色模式
+       *     MULTIPLE_COLOR - 图标的不同层用不同的颜色（仅部分图标支持）
        *
        * SymbolGlyphModifier() - 符号图标
        *   其他 UI 组件如果需要使用符号图标，一般会通过 SymbolGlyphModifier 实现
@@ -45,19 +48,26 @@ struct MySample1 {
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
         .fontWeight(FontWeight.Normal)
-        .fontSize(80)
+        .fontSize(50)
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(80)
+        .fontSize(50)
         .fontColor([Color.Orange])
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(80)
+        .fontSize(50)
         .effectStrategy(SymbolEffectStrategy.SCALE)
 
       SymbolGlyph($r('sys.symbol.ohos_wifi'))
-        .fontSize(80)
+        .fontSize(50)
         .effectStrategy(SymbolEffectStrategy.HIERARCHICAL)
+
+      // sys.symbol.ohos_folder_badge_plus 图标支持不同层用不同的颜色，因为其由 2 层构成，第 1 层是一个“文件夹”图形，第 2 层是一个“加号”图形
+      // 下面例子中的图标，其中的“文件夹”图形会显示为红色，其中的“加号”图形会显示为绿色
+      SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
+        .fontSize(50)
+        .fontColor([Color.Red, Color.Green])
+        .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR)
 
       Chip({
         label: { text: 'label' },

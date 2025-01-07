@@ -51,8 +51,8 @@ export struct RadioBar {
         Column() {
           Radio({ value: item, group: this.groupName })
             .checked(index == this.selectedIndex)
-            .height(24)
-            .width(24)
+            .height(14)
+            .width(14)
             .onChange((isChecked: boolean) => {
               if (isChecked) {
                 this.selectedIndex = index
@@ -61,9 +61,9 @@ export struct RadioBar {
                 }
               }
             })
-          Text(item)
+          Text(item).fontSize(14)
         }
       })
-    }.padding(10)
+    }
   }
 }

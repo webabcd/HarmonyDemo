@@ -84,7 +84,7 @@ struct ToolBarDemo {
       ToolBar({
         activateIndex: 2,
         toolBarList: this.toolBarList,
-      })
+      }).height(60)
     }
   }
 }
