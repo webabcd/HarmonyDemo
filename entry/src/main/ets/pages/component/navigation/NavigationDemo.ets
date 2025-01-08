@@ -18,7 +18,7 @@ struct NavigationDemo {
       Tabs() {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('标准化的导航栏和工具栏').align(Alignment.Top)
-        TabContent() { MySample3() }.tabBar('分栏').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('导航组件与导航目标页分栏显示').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
