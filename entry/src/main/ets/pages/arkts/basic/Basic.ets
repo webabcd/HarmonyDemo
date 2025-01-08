@@ -107,3 +107,19 @@ struct BasicDemo {
   MyLog.d(`${c?.name || "xxx"}`); // xxx
   // MyLog.d(`${c!.name}`); // 运行时报错
 }
+
+// 单例模式
+{
+  class MyClass {
+    private static myClass = new MyClass();
+    public static getInstance() {
+      return MyClass.myClass;
+    }
+    public n:number = 0
+  }
+
+  MyClass.getInstance().n ++;
+  MyClass.getInstance().n ++;
+  MyClass.getInstance().n ++;
+  MyLog.d(`${MyClass.getInstance().n}`) // 3
+}
