@@ -296,7 +296,7 @@ struct MySample3 {
       Navigation(this.navPathStack) {
 
         Button('pushPath').onClick(() => {
-          this.navPathStack.pushPath({ name: "navigationDemo_MyPage" })
+          this.navPathStack.pushPath({ name: "navigationDemo_myPage" })
         }).margin({ bottom: 10 })
 
         List({ space: 20 }) {
@@ -336,7 +336,7 @@ struct MyPage {
     NavDestination() {
       Column({space:5}) {
         Button('pushPath').onClick(() => {
-          this.navPathStack?.pushPath({ name: "navigationDemo_MyPage" });
+          this.navPathStack?.pushPath({ name: "navigationDemo_myPage" });
         })
 
         Button('pop').onClick(() => {

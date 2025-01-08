@@ -185,10 +185,11 @@ struct MySample3 {
           }, (err, data) => {
             // 点击了空白区域
             if (err) {
+              // err.message 的值为 cancel
               this.message = `err message:${err.message}`
               return;
             }
-            // 点击了自定义按钮
+            // 点击了自定义按钮，通过 data.index 获取点击的按钮的索引位置
             this.message = `button index:${data.index}`
           });
         })
