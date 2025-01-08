@@ -1,0 +1,36 @@
+{
+  "routerMap": [
+    {
+      "name": "navigationDemo_myPage",
+      "pageSourceFile": "src/main/ets/pages/component/navigation/NavigationDemo.ets",
+      "buildFunction": "myPageBuilder",
+      "data": {
+        "description": "description"
+      }
+    },
+    {
+      "name": "navigationDemo2_page1",
+      "pageSourceFile": "src/main/ets/pages/component/navigation/pages/NavigationDemo2_Page1.ets",
+      "buildFunction": "navigationDemo2_page1_builder",
+      "data": {
+        "description": "description"
+      }
+    },
+    {
+      "name": "navigationDemo2_page2",
+      "pageSourceFile": "src/main/ets/pages/component/navigation/pages/NavigationDemo2_Page2.ets",
+      "buildFunction": "navigationDemo2_page2_builder",
+      "data": {
+        "description": "description"
+      }
+    },
+    {
+      "name": "navigationDemo2_page3",
+      "pageSourceFile": "src/main/ets/pages/component/navigation/pages/NavigationDemo2_Page3.ets",
+      "buildFunction": "navigationDemo2_page3_builder",
+      "data": {
+        "description": "description"
+      }
+    }
+  ]
+}
