@@ -3,7 +3,7 @@
  * 包括顶部的导航栏，中部的内容区，底部的工具栏
  *
  * 本例用于演示导航组件的显示
- * Navigation 是导航的根组件，导航到的目标页是 NavDestination 组件，导航栈中包含的是多个 NavDestination 组件
+ * Navigation 是导航的根组件，导航到的目标页是 NavDestination 组件，导航栈中包含的是多个 NavDestination 组件（Navigation 组件不在导航栈中）
  */
 
 import { TitleBar, RadioBar } from '../../TitleBar';
