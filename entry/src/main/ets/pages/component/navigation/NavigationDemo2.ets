@@ -3,6 +3,7 @@
  * 包括顶部的导航栏，中部的内容区，底部的工具栏
  *
  * 本例用于演示导航组件的导航
+ * Navigation 是导航的根组件，导航到的目标页是 NavDestination 组件，导航栈中包含的是多个 NavDestination 组件
  *
  * 如果需要通过 Navigation 实现导航，则先要配置路由表
  * 1、在 src/main/module.json5 中做类似如下的配置（指定路由表）

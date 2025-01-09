@@ -31,6 +31,14 @@
       "data": {
         "description": "description"
       }
+    },
+    {
+      "name": "navigationDemo3_page1",
+      "pageSourceFile": "src/main/ets/pages/component/navigation/pages/NavigationDemo3_Page1.ets",
+      "buildFunction": "navigationDemo3_page1_builder",
+      "data": {
+        "description": "description"
+      }
     }
   ]
 }
