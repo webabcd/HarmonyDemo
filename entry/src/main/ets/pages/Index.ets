@@ -20,8 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Stepper（引导页）", "pages/component/navigation/StepperDemo"),
-          new Node2("Navigator（）", "pages/component/navigation/NavigatorDemo", "pages/component/navigation/pages/NavigatorDemo_Page1.ets|pages/component/navigation/pages/NavigatorDemo_Page2.ets"),
+          new Node2("router（router 导航 ）", "pages/component/navigation/NavigationDemo3"),
+          new Node2("Tabs（）", "pages/component/navigation/TabsDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -51,6 +51,7 @@ struct Index {
           new Node2("async/await", "pages/arkts/advanced/AsyncAwait"),
           new Node2("iterator, generator", "pages/arkts/advanced/IteratorGenerator"),
           new Node2("Proxy, Reflect", "pages/arkts/advanced/ProxyReflect"),
+          new Node2("Record, Partial", "pages/arkts/advanced/RecordPartial"),
         ]),
         new Node1("ArkTS 多线程", [
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/SendableDemo_MyFunctionAndClass.ets"),
@@ -163,6 +164,13 @@ struct Index {
           new Node2("SelectTitleBar（带下拉标题栏）", "pages/component/navigation/SelectTitleBarDemo"),
           new Node2("TabTitleBar（页签标题栏）", "pages/component/navigation/TabTitleBarDemo"),
           new Node2("ToolBar（工具栏）", "pages/component/navigation/ToolBarDemo"),
+          new Node2("Stepper（引导页）", "pages/component/navigation/StepperDemo"),
+          new Node2("Navigation（导航组件的显示）", "pages/component/navigation/NavigationDemo"),
+          new Node2("Navigation（导航组件的导航）", "pages/component/navigation/NavigationDemo2", "pages/component/navigation/pages/NavigationDemo2_Page1.ets|pages/component/navigation/pages/NavigationDemo2_Page2.ets|pages/component/navigation/pages/NavigationDemo2_Page3.ets"),
+          new Node2("Navigation（导航组件的转场动画）", "pages/component/navigation/NavigationDemo3", "pages/component/navigation/pages/NavigationDemo3_Page1.ets"),
+          new Node2("NavDestination（导航目标页）", "pages/component/navigation/NavDestinationDemo"),
+          new Node2("NavRouter（简版导航）", "pages/component/navigation/NavRouterDemo"),
+          new Node2("Navigator（导航器）", "pages/component/navigation/NavigatorDemo", "pages/component/navigation/pages/NavigatorDemo_Page1.ets"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),
@@ -295,16 +303,10 @@ struct Index {
         ForEach(this.siteMap, (node1: Node1, index: number) => {
           Column() {
             Row() {
-              Text(node1.title)
-                .fontSize(16)
-                .margin({ left: 16 })
-
+              Text(node1.title).fontSize(16).margin({ left: 16 })
               Blank()
-
               Image(this.selectedNode1 == index ? $r('app.media.ic_arrow_down') : $r('app.media.ic_arrow_right'))
-                .width(24)
-                .height(24)
-                .margin({ right: 6 })
+                .width(24).height(24).margin({ right: 6 })
             }
             .height(56)
             .width('100%')
@@ -319,18 +321,10 @@ struct Index {
             if (this.selectedNode1 == index) {
               ForEach(this.siteMap[this.selectedNode1].childNodes, (node2: Node2) => {
                 Column() {
-                  Divider()
-                    .height(1)
-                    .opacity(0.2)
-                    .margin({ left: 42, right: 8 })
+                  Divider().height(1).opacity(0.2).margin({ left: 42, right: 8 })
 
                   Row() {
-                    Text(node2.title)
-                      .fontSize(16)
-                      .layoutWeight(1)
-                      .margin({ left: 42 })
-                      .align(Alignment.Start)
-
+                    Text(node2.title).fontSize(16).layoutWeight(1).margin({ left: 42 }).align(Alignment.Start)
                     Blank()
                   }
                   .height(48)

@@ -172,7 +172,13 @@
     "pages/component/navigation/StepperDemo",
     "pages/component/navigation/NavigatorDemo",
     "pages/component/navigation/pages/NavigatorDemo_Page1",
-    "pages/component/navigation/pages/NavigatorDemo_Page2"
+    "pages/component/navigation/NavigationDemo",
+    "pages/component/navigation/TabsDemo",
+    "pages/component/navigation/NavigationDemo2",
+    "pages/component/navigation/NavDestinationDemo",
+    "pages/component/navigation/NavigationDemo3",
+    "pages/component/navigation/NavRouterDemo",
+    "pages/arkts/advanced/RecordPartial"
   ],
   "window": {
     "designWidth": 720,
