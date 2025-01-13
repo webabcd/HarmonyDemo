@@ -20,7 +20,6 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("router（router 导航 ）", "pages/component/navigation/NavigationDemo3"),
           new Node2("Tabs（）", "pages/component/navigation/TabsDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
@@ -171,6 +170,7 @@ struct Index {
           new Node2("NavDestination（导航目标页）", "pages/component/navigation/NavDestinationDemo"),
           new Node2("NavRouter（简版导航）", "pages/component/navigation/NavRouterDemo"),
           new Node2("Navigator（导航器）", "pages/component/navigation/NavigatorDemo", "pages/component/navigation/pages/NavigatorDemo_Page1.ets"),
+          new Node2("router（路由接口）", "pages/component/navigation/RouterDemo", "pages/component/navigation/pages/RouterDemo_Page1.ets"),
         ]),
         new Node1("组件（弹出类）", [
           new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),

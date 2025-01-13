@@ -18,7 +18,7 @@ struct NavigatorDemo_Page1 {
     Column({space:10}) {
       TitleBar()
 
-      Text(`sessionId:${Math.floor(Math.random() * 1000).toString()}`).fontSize(24)
+      Text(`pageId:${Math.floor(Math.random() * 1000).toString()}`).fontSize(24)
 
       Text(`name:${this.person?.name}, age:${this.person?.age}`).fontSize(24)
 

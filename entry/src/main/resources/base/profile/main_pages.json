@@ -178,7 +178,9 @@
     "pages/component/navigation/NavDestinationDemo",
     "pages/component/navigation/NavigationDemo3",
     "pages/component/navigation/NavRouterDemo",
-    "pages/arkts/advanced/RecordPartial"
+    "pages/arkts/advanced/RecordPartial",
+    "pages/component/navigation/RouterDemo",
+    "pages/component/navigation/pages/RouterDemo_Page1"
   ],
   "window": {
     "designWidth": 720,
