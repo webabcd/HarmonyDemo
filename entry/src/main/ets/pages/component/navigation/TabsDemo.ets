@@ -70,6 +70,7 @@ struct MySample1 {
    *   divider() - 页签栏与内容区之间的分隔线
    *     strokeWidth, color, startMargin, endMargin
    *     注：如果需要隐藏分隔线的话，就 divider(null) 即可
+   *   animationDuration() - 页签切换动画的时长
    *   onChange() - 页签切换后的回调
    *   onTabBarClick() - 页签点击后的回调
    *   onContentWillChange() - 切换页签前的回调，可用于页签的切换拦截
@@ -127,14 +128,10 @@ struct MySample1 {
         startMargin: 0,
         endMargin: 0
       })
+      .animationDuration(1000)
       .onChange((index: number) => {
         this.message = `onChange:${index}`
         this.currentIndex = index
-      })
-      .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-        // 注：如果仅在 onChange 回调中设置 currentIndex 则可能会导致自定义页签的切换延迟
-        // 所以建议在 onAnimationStart 回调中设置 currentIndex 以避免此问题
-        this.currentIndex = targetIndex
       })
       .onTabBarClick((index: number) => {
         this.message = `onTabBarClick:${index}`
