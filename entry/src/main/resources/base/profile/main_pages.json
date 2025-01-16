@@ -180,7 +180,8 @@
     "pages/component/navigation/NavRouterDemo",
     "pages/arkts/advanced/RecordPartial",
     "pages/component/navigation/RouterDemo",
-    "pages/component/navigation/pages/RouterDemo_Page1"
+    "pages/component/navigation/pages/RouterDemo_Page1",
+    "pages/component/navigation/TabContentDemo"
   ],
   "window": {
     "designWidth": 720,

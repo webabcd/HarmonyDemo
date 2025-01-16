@@ -20,7 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Tabs（）", "pages/component/navigation/TabsDemo"),
+          new Node2("Tabs（页签导航）", "pages/component/navigation/TabsDemo"),
+          new Node2("TabContentDemo（页签导航的页签内容）", "pages/component/navigation/TabContentDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [

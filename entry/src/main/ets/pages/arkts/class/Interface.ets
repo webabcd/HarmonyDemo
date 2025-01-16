@@ -31,6 +31,16 @@ struct InterfaceDemo {
     }
   };
 
+  // 也可以通过 as 实现上面的效果
+  let webabcd2 = {
+    id: 1234,
+    name: 'webabcd',
+    age: 44,
+    hello: (name: string) => {
+      return 'hello: '+ name;
+    }
+  } as Person;
+
   webabcd.name = 'wanglei';
   MyLog.d(`${webabcd.id}, ${webabcd.name}, ${webabcd.age}, ${webabcd.hello("webabcd")}`); // 1234, wanglei, 44, hello: webabcd
 }
