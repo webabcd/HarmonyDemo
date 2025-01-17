@@ -2,7 +2,7 @@
  * Tabs - 页签导航
  * 包括页签栏和内容区
  *
- * 注：Tabs 的子组件通过 TabContent 定义页签内容，详见 TabContentDemo.ets 中的说明
+ * 注：Tabs 的子组件通过 TabContent 定义某个页签及其对应的内容，详见 TabContentDemo.ets 中的说明
  */
 
 import { TitleBar, RadioBar, MyLog } from '../../TitleBar';

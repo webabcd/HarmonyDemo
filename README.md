@@ -36,15 +36,18 @@
 - pages/arkts/class/Generics
 7. 模块
 - pages/arkts/module/Main
-- pages/arkts/module/a
-- pages/arkts/module/b
-- pages/arkts/module/c
-- pages/arkts/module/d
-- pages/arkts/module/e
-- pages/arkts/module/f
-- pages/arkts/module/g
-- pages/arkts/module/h
-- pages/arkts/module/i
+- pages/arkts/module/a.ets
+- pages/arkts/module/b.ets
+- pages/arkts/module/c.ets
+- pages/arkts/module/d.ets
+- pages/arkts/module/e.ets
+- pages/arkts/module/f.ets
+- pages/arkts/module/g.ets
+- pages/arkts/module/h.ets
+- pages/arkts/module/i.ets
+- pages/arkts/module/j.ets
+- pages/arkts/module/k.ets
+- pages/arkts/module/l.ets
 
 ### ArkTS 进阶
 1. ArrayBuffer
@@ -57,14 +60,24 @@
 - pages/arkts/advanced/IteratorGenerator
 5. Proxy, Reflect
 - pages/arkts/advanced/ProxyReflect
+6. Record, Partial
+- pages/arkts/advanced/RecordPartial
 
 ### ArkTS 多线程
 1. TaskPool
 - pages/arkts/concurrent/TaskPool
-- pages/arkts/concurrent/MyFunctionAndClass
+- pages/arkts/concurrent/SendableDemo_MyFunctionAndClass.ets
 2. Worker
 - pages/arkts/concurrent/Worker
 - /entry/src/main/ets/workers/myworker
+3. @Sendable（多线程共享对象）
+- pages/arkts/concurrent/SendableDemo
+4. use shared（多线程引用相同的模块只被加载一次）
+- pages/arkts/concurrent/UseSharedDemo
+- pages/arkts/concurrent/UseSharedDemo_1.ets
+- pages/arkts/concurrent/UseSharedDemo_2.ets
+5. ASON（对 @Sendable 对象做序列化和反序列化）
+- pages/arkts/concurrent/ASONDemo
 
 ### 开发基础
 1. ArkUI 基础
@@ -101,7 +114,9 @@
 - pages/state/v2/ProviderConsumerDemo
 11. v2 @Require, @Monitor, @Computed, !!
 - pages/state/v2/MonitorDemo
-12. MVVM
+12. v2 UIUtils.makeObserved()
+- pages/state/v2/MakeObservedDemo
+13. MVVM
 - pages/state/mvvm/MVVMDemo
 - pages/state/mvvm/model/MyModel.ets
 - pages/state/mvvm/view/MyTopView.ets
@@ -124,14 +139,24 @@
 - pages/component/layout/FlexDemo
 4. Stack（堆叠布局）
 - pages/component/layout/StackDemo
-5. FolderStack（可识别屏幕折叠悬停的堆叠布局）
-- pages/component/layout/FolderStackDemo
-6. RelativeContainer（相对布局）
+5. RelativeContainer（相对布局）
 - pages/component/layout/RelativeContainerDemo
-7. Scroll（可滚动容器）
+6. GridRow（栅格布局）
+- pages/component/layout/GridRowDemo
+7. ColumnSplit（垂直分栏布局）
+- pages/component/layout/ColumnSplitDemo
+8. RowSplit（水平分栏布局）
+- pages/component/layout/RowSplitDemo
+9. FolderStack（折叠屏悬停状态的堆叠布局）
+- pages/component/layout/FolderStackDemo
+10. FoldSplitContainer（折叠屏分栏布局）
+- pages/component/layout/FoldSplitContainerDemo
+11. Scroll（可滚动容器）
 - pages/component/layout/ScrollDemo
-8. Refresh（下拉刷新容器）
+12. Refresh（下拉刷新容器）
 - pages/component/layout/RefreshDemo
+13. SideBarContainer（侧边栏容器）
+- pages/component/layout/SideBarContainerDemo
 
 ### 组件（文本类）
 1. Text（文本显示框）
@@ -231,36 +256,78 @@
 9. PatternLock（手势锁）
 - pages/component/display/PatternLockDemo
 
+### 组件（导航类）
+1. ComposeTitleBar（主标题栏）
+- pages/component/navigation/ComposeTitleBarDemo
+2. SubHeader（子标题栏）
+- pages/component/navigation/SubHeaderDemo
+3. EditableTitleBar（编辑型标题栏）
+- pages/component/navigation/EditableTitleBarDemo
+4. SelectTitleBar（带下拉标题栏）
+- pages/component/navigation/SelectTitleBarDemo
+5. TabTitleBar（页签标题栏）
+- pages/component/navigation/TabTitleBarDemo
+6. ToolBar（工具栏）
+- pages/component/navigation/ToolBarDemo
+7. Stepper（引导页）
+- pages/component/navigation/StepperDemo
+8. Tabs（页签导航）
+- pages/component/navigation/TabsDemo
+9. TabContent（页签导航的某个页签及其对应的内容）
+- pages/component/navigation/TabContentDemo
+10. Navigation（导航组件的显示）
+- pages/component/navigation/NavigationDemo
+11. Navigation（导航组件的导航）
+- pages/component/navigation/NavigationDemo2
+- pages/component/navigation/pages/NavigationDemo2_Page1.ets
+- pages/component/navigation/pages/NavigationDemo2_Page2.ets
+- pages/component/navigation/pages/NavigationDemo2_Page3.ets
+12. Navigation（导航组件的转场动画）
+- pages/component/navigation/NavigationDemo3
+- pages/component/navigation/pages/NavigationDemo3_Page1.ets
+13. NavDestination（导航目标页）
+- pages/component/navigation/NavDestinationDemo
+14. NavRouter（简版导航）
+- pages/component/navigation/NavRouterDemo
+15. Navigator（导航器）
+- pages/component/navigation/NavigatorDemo
+- pages/component/navigation/pages/NavigatorDemo_Page1.ets
+16. router（路由接口）
+- pages/component/navigation/RouterDemo
+- pages/component/navigation/pages/RouterDemo_Page1.ets
+
 ### 组件（弹出类）
 1. promptAction（toast, menu, dialog, custom）
 - pages/component/flyout/PromptActionDemo
 2. Popup（弹出框）
 - pages/component/flyout/PopupDemo
-3. AlertDialog（警告弹框）
+3. Menu（上下文菜单）
+- pages/component/flyout/MenuDemo
+4. AlertDialog（警告弹框）
 - pages/component/flyout/AlertDialogDemo
-4. ActionSheet（列表弹框）
+5. ActionSheet（列表弹框）
 - pages/component/flyout/ActionSheetDemo
-5. CustomDialog（自定义弹框）
+6. CustomDialog（自定义弹框）
 - pages/component/flyout/CustomDialogDemo
-6. CustomDialog 之 TipsDialog（图文弹框）
+7. CustomDialog 之 TipsDialog（图文弹框）
 - pages/component/flyout/CustomDialogDemo_TipsDialog
-7. CustomDialog 之 SelectDialog（列表弹框）
+8. CustomDialog 之 SelectDialog（列表弹框）
 - pages/component/flyout/CustomDialogDemo_SelectDialog
-8. CustomDialog 之 ConfirmDialog（信息确认弹框）
+9. CustomDialog 之 ConfirmDialog（信息确认弹框）
 - pages/component/flyout/CustomDialogDemo_ConfirmDialog
-9. CustomDialog 之 AlertDialog（警告弹框）
+10. CustomDialog 之 AlertDialog（警告弹框）
 - pages/component/flyout/CustomDialogDemo_AlertDialog
-10. CustomDialog 之 LoadingDialog（加载弹框）
+11. CustomDialog 之 LoadingDialog（加载弹框）
 - pages/component/flyout/CustomDialogDemo_LoadingDialog
-11. CustomDialog 之 CustomContentDialog（自定义内容弹框）
+12. CustomDialog 之 CustomContentDialog（自定义内容弹框）
 - pages/component/flyout/CustomDialogDemo_CustomContentDialog
-12. CalendarPickerDialog（日历选择弹窗）
+13. CalendarPickerDialog（日历选择弹窗）
 - pages/component/flyout/CalendarPickerDialogDemo
-13. DatePickerDialog（日期滑动选择弹窗）
+14. DatePickerDialog（日期滑动选择弹窗）
 - pages/component/flyout/DatePickerDialogDemo
-14. TimePickerDialog（时间滑动选择弹窗）
+15. TimePickerDialog（时间滑动选择弹窗）
 - pages/component/flyout/TimePickerDialogDemo
-15. TextPickerDialog（文本滑动选择弹窗）
+16. TextPickerDialog（文本滑动选择弹窗）
 - pages/component/flyout/TextPickerDialogDemo
 
 ### 组件（媒体类）
@@ -288,11 +355,15 @@
 - pages/component/list/GridDemo2
 10. Grid（滚动，多选，拖动排序，双指缩放并修改列数）
 - pages/component/list/GridDemo3
-11. GridObjectSortComponent（图标网格，支持增加、删除和排序）
+11. Swiper（组件轮播列表）
+- pages/component/list/SwiperDemo
+12. WaterFlow（瀑布流列表）
+- pages/component/list/WaterFlowDemo
+13. GridObjectSortComponent（图标网格，支持增加、删除和排序）
 - pages/component/list/GridObjectSortComponentDemo
-12. TreeView（树状列表）
+14. TreeView（树状列表）
 - pages/component/list/TreeViewDemo
-13. AlphabetIndexer（单字符二级联动列表）
+15. AlphabetIndexer（单字符二级联动列表）
 - pages/component/list/AlphabetIndexerDemo
 
 ### UI
@@ -308,6 +379,8 @@
 5. 主题相关
 - pages/ui/ThemeDemo
 - pages/ui/MyTheme.ets
+6. 安全区域
+- pages/ui/SafeAreaDemo
 
 ### 图形
 1. 边框
@@ -347,3 +420,7 @@
 - pages/animation/PageTransitionDemo_3.ets
 9. Curve（动画曲线）
 - pages/animation/CurveDemo
+
+### 资源
+1. 图标资源
+- pages/resource/IconDemo

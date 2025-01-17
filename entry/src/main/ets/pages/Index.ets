@@ -20,8 +20,6 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Tabs（页签导航）", "pages/component/navigation/TabsDemo"),
-          new Node2("TabContentDemo（页签导航的页签内容）", "pages/component/navigation/TabContentDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -165,6 +163,8 @@ struct Index {
           new Node2("TabTitleBar（页签标题栏）", "pages/component/navigation/TabTitleBarDemo"),
           new Node2("ToolBar（工具栏）", "pages/component/navigation/ToolBarDemo"),
           new Node2("Stepper（引导页）", "pages/component/navigation/StepperDemo"),
+          new Node2("Tabs（页签导航）", "pages/component/navigation/TabsDemo"),
+          new Node2("TabContent（页签导航的某个页签及其对应的内容）", "pages/component/navigation/TabContentDemo"),
           new Node2("Navigation（导航组件的显示）", "pages/component/navigation/NavigationDemo"),
           new Node2("Navigation（导航组件的导航）", "pages/component/navigation/NavigationDemo2", "pages/component/navigation/pages/NavigationDemo2_Page1.ets|pages/component/navigation/pages/NavigationDemo2_Page2.ets|pages/component/navigation/pages/NavigationDemo2_Page3.ets"),
           new Node2("Navigation（导航组件的转场动画）", "pages/component/navigation/NavigationDemo3", "pages/component/navigation/pages/NavigationDemo3_Page1.ets"),
