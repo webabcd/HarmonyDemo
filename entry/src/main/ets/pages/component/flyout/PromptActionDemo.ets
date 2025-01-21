@@ -157,7 +157,7 @@ struct MySample3 {
     Column({ space: 10 }) {
 
       /*
-       * promptAction.showDialog() - 弹出 dialog（显示一个标题和一个内容和多个自定义按钮）
+       * promptAction.showDialog() - 弹出 dialog（显示一个标题和一个内容和多个自定义按钮），点击空白处会自动隐藏
        *   title - 标题
        *   message - 内容
        *   buttons - 自定义按钮集合
