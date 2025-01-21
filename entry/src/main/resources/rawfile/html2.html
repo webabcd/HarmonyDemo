@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+</head>
+<body>
+
+<p>Hello World</p>
+
+<div id="div"></div>
+
+<div>
+    <button onclick="js2arkts();">js 调用 arkts</button>
+</div>
+
+<script>
+
+    // 用于演示在 webview 中通过 arkts 调用 js
+    function arkts2js(name) {
+        return `hello:${name}`
+    }
+
+    // 用于演示在 webview 中通过 js 调用 arkts
+    function js2arkts() {
+        // 在 webview 中通过 WebviewController 的 registerJavaScriptProxy 注册了名为 jsObj 的 js 对象（并指定此 js 对象包括 js2arkts 方法）
+        let result = jsObj.js2arkts("webabcd")
+        document.getElementById('div').innerHTML += `js2arkts ${result}<br/>`
+    }
+
+</script>
+</body>
+</html>

@@ -253,7 +253,7 @@ struct MySample3 {
       })
 
       /*
-       * TextInputController - 用于控制 TextInput 的 controller
+       * TextInputController - 用于和绑定的 TextInput 之间的交互
        *   getCaretOffset() - 获取当前光标的位置
        *     index - 光标所在的字符位置
        *     x - 光标所在的行位置

@@ -181,7 +181,8 @@
     "pages/arkts/advanced/RecordPartial",
     "pages/component/navigation/RouterDemo",
     "pages/component/navigation/pages/RouterDemo_Page1",
-    "pages/component/navigation/TabContentDemo"
+    "pages/component/navigation/TabContentDemo",
+    "pages/component/webview/WebDemo"
   ],
   "window": {
     "designWidth": 720,
