@@ -11,7 +11,7 @@
 
 import { TitleBar, MyLog } from '../../TitleBar';
 import { taskpool } from '@kit.ArkTS';
-import { myFunction, MyClass } from './SendableDemo_MyFunctionAndClass';
+import { myFunction, MyClass } from './TaskPoolDemo_1';
 
 // @Concurrent 表示函数可以被创建为一个被任务池执行的任务
 @Concurrent
@@ -66,7 +66,7 @@ async function sample3(): Promise<string> {
 }
 
 // @Concurrent 函数无法调用同文件内的其他函数或类
-// 如果要在 @Concurrent 函数内调用其他函数或类，那么被调用的函数或类必须定义在其他 .ets 文件中（参见 MyFunctionAndClass.ets 中的示例）
+// 如果要在 @Concurrent 函数内调用其他函数或类，那么被调用的函数或类必须定义在其他 .ets 文件中（参见 TaskPoolDemo_1.ets 中的示例）
 @Concurrent
 async function fun4(): Promise<string> {
   await new Promise<void>((r) => { setTimeout(r, 1000) })
@@ -86,7 +86,7 @@ async function sample4(): Promise<string> {
 
 @Entry
 @Component
-struct TaskPool {
+struct TaskPoolDemo {
 
   @State message:string = ""
 

@@ -20,7 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
+          new Node2("TaskPool", "pages/arkts/concurrent/TaskPoolDemo2"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
@@ -52,8 +52,8 @@ struct Index {
           new Node2("Record, Partial", "pages/arkts/advanced/RecordPartial"),
         ]),
         new Node1("ArkTS 多线程", [
-          new Node2("TaskPool", "pages/arkts/concurrent/TaskPool", "pages/arkts/concurrent/SendableDemo_MyFunctionAndClass.ets"),
-          new Node2("Worker", "pages/arkts/concurrent/Worker", "/entry/src/main/ets/workers/myworker.ets"),
+          new Node2("TaskPool", "pages/arkts/concurrent/TaskPoolDemo", "pages/arkts/concurrent/TaskPoolDemo_1.ets"),
+          new Node2("Worker", "pages/arkts/concurrent/WorkerDemo", "/entry/src/main/ets/workers/myworker.ets"),
           new Node2("@Sendable（多线程共享对象）", "pages/arkts/concurrent/SendableDemo"),
           new Node2("use shared（多线程引用相同的模块只被加载一次）", "pages/arkts/concurrent/UseSharedDemo", "pages/arkts/concurrent/UseSharedDemo_1.ets|pages/arkts/concurrent/UseSharedDemo_2.ets"),
           new Node2("ASON（对 @Sendable 对象做序列化和反序列化）", "pages/arkts/concurrent/ASONDemo"),

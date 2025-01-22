@@ -29,7 +29,7 @@ import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 
 @Entry
 @Component
-struct Worker {
+struct WorkerDemo {
 
   @State message:string = ""
 
@@ -42,6 +42,8 @@ struct Worker {
       Button("button1")
         .fontSize(16)
         .onClick(() => {
+
+          this.message += `start\n`
 
           // 通过指定的 worker 线程文件创建工作线程对象（注：此处的文件路径要省略 src/main/）
           let threadWorker = new worker.ThreadWorker('entry/ets/workers/myworker.ets');
