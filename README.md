@@ -69,7 +69,7 @@
 - pages/arkts/concurrent/SendableDemo_MyFunctionAndClass.ets
 2. Worker
 - pages/arkts/concurrent/Worker
-- /entry/src/main/ets/workers/myworker
+- /entry/src/main/ets/workers/myworker.ets
 3. @Sendable（多线程共享对象）
 - pages/arkts/concurrent/SendableDemo
 4. use shared（多线程引用相同的模块只被加载一次）
@@ -333,6 +333,8 @@
 ### 组件（媒体类）
 1. Image（图片）
 - pages/component/media/ImageDemo
+2. Video（视频播放器）
+- pages/component/media/VideoDemo
 
 ### 组件（列表类）
 1. List（列表基础）
@@ -365,6 +367,12 @@
 - pages/component/list/TreeViewDemo
 15. AlphabetIndexer（单字符二级联动列表）
 - pages/component/list/AlphabetIndexerDemo
+
+### 组件（webview）
+1. Web（基础）
+- pages/component/webview/WebDemo
+- /entry/src/main/resources/rawfile/html1.html
+- /entry/src/main/resources/rawfile/html2.html
 
 ### UI
 1. 颜色相关
@@ -399,26 +407,28 @@
 - pages/shape/TransformDemo
 
 ### 动画
-1. 属性动画
+1. ImageAnimator（帧动画）
+- pages/animation/ImageAnimatorDemo
+2. 属性动画
 - pages/animation/AnimationDemo
-2. @AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）
+3. @AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）
 - pages/animation/AnimatableExtendDemo
-3. 显式动画
+4. 显式动画
 - pages/animation/AnimationToDemo
-4. 关键帧动画
+5. 关键帧动画
 - pages/animation/KeyframeAnimateDemo
-5. 路径动画
+6. 路径动画
 - pages/animation/MotionPathDemo
-6. 单个组件显示和消失时的过渡动画
+7. 单个组件显示和消失时的过渡动画
 - pages/animation/TransitionDemo
-7. 一组件显示一组件消失时的过渡动画
+8. 一组件显示一组件消失时的过渡动画
 - pages/animation/GeometryTransitionDemo
-8. 页面转场效果
+9. 页面转场效果
 - pages/animation/PageTransitionDemo
 - pages/animation/PageTransitionDemo_1.ets
 - pages/animation/PageTransitionDemo_2.ets
 - pages/animation/PageTransitionDemo_3.ets
-9. Curve（动画曲线）
+10. Curve（动画曲线）
 - pages/animation/CurveDemo
 
 ### 资源
