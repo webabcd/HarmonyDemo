@@ -20,7 +20,6 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Video（）", "pages/component/media/VideoDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -194,6 +193,7 @@ struct Index {
         ]),
         new Node1("组件（媒体类）", [
           new Node2("Image（图片）", "pages/component/media/ImageDemo"),
+          new Node2("Video（视频播放器）", "pages/component/media/VideoDemo"),
         ]),
         new Node1("组件（列表类）", [
           new Node2("List（列表基础）", "pages/component/list/ListDemo"),
