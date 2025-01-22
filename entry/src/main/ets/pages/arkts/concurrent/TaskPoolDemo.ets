@@ -96,27 +96,27 @@ struct TaskPoolDemo {
 
       Text(this.message).fontSize(16)
 
-      Button("button1")
+      Button("通过任务池执行一个同步的 @Concurrent")
         .fontSize(16)
         .onClick(async () => {
           this.message = await sample1()
         })
 
-      Button("button2")
+      Button("通过任务池执行一个异步的 @Concurrent")
         .fontSize(16)
         .onClick(async () => {
           this.message = "ing"
           this.message = await sample2()
         })
 
-      Button("button3")
+      Button("通过任务池执行任务时，捕获异常")
         .fontSize(16)
         .onClick(async () => {
           this.message = "ing"
           this.message = await sample3()
         })
 
-      Button("button4")
+      Button("在 @Concurrent 内调用其他函数")
         .fontSize(16)
         .onClick(async () => {
           this.message = "ing"

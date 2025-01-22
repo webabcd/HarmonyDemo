@@ -39,7 +39,7 @@ struct WorkerDemo {
 
       Text(this.message).fontSize(16)
 
-      Button("button1")
+      Button("click me")
         .fontSize(16)
         .onClick(() => {
 
