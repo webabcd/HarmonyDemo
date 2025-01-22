@@ -182,7 +182,9 @@
     "pages/component/navigation/RouterDemo",
     "pages/component/navigation/pages/RouterDemo_Page1",
     "pages/component/navigation/TabContentDemo",
-    "pages/component/webview/WebDemo"
+    "pages/component/webview/WebDemo",
+    "pages/component/media/VideoDemo",
+    "pages/animation/ImageAnimatorDemo"
   ],
   "window": {
     "designWidth": 720,

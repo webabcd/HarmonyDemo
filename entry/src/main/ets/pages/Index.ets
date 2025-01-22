@@ -20,6 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("Video（）", "pages/component/media/VideoDemo"),
           new Node2("TaskPool", "pages/arkts/concurrent/TaskPool2"),
         ]),
         new Node1("ArkTS 基础", [
@@ -232,6 +233,7 @@ struct Index {
           new Node2("图形变换（transform, rotate, translate, scale, skew）", "pages/shape/TransformDemo"),
         ]),
         new Node1("动画", [
+          new Node2("ImageAnimator（帧动画）", "pages/animation/ImageAnimatorDemo"),
           new Node2("属性动画", "pages/animation/AnimationDemo"),
           new Node2("@AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）", "pages/animation/AnimatableExtendDemo"),
           new Node2("显式动画", "pages/animation/AnimationToDemo"),
