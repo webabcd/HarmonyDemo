@@ -185,7 +185,8 @@
     "pages/component/webview/WebDemo",
     "pages/component/media/VideoDemo",
     "pages/animation/ImageAnimatorDemo",
-    "pages/arkts/concurrent/TaskPoolDemo3"
+    "pages/arkts/concurrent/TaskPoolDemo3",
+    "pages/arkts/concurrent/AsyncLockDemo"
   ],
   "window": {
     "designWidth": 720,

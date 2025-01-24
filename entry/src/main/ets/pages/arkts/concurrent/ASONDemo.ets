@@ -62,7 +62,7 @@ struct ASONDemo {
 
       // 通过 JSON.stringify(), JSON.parse() 做序列化和反序列化
       // stringify 就是字符串化的意思，ify 后缀来自于拉丁语 ificare，是使...化的意思
-      Button("button1")
+      Button("JSON 序列化和反序列化")
         .fontSize(16)
         .onClick(() => {
           let myClass = new MyClass(0)
@@ -72,7 +72,7 @@ struct ASONDemo {
         })
 
       // 通过 ArkTSUtils.ASON.stringify(), ArkTSUtils.ASON.parse() 做序列化和反序列化
-      Button("button2")
+      Button("ASON 序列化和反序列化")
         .fontSize(16)
         .onClick(() => {
           let myClass = new MyClass(0)
@@ -82,7 +82,7 @@ struct ASONDemo {
         })
 
       // 通过 JSON.parse() 做反序列化，反序列化出的对象无 @Sendable 特性
-      Button("button3")
+      Button("JSON 反序列化出的对象无 @Sendable 特性")
         .fontSize(16)
         .onClick(async () => {
           let obj = JSON.parse('{"id":0}') as MyClass
@@ -90,7 +90,7 @@ struct ASONDemo {
         })
 
       // 通过 ArkTSUtils.ASON.parse() 做反序列化，反序列化出的对象有 @Sendable 特性
-      Button("button4")
+      Button("ASON 反序列化出的对象有 @Sendable 特性")
         .fontSize(16)
         .onClick(async () => {
           let obj = ArkTSUtils.ASON.parse('{"id":0}') as MyClass
