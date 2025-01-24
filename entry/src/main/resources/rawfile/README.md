@@ -64,19 +64,25 @@
 - pages/arkts/advanced/RecordPartial
 
 ### ArkTS 多线程
-1. TaskPool
-- pages/arkts/concurrent/TaskPool
-- pages/arkts/concurrent/SendableDemo_MyFunctionAndClass.ets
-2. Worker
-- pages/arkts/concurrent/Worker
+1. TaskPool（任务池基础）
+- pages/arkts/concurrent/TaskPoolDemo
+- pages/arkts/concurrent/TaskPoolDemo_1.ets
+2. TaskPool（任务池进阶1）
+- pages/arkts/concurrent/TaskPoolDemo2
+3. TaskPool（任务池进阶2）
+- pages/arkts/concurrent/TaskPoolDemo3
+4. Worker（工作线程）
+- pages/arkts/concurrent/WorkerDemo
 - /entry/src/main/ets/workers/myworker.ets
-3. @Sendable（多线程共享对象）
+5. @Sendable（多线程共享对象）
 - pages/arkts/concurrent/SendableDemo
-4. use shared（多线程引用相同的模块只被加载一次）
+6. AsyncLock（异步锁）
+- pages/arkts/concurrent/AsyncLockDemo
+7. use shared（多线程引用相同的模块只被加载一次）
 - pages/arkts/concurrent/UseSharedDemo
 - pages/arkts/concurrent/UseSharedDemo_1.ets
 - pages/arkts/concurrent/UseSharedDemo_2.ets
-5. ASON（对 @Sendable 对象做序列化和反序列化）
+8. ASON（对 @Sendable 对象做序列化和反序列化）
 - pages/arkts/concurrent/ASONDemo
 
 ### 开发基础
