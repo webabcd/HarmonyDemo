@@ -61,6 +61,7 @@ struct ASONDemo {
       Text(this.message).fontSize(16)
 
       // 通过 JSON.stringify(), JSON.parse() 做序列化和反序列化
+      // stringify 就是字符串化的意思，ify 后缀来自于拉丁语 ificare，是使...化的意思
       Button("button1")
         .fontSize(16)
         .onClick(() => {

@@ -184,7 +184,8 @@
     "pages/component/navigation/TabContentDemo",
     "pages/component/webview/WebDemo",
     "pages/component/media/VideoDemo",
-    "pages/animation/ImageAnimatorDemo"
+    "pages/animation/ImageAnimatorDemo",
+    "pages/arkts/concurrent/TaskPoolDemo3"
   ],
   "window": {
     "designWidth": 720,
