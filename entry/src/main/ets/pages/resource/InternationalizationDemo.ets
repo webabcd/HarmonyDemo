@@ -9,10 +9,9 @@
  */
 
 import { TitleBar } from '../TitleBar'
-import { i18n, intl, resourceManager } from '@kit.LocalizationKit'
+import { i18n, intl } from '@kit.LocalizationKit'
 import { BusinessError } from '@kit.BasicServicesKit'
 import { common } from '@kit.AbilityKit'
-import { Configuration } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -111,11 +110,19 @@ struct MySample1 {
         overrideConfiguration.locale = "en"
         // 获取自定义的资源管理器，其加载的是 en 资源
         let overrideResourceManager = resourceManager.getOverrideResourceManager(overrideConfiguration)
-        // 根据资源 id 加载其对应的字符串，类似的方法还有 getBoolean(), getColor(), getMediaContent() 等
+
+        // 根据资源 id 加载其对应的字符串（同步），类似的方法还有 getColorSync(), getMediaContentSync() 等
+        let a = overrideResourceManager.getStringSync($r('app.string.hello_webabcd').id)
+        this.message += `英文资源：${a}\n`
+        // 根据资源 name 加载其对应的字符串（同步），类似的方法还有 getColorByNameSync(), getMediaByNameSync() 等
+        let b = overrideResourceManager.getStringByNameSync('hello_webabcd')
+        this.message += `英文资源：${b}\n`
+
+        // 根据资源 id 加载其对应的字符串（异步），类似的方法还有 getColor(), getMediaContent() 等
         overrideResourceManager.getStringValue($r('app.string.hello_webabcd').id, (error: BusinessError, value: string) => {
           this.message += `英文资源：${value}\n`
         });
-        // 根据资源 name 加载其对应的字符串，类似的方法还有 getBooleanByName(), getColorByName(), getMediaByName() 等
+        // 根据资源 name 加载其对应的字符串（异步），类似的方法还有 getColorByName(), getMediaByName() 等
         overrideResourceManager.getStringByName('hello_webabcd', (error: BusinessError, value: string) => {
           this.message += `英文资源：${value}\n`
         });
