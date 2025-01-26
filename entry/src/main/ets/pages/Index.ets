@@ -249,6 +249,7 @@ struct Index {
         ]),
         new Node1("资源", [
           new Node2("图标资源", "pages/resource/IconDemo"),
+          new Node2("国际化", "pages/resource/InternationalizationDemo"),
         ]),
       ]
     let md = this.siteMapToMarkdown()
