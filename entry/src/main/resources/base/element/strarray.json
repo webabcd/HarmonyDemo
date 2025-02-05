@@ -1,0 +1,18 @@
+{
+  "strarray": [
+    {
+      "name": "my_strarray",
+      "value": [
+        {
+          "value": "small"
+        },
+        {
+          "value": "small"
+        },
+        {
+          "value": "small"
+        }
+      ]
+    }
+  ]
+}

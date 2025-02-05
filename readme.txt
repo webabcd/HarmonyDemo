@@ -26,3 +26,10 @@ md（Medium） - 水平宽度 520vp - 840vp（左闭右开）
 lg（Large） - 水平宽度 840vp - 无限大
 xl（Extra Large） - 自定义
 xxl（Extra Extra Large） - 自定义
+
+sdpi（Small-scale Dots Per Inch） - dpi 在 0 - 120（左开右闭）
+mdpi（Medium-scale Dots Per Inch） - dpi 在 120 - 160（左开右闭）
+ldpi（Large-scale Dots Per Inch） - dpi 在 160 - 240（左开右闭）
+xldpi（Extra Large-scale Dots Per Inch） - dpi 在 240 - 320（左开右闭）
+xxldpi（Extra Extra Large-scale Dots Per Inch） - dpi 在 320 - 480（左开右闭）
+xxxldpi（Extra Extra Extra Large-scale Dots Per Inch） - dpi 在 480 - 640（左开右闭）

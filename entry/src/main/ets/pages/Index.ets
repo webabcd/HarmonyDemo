@@ -249,7 +249,8 @@ struct Index {
         ]),
         new Node1("资源", [
           new Node2("图标资源", "pages/resource/IconDemo"),
-          new Node2("国际化", "pages/resource/InternationalizationDemo"),
+          new Node2("国际化", "pages/resource/InternationalizationDemo", "/entry/src/main/resources/base/element/string.json|/entry/src/main/resources/zh_CN/element/string.json|/entry/src/main/resources/en_US/element/string.json"),
+          new Node2("资源", "pages/resource/ResourceDemo", "/entry/src/main/resources/base/element/boolean.json|/entry/src/main/resources/base/element/color.json|/entry/src/main/resources/base/element/float.json|/entry/src/main/resources/base/element/integer.json|/entry/src/main/resources/base/element/strarray.json|/entry/src/main/resources/base/element/string.json|/entry/src/main/resources/vertical-xxxldpi/element/string.json|/entry/src/main/resources/rawfile/mytext.txt|/entry/src/main/resources/resfile/mytext.txt"),
         ]),
       ]
     let md = this.siteMapToMarkdown()

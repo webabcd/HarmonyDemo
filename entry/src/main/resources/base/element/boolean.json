@@ -1,0 +1,8 @@
+{
+  "boolean": [
+    {
+      "name": "my_boolean",
+      "value": true
+    }
+  ]
+}
