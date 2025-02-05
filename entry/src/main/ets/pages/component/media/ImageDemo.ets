@@ -3,6 +3,7 @@
  */
 
 import { RadioBar, TitleBar } from '../../TitleBar'
+import { image } from '@kit.ImageKit'
 
 @Entry
 @Component
@@ -15,6 +16,7 @@ struct ImageDemo {
       Tabs() {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('拉伸').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('PixelMap').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -109,5 +111,41 @@ struct MySample2 {
         .objectFit(this.imageFit)
 
     }
+  }
+}
+
+@Component
+struct MySample3 {
+
+  @State pixelMap: PixelMap | undefined = undefined
+
+  async aboutToAppear() {
+    this.pixelMap = await this.getPixmapFromMedia($r('app.media.son'))
+  }
+
+  build() {
+    Column() {
+      // Image 可以显示一个 PixelMap 对象
+      Image(this.pixelMap).width(200).height(200)
+    }
+  }
+
+  // 图片资源转 PixelMap 对象
+  private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
+    // 资源转 Uint8Array 对象
+    let uint8Array = await getContext(this).resourceManager.getMediaContent({
+      bundleName: resource.bundleName,
+      moduleName: resource.moduleName,
+      id: resource.id
+    })
+
+    // 图片 Uint8Array 对象转 PixelMap 对象
+    let imageSource = image.createImageSource(uint8Array.buffer)
+    let pixelMap: image.PixelMap = await imageSource.createPixelMap({
+      // RGBA_8888 的意思是 r 占用 8 位，g 占用 8 位，b 占用 8 位，a 占用 8 位
+      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+    })
+    await imageSource.release()
+    return pixelMap
   }
 }
