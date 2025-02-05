@@ -287,7 +287,7 @@ struct Index {
   }
 
   siteMapToMarkdown() {
-    let md = "# Harmony Demo\n\n"
+    let md = "# HarmonyOS Demo\n\n"
     for (let i = 0; i < this.siteMap.length; i++) {
       let node1 = this.siteMap[i]
       md += `\n### ${node1.title}\n`
