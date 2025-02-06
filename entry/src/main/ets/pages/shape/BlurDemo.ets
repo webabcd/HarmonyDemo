@@ -36,11 +36,11 @@ struct MySample1 {
       Column(){
         Text('blur').fontSize(24).fontColor(Color.Red)
       }
-      .width(100)
-      .height(100)
+      .width(80)
+      .height(80)
       .justifyContent(FlexAlign.Center)
       .backgroundImage($r('app.media.son'))
-      .backgroundImageSize({ width: 100, height: 100 })
+      .backgroundImageSize({ width: 80, height: 80 })
       .backdropBlur(10)
 
       // blur() - 对组件整体做模糊处理
@@ -48,11 +48,11 @@ struct MySample1 {
       Column(){
         Text('blur').fontSize(24).fontColor(Color.Red)
       }
-      .width(100)
-      .height(100)
+      .width(80)
+      .height(80)
       .justifyContent(FlexAlign.Center)
       .backgroundImage($r('app.media.son'))
-      .backgroundImageSize({ width: 100, height: 100 })
+      .backgroundImageSize({ width: 80, height: 80 })
       .blur(10)
 
       // backgroundBlurStyle() - 仅对组件的背景做模糊处理，并指定模糊的样式
@@ -60,11 +60,11 @@ struct MySample1 {
       Column(){
         Text('blur').fontSize(24).fontColor(Color.Red)
       }
-      .width(100)
-      .height(100)
+      .width(80)
+      .height(80)
       .justifyContent(FlexAlign.Center)
       .backgroundImage($r('app.media.son'))
-      .backgroundImageSize({ width: 100, height: 100 })
+      .backgroundImageSize({ width: 80, height: 80 })
       .backgroundBlurStyle(BlurStyle.Thin, {
         scale: 0.2 // 模糊的程度 0 - 1 之间，越大越狠
       })
@@ -74,13 +74,32 @@ struct MySample1 {
       Column(){
         Text('blur').fontSize(24).fontColor(Color.Red)
       }
-      .width(100)
-      .height(100)
+      .width(80)
+      .height(80)
       .justifyContent(FlexAlign.Center)
       .backgroundImage($r('app.media.son'))
-      .backgroundImageSize({ width: 100, height: 100 })
+      .backgroundImageSize({ width: 80, height: 80 })
       .foregroundBlurStyle(BlurStyle.Thin, {
         scale: 0.2 // 模糊的程度 0 - 1 之间，越大越狠
+      })
+
+      // linearGradientBlur() - 对组件整体做线性模糊处理
+      //   value - 最大模糊程度（0 到 100 之间）
+      //   options - 选项
+      //     fractionStops - 用于设置线性模糊的关键点
+      //       [模糊程度, 模糊位置]
+      //     direction - 线性模糊的方向（比如 GradientDirection.Bottom 代表从上到下）
+      Column(){
+        Text('blur').fontSize(24).fontColor(Color.Red)
+      }
+      .width(80)
+      .height(80)
+      .justifyContent(FlexAlign.Center)
+      .backgroundImage($r('app.media.son'))
+      .backgroundImageSize({ width: 80, height: 80 })
+      .linearGradientBlur(75, {
+        fractionStops: [[0, 0], [0.6, 0.33], [0.8, 0.66], [1, 1]],
+        direction: GradientDirection.Bottom
       })
 
       // motionBlur() - 运动模糊效果
