@@ -131,7 +131,7 @@
 - pages/state/mvvm/viewmodel/MyViewModel.ets
 
 ### 组件（通用的属性方法和事件方法）
-1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding）
+1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, visibility）
 - pages/component/common/SizeDemo
 2. 位置相关（align, direction, position, markAnchor, offset）
 - pages/component/common/PositionDemo

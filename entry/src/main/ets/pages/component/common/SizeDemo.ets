@@ -1,6 +1,6 @@
 /*
  * 尺寸相关
- * width, height, aspectRatio, size, constraintSize, margin, padding
+ * width, height, aspectRatio, size, constraintSize, margin, padding, visibility
  */
 
 import { TitleBar } from '../../TitleBar';
@@ -73,6 +73,15 @@ struct CommonSizeDemo {
       .width(100)
       .height(100)
       .backgroundColor(Color.Blue)
+
+      // visibility() - 显示状态（Visibility 枚举）
+      //   Visible - 显示
+      //   Hidden - 隐藏（占位）
+      //   None - 隐藏（不占位）
+      Column().width(50).height(50).backgroundColor(Color.Red).visibility(Visibility.Hidden)
+      Column().width(50).height(50).backgroundColor(Color.Green).visibility(Visibility.Visible)
+      Column().width(50).height(50).backgroundColor(Color.Blue).visibility(Visibility.None)
+      Column().width(50).height(50).backgroundColor(Color.Orange).visibility(Visibility.Visible)
     }
   }
 }
