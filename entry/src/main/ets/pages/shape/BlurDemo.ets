@@ -7,7 +7,7 @@ import { uiEffect } from '@kit.ArkGraphics2D'
 
 @Entry
 @Component
-struct ForegroundBackgroundDemo {
+struct BlurDemo {
 
   build() {
     Column() {
