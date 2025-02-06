@@ -35,9 +35,7 @@ struct ShadowDemo {
        */
       Column() {
         Text('shadow').fontSize(12)
-      }
-      .width(100)
-      .height(100)
+      }.width(100).height(100)
       .justifyContent(FlexAlign.Center)
       .backgroundColor(Color.Orange)
       .borderRadius(20)
@@ -52,9 +50,7 @@ struct ShadowDemo {
 
       Column() {
         Text('shadow').fontSize(12)
-      }
-      .width(100)
-      .height(100)
+      }.width(100).height(100)
       .justifyContent(FlexAlign.Center)
       .backgroundColor(Color.Orange)
       .borderRadius(20)
