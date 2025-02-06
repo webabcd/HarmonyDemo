@@ -20,7 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("xxx（）", "pages/component/common/ForegroundBackgroundDemo"),
+          new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
+          new Node2("效果", "pages/shape/EffectDemo")
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),

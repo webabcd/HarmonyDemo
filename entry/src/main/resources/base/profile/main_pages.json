@@ -188,7 +188,9 @@
     "pages/arkts/concurrent/TaskPoolDemo3",
     "pages/arkts/concurrent/AsyncLockDemo",
     "pages/resource/InternationalizationDemo",
-    "pages/resource/ResourceDemo"
+    "pages/resource/ResourceDemo",
+    "pages/component/common/ForegroundBackgroundDemo",
+    "pages/shape/EffectDemo"
   ],
   "window": {
     "designWidth": 720,
