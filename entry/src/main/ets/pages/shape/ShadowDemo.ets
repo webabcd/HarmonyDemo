@@ -31,6 +31,7 @@ struct ShadowDemo {
        *   color - 阴影颜色
        *   offsetX - 阴影 X 轴方向上的偏移量
        *   offsetY - 阴影 Y 轴方向上的偏移量
+       *   fill - 阴影是否内部填充
        */
       Column() {
         Text('shadow').fontSize(12)
@@ -40,11 +41,30 @@ struct ShadowDemo {
       .justifyContent(FlexAlign.Center)
       .backgroundColor(Color.Orange)
       .borderRadius(20)
+      .opacity(0.7)
       .shadow({
         radius: 10,
         color: Color.Gray,
         offsetX: 20,
         offsetY: 20,
+        fill: false
+      })
+
+      Column() {
+        Text('shadow').fontSize(12)
+      }
+      .width(100)
+      .height(100)
+      .justifyContent(FlexAlign.Center)
+      .backgroundColor(Color.Orange)
+      .borderRadius(20)
+      .opacity(0.7)
+      .shadow({
+        radius: 10,
+        color: Color.Gray,
+        offsetX: 20,
+        offsetY: 20,
+        fill: true
       })
     }
   }
