@@ -1,18 +1,35 @@
 /*
- * 模糊相关
+ * 模糊相关和滤镜相关
  */
 
 import { TitleBar } from '../TitleBar'
+import { uiEffect } from '@kit.ArkGraphics2D'
 
 @Entry
 @Component
-struct BlurDemo {
+struct ForegroundBackgroundDemo {
+
+  build() {
+    Column() {
+      TitleBar()
+      Tabs() {
+        TabContent() { MySample1() }.tabBar('模糊').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('滤镜').align(Alignment.Top)
+      }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
+    }
+  }
+}
+
+@Component
+struct MySample1 {
   @State myWidth: number = 100
   @State myHeight: number = 100
 
   build() {
     Column({ space: 10 }) {
-      TitleBar()
 
       // backdropBlur() - 仅对组件的背景做模糊处理
       //   指定的值越大模糊的越狠
@@ -97,6 +114,53 @@ struct BlurDemo {
           y: 0.5,
         }
       })
+    }
+  }
+}
+
+@Component
+struct MySample2 {
+
+  // uiEffect.createFilter() - 创建滤镜对象
+  //   blur() - 模糊半径，值越大模糊的越狠
+  @State myFilter:uiEffect.Filter = uiEffect.createFilter().blur(20)
+
+  build() {
+    Column({ space: 10 }) {
+
+      Text('前景滤镜')
+        .width(100)
+        .height(100)
+        .backgroundColor(Color.Red)
+        .backgroundImage($r("app.media.app_icon"))
+        .backgroundImageSize({ width: 80, height: 80 })
+
+      // foregroundFilter() - 前景滤镜，对组件整体做处理
+      Text('前景滤镜')
+        .width(100)
+        .height(100)
+        .backgroundColor(Color.Red)
+        .backgroundImage($r("app.media.app_icon"))
+        .backgroundImageSize({ width: 80, height: 80 })
+        .foregroundFilter(this.myFilter)
+
+      // backgroundFilter() - 背景滤镜，对组件背景图片做处理
+      Text('背景滤镜')
+        .width(100)
+        .height(100)
+        .backgroundColor(Color.Red)
+        .backgroundImage($r("app.media.app_icon"))
+        .backgroundImageSize({ width: 80, height: 80 })
+        .backgroundFilter(this.myFilter) // 通过 backgroundFilter 设置模糊效果
+
+      // compositingFilter() - 合成滤镜，对组件的背景颜色之外的部分做处理
+      Text('合成滤镜')
+        .width(100)
+        .height(100)
+        .backgroundColor(Color.Red)
+        .backgroundImage($r("app.media.app_icon"))
+        .backgroundImageSize({ width: 80, height: 80 })
+        .compositingFilter(this.myFilter) // 通过 compositingFilter 设置模糊效果
     }
   }
 }

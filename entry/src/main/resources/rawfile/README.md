@@ -403,7 +403,7 @@
 - pages/shape/ClipDemo
 3. 阴影
 - pages/shape/ShadowDemo
-4. 模糊
+4. 模糊，滤镜
 - pages/shape/BlurDemo
 5. 渐变
 - pages/shape/GradientDemo
