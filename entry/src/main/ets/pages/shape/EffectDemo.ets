@@ -1,9 +1,9 @@
 /*
- *
+ * 图像效果
  */
 
-import { TitleBar } from '../TitleBar'
-import { uiEffect } from '@kit.ArkGraphics2D'
+import { RadioBar, TitleBar } from '../TitleBar'
+import { Helper } from '../Helper'
 
 @Entry
 @Component
@@ -14,6 +14,8 @@ struct EffectDemo {
       TitleBar()
       Tabs() {
         TabContent() { MySample1() }.tabBar('常用效果').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('离屏渲染').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('子组件与父容器的混合方式').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -53,6 +55,73 @@ struct MySample1 {
 
       // colorBlend() - 颜色叠加效果
       Image($r('app.media.son')).width('90%').height(50).colorBlend(Color.Red)
+    }
+  }
+}
+
+@Component
+struct MySample2 {
+
+  build() {
+    Column({space:10}) {
+
+      /*
+       * renderGroup() - 用于设置当前组件是否需要离屏渲染（默认值为 false）
+       * 离屏渲染的意思是，将图像渲染过程从直接显示的屏幕缓冲区转移到一个不直接可见的缓冲区进行处理，处理完成之后再绘制，其好处是不会影响主线程
+       *
+       * 注：启用离屏渲染后，当组件的 opacity 不为 1 时，子组件的绘制结果可能会与预期不符
+       */
+
+      Column() {
+        Column().width(50).height(50).backgroundColor(Color.Blue)
+      }
+      .width(100).height(100).backgroundColor(Color.Red).alignItems(HorizontalAlign.Center).justifyContent(FlexAlign.Center)
+      .opacity(0.3)
+      .renderGroup(false)
+
+      Column() {
+        Column().width(50).height(50).backgroundColor(Color.Blue)
+      }
+      .width(100).height(100).backgroundColor(Color.Red).alignItems(HorizontalAlign.Center).justifyContent(FlexAlign.Center)
+      .opacity(0.3)
+      .renderGroup(true)
+    }
+  }
+}
+
+@Component
+struct MySample3 {
+
+  @State myBlendMode: BlendMode = BlendMode.NONE
+  valueList = Helper.enumToString(BlendMode)
+
+  build() {
+    Column({space:10}) {
+      RadioBar({valueList: this.valueList, onChange: (selectedIndex: number) => {
+        this.myBlendMode = BlendMode[this.valueList[selectedIndex]]
+      }})
+
+      /*
+       * blendMode() - 用于设置子组件与父容器的混合方式
+       *   value - 混合方式（BlendMode 枚举）
+       *   type - 一个 BlendApplyType 枚举
+       *     FAST - 默认渲染方式
+       *     OFFSCREEN - 离屏渲染方式
+       */
+
+      Column() {
+        Circle()
+          .width(100)
+          .height(100)
+          .fill(Color.Orange)
+          .blendMode(this.myBlendMode, BlendApplyType.OFFSCREEN)
+      }
+      .height(200)
+      .width(200)
+      .alignItems(HorizontalAlign.Center)
+      .justifyContent(FlexAlign.Center)
+      .backgroundImage($r('app.media.son'))
+      .backgroundImageSize(ImageSize.FILL)
     }
   }
 }

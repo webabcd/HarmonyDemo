@@ -1,4 +1,4 @@
-import { router } from '@kit.ArkUI';
+import { LengthMetrics, router } from '@kit.ArkUI';
 
 export * from '../utils/MyLog';
 
@@ -46,7 +46,7 @@ export struct RadioBar {
   onChange?: (selectedIndex: number) => void;
 
   build() {
-    Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround }) {
+    Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { main: LengthMetrics.vp(10) } }) {
       ForEach(this.valueList, (item: string, index: number) => {
         Column() {
           Radio({ value: item, group: this.groupName })
