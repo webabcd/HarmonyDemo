@@ -34,6 +34,7 @@ struct FlexDemo {
         TabContent() { MySample3() }.tabBar('水平布局').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('wrap').align(Alignment.Top)
         TabContent() { MySample5() }.tabBar('权重').align(Alignment.Top)
+        TabContent() { MySample6() }.tabBar('优先级').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -235,6 +236,50 @@ struct MySample5 {
       }
       .width('33.3%')
       .height('100%')
+    }
+  }
+}
+
+@Component
+struct MySample6 {
+  build() {
+    Column({space:50}) {
+
+      /*
+       * displayPriority() - 子组件是否显示的优先级（数字越大优先级越高）
+       *   显示不下时，则隐藏低优先级的子组件
+       *   同一优先级的子组件要显示就都显示，要隐藏就都隐藏
+       */
+
+      Flex({
+        direction: FlexDirection.Column,
+      }) {
+        Column().width('100%').height(50).backgroundColor(Color.Red)
+          .displayPriority(1)
+        Column().width('100%').height(50).backgroundColor(Color.Green)
+          .displayPriority(2)
+        Column().width('100%').height(50).backgroundColor(Color.Blue)
+          .displayPriority(3)
+        Column().width('100%').height(50).backgroundColor(Color.Orange)
+          .displayPriority(4)
+      }
+      .backgroundColor(Color.Yellow)
+      .height(180)
+
+      Flex({
+        direction: FlexDirection.Column,
+      }) {
+        Column().width('100%').height(50).backgroundColor(Color.Red)
+          .displayPriority(1)
+        Column().width('100%').height(50).backgroundColor(Color.Green)
+          .displayPriority(2)
+        Column().width('100%').height(50).backgroundColor(Color.Blue)
+          .displayPriority(2)
+        Column().width('100%').height(50).backgroundColor(Color.Orange)
+          .displayPriority(1)
+      }
+      .backgroundColor(Color.Yellow)
+      .height(180)
     }
   }
 }
