@@ -15,7 +15,9 @@ struct EnumDemo {
 {
   // 简单枚举
   enum Status {Ok, Error};
+  // 通过枚举名称获取枚举值
   MyLog.d(`${Status["Ok"]}, ${Status["Error"]}`); // 0, 1
+  // 通过枚举值获取枚举名称
   MyLog.d(`${Status[0]}, ${Status[1]}`); // Ok, Error
 }
 
@@ -70,4 +72,16 @@ struct EnumDemo {
   MyLog.d(`${(Permission.Read | Permission.Write)}`); // 3
   MyLog.d(`${(Permission.Read | Permission.Write | Permission.Publish)}`); // 7
   MyLog.d(`${(Permission.Full)}`); // 7
+}
+
+{
+  enum Status {Ok, Error};
+  // 遍历枚举（如下方式会先按照枚举值遍历一遍，再按照枚举名称遍历一遍）
+  Object.keys(Status).forEach(key => {
+    MyLog.d(`key:${key}, value:${Status[key]}`);
+    // key:0, value:Ok
+    // key:1, value:Error
+    // key:Ok, value:0
+    // key:Error, value:1
+  });
 }

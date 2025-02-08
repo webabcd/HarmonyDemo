@@ -78,8 +78,8 @@ struct ObjectDemo {
   let a = new MyClass("webabcd", 44)
 
   Object.keys(a).forEach(key => {
-    MyLog.d(`Key:${key}, value: ${Reflect.get(a, key)}`);
-    // Key:name, value: webabcd
-    // Key:age, value: 44
+    MyLog.d(`key:${key}, value:${Reflect.get(a, key)}`);
+    // key:name, value:webabcd
+    // key:age, value:44
   });
 }
