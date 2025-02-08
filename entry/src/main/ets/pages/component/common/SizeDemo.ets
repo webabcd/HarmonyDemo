@@ -1,6 +1,6 @@
 /*
  * 尺寸相关
- * width, height, aspectRatio, size, constraintSize, margin, padding, visibility
+ * width, height, aspectRatio, size, constraintSize, margin, padding, visibility, pixelRound
  */
 
 import { TitleBar } from '../../TitleBar';
@@ -10,8 +10,24 @@ import { TitleBar } from '../../TitleBar';
 struct CommonSizeDemo {
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       TitleBar()
+      Tabs() {
+        TabContent() { MySample1() }.tabBar('尺寸相关').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('像素级取整方式').align(Alignment.Top)
+      }
+      .scrollable(true)
+      .barMode(BarMode.Scrollable)
+      .layoutWeight(1)
+    }
+  }
+}
+
+@Component
+struct MySample1 {
+
+  build() {
+    Column({ space: 10 }) {
 
       // width() - 宽
       // height() - 高
@@ -82,6 +98,44 @@ struct CommonSizeDemo {
       Column().width(50).height(50).backgroundColor(Color.Green).visibility(Visibility.Visible)
       Column().width(50).height(50).backgroundColor(Color.Blue).visibility(Visibility.None)
       Column().width(50).height(50).backgroundColor(Color.Orange).visibility(Visibility.Visible)
+    }
+  }
+}
+
+@Component
+struct MySample2 {
+
+  build() {
+    Column({ space: 10 }) {
+      Stack() {
+        // 显示在屏幕上时，会对实际计算出的像素值做四舍五入
+        Column().width('500.6px').height('500.6px').backgroundColor(Color.Red) // 显示在屏幕上的大小为 501 * 501
+        Column().width('500.2px').height('500.2px').backgroundColor(Color.Blue) // 显示在屏幕上的大小为 500 * 500
+      }
+
+      /*
+       * pixelRound() - 指定当前组件的像素级取整方式（可以分别指定 top, bottom, start, end 方向的取整方式）
+       *   PixelRoundCalcPolicy.NO_FORCE_ROUND - 不处理
+       *   PixelRoundCalcPolicy.FORCE_CEIL - 向上取整
+       *   PixelRoundCalcPolicy.FORCE_FLOOR - 向下取整
+       */
+
+      Stack() {
+        Column().width('500.6px').height('500.6px').backgroundColor(Color.Red)  // 显示在屏幕上的大小为 501 * 501
+          .pixelRound({
+            top:PixelRoundCalcPolicy.FORCE_CEIL,
+            bottom:PixelRoundCalcPolicy.FORCE_CEIL,
+            start:PixelRoundCalcPolicy.FORCE_CEIL,
+            end:PixelRoundCalcPolicy.FORCE_CEIL,
+          })
+        Column().width('500.2px').height('500.2px').backgroundColor(Color.Blue)  // 显示在屏幕上的大小为 501 * 501
+          .pixelRound({
+            top:PixelRoundCalcPolicy.FORCE_CEIL,
+            bottom:PixelRoundCalcPolicy.FORCE_CEIL,
+            start:PixelRoundCalcPolicy.FORCE_CEIL,
+            end:PixelRoundCalcPolicy.FORCE_CEIL,
+          })
+      }
     }
   }
 }
