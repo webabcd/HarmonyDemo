@@ -191,7 +191,8 @@
     "pages/resource/ResourceDemo",
     "pages/component/common/ForegroundBackgroundDemo",
     "pages/shape/EffectDemo",
-    "pages/component/common/DisplayDemo"
+    "pages/component/common/DisplayDemo",
+    "pages/component/common/EventDemo"
   ],
   "window": {
     "designWidth": 720,
