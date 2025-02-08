@@ -49,6 +49,7 @@ struct MySample1 {
        *   buttonStyle() - 同 options 的 buttonStyle，有冲突则以此为准
        *   controlSize() - 同 options 的 controlSize，有冲突则以此为准
        *   role() - 同 options 的 role，有冲突则以此为准
+       *   enabled() - 按钮是否可用
        */
       Button('Normal', { type: ButtonType.Normal, stateEffect: true }).width(100)
       Button('Circle', { type: ButtonType.Circle, stateEffect: true }).width(100)
@@ -69,6 +70,8 @@ struct MySample1 {
         .buttonStyle(ButtonStyleMode.EMPHASIZED)
         .controlSize(ControlSize.NORMAL)
         .role(ButtonRole.NORMAL)
+
+      Button('enabled(false)').enabled(false)
     }
   }
 }
