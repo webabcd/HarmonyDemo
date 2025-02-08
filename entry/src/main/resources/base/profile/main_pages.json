@@ -190,7 +190,8 @@
     "pages/resource/InternationalizationDemo",
     "pages/resource/ResourceDemo",
     "pages/component/common/ForegroundBackgroundDemo",
-    "pages/shape/EffectDemo"
+    "pages/shape/EffectDemo",
+    "pages/component/common/DisplayDemo"
   ],
   "window": {
     "designWidth": 720,

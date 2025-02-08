@@ -20,6 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("显示相关（visibility, overlay）", "pages/component/common/DisplayDemo"),
           new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
           new Node2("图像效果", "pages/shape/EffectDemo")
         ]),
@@ -86,8 +87,7 @@ struct Index {
           new Node2("MVVM", "pages/state/mvvm/MVVMDemo", "pages/state/mvvm/model/MyModel.ets|pages/state/mvvm/view/MyTopView.ets|pages/state/mvvm/view/MyBottomView.ets|pages/state/mvvm/view/MyListView.ets|pages/state/mvvm/viewmodel/MyViewModel.ets"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
-          new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, visibility, pixelRound）",
-            "pages/component/common/SizeDemo"),
+          new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）", "pages/component/common/SizeDemo"),
           new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
         ]),
         new Node1("组件（布局类）", [
