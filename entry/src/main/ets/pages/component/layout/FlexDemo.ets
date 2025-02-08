@@ -13,6 +13,7 @@
  *   layoutWeight() - 主轴方向上占用空间的权重
  *   flexGrow() - 主轴方向上占用空间的权重，与 layoutWeight() 一样，但是必须要指定 Flex 的 width()/height() 才会生效
  *   flexShrink() - 主轴方向上空间不够时的压缩的权重，必须要指定 Flex 的 width()/height() 才会生效
+ *   displayPriority() - 子组件是否显示的优先级（数字越大优先级越高）
  *
  * 注：如果需要空白处自动填满，可以使用 Blank 组件，详见 BlankDemo.ets 中的说明
  */

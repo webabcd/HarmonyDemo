@@ -11,6 +11,7 @@
  *   layoutWeight() - 垂直方向上占用空间的权重
  *   flexGrow() - 垂直方向上占用空间的权重，与 layoutWeight() 一样，但是必须要指定 Column 的 height() 才会生效
  *   flexShrink() - 垂直方向上空间不够时的压缩的权重，必须要指定 Column 的 height() 才会生效
+ *   displayPriority() - 子组件是否显示的优先级（数字越大优先级越高）
  *
  * 注：
  * 1、垂直方向上的多个组件如果超过了 Column 的限制范围，是不会 wrap 的，如果需要 wrap 请参见 FlexDemo.ets 中的说明
