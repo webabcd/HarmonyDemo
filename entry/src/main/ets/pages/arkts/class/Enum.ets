@@ -72,6 +72,10 @@ struct EnumDemo {
   MyLog.d(`${(Permission.Read | Permission.Write)}`); // 3
   MyLog.d(`${(Permission.Read | Permission.Write | Permission.Publish)}`); // 7
   MyLog.d(`${(Permission.Full)}`); // 7
+
+  // 判断 flag 型的枚举是否包含指定的枚举成员
+  MyLog.d(`${((Permission.Read | Permission.Write) & Permission.Write) == Permission.Write}`); // true
+  MyLog.d(`${(Permission.Full & Permission.Write) == Permission.Write}`); // true
 }
 
 {
