@@ -73,6 +73,29 @@ struct InterfaceDemo {
 }
 
 {
+  interface IPerson {
+    name: string;
+  };
+
+  let person: IPerson = {
+    name: "webabcd"
+  }
+
+  // 通过 instanceof 可以判断一个对象是否属于某个类，但是不能通过 instanceof 判断一个对象是否属于某个接口
+  // 因为编译后，所有接口都会被移除，所以不能在运行时判断一个对象是否符合某个接口
+  // MyLog.d(`${person instanceof IPerson}`) // 报错 'IPerson' only refers to a type, but is being used as a value here.
+
+  // 可以通过类似如下的方式判断一个对象是否符合某个接口
+  let isIPerson = (obj: object): boolean => {
+    if (typeof (obj as Partial<IPerson>).name === 'string') {
+      return true
+    }
+    return false
+  }
+  MyLog.d(`${isIPerson(person)}`) // true
+}
+
+{
   // 通过接口定义数组，不支持（但是 typescript 是支持的）
   /*
   interface I1 {
