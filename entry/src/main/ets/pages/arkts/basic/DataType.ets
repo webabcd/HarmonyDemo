@@ -126,6 +126,7 @@ struct DataTypeDemo {
   }
 }
 
+// 鸭子类型（duck typing）
 {
   class Class1 {
     title: string = "";
@@ -152,9 +153,20 @@ struct DataTypeDemo {
   let r2 = f2([new Class2("a"), new Class2("b"), new Class2("c")])
   MyLog.d(r2) // a,b,c
 
-  // 依据 duck typing 支持形状相同的匿名 interface 到 class 的转换
+  // 依据 duck typing 支持形状相同的匿名 interface 到指定 class 的转换
   let r3 = f1({ title: "abc" })
   MyLog.d(r3) // abc
+
+
+  interface IPerson {
+    name: string
+  }
+  let f3 = (p: IPerson): string => {
+    return p.name
+  }
+  // 依据 duck typing 支持形状相同的匿名 interface 到指定 interface 的转换
+  let r4 = f3({ name: "abc" })
+  MyLog.d(r4) // abc
 }
 
 {
