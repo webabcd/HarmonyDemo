@@ -33,3 +33,7 @@ ldpi（Large-scale Dots Per Inch） - dpi 在 160 - 240（左开右闭）
 xldpi（Extra Large-scale Dots Per Inch） - dpi 在 240 - 320（左开右闭）
 xxldpi（Extra Extra Large-scale Dots Per Inch） - dpi 在 320 - 480（左开右闭）
 xxxldpi（Extra Extra Extra Large-scale Dots Per Inch） - dpi 在 480 - 640（左开右闭）
+
+ArkTS 方舟编程语言
+ArkUI 提供 UI 框架，通过 ArkTS 声明式编程
+Core File Kit 提供文件管理能力
