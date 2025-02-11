@@ -24,7 +24,7 @@ struct BasicDemo {
     } catch (error) {
       return `catch: ${(error as Error).message}`;
 
-      // 注：不对 error 做类型转换，而是直接像下面这样写也是可以的，因为 catch 到 error 是 any 类型的（注：虽然 ArkTs 不允许自己定义 any 类型，但是可以使用系统的 any 类型）
+      // 注：不对 error 做类型转换，而是直接像下面这样写也是可以的，因为这里 catch 到 error 是 any 类型的（注：虽然 ArkTs 不允许自己定义 any 类型，但是可以使用系统的 any 类型）
       // return `catch: ${error.message}`;
     } finally {
       MyLog.d("finally");
