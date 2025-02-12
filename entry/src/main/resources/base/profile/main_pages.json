@@ -193,7 +193,8 @@
     "pages/shape/EffectDemo",
     "pages/component/common/DisplayDemo",
     "pages/component/common/EventDemo",
-    "pages/file/AppFileDemo"
+    "pages/storage/AppFileDemo",
+    "pages/storage/PreferencesDemo"
   ],
   "window": {
     "designWidth": 720,

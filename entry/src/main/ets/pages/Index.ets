@@ -24,7 +24,8 @@ struct Index {
           new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
           new Node2("事件相关（onAppear/onDisAppear, onAreaChange, onVisibleAreaChange, 自定义事件）", "pages/component/common/EventDemo"),
           new Node2("图像效果", "pages/shape/EffectDemo"),
-          new Node2("应用文件", "pages/file/AppFileDemo"),
+          new Node2("用户首选项", "pages/storage/PreferencesDemo"),
+          new Node2("应用文件", "pages/storage/AppFileDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
