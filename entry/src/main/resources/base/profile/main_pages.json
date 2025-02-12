@@ -192,7 +192,8 @@
     "pages/component/common/ForegroundBackgroundDemo",
     "pages/shape/EffectDemo",
     "pages/component/common/DisplayDemo",
-    "pages/component/common/EventDemo"
+    "pages/component/common/EventDemo",
+    "pages/file/AppFileDemo"
   ],
   "window": {
     "designWidth": 720,
