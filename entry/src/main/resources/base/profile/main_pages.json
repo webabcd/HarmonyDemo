@@ -196,7 +196,8 @@
     "pages/storage/AppFileDemo",
     "pages/storage/PreferencesDemo",
     "pages/storage/UserFileDemo",
-    "pages/network/HttpDemo"
+    "pages/network/HttpDemo",
+    "pages/network/JsonDemo"
   ],
   "window": {
     "designWidth": 720,
