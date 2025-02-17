@@ -1,5 +1,5 @@
 /*
- *
+ * http 请求
  */
 
 import { TitleBar } from '../TitleBar';
@@ -28,6 +28,28 @@ struct MySample1 {
 
   @State message: string = ""
 
+  /*
+   * HttpRequest - 用于 http 请求
+   *   http.createHttp() - 创建一个 HttpRequest 实例
+   *   on(), off() - 监听指定事件，取消监听指定事件
+   *     headersReceive - 收到响应 header 后的事件
+   *   request() - 开始 http 请求
+   *     url - url
+   *     options - 选项（一个 HttpRequestOptions 对象）
+   *       header - 请求头
+   *       method - 请求方法（RequestMethod 枚举）
+   *         OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+   *       expectDataType - 返回数据的类型（HttpDataType 枚举）
+   *         STRING, OBJECT, ARRAY_BUFFER
+   *       connectTimeout - 连接的超时时间（单位：毫秒）
+   *       readTimeout - 读取的超时时间（单位：毫秒）
+   *       extraData - post 的数据
+   *     callback - 回调（回调参数是一个 BusinessError 对象和一个 HttpResponse 对象）
+   *       result - 响应的结果
+   *       responseCode - 响应的 http 状态码
+   *   destroy() - 中断并销毁（注：请求完毕后需要调用此方法释放资源）
+   */
+
   async get_sample() {
     this.message = ""
     let httpRequest = http.createHttp()
@@ -48,15 +70,14 @@ struct MySample1 {
         readTimeout: 60_000,
       },
       (err: BusinessError, data: http.HttpResponse) => {
-        httpRequest.off('headersReceive');
         if (!err) {
           this.message += `result: ${JSON.stringify(data.result)}\n`
           this.message += `response code: ${data.responseCode}\n`
-          httpRequest.destroy();
         } else {
           this.message += `error: ${JSON.stringify(err)}\n`
-          httpRequest.destroy();
         }
+        httpRequest.off('headersReceive')
+        httpRequest.destroy()
       }
     );
   }
@@ -87,21 +108,20 @@ struct MySample1 {
           'custom-header1': 'abc'
         },
         method: http.RequestMethod.POST,
-        extraData: postData,
         expectDataType: http.HttpDataType.STRING,
         connectTimeout: 60_000,
         readTimeout: 60_000,
+        extraData: postData,
       },
       (err: BusinessError, data: http.HttpResponse) => {
-        httpRequest.off('headersReceive');
         if (!err) {
           this.message += `result: ${JSON.stringify(data.result)}\n`
           this.message += `response code: ${data.responseCode}\n`
-          httpRequest.destroy();
         } else {
           this.message += `error: ${JSON.stringify(err)}\n`
-          httpRequest.destroy();
         }
+        httpRequest.off('headersReceive')
+        httpRequest.destroy()
       }
     );
   }
