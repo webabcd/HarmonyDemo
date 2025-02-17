@@ -27,6 +27,7 @@ struct Index {
           new Node2("用户首选项", "pages/storage/PreferencesDemo"),
           new Node2("应用文件（沙箱目录）", "pages/storage/AppFileDemo"),
           new Node2("用户文件（公共目录）", "pages/storage/UserFileDemo"),
+          new Node2("http", "pages/network/HttpDemo", "/webapi/webapi/webserver.py"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),

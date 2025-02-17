@@ -195,7 +195,8 @@
     "pages/component/common/EventDemo",
     "pages/storage/AppFileDemo",
     "pages/storage/PreferencesDemo",
-    "pages/storage/UserFileDemo"
+    "pages/storage/UserFileDemo",
+    "pages/network/HttpDemo"
   ],
   "window": {
     "designWidth": 720,

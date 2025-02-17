@@ -35,5 +35,6 @@ xxldpi（Extra Extra Large-scale Dots Per Inch） - dpi 在 320 - 480（左开�
 xxxldpi（Extra Extra Extra Large-scale Dots Per Inch） - dpi 在 480 - 640（左开右闭）
 
 ArkTS 方舟编程语言
-ArkUI 提供 UI 框架，通过 ArkTS 声明式编程
-Core File Kit 提供文件管理能力
+ArkUI 提供 UI 框架，通过 ArkTS 声明式编程。比如 import { router } from '@kit.ArkUI'
+Core File Kit 提供文件管理能力。比如 import { fileIo as fs } from '@kit.CoreFileKit'
+Network Kit 提供网络相关能力。比如 import { http } from '@kit.NetworkKit'
