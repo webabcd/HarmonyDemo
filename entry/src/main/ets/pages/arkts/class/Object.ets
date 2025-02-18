@@ -16,17 +16,33 @@ struct ObjectDemo {
 {
   const name = "webabcd";
   const age = 40;
-  // 需要通过接口定义 Object，但是不能定义方法（typescript 是可以的），如需要的话就通过 class 的方式实现接口
+  // 需要通过接口定义 Object
   interface MyInterface {
     name:string;
     age:number;
+    hello: (name: string) => string;
   }
-  const a: MyInterface = {name, age}; // 定义对象时省略属性名（其属性名默认为变量名称）
-  const b: MyInterface = {"name":name, "age":age}; // 这个等价于上面的写法
-  MyLog.d(`${JSON.stringify(a)}`); // {"name":"webabcd","age":40}
-  MyLog.d(`${JSON.stringify(b)}`); // {"name":"webabcd","age":40}
+  // 定义对象时省略属性名（其属性名默认为变量名称）
+  const a: MyInterface = {name, age, hello: (name: string) => {
+    return 'hello: '+ name;
+  }};
+  // 这个等价于上面的写法
+  const b: MyInterface = {"name":name, "age":age, hello: (name: string) => {
+    return 'hello: '+ name;
+  }};
+  MyLog.d(`${a.name}, ${a.age}, ${a.hello("www")}`); // webabcd, 40, hello: www
+  MyLog.d(`${b.name}, ${b.age}, ${b.hello("www")}`); // webabcd, 40, hello: www
 }
 
+// Object 和 object 的区别
+{
+  // 定义为 Object 类型，则可以赋值为任意基本类型或任意对象（不可以赋值为 null 和 undefined）
+  let a: Object = 123;
+  // 定义为 object 类型，则可以赋值为任意对象（不可以赋值为基本数据类型，以及 null 和 undefined）
+  let b: object = new Date();
+
+  // 注：ArkTS 不支持 typescript 的 any 和 unknown
+}
 
 // 关于 bind() 的用法的说明（其用于修改 this 的指向）
 {

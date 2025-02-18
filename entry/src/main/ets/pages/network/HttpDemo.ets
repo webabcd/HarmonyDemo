@@ -1,5 +1,21 @@
 /*
  * http 请求
+ *
+ * 需要在 src/main/module.json5 中添加网络权限，类似如下
+ * {
+ *   "module": {
+ *     "requestPermissions":[
+ *       {
+ *         "name" : "ohos.permission.INTERNET", // 使用 Internet 网络的权限
+ *         "reason": "$string:hello_webabcd", // 申请此权限的原因
+ *         "usedScene": {
+ *           "abilities": [ ],
+ *           "when":"always" // inuse（使用时允许使用此权限），always（始终允许使用此权限）
+ *         }
+ *       },
+ *     ]
+ *   }
+ * }
  */
 
 import { TitleBar } from '../TitleBar';
