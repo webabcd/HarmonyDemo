@@ -4,6 +4,7 @@
  */
 
 import { MyLog, TitleBar } from '../TitleBar';
+import { window } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -15,6 +16,7 @@ struct LifecycleDemo {
   onPageShow() {
     MyLog.d('onPageShow 页面显示时触发，比如路由进来或应用进入前台等');
   }
+
   // 只有被 @Entry 装饰的组件的生命周期才有 onPageHide
   onPageHide() {
     MyLog.d('onPageHide 页面隐藏时触发，比如路由离开或应用进入后台等');
@@ -31,6 +33,18 @@ struct LifecycleDemo {
   // 组件生命周期
   aboutToAppear() {
     MyLog.d('aboutToAppear 组件即将创建之前');
+
+    // 开启 windowEvent 监听
+    window.getLastWindow(getContext(this), (err, win) => {
+      win.on("windowEvent", (event) => {
+        // 监听切到前台和切到后台的事件
+        if (event == window.WindowEventType.WINDOW_SHOWN) {
+          MyLog.d('切到前台');
+        } else if (event == window.WindowEventType.WINDOW_HIDDEN) {
+          MyLog.d('切到后台');
+        }
+      });
+    });
   }
 
   // 组件生命周期
@@ -41,6 +55,11 @@ struct LifecycleDemo {
   // 组件生命周期
   aboutToDisappear() {
     MyLog.d('aboutToDisappear 组件即将销毁之前');
+
+    // 关闭 windowEvent 监听
+    window.getLastWindow(getContext(this), (err, win) => {
+      win.off("windowEvent");
+    });
   }
 
   build() {
