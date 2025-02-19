@@ -7,6 +7,9 @@ ArkTs 兼容大部分的 typescript 语法，不支持 var any unknown symbol，
 
 ohos
 ohos 全称是 OpenHarmony Operating System
+一个 @kit 包一般会整合好多 @ohos 包
+比如 import { router } from '@kit.ArkUI'; 实际导入的是 import router from '@ohos.router';
+比如 import { window } from '@kit.ArkUI'; 实际导入的是 import window from '@ohos.window';
 
 .ets 文件
 ets 的全称是 extended typescript
