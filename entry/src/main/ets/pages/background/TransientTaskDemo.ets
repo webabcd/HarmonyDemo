@@ -102,7 +102,7 @@ struct MySample1 {
     backgroundTaskManager.getRemainingDelayTime(this.taskId).then((taskSuspendDelayTime: number) => {
       this.message += `任务id:${this.taskId}, 任务剩余时间:${taskSuspendDelayTime}\n`
     }).catch((err: BusinessError) => {
-      this.message += `errCode:${err.code}, errMessage:${err.message}\n`
+      this.message += `getRemainingDelayTime errCode:${err.code}, errMessage:${err.message}\n`
     })
   }
 
