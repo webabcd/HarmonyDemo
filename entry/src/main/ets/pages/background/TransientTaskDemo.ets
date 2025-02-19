@@ -66,6 +66,7 @@ struct MySample1 {
   }
 
   // 开始任务
+  // 模拟一个自定义任务
   async startTask() {
     this.taskStatus = false
     let start: number = new Date().getTime();
