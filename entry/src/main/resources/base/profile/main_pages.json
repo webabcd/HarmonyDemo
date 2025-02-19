@@ -197,7 +197,8 @@
     "pages/storage/PreferencesDemo",
     "pages/storage/UserFileDemo",
     "pages/network/HttpDemo",
-    "pages/network/JsonDemo"
+    "pages/network/JsonDemo",
+    "pages/background/TransientTaskDemo"
   ],
   "window": {
     "designWidth": 720,
