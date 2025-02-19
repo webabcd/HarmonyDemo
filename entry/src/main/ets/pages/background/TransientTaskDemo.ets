@@ -106,7 +106,7 @@ struct MySample1 {
     })
   }
 
-  async cancelSuspendDelay() {
+  cancelSuspendDelay() {
     /*
      * backgroundTaskManager.cancelSuspendDelay() - 取消指定的短时任务
      *   requestId - 短时任务 ID
