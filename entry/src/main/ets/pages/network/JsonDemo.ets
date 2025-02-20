@@ -52,10 +52,16 @@ struct MySample1 {
         this.message = `json:${json}`
       })
 
-      Button("json 反序列化").onClick(() => {
+      Button("json 反序列化（对象）").onClick(() => {
         let json = '{"name":"webabcd", "age":44}'
         let person = JSON.parse(json) as Person
         this.message = `name:${person.name}, age:${person.age}`
+      })
+
+      Button("json 反序列化（对象数组）").onClick(() => {
+        let json = '[{"name":"webabcd", "age":44}]'
+        let personList = JSON.parse(json) as Person[]
+        this.message = `name_0:${personList[0].name}, age_0:${personList[0].age}`
       })
 
       Text(this.message)
@@ -77,17 +83,24 @@ struct MySample2 {
        *   has() - 判断对象是否包含指定名称的属性
        */
 
-      Button("解析 json 对象").onClick(() => {
+      Button("解析 json 对象（通过 object 的方式）").onClick(() => {
         let json = '{"name":"webabcd", "age":44}'
         let obj = JSON.parse(json) as object
         this.message = `name:${obj?.["name"]}, age:${obj?.["age"]}\n`
         this.message += `obj 是否有 name:${JSON.has(obj, "name")}, obj 是否有 age:${JSON.has(obj, "age")}`
       })
 
+      Button("解析 json 对象（通过 Record 的方式）").onClick(() => {
+        let json = '{"name":"webabcd", "age":44}'
+        // 关于 Record 的用法，请参见 arkts/advanced/RecordPartial.ets 中的说明
+        let obj = JSON.parse(json) as Record<string, Object>
+        this.message = `name:${obj.name}, age:${obj.age}\n`
+      })
+
       Button("解析 json 数组").onClick(() => {
         let json = '[{"name":"webabcd", "age":44}]'
-        let obj = JSON.parse(json)
-        this.message = `length:${(obj as [])?.length}, name_0:${(obj as object)?.[0]["name"]}, age_0:${(obj as object)?.[0]["age"]}`
+        let ary = JSON.parse(json) as object[]
+        this.message = `length:${ary.length}, name_0:${ary[0]["name"]}, age_0:${ary[0]["age"]}`
       })
 
       Text(this.message)
