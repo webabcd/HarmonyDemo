@@ -53,6 +53,11 @@
             "resource": "$profile:backup_config"
           }
         ],
+      },
+      {
+        "name": "MyWorkSchedulerExtensionAbility", // 延迟任务的类名
+        "srcEntry": "./ets/pages/background/MyWorkSchedulerExtensionAbility.ets", // 延迟任务的类的所属文件
+        "type": "workScheduler" // 延迟任务
       }
     ],
     "routerMap": "$profile:route_map", // 指定路由表，详见 src/main/resources/profile/route_map.json 中的配置

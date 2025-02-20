@@ -29,8 +29,10 @@ struct Index {
           new Node2("用户文件（公共目录）", "pages/storage/UserFileDemo"),
           new Node2("http", "pages/network/HttpDemo", "/webapi/webapi/webserver.py"),
           new Node2("json", "pages/network/JsonDemo"),
-          new Node2("TransientTask（短时任务）", "pages/background/TransientTaskDemo"),
-          new Node2("ContinuousTask（长时任务）", "pages/background/ContinuousTaskDemo"),
+          new Node2("短时任务（应用退到后台之后，允许继续运行一段时间）", "pages/background/TransientTaskDemo"),
+          new Node2("长时任务（应用退到后台之后，允许特定任务长时间运行）", "pages/background/ContinuousTaskDemo"),
+          new Node2("延迟任务（由系统决策，在合适的时候执行）", "pages/background/DeferredTaskDemo", "pages/background/MyWorkSchedulerExtensionAbility.ets"),
+          new Node2("提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）", "pages/background/ReminderTaskDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),

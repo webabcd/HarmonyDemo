@@ -199,7 +199,9 @@
     "pages/network/HttpDemo",
     "pages/network/JsonDemo",
     "pages/background/TransientTaskDemo",
-    "pages/background/ContinuousTaskDemo"
+    "pages/background/ContinuousTaskDemo",
+    "pages/background/DeferredTaskDemo",
+    "pages/background/ReminderTaskDemo"
   ],
   "window": {
     "designWidth": 720,
