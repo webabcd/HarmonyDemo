@@ -30,6 +30,7 @@ struct Index {
           new Node2("http", "pages/network/HttpDemo", "/webapi/webapi/webserver.py"),
           new Node2("json", "pages/network/JsonDemo"),
           new Node2("TransientTask（短时任务）", "pages/background/TransientTaskDemo"),
+          new Node2("ContinuousTask（长时任务）", "pages/background/ContinuousTaskDemo"),
         ]),
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),

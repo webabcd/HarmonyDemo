@@ -198,7 +198,8 @@
     "pages/storage/UserFileDemo",
     "pages/network/HttpDemo",
     "pages/network/JsonDemo",
-    "pages/background/TransientTaskDemo"
+    "pages/background/TransientTaskDemo",
+    "pages/background/ContinuousTaskDemo"
   ],
   "window": {
     "designWidth": 720,
