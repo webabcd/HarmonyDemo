@@ -2,7 +2,7 @@
  * ContinuousTask - 长时任务
  *
  * 应用退到后台之后，特定任务（比如数据上传下载，音视频播放，录音录屏，定位，蓝牙传输等）可以长时间运行
- * 开始长时任务后，通知栏会显示一个与此任务关联的通知，删除这个通知则会自动停止长时任务
+ * 启动长时任务后，通知栏会显示一个与此任务关联的通知，删除这个通知则会自动停止长时任务
  *
  * 1、需要在 src/main/module.json5 中添加长时任务权限，类似如下
  * {
@@ -71,7 +71,7 @@ struct MySample1 {
   // 长任务关联的通知 ID
   notificationId: number = 0
 
-  // 开始长时任务
+  //启动长时任务
   startBackgroundRunning() {
     let context: Context = getContext(this);
     this.bundleName = (context as common.UIAbilityContext).abilityInfo.bundleName
@@ -117,7 +117,7 @@ struct MySample1 {
 
     wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj: WantAgent) => {
       /*
-       * backgroundTaskManager.startBackgroundRunning() - 开始长时任务
+       * backgroundTaskManager.startBackgroundRunning() - 启动长时任务
        *   context - 上下文
        *   bgModes - 长时任务的类型
        *     dataTransfer - 数据上传下载
@@ -170,7 +170,7 @@ struct MySample1 {
         systemLiveView: { typeCode: 8, title: "title",  text: "text", } // 当前场景下 title 和 text 都是无效的，但是不能设置为空
       },
       notificationSlotType: notificationManager.SlotType.LIVE_VIEW, // dataTransfer 类型的长时任务的绑定的通知要写死这个
-      id: this.notificationId, // 开始长时任务时，返回的其关联的通知 ID
+      id: this.notificationId, // 启动长时任务时，返回的其关联的通知 ID
       template: downLoadTemplate // 通知模版
     };
 
@@ -197,7 +197,7 @@ struct MySample1 {
 
   build() {
     Column({ space: 10 }) {
-      Button("开始长时任务，并执行一个自定义的下载任务").onClick(() => {
+      Button("启动长时任务，并执行一个自定义的下载任务").onClick(() => {
         this.startBackgroundRunning()
         this.startTask()
       })
