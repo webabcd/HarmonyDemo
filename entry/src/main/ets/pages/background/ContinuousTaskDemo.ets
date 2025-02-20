@@ -140,8 +140,8 @@ struct MySample1 {
   }
 
   // 开始任务
+  // 模拟数据下载任务
   async startTask() {
-    // 模拟数据下载任务
     for (let i = 1; i <= 10; i++) {
       await new Promise<string>(r => setTimeout(r, 1000));
       if (i > 5) {
