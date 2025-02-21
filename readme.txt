@@ -1,6 +1,10 @@
 https://developer.huawei.com
 https://docs.openharmony.cn
 
+OpenHarmony 是开源的
+HarmonyOS 是鸿蒙操作系统，不开源，他是基于 OpenHarmony 开发的，其支持 Android 的 app 是因为其集成了 AOSP（Android Open Source Project）
+HarmonyOS NEXT 是纯血鸿蒙操作系统，完全去掉了 AOSP
+
 ArkTs
 ark 是方舟的意思，ts 是 typescript
 ArkTs 兼容大部分的 typescript 语法，不支持 var any unknown symbol，不支持匿名类型，不支持解构，不支持 Generator
