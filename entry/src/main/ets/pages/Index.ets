@@ -20,20 +20,9 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("显示相关（visibility, overlay）", "pages/component/common/DisplayDemo"),
-          new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
-          new Node2("事件相关（onAppear/onDisAppear, onAreaChange, onVisibleAreaChange, 自定义事件）", "pages/component/common/EventDemo"),
-          new Node2("图像效果", "pages/shape/EffectDemo"),
-          new Node2("用户首选项", "pages/storage/PreferencesDemo"),
-          new Node2("应用文件（沙箱目录）", "pages/storage/AppFileDemo"),
-          new Node2("用户文件（公共目录）", "pages/storage/UserFileDemo"),
-          new Node2("http", "pages/network/HttpDemo", "/webapi/webapi/webserver.py"),
-          new Node2("json", "pages/network/JsonDemo"),
-          new Node2("短时任务（应用退到后台之后，允许继续运行一段时间）", "pages/background/TransientTaskDemo"),
-          new Node2("长时任务（应用退到后台之后，允许特定任务长时间运行）", "pages/background/ContinuousTaskDemo"),
-          new Node2("延迟任务（由系统决策，在合适的时候执行）", "pages/background/DeferredTaskDemo", "pages/background/MyWorkSchedulerExtensionAbility.ets"),
-          new Node2("提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）", "pages/background/ReminderTaskDemo"),
+
         ]),
+
         new Node1("ArkTS 基础", [
           new Node2("基础", "pages/arkts/basic/Basic"),
           new Node2("数据类型", "pages/arkts/basic/DataType"),
@@ -99,6 +88,9 @@ struct Index {
         new Node1("组件（通用的属性方法和事件方法）", [
           new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）", "pages/component/common/SizeDemo"),
           new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
+          new Node2("显示相关（visibility, overlay）", "pages/component/common/DisplayDemo"),
+          new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
+          new Node2("事件相关（onAppear/onDisAppear, onAreaChange, onVisibleAreaChange, 自定义事件）", "pages/component/common/EventDemo"),
         ]),
         new Node1("组件（布局类）", [
           new Node2("Column（垂直布局）", "pages/component/layout/ColumnDemo"),
@@ -245,6 +237,7 @@ struct Index {
           new Node2("渐变", "pages/shape/GradientDemo"),
           new Node2("图形绘制（Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape）", "pages/shape/ShapeDemo"),
           new Node2("图形变换（transform, rotate, translate, scale, skew）", "pages/shape/TransformDemo"),
+          new Node2("图像效果", "pages/shape/EffectDemo"),
         ]),
         new Node1("动画", [
           new Node2("ImageAnimator（帧动画）", "pages/animation/ImageAnimatorDemo"),
@@ -262,6 +255,21 @@ struct Index {
           new Node2("图标资源", "pages/resource/IconDemo"),
           new Node2("国际化", "pages/resource/InternationalizationDemo", "/entry/src/main/resources/base/element/string.json|/entry/src/main/resources/zh_CN/element/string.json|/entry/src/main/resources/en_US/element/string.json"),
           new Node2("资源", "pages/resource/ResourceDemo", "/entry/src/main/resources/base/element/boolean.json|/entry/src/main/resources/base/element/color.json|/entry/src/main/resources/base/element/float.json|/entry/src/main/resources/base/element/integer.json|/entry/src/main/resources/base/element/strarray.json|/entry/src/main/resources/base/element/string.json|/entry/src/main/resources/vertical-xxxldpi/element/string.json|/entry/src/main/resources/rawfile/mytext.txt|/entry/src/main/resources/resfile/mytext.txt"),
+        ]),
+        new Node1("存储", [
+          new Node2("用户首选项", "pages/storage/PreferencesDemo"),
+          new Node2("应用文件（沙箱目录）", "pages/storage/AppFileDemo"),
+          new Node2("用户文件（公共目录）", "pages/storage/UserFileDemo"),
+        ]),
+        new Node1("网络", [
+          new Node2("http", "pages/network/HttpDemo", "/webapi/webapi/webserver.py"),
+          new Node2("json", "pages/network/JsonDemo"),
+        ]),
+        new Node1("后台", [
+          new Node2("短时任务（应用退到后台之后，允许继续运行一段时间）", "pages/background/TransientTaskDemo"),
+          new Node2("长时任务（应用退到后台之后，允许特定任务长时间运行）", "pages/background/ContinuousTaskDemo"),
+          new Node2("延迟任务（由系统决策，在合适的时候执行）", "pages/background/DeferredTaskDemo", "pages/background/MyWorkSchedulerExtensionAbility.ets"),
+          new Node2("提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）", "pages/background/ReminderTaskDemo"),
         ]),
       ]
     let md = this.siteMapToMarkdown()

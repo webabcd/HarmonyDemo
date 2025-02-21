@@ -131,10 +131,16 @@
 - pages/state/mvvm/viewmodel/MyViewModel.ets
 
 ### 组件（通用的属性方法和事件方法）
-1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, visibility）
+1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）
 - pages/component/common/SizeDemo
 2. 位置相关（align, direction, position, markAnchor, offset）
 - pages/component/common/PositionDemo
+3. 显示相关（visibility, overlay）
+- pages/component/common/DisplayDemo
+4. 前景背景
+- pages/component/common/ForegroundBackgroundDemo
+5. 事件相关（onAppear/onDisAppear, onAreaChange, onVisibleAreaChange, 自定义事件）
+- pages/component/common/EventDemo
 
 ### 组件（布局类）
 1. Column（垂直布局）
@@ -411,6 +417,8 @@
 - pages/shape/ShapeDemo
 7. 图形变换（transform, rotate, translate, scale, skew）
 - pages/shape/TransformDemo
+8. 图像效果
+- pages/shape/EffectDemo
 
 ### 动画
 1. ImageAnimator（帧动画）
@@ -456,3 +464,29 @@
 - /entry/src/main/resources/vertical-xxxldpi/element/string.json
 - /entry/src/main/resources/rawfile/mytext.txt
 - /entry/src/main/resources/resfile/mytext.txt
+
+### 存储
+1. 用户首选项
+- pages/storage/PreferencesDemo
+2. 应用文件（沙箱目录）
+- pages/storage/AppFileDemo
+3. 用户文件（公共目录）
+- pages/storage/UserFileDemo
+
+### 网络
+1. http
+- pages/network/HttpDemo
+- /webapi/webapi/webserver.py
+2. json
+- pages/network/JsonDemo
+
+### 后台
+1. 短时任务（应用退到后台之后，允许继续运行一段时间）
+- pages/background/TransientTaskDemo
+2. 长时任务（应用退到后台之后，允许特定任务长时间运行）
+- pages/background/ContinuousTaskDemo
+3. 延迟任务（由系统决策，在合适的时候执行）
+- pages/background/DeferredTaskDemo
+- pages/background/MyWorkSchedulerExtensionAbility.ets
+4. 提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）
+- pages/background/ReminderTaskDemo
