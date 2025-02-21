@@ -46,7 +46,7 @@ struct SafeAreaDemo {
   @Builder myComponent() {
     Column({space:10}) {
       Text(this.message)
-      RadioBar({valueList: ["一般组件的沉浸式效果", "滚动组件的沉浸式效果"], selectedIndex: this.demonIndex, onChange: (selectedIndex: number) => {
+      RadioBar({valueList: ["一般组件的沉浸式效果", "滚动组件的沉浸式效果", "无沉浸式效果"], selectedIndex: this.demonIndex, onChange: (selectedIndex: number) => {
         this.demonIndex = selectedIndex
       }})
     }
@@ -124,11 +124,35 @@ struct SafeAreaDemo {
     )
   }
 
+  @Builder demo3() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      List({ space: 20, }) {
+        ForEach(this.array, (item: string) => {
+          ListItem() {
+            Text(item).width('100%').height(100).fontSize(48)
+              .textAlign(TextAlign.Center).backgroundColor(Color.Orange).borderRadius(20)
+          }
+          .margin({ left: 20, right: 20 })
+        }, (item: string) => item)
+      }
+      .width('100%')
+      .height('100%')
+
+      Column() {
+        TitleBar()
+        this.myComponent()
+      }
+    }
+    .backgroundColor(Color.Yellow)
+  }
+
   build() {
     if (this.demonIndex == 0) {
       this.demo1()
     } else if (this.demonIndex == 1) {
       this.demo2()
+    } else if (this.demonIndex == 2) {
+      this.demo3()
     } else {
 
     }
