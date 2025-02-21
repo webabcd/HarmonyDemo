@@ -3,6 +3,7 @@
  *
  * 延迟任务是由系统统一决策并调用，系统会根据应用的活跃程度决定多长时间执行一次（最快 2 个小时）
  * 延迟任务每次执行时，最多运行 2 分钟
+ * 延迟任务支持在 app 死掉后执行
  *
  * 1、继承 WorkSchedulerExtensionAbility 实现自定义的延迟任务（参见 MyWorkSchedulerExtensionAbility.ets）
  * 2、需要在 src/main/module.json5 中添加指定的延迟任务，类似如下
@@ -61,10 +62,10 @@ struct MySample1 {
     try {
       // 申请延迟任务
       workScheduler.startWork(this.myWorkInfo);
-      this.message = `startWork success`;
+      this.message = `startWork 成功`;
     } catch (error) {
       let err = error as BusinessError;
-      this.message =`startWork failed, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`startWork 失败, errCode${err.code}, errMessage:${err.message}`;
     }
   }
 
@@ -73,10 +74,10 @@ struct MySample1 {
     try {
       // 取消延迟任务
       workScheduler.stopWork(this.myWorkInfo);
-      this.message = `stopWork success`;
+      this.message = `stopWork 成功`;
     } catch (error) {
       let err = error as BusinessError;
-      this.message =`stopWork failed, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`stopWork 失败, errCode${err.code}, errMessage:${err.message}`;
     }
   }
 
