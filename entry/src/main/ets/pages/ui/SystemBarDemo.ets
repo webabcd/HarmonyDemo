@@ -85,10 +85,10 @@ struct MySample1 {
   // 设置顶部的系统状态栏和底部的系统导航栏的样式
   setSystemBarStyle() {
     let systemBarProperties: window.SystemBarProperties = {
-      statusBarColor: '#ff0000',
-      statusBarContentColor: '#ffffff',
-      navigationBarColor: '#00ff00',
-      navigationBarContentColor: '#ffffff',
+      statusBarColor: '#ff0000', // 状态栏背景色
+      statusBarContentColor: '#ffffff',  // 状态栏前景色
+      navigationBarColor: '#00ff00', // 导航栏背景色（我这里测试无效）
+      navigationBarContentColor: '#ffffff', // 导航栏前景色（我这里测试无效）
     };
     this.windowClass.setWindowSystemBarProperties(systemBarProperties).then(() => {
       this.message = '设置成功';
