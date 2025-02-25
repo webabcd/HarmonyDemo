@@ -46,8 +46,8 @@ struct MySample1 {
        *   orientation - 方向（display.Orientation 枚举）
        *     PORTRAIT - 竖屏
        *     LANDSCAPE - 横屏（竖屏顺时针旋转 90 度）
-       *     PORTRAIT_INVERTED - 反向竖屏（竖屏顺时针旋转 90 度）
-       *     LANDSCAPE_INVERTED- 反向横屏（竖屏顺时针旋转 270 度）
+       *     PORTRAIT_INVERTED - 反向竖屏（竖屏顺时针旋转 180 度）
+       *     LANDSCAPE_INVERTED - 反向横屏（竖屏顺时针旋转 270 度）
        */
       let newDisplay: display.Display = display.getDefaultDisplaySync();
       this.message += `orientation:${newDisplay.orientation}, width:${newDisplay.width}, height:${newDisplay.height}\n`
@@ -71,7 +71,7 @@ struct MySample1 {
          *   UNSPECIFIED - 未定义，由系统决定
          *   PORTRAIT - 竖屏
          *   LANDSCAPE - 横屏（竖屏顺时针旋转 90 度）
-         *   PORTRAIT_INVERTED - 反向竖屏（竖屏顺时针旋转 90 度）
+         *   PORTRAIT_INVERTED - 反向竖屏（竖屏顺时针旋转 180 度）
          *   LANDSCAPE_INVERTED - 反向横屏（竖屏顺时针旋转 270 度）
          *   AUTO_ROTATION - 跟随屏幕方向自动旋转（支持 4 个方向），且不受控制中心旋转开关的控制
          *   AUTO_ROTATION_PORTRAIT - 跟随屏幕方向自动旋转（仅支持竖屏和反向竖屏），且不受控制中心旋转开关的控制
