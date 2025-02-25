@@ -72,6 +72,16 @@ struct MySample1 {
     });
   }
 
+  // 沉浸式效果
+  enableImmersiveMode() {
+    this.windowClass.setImmersiveModeEnabledState(true)
+  }
+
+  // 非沉浸式效果
+  disableImmersiveMode() {
+    this.windowClass.setImmersiveModeEnabledState(false)
+  }
+
   // 设置顶部的系统状态栏和底部的系统导航栏的样式
   setSystemBarStyle() {
     let systemBarProperties: window.SystemBarProperties = {
@@ -101,6 +111,13 @@ struct MySample1 {
       })
       Button("退出全屏（非沉浸式效果）").onClick(() => {
         this.exitFullScreen()
+      })
+
+      Button("沉浸式效果").onClick(() => {
+        this.enableImmersiveMode()
+      })
+      Button("非沉浸式效果").onClick(() => {
+        this.disableImmersiveMode()
       })
 
       Button("设置顶部的系统状态栏和底部的系统导航栏的样式").onClick(() => {
