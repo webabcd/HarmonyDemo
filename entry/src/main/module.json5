@@ -23,6 +23,7 @@
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
         "orientation": "portrait", // 屏幕方向
+        "preferMultiWindowOrientation": "landscape_auto", // 悬浮窗方向
         "skills": [
           {
             "entities": [

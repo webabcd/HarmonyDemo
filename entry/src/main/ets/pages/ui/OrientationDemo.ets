@@ -16,6 +16,7 @@ struct OrientationDemo {
       Tabs() {
         TabContent() { MySample1() }.tabBar('通过程序控制').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('通过配置控制').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('控制悬浮窗方向').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -141,6 +142,64 @@ struct MySample2 {
 
   build() {
     Column({space:10}) {
+      Text(this.message)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
+/*
+ * 控制悬浮窗方向需要在 src/main/module.json5 中做类似如下的配置
+ * {
+ *   "module": {
+ *     "abilities": [
+ *       {
+ *         "preferMultiWindowOrientation": "landscape_auto"
+ *       }
+ *     ]
+ *   }
+ * }
+ * 其中 preferMultiWindowOrientation 的可用值和说明如下
+ *  default - 默认
+ *  portrait - 竖屏悬浮窗
+ *  landscape - 横屏悬浮窗
+ *  landscape_auto - 由程序解决是竖屏悬浮窗还是横屏悬浮窗
+ */
+@Component
+struct MySample3 {
+
+  @State message: string = ""
+
+  context = getContext(this) as common.UIAbilityContext;
+  windowStage = this.context.windowStage;
+  windowClass = this.windowStage.getMainWindowSync();
+
+  aboutToAppear() {
+    let callback = async () => {
+      let newDisplay: display.Display = display.getDefaultDisplaySync();
+      this.message += `orientation:${newDisplay.orientation}, width:${newDisplay.width}, height:${newDisplay.height}\n`
+    }
+    display.on("change", callback);
+  }
+
+  aboutToDisappear(): void {
+    display.off("change")
+  }
+
+  build() {
+    Column({space:10}) {
+
+      Button("横屏悬浮框").onClick(() => {
+        // 横屏悬浮框（需要先在 module.json5 中配置 "preferMultiWindowOrientation": "landscape_auto"）
+        this.windowClass.enableLandscapeMultiWindow()
+      })
+
+      Button("竖屏悬浮框").onClick(() => {
+        // 竖屏悬浮框（需要先在 module.json5 中配置 "preferMultiWindowOrientation": "landscape_auto"）
+        this.windowClass.disableLandscapeMultiWindow()
+      })
+
       Text(this.message)
     }
     .width('100%')
