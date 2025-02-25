@@ -129,7 +129,7 @@ struct MySample2 {
   @State message: string = ""
 
   aboutToAppear() {
-    let callback = async () => {
+    let callback = () => {
       let newDisplay: display.Display = display.getDefaultDisplaySync();
       this.message += `orientation:${newDisplay.orientation}, width:${newDisplay.width}, height:${newDisplay.height}\n`
     }

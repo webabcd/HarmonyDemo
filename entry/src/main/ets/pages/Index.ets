@@ -22,7 +22,7 @@ struct Index {
         new Node1("临时测试用", [
           new Node2("状态栏和导航栏", "pages/ui/SystemBarDemo"),
           new Node2("屏幕方向", "pages/ui/OrientationDemo"),
-          new Node2("窗口相关", "pages/ui/WindowDemo"),
+          new Node2("屏幕和窗口", "pages/ui/DisplayWindowDemo"),
 
         ]),
 

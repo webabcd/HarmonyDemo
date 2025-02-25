@@ -202,7 +202,7 @@
     "pages/background/ContinuousTaskDemo",
     "pages/background/DeferredTaskDemo",
     "pages/background/ReminderTaskDemo",
-    "pages/ui/WindowDemo",
+    "pages/ui/DisplayWindowDemo",
     "pages/ui/OrientationDemo",
     "pages/ui/SystemBarDemo"
   ],
