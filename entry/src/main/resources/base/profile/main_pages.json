@@ -201,7 +201,10 @@
     "pages/background/TransientTaskDemo",
     "pages/background/ContinuousTaskDemo",
     "pages/background/DeferredTaskDemo",
-    "pages/background/ReminderTaskDemo"
+    "pages/background/ReminderTaskDemo",
+    "pages/ui/WindowDemo",
+    "pages/ui/OrientationDemo",
+    "pages/ui/SystemBarDemo"
   ],
   "window": {
     "designWidth": 720,

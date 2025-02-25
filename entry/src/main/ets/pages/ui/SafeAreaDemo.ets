@@ -8,6 +8,8 @@
  *     没有特殊要求的话，就设置为 [SafeAreaType.SYSTEM, SafeAreaType.CUTOUT, SafeAreaType.KEYBOARD] 即可
  *   edges - 用于指定安全区域扩展的方向
  *     如果四周都需要扩展的话，就设置为 [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM, SafeAreaEdge.START, SafeAreaEdge.END] 即可
+ *
+ * 注：关于顶部的系统状态栏和底部的系统导航栏的显示和隐藏，以及他们的样式的修改，以及窗口的全屏（沉浸式效果）和退出全屏（非沉浸式效果）等请参见 SystemBarDemo.ets 中的相关说明
  */
 
 import { RadioBar, TitleBar } from '../TitleBar'
@@ -46,7 +48,7 @@ struct SafeAreaDemo {
   @Builder myComponent() {
     Column({space:10}) {
       Text(this.message)
-      RadioBar({valueList: ["一般组件的沉浸式效果", "滚动组件的沉浸式效果", "无沉浸式效果"], selectedIndex: this.demonIndex, onChange: (selectedIndex: number) => {
+      RadioBar({valueList: ["一般组件的沉浸式效果", "滚动组件的沉浸式效果", "非沉浸式效果"], selectedIndex: this.demonIndex, onChange: (selectedIndex: number) => {
         this.demonIndex = selectedIndex
       }})
     }
