@@ -24,6 +24,9 @@ struct Index {
           new Node2("屏幕方向", "pages/ui/OrientationDemo"),
           new Node2("屏幕和窗口", "pages/ui/DisplayWindowDemo"),
 
+          new Node2("触摸类输入", "pages/input/TouchDemo"),
+          new Node2("键盘类输入", "pages/input/KeyboardDemo"),
+          new Node2("手势", "pages/input/GestureDemo"),
         ]),
 
         new Node1("ArkTS 基础", [

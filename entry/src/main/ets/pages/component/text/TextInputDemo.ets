@@ -3,6 +3,7 @@
  */
 
 import { MyLog, TitleBar } from '../../TitleBar'
+import { KeyCode } from '@kit.InputKit'
 
 @Entry
 @Component
@@ -321,13 +322,16 @@ struct MySample4 {
          *   event - 事件参数（一个 SubmitEvent 对象）
          *     text - 当前的文本内容
          *     keepEditableState() - 保持编辑状态（注：默认在 onSubmit() 之后会变为非编辑状态）
+         * onKeyPreIme() - 通过输入法按键时的回调
+         *   return true - 代表已处理，不需要执行默认的行为
+         *   return false - 代表没处理，需要执行默认的行为
          */
 
         .onWillInsert((info: InsertValue) => {
           this.message += `onWillInsert, insertValue:${info.insertValue}, insertOffset:${info.insertOffset}\n`
           // 返回 true 则代表允许此次输入，然后会调用 onDidInsert()
           // 返回 false 则代表拒绝此次输入，之后也不会调用 onDidInsert()
-          return false;
+          return true;
         })
         .onDidInsert((info: InsertValue) => {
           this.message += `onDidInsert, insertValue:${info.insertValue}, insertOffset:${info.insertOffset}\n`
@@ -362,6 +366,14 @@ struct MySample4 {
             this.message += `onSubmit, enterKey:${enterKey}, text:${event.text}\n`
             // 默认在 onSubmit() 之后输入框会变为非编辑状态，如果调用 keepEditableState() 则可以保持编辑状态
             event.keepEditableState()
+        })
+
+        .onKeyPreIme((event: KeyEvent) => {
+          // 通过输入法输入字符 1 时
+          if (event.keyCode == KeyCode.KEYCODE_1) {
+            return true; // 代表已处理，不需要执行默认的行为（字符 1 不会进入输入框）
+          }
+          return false; // 代表没处理，需要执行默认的行为（字符 1 会进入到输入框）
         })
 
       Text(this.message).fontSize(16)

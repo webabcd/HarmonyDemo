@@ -204,7 +204,10 @@
     "pages/background/ReminderTaskDemo",
     "pages/ui/DisplayWindowDemo",
     "pages/ui/OrientationDemo",
-    "pages/ui/SystemBarDemo"
+    "pages/ui/SystemBarDemo",
+    "pages/input/TouchDemo",
+    "pages/input/KeyboardDemo",
+    "pages/input/GestureDemo"
   ],
   "window": {
     "designWidth": 720,

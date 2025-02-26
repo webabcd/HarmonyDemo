@@ -71,8 +71,8 @@ struct MySample2 {
        * onAreaChange() - 组件的区域（尺寸和位置）发生变化时的回调
        *   oldValue, newValue - 变化前和变化后，组件的尺寸和位置（Area 对象）
        *     width, height - 尺寸
-       *     position - 相对于父容器的位置
-       *     globalPosition - 相对于页面的位置
+       *     position - 区域的左上角相对于父容器的左上角的位置
+       *     globalPosition - 区域的左上角相对于页面的左上角的位置
        * onSizeChange() - 组件的尺寸发生变化时的回调
        *   oldValue, newValue - 变化前和变化后，组件的尺寸（SizeOptions 对象）
        *     width, height - 尺寸
