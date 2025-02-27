@@ -26,7 +26,7 @@ struct Index {
 
           new Node2("触摸类输入", "pages/input/TouchDemo"),
           new Node2("键盘类输入", "pages/input/KeyboardDemo"),
-          new Node2("手势", "pages/input/GestureDemo"),
+          new Node2("手势识别", "pages/input/GestureDemo"),
         ]),
 
         new Node1("ArkTS 基础", [
