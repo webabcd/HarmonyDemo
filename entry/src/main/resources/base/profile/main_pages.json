@@ -207,7 +207,10 @@
     "pages/ui/SystemBarDemo",
     "pages/input/TouchDemo",
     "pages/input/KeyboardDemo",
-    "pages/input/GestureDemo"
+    "pages/input/GestureDemo",
+    "pages/state/v2/AppStorageV2Demo",
+    "pages/state/v2/AppStorageV2Demo_Page1",
+    "pages/state/v2/PersistenceV2Demo"
   ],
   "window": {
     "designWidth": 720,

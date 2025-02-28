@@ -20,6 +20,9 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("v2 AppStorageV2", "pages/state/v2/AppStorageV2Demo", "pages/state/v2/AppStorageV2Demo_Page1.ets"),
+          new Node2("v2 PersistenceV2", "pages/state/v2/PersistenceV2Demo"),
+
           new Node2("状态栏和导航栏", "pages/ui/SystemBarDemo"),
           new Node2("屏幕方向", "pages/ui/OrientationDemo"),
           new Node2("屏幕和窗口", "pages/ui/DisplayWindowDemo"),
