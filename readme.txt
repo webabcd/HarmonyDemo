@@ -46,3 +46,6 @@ ArkUI 提供 UI 框架，通过 ArkTS 声明式编程。比如 import { router }
 Core File Kit 提供文件管理能力。比如 import { fileIo as fs } from '@kit.CoreFileKit'
 Network Kit 提供网络相关能力。比如 import { http } from '@kit.NetworkKit'
 Background Tasks Kit 提供后台任务能力。比如 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
+
+hdc（OpenHarmony Device Connector）
+命令行工具，其存放于类似如下的地址 /sdk/12/toolchains/hdc.exe

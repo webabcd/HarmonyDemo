@@ -1,0 +1,28 @@
+{
+  "module": {
+    "name": "feature1",
+    "type": "feature",
+    "description": "$string:module_desc",
+    "mainElement": "Feature1Ability",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "com.webabcd.harmonydemo.Feature1Ability",
+        "srcEntry": "./ets/feature1ability/Feature1Ability.ets",
+        "description": "$string:Feature1Ability_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:Feature1Ability_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      }
+    ]
+  }
+}

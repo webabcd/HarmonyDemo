@@ -36,6 +36,18 @@
           ]
         }
       ]
+    },
+    {
+      "name": "feature1",
+      "srcPath": "./feature1",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }
