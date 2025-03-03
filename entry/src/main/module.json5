@@ -14,8 +14,8 @@
     "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的自定义标识
+        "srcEntry": "./ets/entryability/EntryAbility.ets", // 当前 ability 的代码的地址
         "description": "$string:EntryAbility_desc",
         "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",

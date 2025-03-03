@@ -143,7 +143,7 @@ struct MySample2 {
       ],
       wantAgent: { // 点击通知后，拉起的 ability 的相关信息
         pkgName: 'com.webabcd.harmonydemo',
-        abilityName: 'EntryAbility'
+        abilityName: 'com.webabcd.harmonydemo.EntryAbility'
       },
       title: 'title', // 通知的标题
       content: 'content', // 通知的内容
@@ -213,7 +213,7 @@ struct MySample3 {
       ],
       wantAgent: { // 点击通知后，拉起的 ability 的相关信息
         pkgName: 'com.webabcd.harmonydemo',
-        abilityName: 'EntryAbility'
+        abilityName: 'com.webabcd.harmonydemo.EntryAbility'
       },
       ringDuration: 15, // 响铃时长（单位：秒）
       snoozeTimes: 2, // 稍后提醒的次数
@@ -295,7 +295,7 @@ struct MySample4 {
       ],
       wantAgent: { // 点击通知后，拉起的 ability 的相关信息
         pkgName: 'com.webabcd.harmonydemo',
-        abilityName: 'EntryAbility'
+        abilityName: 'com.webabcd.harmonydemo.EntryAbility'
       },
       ringDuration: 15, // 响铃时长（单位：秒）
       snoozeTimes: 2, // 稍后提醒的次数
