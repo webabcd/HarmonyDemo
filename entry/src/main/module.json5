@@ -57,9 +57,9 @@
         ],
       },
       {
-        "name": "MyWorkSchedulerExtensionAbility", // 延迟任务的类名
-        "srcEntry": "./ets/pages/background/MyWorkSchedulerExtensionAbility.ets", // 延迟任务的类的所属文件
-        "type": "workScheduler" // 延迟任务
+        "name": "com.webabcd.harmonydemo.MyWorkSchedulerExtensionAbility", // 自定义标识
+        "srcEntry": "./ets/pages/background/MyWorkSchedulerExtensionAbility.ets", // 延迟任务对应的代码的地址
+        "type": "workScheduler" // 当前的 ExtensionAbility 的类型为延迟任务
       }
     ],
     "routerMap": "$profile:route_map", // 指定路由表，详见 src/main/resources/profile/route_map.json 中的配置

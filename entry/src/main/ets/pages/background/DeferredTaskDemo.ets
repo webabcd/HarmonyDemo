@@ -11,9 +11,9 @@
  *   "module": {
  *     "extensionAbilities": [
  *       {
- *         "name": "MyWorkSchedulerExtensionAbility", // 延迟任务的类名
- *         "srcEntry": "./ets/pages/background/MyWorkSchedulerExtensionAbility.ets", // 延迟任务的类的所属文件
- *         "type": "workScheduler" // 延迟任务
+ *         "name": "com.webabcd.harmonydemo.MyWorkSchedulerExtensionAbility", // 自定义标识
+ *         "srcEntry": "./ets/pages/background/MyWorkSchedulerExtensionAbility.ets", // 延迟任务对应的代码的地址
+ *         "type": "workScheduler" // 当前的 ExtensionAbility 的类型为延迟任务
  *       }
  *     ],
  *   }
@@ -55,7 +55,7 @@ struct MySample1 {
       // 注：还有一些其他限制条件，比如是否在充电、电量多少、存储状态等，必须至少设置一个限制条件
       networkType: workScheduler.NetworkType.NETWORK_TYPE_WIFI,
       bundleName: 'com.webabcd.harmonydemo', // bundle 名称
-      abilityName: 'MyWorkSchedulerExtensionAbility', // 自定义的延迟任务的类名
+      abilityName: 'com.webabcd.harmonydemo.MyWorkSchedulerExtensionAbility', // ability 名称（即在 src/main/module.json5 配置的延迟任务的自定义标识）
       isRepeat: true, // 是否是重复任务（最快 2 个小时重复执行一次，每次最多运行 2 分钟）
     }
 
