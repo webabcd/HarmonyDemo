@@ -139,7 +139,7 @@
     "pages/component/list/ListDemo6",
     "pages/component/list/ListDemo7",
     "pages/animation/AnimatableExtendDemo",
-    "pages/basic/ReusableDemo",
+    "pages/component/common/ReusableDemo",
     "pages/component/progress/SwipeRefresherDemo",
     "pages/component/list/GridDemo",
     "pages/component/list/GridDemo2",
@@ -210,7 +210,8 @@
     "pages/input/GestureDemo",
     "pages/state/v2/AppStorageV2Demo",
     "pages/state/v2/AppStorageV2Demo_Page1",
-    "pages/state/v2/PersistenceV2Demo"
+    "pages/state/v2/PersistenceV2Demo",
+    "pages/basic/StructureDemo"
   ],
   "window": {
     "designWidth": 720,

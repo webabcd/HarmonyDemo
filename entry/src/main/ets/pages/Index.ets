@@ -20,6 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("程序架构", "pages/basic/StructureDemo"),
+
           new Node2("v2 AppStorageV2", "pages/state/v2/AppStorageV2Demo", "pages/state/v2/AppStorageV2Demo_Page1.ets"),
           new Node2("v2 PersistenceV2", "pages/state/v2/PersistenceV2Demo"),
 
@@ -77,7 +79,6 @@ struct Index {
             "pages/basic/BuilderDemo"),
           new Node2("在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句", "pages/basic/StatementDemo"),
           new Node2("生命周期", "pages/basic/LifecycleDemo"),
-          new Node2("@Reusable（组件复用）", "pages/basic/ReusableDemo"),
         ]),
         new Node1("状态管理", [
           new Node2("@State", "pages/state/StateDemo"),
@@ -95,6 +96,7 @@ struct Index {
           new Node2("MVVM", "pages/state/mvvm/MVVMDemo", "pages/state/mvvm/model/MyModel.ets|pages/state/mvvm/view/MyTopView.ets|pages/state/mvvm/view/MyBottomView.ets|pages/state/mvvm/view/MyListView.ets|pages/state/mvvm/viewmodel/MyViewModel.ets"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
+          new Node2("@Reusable（组件复用）", "pages/component/common/ReusableDemo"),
           new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）", "pages/component/common/SizeDemo"),
           new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
           new Node2("显示相关（visibility, overlay）", "pages/component/common/DisplayDemo"),

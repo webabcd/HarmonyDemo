@@ -7,7 +7,7 @@
  * 注：@ComponentV2 不支持 @Reusable
  */
 
-import { MyLog, TitleBar } from '../TitleBar';
+import { MyLog, TitleBar } from '../../TitleBar';
 
 
 @Entry
