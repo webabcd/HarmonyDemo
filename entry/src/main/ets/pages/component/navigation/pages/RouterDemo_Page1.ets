@@ -7,7 +7,7 @@
 import { TitleBar } from '../../../TitleBar';
 import { router } from '@kit.ArkUI';
 
-@Entry({ routeName: 'myRouteName' })
+@Entry
 @Component
 struct RouterDemo_Page1 {
 
