@@ -1,5 +1,8 @@
 /*
  * Navigator - 导航器，支持通过页面地址导航
+ *   页面需要用 @Entry 装饰，且需要在 /entry/src/main/resources/base/profile/main_pages.json 文件中声明
+ *
+ * 注：此组件已过时（deprecated），如需通过页面地址导航请使用 router（参见 RouterDemo.ets 中的说明）
  */
 
 import { TitleBar } from '../../TitleBar'

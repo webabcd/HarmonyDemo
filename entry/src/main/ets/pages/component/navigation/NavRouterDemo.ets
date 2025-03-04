@@ -4,6 +4,8 @@
  * NavRouter 组件需要放在 Navigation 组件内
  * NavRouter 组件内需要有 2 个子组件
  * 第 2 个子组件是一个 NavDestination 组件，点击第 1 个子组件后，Navigation 会导航至第 2 个子组件
+ *
+ * 注：此组件已过时（deprecated）
  */
 
 import { TitleBar } from '../../TitleBar'

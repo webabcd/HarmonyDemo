@@ -20,7 +20,9 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("程序架构", "pages/basic/StructureDemo"),
+          new Node2("HAP（Harmony Ability Package）", "pages/basic/HapDemo"),
+          new Node2("HSP（Harmony Shared Package）", "pages/basic/HspDemo"),
+          new Node2("HAR（Harmony Archive）", "pages/basic/HarDemo"),
 
           new Node2("v2 AppStorageV2", "pages/state/v2/AppStorageV2Demo", "pages/state/v2/AppStorageV2Demo_Page1.ets"),
           new Node2("v2 PersistenceV2", "pages/state/v2/PersistenceV2Demo"),

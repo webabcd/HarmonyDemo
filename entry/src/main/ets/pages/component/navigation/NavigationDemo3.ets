@@ -5,6 +5,8 @@
  * 本例用于演示导航组件的转场动画
  * Navigation 是导航的根组件，导航到的目标页是 NavDestination 组件，导航栈中包含的是多个 NavDestination 组件（Navigation 组件不在导航栈中）
  * 如果需要通过 Navigation 实现导航，则先要配置路由表
+ *
+ * 注：本例演示的是如何通过路由表做路由，如需要通过页面地址做路由请参见 RouterDemo.ets 中的说明
  */
 
 import { TitleBar } from '../../TitleBar';

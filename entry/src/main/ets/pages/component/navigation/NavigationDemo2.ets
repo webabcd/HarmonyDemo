@@ -24,6 +24,8 @@
  *     }
  *   ]
  * }
+ *
+ * 注：本例演示的是如何通过路由表做路由，如需要通过页面地址做路由请参见 RouterDemo.ets 中的说明
  */
 
 import { TitleBar, RadioBar } from '../../TitleBar';

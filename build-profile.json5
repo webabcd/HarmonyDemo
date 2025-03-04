@@ -48,6 +48,38 @@
           ]
         }
       ]
+    },
+    {
+      "name": "har1",
+      "srcPath": "./har1",
+    },
+    {
+      "name": "har2",
+      "srcPath": "./har2",
+    },
+    {
+      "name": "hsp1",
+      "srcPath": "./hsp1",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hsp2",
+      "srcPath": "./hsp2",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }

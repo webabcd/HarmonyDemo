@@ -20,6 +20,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     MyLog.d('Ability onWindowStageCreate');
 
+    // 加载 app 的入口文件（必须是 @Entry 组件，必须在 /entry/src/main/resources/base/profile/main_pages.json 文件中声明）
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

@@ -13,6 +13,7 @@ import { promptAction } from '@kit.ArkUI';
 // @ 开头的被称为装饰器，比如 @Entry, @Component, @State 等
 
 // @Entry 表示该自定义组件为入口组件
+// 注：@Entry 组件需要在 /entry/src/main/resources/base/profile/main_pages.json 文件中声明
 @Entry
 // @Component 表示自定义组件
 @Component
