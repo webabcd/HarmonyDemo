@@ -213,7 +213,8 @@
     "pages/state/v2/PersistenceV2Demo",
     "pages/basic/HapDemo",
     "pages/basic/HarDemo",
-    "pages/basic/HspDemo"
+    "pages/basic/HspDemo",
+    "pages/state/LocalStorageDemo"
   ],
   "window": {
     "designWidth": 720,

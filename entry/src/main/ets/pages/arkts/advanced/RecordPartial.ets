@@ -23,8 +23,13 @@ struct RecordPartialDemo {
     height: 200,
   };
 
+  // 将 Object 转为 Record
   let b = a as Object as Record<string, number>
   MyLog.d(`${b.width}, ${b.height}, ${b.xxx}`); // 100, 200, undefined
+
+  // 实例化一个 Record 类型的对象
+  let c: Record<string, string> = { 'name': 'webabcd' };
+  MyLog.d(`${c.name}`); // webabcd
 }
 
 
