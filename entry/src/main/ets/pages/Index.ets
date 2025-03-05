@@ -22,7 +22,7 @@ struct Index {
         new Node1("临时测试用", [
           new Node2("HAP（Harmony Ability Package）", "pages/basic/HapDemo", "/feature1/src/main/ets/feature1ability/Feature1Ability.ets|/feature1/src/main/ets/pages/Index.ets"),
           new Node2("HSP（Harmony Shared Package）", "pages/basic/HspDemo"),
-          new Node2("HAR（Harmony Archive）", "pages/basic/HarDemo"),
+          new Node2("HAR（Harmony Archive）", "pages/basic/HarDemo", "/har1/Index.ets|/har1/src/main/ets/utils/Helper.ets|/har1/src/main/ets/components/MainPage.ets|/har1/src/main/ets/components/MyPage.ets|/har2/Index.ets|/har2/src/main/ets/utils/Helper.ets|/har2/src/main/ets/components/MainPage.ets|/har2/src/main/ets/components/MyPage.ets"),
 
           new Node2("LocalStorage", "pages/state/LocalStorageDemo"),
           new Node2("AppStorage", "pages/state/AppStorageDemo"),

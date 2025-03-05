@@ -1,16 +1,16 @@
 /*
  * HAR（Harmony Archive）
- *   支持独立发布
+ *   支持独立发布（比如要发布你自己实现的第三方库时，就可以将其封装为一个 har 包）
  *   支持 UIAbility 组件，但是不支持 ExtensionAbility 组件
- *   不支持在 main_pages.json 中声明页面，也就是说无法通过页面地址跳转到 har 包内的页面，可以通过命名路由的方式跳转到 har 包内的页面
+ *   不支持在 main_pages.json 中声明页面，也就是说无法通过页面地址跳转到 har 包内的页面，但是可以通过命名路由的方式跳转到 har 包内的页面
  *   在编译时与应用程序链接，代码直接嵌入到应用二进制文件中
  */
 
 import { TitleBar } from '../TitleBar';
-import { MainPage as har1_MainPage } from 'har1'
-import { MainPage as har2_MainPage } from 'har2'
-import 'har1/src/main/ets/components/MyPage'
-import { DialogHelper } from '@pura/harmony-dialog'
+import { MainPage as har1_MainPage, hello as har1_hello } from 'har1' // 源码方式引用本地的 har 模块的示例
+import { MainPage as har2_MainPage, hello as har2_hello } from 'har2' // 文件方式引用指定的 har 文件时示例
+import { DialogHelper } from '@pura/harmony-dialog' // 引用第三方 har 包的示例
+import { router } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -65,33 +65,43 @@ struct HarDemo {
 @Component
 struct MySample1 {
 
+  @State message: string = ""
+
+  aboutToAppear(): void {
+    // 调用 har 包中的接口
+    this.message += `${har1_hello("webabcd")}\n` // 参见 har1/src/main/ets/utils/Helper.ets
+    this.message += `${har2_hello("webabcd")}\n` // 参见 har2/src/main/ets/utils/Helper.ets
+  }
+
   build() {
     Column({ space: 10 }) {
 
-      har1_MainPage().height(200)
+      Text(this.message)
 
-      har2_MainPage().height(200)
+      // 显示 har 包中的页面
+      har1_MainPage({param1: "value1"}).height(120) // 参见 har1/src/main/ets/components/MainPage.ets
+      har2_MainPage({param1: "value1"}).height(120) // 参见 har2/src/main/ets/components/MainPage.ets
+
+      // 跳转到 har 包中的指定的页面
+      Button("通过命名路由跳转到 har 包的指定的页面").onClick(() => {
+        router.pushNamedRoute({
+          name: 'routeName1', // 命名路由的名称，参见 har1/src/main/ets/components/MyPage.ets
+          params: { // 传参
+            param1: "value1",
+          }
+        })
+      })
+      Button("通过命名路由跳转到 har 包的指定的页面").onClick(() => {
+        router.pushNamedRoute({
+          name: 'routeName2', // 命名路由的名称，参见 har2/src/main/ets/components/MyPage.ets
+          params: { // 传参
+            param1: "value1",
+          }
+        })
+      })
 
       Button("第三方库测试").onClick(() => {
         DialogHelper.showToast('第三方库测试');
-      })
-
-      Button("通过命名路由跳转到 har 包的指定的页面").onClick(() => {
-        this.getUIContext().getRouter().pushNamedRoute({
-          name: 'myRouteName1',
-          params: {
-
-          }
-        })
-      })
-
-      Button("通过命名路由跳转到 har 包的指定的页面").onClick(() => {
-        this.getUIContext().getRouter().pushNamedRoute({
-          name: 'myRouteName2',
-          params: {
-
-          }
-        })
       })
     }
   }

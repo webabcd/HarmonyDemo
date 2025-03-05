@@ -1,6 +1,14 @@
 @Component
 export struct MainPage {
-  @State message: string = 'hello har1';
+
+  // 组件参数，在调用此组件的时候可以对其初始化
+  param1: string = ""
+
+  @State message: string = 'hello har1\n';
+
+  aboutToAppear(): void {
+    this.message += `param1: ${this.param1}`
+  }
 
   build() {
     Row() {
