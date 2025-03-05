@@ -3,7 +3,7 @@
  *
  * 官方建议可能的话最好使用 Navigation 组件做导航
  *
- * 注：本例演示的是如何通过页面地址做路由，如需要通过路由表做路由请参见 NavigationDemo2.ets, NavigationDemo3.ets 中的说明
+ * 注：本例演示的是如何通过页面地址做路由（必须是 @Entry 组件），如需要通过路由表做路由（允许非 @Entry 组件）请参见 NavigationDemo2.ets, NavigationDemo3.ets 中的说明
  */
 
 import { TitleBar } from '../../../TitleBar';
