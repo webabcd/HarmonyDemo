@@ -43,6 +43,8 @@ struct MySample1 {
       /*
        * onAppear() - 挂载到组件树上时的回调
        * onDisAppear() - 从组件树上卸载时的回调
+       *
+       * 注：组件的挂载和卸载，与组件的实例化和销毁并不一样，组件卸载后并不一定会销毁，可以参见 ReusableDemo.ets 中的相关说明
        */
       if (this.flag) {
         Text('Text')

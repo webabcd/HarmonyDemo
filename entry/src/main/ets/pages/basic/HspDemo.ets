@@ -6,8 +6,7 @@
  */
 
 import { TitleBar } from '../TitleBar';
-import { hello as hsp1_hello } from 'hsp1';
-import { hello as hsp2_hello } from 'hsp2';
+import { hello } from 'hsp1';
 import { router } from '@kit.ArkUI';
 
 @Entry
@@ -29,17 +28,17 @@ struct HspDemo {
 
 /*
  * HSP（Harmony Shared Package）是动态共享包
+ * 右键单击全局项目，然后 New -> Module... -> Shared Library 即可创建新 hsp 包
+ * 在 hsp 项目中的 oh-package.json5 的 main 指定的文件中，配置需要导出的功能
  *
+ * 源码方式引用本地的 hsp 模块时，如果需要在 entry 模块中引用，则在 entry/oh-package.json5 中做类似如下的配置
  * {
- *   "buildOption": {
- *     "arkOptions": {
- *       "integratedHsp": true
- *     }
+ *   "dependencies": {
+ *     "hsp1": "../hsp1"
  *   }
  * }
- *
- * 点击右上方的运行工具栏的左侧的圆形的名为 Product 的按钮，然后将 Build Mode 设置为 release（参见本目录的 ide-release-setting.png 文件）
- * 选中 hsp 模块，然后在 Build 菜单中编译即可，编译后是 .tgz 文件
+ * 然后执行 ohpm install 后即可
+ * 导入的方法类似如下 import { hello } from 'hsp1'
  */
 @Component
 struct MySample1 {
@@ -52,39 +51,26 @@ struct MySample1 {
       Text(this.message)
 
       Button("调用 hsp 中的接口").onClick(() => {
-        this.message = hsp1_hello("webabcd")
+        this.message = hello("webabcd") // 参见 hsp1/src/main/ets/utils/Helper.ets
       })
 
-      Button("调用 hsp 中的接口").onClick(() => {
-        this.message = hsp2_hello("webabcd")
-      })
-
-      Button("").onClick(() => {
-        router.pushUrl({
-          url: '@bundle:com.webabcd.harmonydemo/hsp1/ets/pages/Index'
-        })
-      })
-
-      Button("").onClick(() => {
-        router.pushUrl({
-          url: '@bundle:com.webabcd.harmonydemo/hsp2/ets/pages/Index'
-        })
-      })
-
-      Button("通过命名路由跳转到 har 包的指定的页面").onClick(() => {
-        this.getUIContext().getRouter().pushNamedRoute({
-          name: 'myRouteName1',
-          params: {
-
+      Button("通过命名路由跳转到 hsp 包的指定的页面").onClick(() => {
+        router.pushNamedRoute({
+          name: 'routeName1', // 命名路由的名称，参见 hsp1/src/main/ets/components/MyPage.ets
+          params: { // 传参
+            param1: "value1",
           }
         })
       })
 
-      Button("通过命名路由跳转到 har 包的指定的页面").onClick(() => {
-        this.getUIContext().getRouter().pushNamedRoute({
-          name: 'myRouteName2',
-          params: {
-
+      // 通过地址跳转到 hsp 包的指定的页面，具体的地址格式请参见下面的示例
+      // 注：用这种方式导航的话，不要求目标页必须是 export 的
+      Button("通过地址跳转到 hsp 包的指定的页面").onClick(() => {
+        router.pushUrl({
+          // 这里的 com.webabcd.harmonydemo 是 bundle 名称
+          url: '@bundle:com.webabcd.harmonydemo/hsp1/ets/pages/Index', // 参见 hsp1/src/main/ets/pages/Index.ets
+          params: { // 传参
+            param1: "value1",
           }
         })
       })
