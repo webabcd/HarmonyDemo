@@ -21,7 +21,9 @@ struct RouterDemo_Page1 {
   @State message: string = ""
 
   aboutToAppear() {
-    // 获取传递过来的数据
+    /*
+     * router.getParams() - 获取 router 传递过来的数据
+     */
     const params = router.getParams() as Record<string, string>
     this.message += `RouterDemo_Page1 pageId:${Math.floor(Math.random() * 1000).toString()}\n`
     this.message += `p1:${params?.p1 || ""}, p2:${params?.p2 || ""}\n`

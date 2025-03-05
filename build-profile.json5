@@ -68,18 +68,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "hsp2",
-      "srcPath": "./hsp2",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
     }
   ]
 }
