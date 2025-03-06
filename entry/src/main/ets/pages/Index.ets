@@ -23,7 +23,7 @@ struct Index {
           new Node2("UIAbility", "pages/basic/UIAbilityDemo", "/entry/src/main/module.json5|/entry/src/main/ets/entryability/EntryAbility.ets|/entry/src/main/ets/entryability/EntryAbility2.ets|/entry/src/main/ets/pages/basic/UIAbilityDemo2.ets"),
           new Node2("UIAbility 的启动类型", "pages/basic/LaunchTypeDemo", "/entry/src/main/ets/entryability/EntryAbility_singleton.ets|/entry/src/main/ets/entryability/EntryAbility_multiton.ets|/entry/src/main/ets/entryability/EntryAbility_specified.ets|/entry/src/main/ets/entryability/MyAbilityStage.ets"),
 
-          new Node2("HAP（Harmony Ability Package）", "pages/basic/HapDemo", "/feature1/src/main/ets/feature1ability/Feature1Ability.ets|/feature1/src/main/ets/pages/Index.ets"),
+          new Node2("HAP（Harmony Ability Package）", "pages/basic/HapDemo", "/entry/src/main/ets/entryability/MyAbilityStage.ets|/feature1/src/main/ets/feature1ability/Feature1Ability.ets|/feature1/src/main/ets/pages/Index.ets"),
           new Node2("HSP（Harmony Shared Package）", "pages/basic/HspDemo", "/hsp1/Index.ets|/hsp1/src/main/ets/utils/Helper.ets|/hsp1/src/main/ets/components/MyPage.ets|/hsp1/src/main/ets/pages/Index.ets"),
           new Node2("HAR（Harmony Archive）", "pages/basic/HarDemo", "/har1/Index.ets|/har1/src/main/ets/utils/Helper.ets|/har1/src/main/ets/components/MainPage.ets|/har1/src/main/ets/components/MyPage.ets|/har2/Index.ets|/har2/src/main/ets/utils/Helper.ets|/har2/src/main/ets/components/MainPage.ets|/har2/src/main/ets/components/MyPage.ets"),
 

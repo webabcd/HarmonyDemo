@@ -3,7 +3,7 @@
  * UIAbility 的相关配置，请参见 module.json5 配置文件中的 abilities 标签
  */
 
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { AbilityConstant, Configuration, UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 import { MyLog } from '../utils/MyLog';
 
@@ -63,5 +63,18 @@ export default class EntryAbility extends UIAbility {
   // 切换到后台时
   onBackground(): void {
     MyLog.d('ability onBackground');
+  }
+
+  // 内存占用级别发生变化时的回调
+  onMemoryLevel(level: AbilityConstant.MemoryLevel): void {
+    // MEMORY_LEVEL_MODERATE - 内存占用适中
+    // MEMORY_LEVEL_LOW - 内存占用低
+    // MEMORY_LEVEL_CRITICAL - 内存占用高
+    MyLog.d(`ability onMemoryLevel ${level}`);
+  }
+
+  // 全局的环境配置发生变化时的回调（比如系统语言，深色浅色模式等）
+  onConfigurationUpdate(newConfig: Configuration): void {
+    MyLog.d(`ability onConfigurationUpdate ${JSON.stringify(newConfig)}`);
   }
 }

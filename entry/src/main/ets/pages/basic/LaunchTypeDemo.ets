@@ -5,8 +5,8 @@
  * singleton - 单实例方式，每次打开时如果发现已存在则复用之，即最近任务列表中只会有一个这种类型的实例
  * multiton 或 standard - 多实例方式，每次打开都创建一个新的实例，即最近任务列表中可能会有多个这种类型的实例
  * specified - 指定实例模式，每次打开时，如果发现指定 specified 标识的 UIAbility 已存在则复用之，否则就新建实例
- *   在 module 对应的 AbilityStage 中的 onAcceptWant() 中返回 specified 标识
- *   关于 module 对应的 AbilityStage 请参见 /entry/src/main/ets/entryability/MyAbilityStage.ets 中的代码
+ *   在 HAP 对应的 AbilityStage 中的 onAcceptWant() 中返回 specified 标识
+ *   关于 HAP 对应的 AbilityStage 请参见 /entry/src/main/ets/entryability/MyAbilityStage.ets 中的代码
  */
 
 import { TitleBar } from '../TitleBar';
