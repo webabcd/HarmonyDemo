@@ -1,11 +1,15 @@
 /*
  * 生命周期
  * aboutToAppear, onDidBuild, onPageShow, onBackPress, onPageHide, aboutToDisappear
+ *
+ * 本例用于演示 @Entry 组件的生命周期和非 @Entry 组件的生命周期
+ * 关于 UIAbility 的生命周期请参见 UIAbilityDemo.ets 中的相关说明
  */
 
 import { MyLog, TitleBar } from '../TitleBar';
 import { window } from '@kit.ArkUI';
 
+// 用于演示 @Entry 组件的生命周期
 @Entry
 @Component
 struct LifecycleDemo {
@@ -78,6 +82,7 @@ struct LifecycleDemo {
   }
 }
 
+// 用于演示非 @Entry 组件的生命周期
 @Component
 struct Child {
   // 组件生命周期
