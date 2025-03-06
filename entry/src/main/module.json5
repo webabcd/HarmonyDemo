@@ -14,14 +14,14 @@
     "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的自定义标识
+        "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的名称（自定义标识）
         "srcEntry": "./ets/entryability/EntryAbility.ets", // 当前 ability 的代码的地址
-        "description": "$string:EntryAbility_desc",
-        "icon": "$media:layered_image",
-        "label": "$string:EntryAbility_label",
-        "startWindowIcon": "$media:startIcon",
-        "startWindowBackground": "$color:start_window_background",
-        "exported": true,
+        "description": "$string:EntryAbility_desc", // 描述
+        "icon": "$media:layered_image", // 图标
+        "label": "$string:EntryAbility_label", // 图标下显示的文字
+        "startWindowIcon": "$media:startIcon", // 启动屏上显示的图标
+        "startWindowBackground": "$color:start_window_background", // 启动屏的背景
+        "exported": true, // 用于标识当前 ability 是否可以被其他应用调用
         "orientation": "portrait", // 屏幕方向
         "preferMultiWindowOrientation": "landscape_auto", // 悬浮窗方向
         "skills": [

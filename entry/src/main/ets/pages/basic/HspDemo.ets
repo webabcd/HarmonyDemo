@@ -1,5 +1,5 @@
 /*
- * HSP（Harmony Shared Package）
+ * HSP（Harmony Shared Package） - 动态共享包
  *   不支持独立发布
  *   不支持 UIAbility 组件，也不支持 ExtensionAbility 组件
  *   在运行时按需加载

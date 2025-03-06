@@ -1,5 +1,5 @@
 /*
- * HAR（Harmony Archive）
+ * HAR（Harmony Archive） - 静态共享包
  *   支持独立发布（比如要发布你自己实现的第三方库时，就可以将其封装为一个 har 包）
  *   支持 UIAbility 组件，但是不支持 ExtensionAbility 组件
  *   不支持在 main_pages.json 中声明页面，也就是说无法通过页面地址跳转到 har 包内的页面，但是可以通过命名路由的方式跳转到 har 包内的页面

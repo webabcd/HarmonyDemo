@@ -1,5 +1,5 @@
 /*
- * HAP（Harmony Ability Package）
+ * HAP（Harmony Ability Package） - 应用安装和运行的基本单元
  */
 
 import { TitleBar } from '../TitleBar';
