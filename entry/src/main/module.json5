@@ -1,9 +1,10 @@
 {
   "module": {
-    "name": "entry",
-    "type": "entry",
-    "description": "$string:module_desc",
-    "mainElement": "EntryAbility",
+    "name": "entry", // 当前 module 的名称
+    "type": "entry", // 当前 module 的类型
+    "srcEntry": "./ets/entryability/MyAbilityStage.ets", // 当前 module 的对应的 AbilityStage 的代码的地址
+    "description": "$string:module_desc", // 当前 module 的描述
+    "mainElement": "com.webabcd.harmonydemo.EntryAbility", // 当前 module 的入口 ability 的名称
     "deviceTypes": [
       "phone",
       "tablet",
@@ -49,6 +50,33 @@
         "label": "$string:EntryAbility_label",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
+      },
+      {
+        "name": "com.webabcd.harmonydemo.EntryAbility_singleton",
+        "srcEntry": "./ets/entryability/EntryAbility_singleton.ets",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "launchType": "singleton", // 指定当前 ability 的启动方式为 singleton 方式（详见 /basic/LaunchTypeDemo.ets 中的相关说明）
+      },
+      {
+        "name": "com.webabcd.harmonydemo.EntryAbility_multiton",
+        "srcEntry": "./ets/entryability/EntryAbility_multiton.ets",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "launchType": "multiton" // 指定当前 ability 的启动方式为 multiton 方式（详见 /basic/LaunchTypeDemo.ets 中的相关说明）
+      },
+      {
+        "name": "com.webabcd.harmonydemo.EntryAbility_specified",
+        "srcEntry": "./ets/entryability/EntryAbility_specified.ets",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "launchType": "specified" // 指定当前 ability 的启动方式为 specified 方式（详见 /basic/LaunchTypeDemo.ets 中的相关说明）
       }
     ],
     "extensionAbilities": [

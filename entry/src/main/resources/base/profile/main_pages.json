@@ -218,7 +218,8 @@
     "pages/state/AppStorageDemo",
     "pages/state/PersistentStorageDemo",
     "pages/basic/UIAbilityDemo",
-    "pages/basic/UIAbilityDemo2"
+    "pages/basic/UIAbilityDemo2",
+    "pages/basic/LaunchTypeDemo"
   ],
   "window": {
     "designWidth": 720,

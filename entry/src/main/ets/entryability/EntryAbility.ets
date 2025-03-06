@@ -1,5 +1,6 @@
 /*
  * UIAbility - 用于为应用提供绘制界面的窗口
+ * UIAbility 的相关配置，请参见 module.json5 配置文件中的 abilities 标签
  */
 
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
