@@ -39,7 +39,7 @@ struct MySample1 {
     this.windowClass.setWindowSystemBarEnable(['status', 'navigation']).then(() => {
       this.message = '显示成功';
     }).catch((err: BusinessError) => {
-      this.message =`显示失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`显示失败, errCode:${err.code}, errMessage:${err.message}`;
     });
   }
 
@@ -48,7 +48,7 @@ struct MySample1 {
     this.windowClass.setWindowSystemBarEnable([]).then(() => {
       this.message = '隐藏成功';
     }).catch((err: BusinessError) => {
-      this.message =`隐藏失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`隐藏失败, errCode:${err.code}, errMessage:${err.message}`;
     });
   }
 
@@ -58,7 +58,7 @@ struct MySample1 {
     this.windowClass.setWindowLayoutFullScreen(true).then(() => {
       this.message = '进入全屏成功';
     }).catch((err: BusinessError) => {
-      this.message =`进入全屏失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`进入全屏失败, errCode:${err.code}, errMessage:${err.message}`;
     });
   }
 
@@ -68,7 +68,7 @@ struct MySample1 {
     this.windowClass.setWindowLayoutFullScreen(false).then(() => {
       this.message = '退出全屏成功';
     }).catch((err: BusinessError) => {
-      this.message =`退出全屏失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`退出全屏失败, errCode:${err.code}, errMessage:${err.message}`;
     });
   }
 
@@ -93,7 +93,7 @@ struct MySample1 {
     this.windowClass.setWindowSystemBarProperties(systemBarProperties).then(() => {
       this.message = '设置成功';
     }).catch((err: BusinessError) => {
-      this.message =`设置失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`设置失败, errCode:${err.code}, errMessage:${err.message}`;
     });
   }
 

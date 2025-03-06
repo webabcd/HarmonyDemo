@@ -65,7 +65,7 @@ struct MySample1 {
       this.message = `startWork 成功`;
     } catch (error) {
       let err = error as BusinessError;
-      this.message =`startWork 失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`startWork 失败, errCode:${err.code}, errMessage:${err.message}`;
     }
   }
 
@@ -77,7 +77,7 @@ struct MySample1 {
       this.message = `stopWork 成功`;
     } catch (error) {
       let err = error as BusinessError;
-      this.message =`stopWork 失败, errCode${err.code}, errMessage:${err.message}`;
+      this.message =`stopWork 失败, errCode:${err.code}, errMessage:${err.message}`;
     }
   }
 
