@@ -1,53 +1,66 @@
+/*
+ * UIAbility - 用于为应用提供绘制界面的窗口
+ */
+
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { MyLog } from '../utils/MyLog';
 
 export default class EntryAbility extends UIAbility {
+
+  // UIAbility 实例创建完成时（冷启动）
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    MyLog.d('Ability onCreate');
+    MyLog.d('ability onCreate');
   }
 
+  // 当 UIAbility 已经启动了，之后再次启动时（热启动）
   onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    MyLog.d(`Ability onNewWant, parameters:${JSON.stringify((want.parameters))}`);
+    MyLog.d(`ability onNewWant, parameters:${JSON.stringify((want.parameters))}`);
   }
 
+  // UIAbility 实例销毁时
   onDestroy(): void {
-    MyLog.d('Ability onDestroy');
+    MyLog.d('ability onDestroy');
   }
 
+  // UIAbility 的窗口创建完成时
+  // 在这里需要通过 windowStage.loadContent() 加载当前 UIAbility 的首页
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
-    MyLog.d('Ability onWindowStageCreate');
+    MyLog.d('ability onWindowStageCreate');
 
     let record: Record<string, number> = {
       'myNumber': 5000
     };
     let storage: LocalStorage = new LocalStorage(record);
 
-    // 加载 app 的入口文件（必须是 @Entry 组件，必须在 /entry/src/main/resources/base/profile/main_pages.json 文件中声明）
-    // 这里指定的 LocalStorage 对象的数据，会自动合并到 LocalStorage.getShared() 中
+    // 加载当前 UIAbility 的首页（必须是 @Entry 组件，必须在 /entry/src/main/resources/base/profile/main_pages.json 文件中声明）
+    // 这里指定的 LocalStorage 对象的数据，会自动合并到当前 UIAbility 的 LocalStorage.getShared() 中
     windowStage.loadContent('pages/Index', storage, (err) => {
       if (err.code) {
-        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        MyLog.d(`windowStage.loadContent() failed, ${JSON.stringify(err)}`)
         return;
       }
-      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+      MyLog.d(`windowStage.loadContent() succeeded`)
     });
   }
 
+  // UIAbility 的窗口销毁之前
+  onWindowStageWillDestroy(windowStage: window.WindowStage) {
+    MyLog.d('ability onWindowStageWillDestroy');
+  }
+
+  // UIAbility 的窗口销毁时
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
-    MyLog.d('Ability onWindowStageDestroy');
+    MyLog.d('ability onWindowStageDestroy');
   }
 
+  // 切换到前台时
   onForeground(): void {
-    // Ability has brought to foreground
-    MyLog.d('Ability onForeground');
+    MyLog.d('ability onForeground');
   }
 
+  // 切换到后台时
   onBackground(): void {
-    // Ability has back to background
-    MyLog.d('Ability onBackground');
+    MyLog.d('ability onBackground');
   }
 }
