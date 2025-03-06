@@ -1,5 +1,5 @@
 /*
- * AppStorage - 全局级的状态存储
+ * AppStorage - 全局级的状态存储，用于在多个 UIAbility 中共享数据
  * 全局 AppStorage 对象可以与 @StorageLink 做双向同步，或与 @StorageProp 做单向同步
  */
 

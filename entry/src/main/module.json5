@@ -41,6 +41,14 @@
           // "location", // 定位
           // "bluetoothInteraction", // 蓝牙传输
         ]
+      },
+      {
+        "name": "com.webabcd.harmonydemo.EntryAbility2",
+        "srcEntry": "./ets/entryability/EntryAbility2.ets",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
       }
     ],
     "extensionAbilities": [
