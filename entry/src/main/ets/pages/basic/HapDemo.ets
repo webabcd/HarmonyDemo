@@ -46,7 +46,7 @@ struct MySample1 {
           deviceId: '', // 空代表本设备
           bundleName: 'com.webabcd.harmonydemo', // 需要打开的 feature ability 的 bundle 的名称
           moduleName: 'feature1', // 需要打开的 feature ability 的 module 的名称
-          abilityName: 'com.webabcd.harmonydemo.Feature1Ability', // 需要打开的 feature ability 的 ability 的名称（此名称是在 module.json5 中配置的）
+          abilityName: 'com.webabcd.harmonydemo.Feature1Ability', // 需要打开的 feature ability 的名称（此名称是在 module.json5 中配置的）
           parameters: { // 传参
             'k1': 'v1',
             'k2': 'v2',
