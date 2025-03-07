@@ -86,16 +86,50 @@
 - pages/arkts/concurrent/ASONDemo
 
 ### 开发基础
-1. ArkUI 基础
+1. 基础知识
+- pages/basic/Overview
+- /readme.txt
+2. ArkUI 基础
 - pages/basic/Hello
-2. @Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）
+3. @Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）
 - pages/basic/BuilderDemo
-3. 在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句
+4. 在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句
 - pages/basic/StatementDemo
-4. 生命周期
+5. 生命周期
 - pages/basic/LifecycleDemo
-5. @Reusable（组件复用）
-- pages/basic/ReusableDemo
+6. UIAbility
+- pages/basic/UIAbilityDemo
+- /entry/src/main/module.json5
+- /entry/src/main/ets/entryability/EntryAbility.ets
+- /entry/src/main/ets/entryability/EntryAbility2.ets
+- /entry/src/main/ets/pages/basic/UIAbilityDemo2.ets
+7. UIAbility 的启动类型
+- pages/basic/LaunchTypeDemo
+- /entry/src/main/ets/entryability/EntryAbility_singleton.ets
+- /entry/src/main/ets/entryability/EntryAbility_multiton.ets
+- /entry/src/main/ets/entryability/EntryAbility_specified.ets
+- /entry/src/main/ets/entryability/MyAbilityStage.ets
+8. HAP（Harmony Ability Package）
+- pages/basic/HapDemo
+- /entry/src/main/ets/entryability/MyAbilityStage.ets
+- /feature1/src/main/ets/feature1ability/Feature1Ability.ets
+- /feature1/src/main/ets/pages/Index.ets
+9. HSP（Harmony Shared Package）
+- pages/basic/HspDemo
+- /hsp1/Index.ets
+- /hsp1/src/main/ets/utils/Helper.ets
+- /hsp1/src/main/ets/components/MyPage.ets
+- /hsp1/src/main/ets/pages/Index.ets
+10. HAR（Harmony Archive）
+- pages/basic/HarDemo
+- /har1/Index.ets
+- /har1/src/main/ets/utils/Helper.ets
+- /har1/src/main/ets/components/MainPage.ets
+- /har1/src/main/ets/components/MyPage.ets
+- /har2/Index.ets
+- /har2/src/main/ets/utils/Helper.ets
+- /har2/src/main/ets/components/MainPage.ets
+- /har2/src/main/ets/components/MyPage.ets
 
 ### 状态管理
 1. @State
@@ -110,19 +144,30 @@
 - pages/state/ProvideConsumeDemo
 6. @Require, @Watch, @Track, $$
 - pages/state/WatchDemo
-7. v2 @ObservedV2/@Trace
+7. LocalStorage
+- pages/state/LocalStorageDemo
+8. AppStorage
+- pages/state/AppStorageDemo
+9. PersistentStorage
+- pages/state/PersistentStorageDemo
+10. v2 @ObservedV2/@Trace
 - pages/state/v2/ObservedV2Demo
-8. v2 @Local
+11. v2 @Local
 - pages/state/v2/LocalDemo
-9. v2 @Param, @Once, @Event
+12. v2 @Param, @Once, @Event
 - pages/state/v2/ParamDemo
-10. v2 @Provider()/@Consumer()
+13. v2 @Provider()/@Consumer()
 - pages/state/v2/ProviderConsumerDemo
-11. v2 @Require, @Monitor, @Computed, !!
+14. v2 @Require, @Monitor, @Computed, !!
 - pages/state/v2/MonitorDemo
-12. v2 UIUtils.makeObserved()
+15. v2 UIUtils.makeObserved()
 - pages/state/v2/MakeObservedDemo
-13. MVVM
+16. v2 AppStorageV2
+- pages/state/v2/AppStorageV2Demo
+- pages/state/v2/AppStorageV2Demo_Page1.ets
+17. v2 PersistenceV2
+- pages/state/v2/PersistenceV2Demo
+18. MVVM
 - pages/state/mvvm/MVVMDemo
 - pages/state/mvvm/model/MyModel.ets
 - pages/state/mvvm/view/MyTopView.ets
@@ -131,15 +176,17 @@
 - pages/state/mvvm/viewmodel/MyViewModel.ets
 
 ### 组件（通用的属性方法和事件方法）
-1. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）
+1. @Reusable（组件复用）
+- pages/component/common/ReusableDemo
+2. 尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）
 - pages/component/common/SizeDemo
-2. 位置相关（align, direction, position, markAnchor, offset）
+3. 位置相关（align, direction, position, markAnchor, offset）
 - pages/component/common/PositionDemo
-3. 显示相关（visibility, overlay）
+4. 显示相关（visibility, overlay）
 - pages/component/common/DisplayDemo
-4. 前景背景
+5. 前景背景
 - pages/component/common/ForegroundBackgroundDemo
-5. 事件相关（onAppear/onDisAppear, onAreaChange, onVisibleAreaChange, 自定义事件）
+6. 事件相关（onAppear/onDisAppear, onAreaChange/onSizeChange, onVisibleAreaChange, 自定义事件）
 - pages/component/common/EventDemo
 
 ### 组件（布局类）
@@ -386,21 +433,35 @@
 - /entry/src/main/resources/rawfile/html1.html
 - /entry/src/main/resources/rawfile/html2.html
 
+### 输入
+1. 触摸类输入
+- pages/input/TouchDemo
+2. 键盘类输入
+- pages/input/KeyboardDemo
+3. 手势识别
+- pages/input/GestureDemo
+
 ### UI
 1. 颜色相关
 - pages/ui/ColorDemo
 2. 单位相关
 - pages/ui/UnitDemo
-3. 获取组件的尺寸和位置
-- pages/ui/ComponentInfoDemo
-4. 样式相关
+3. 样式相关
 - pages/ui/StyleDemo
 - pages/ui/MyButtonAttributeModifier.ets
-5. 主题相关
+4. 主题相关
 - pages/ui/ThemeDemo
 - pages/ui/MyTheme.ets
-6. 安全区域
+5. 安全区域
 - pages/ui/SafeAreaDemo
+6. 状态栏和导航栏
+- pages/ui/SystemBarDemo
+7. 屏幕和窗口
+- pages/ui/DisplayWindowDemo
+8. 获取组件的尺寸和位置
+- pages/ui/ComponentInfoDemo
+9. 屏幕方向
+- pages/ui/OrientationDemo
 
 ### 图形
 1. 边框

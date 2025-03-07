@@ -41,6 +41,9 @@ HarmonyDemo // 项目名称
 ├── build-profile.json5 // 应用级的编译相关的配置
 └── oh-package.json5 // 应用级的依赖配置
 
+一个项目由多个模块（module）组成，模块的类型有 HAP（包括 entry 和 feature 两种类型）, HSP, HAR
+每个 HAP 可以包含多个 UIAbility，每个 UIAbility 实例都会在最近任务列表中显示为一个对应的任务窗口，每个 UIAbility 可以包含多个页面
+
 通过 Previewer 可以快速查看 UI 效果，修改代码后不用重新编译即可快速看到修改后的效果，类似 flutter 的 hot reload，但是很多功能都无法使用
 通过 Simulator 可以使用较完整的功能，但是它不支持 hot reload
 

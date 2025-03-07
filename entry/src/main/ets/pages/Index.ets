@@ -20,28 +20,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("基础知识", "pages/basic/Overview", "/readme.txt"),
 
-          new Node2("UIAbility", "pages/basic/UIAbilityDemo", "/entry/src/main/module.json5|/entry/src/main/ets/entryability/EntryAbility.ets|/entry/src/main/ets/entryability/EntryAbility2.ets|/entry/src/main/ets/pages/basic/UIAbilityDemo2.ets"),
-          new Node2("UIAbility 的启动类型", "pages/basic/LaunchTypeDemo", "/entry/src/main/ets/entryability/EntryAbility_singleton.ets|/entry/src/main/ets/entryability/EntryAbility_multiton.ets|/entry/src/main/ets/entryability/EntryAbility_specified.ets|/entry/src/main/ets/entryability/MyAbilityStage.ets"),
-
-          new Node2("HAP（Harmony Ability Package）", "pages/basic/HapDemo", "/entry/src/main/ets/entryability/MyAbilityStage.ets|/feature1/src/main/ets/feature1ability/Feature1Ability.ets|/feature1/src/main/ets/pages/Index.ets"),
-          new Node2("HSP（Harmony Shared Package）", "pages/basic/HspDemo", "/hsp1/Index.ets|/hsp1/src/main/ets/utils/Helper.ets|/hsp1/src/main/ets/components/MyPage.ets|/hsp1/src/main/ets/pages/Index.ets"),
-          new Node2("HAR（Harmony Archive）", "pages/basic/HarDemo", "/har1/Index.ets|/har1/src/main/ets/utils/Helper.ets|/har1/src/main/ets/components/MainPage.ets|/har1/src/main/ets/components/MyPage.ets|/har2/Index.ets|/har2/src/main/ets/utils/Helper.ets|/har2/src/main/ets/components/MainPage.ets|/har2/src/main/ets/components/MyPage.ets"),
-
-          new Node2("LocalStorage", "pages/state/LocalStorageDemo"),
-          new Node2("AppStorage", "pages/state/AppStorageDemo"),
-          new Node2("PersistentStorage", "pages/state/PersistentStorageDemo"),
-          new Node2("v2 AppStorageV2", "pages/state/v2/AppStorageV2Demo", "pages/state/v2/AppStorageV2Demo_Page1.ets"),
-          new Node2("v2 PersistenceV2", "pages/state/v2/PersistenceV2Demo"),
-
-          new Node2("状态栏和导航栏", "pages/ui/SystemBarDemo"),
-          new Node2("屏幕方向", "pages/ui/OrientationDemo"),
-          new Node2("屏幕和窗口", "pages/ui/DisplayWindowDemo"),
-
-          new Node2("触摸类输入", "pages/input/TouchDemo"),
-          new Node2("键盘类输入", "pages/input/KeyboardDemo"),
-          new Node2("手势识别", "pages/input/GestureDemo"),
         ]),
 
         new Node1("ArkTS 基础", [
@@ -84,11 +63,16 @@ struct Index {
           new Node2("ASON（对 @Sendable 对象做序列化和反序列化）", "pages/arkts/concurrent/ASONDemo"),
         ]),
         new Node1("开发基础", [
+          new Node2("基础知识", "pages/basic/Overview", "/readme.txt"),
           new Node2("ArkUI 基础", "pages/basic/Hello"),
-          new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）",
-            "pages/basic/BuilderDemo"),
+          new Node2("@Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）", "pages/basic/BuilderDemo"),
           new Node2("在描述 UI 时使用 if/else, ForEach, LazyForEach, Repeat 语句", "pages/basic/StatementDemo"),
           new Node2("生命周期", "pages/basic/LifecycleDemo"),
+          new Node2("UIAbility", "pages/basic/UIAbilityDemo", "/entry/src/main/module.json5|/entry/src/main/ets/entryability/EntryAbility.ets|/entry/src/main/ets/entryability/EntryAbility2.ets|/entry/src/main/ets/pages/basic/UIAbilityDemo2.ets"),
+          new Node2("UIAbility 的启动类型", "pages/basic/LaunchTypeDemo", "/entry/src/main/ets/entryability/EntryAbility_singleton.ets|/entry/src/main/ets/entryability/EntryAbility_multiton.ets|/entry/src/main/ets/entryability/EntryAbility_specified.ets|/entry/src/main/ets/entryability/MyAbilityStage.ets"),
+          new Node2("HAP（Harmony Ability Package）", "pages/basic/HapDemo", "/entry/src/main/ets/entryability/MyAbilityStage.ets|/feature1/src/main/ets/feature1ability/Feature1Ability.ets|/feature1/src/main/ets/pages/Index.ets"),
+          new Node2("HSP（Harmony Shared Package）", "pages/basic/HspDemo", "/hsp1/Index.ets|/hsp1/src/main/ets/utils/Helper.ets|/hsp1/src/main/ets/components/MyPage.ets|/hsp1/src/main/ets/pages/Index.ets"),
+          new Node2("HAR（Harmony Archive）", "pages/basic/HarDemo", "/har1/Index.ets|/har1/src/main/ets/utils/Helper.ets|/har1/src/main/ets/components/MainPage.ets|/har1/src/main/ets/components/MyPage.ets|/har2/Index.ets|/har2/src/main/ets/utils/Helper.ets|/har2/src/main/ets/components/MainPage.ets|/har2/src/main/ets/components/MyPage.ets"),
         ]),
         new Node1("状态管理", [
           new Node2("@State", "pages/state/StateDemo"),
@@ -97,12 +81,17 @@ struct Index {
           new Node2("@ObjectLink/@Observed", "pages/state/ObjectLinkDemo"),
           new Node2("@Provide/@Consume", "pages/state/ProvideConsumeDemo"),
           new Node2("@Require, @Watch, @Track, $$", "pages/state/WatchDemo"),
+          new Node2("LocalStorage", "pages/state/LocalStorageDemo"),
+          new Node2("AppStorage", "pages/state/AppStorageDemo"),
+          new Node2("PersistentStorage", "pages/state/PersistentStorageDemo"),
           new Node2("v2 @ObservedV2/@Trace", "pages/state/v2/ObservedV2Demo"),
           new Node2("v2 @Local", "pages/state/v2/LocalDemo"),
           new Node2("v2 @Param, @Once, @Event", "pages/state/v2/ParamDemo"),
           new Node2("v2 @Provider()/@Consumer()", "pages/state/v2/ProviderConsumerDemo"),
           new Node2("v2 @Require, @Monitor, @Computed, !!", "pages/state/v2/MonitorDemo"),
           new Node2("v2 UIUtils.makeObserved()", "pages/state/v2/MakeObservedDemo"),
+          new Node2("v2 AppStorageV2", "pages/state/v2/AppStorageV2Demo", "pages/state/v2/AppStorageV2Demo_Page1.ets"),
+          new Node2("v2 PersistenceV2", "pages/state/v2/PersistenceV2Demo"),
           new Node2("MVVM", "pages/state/mvvm/MVVMDemo", "pages/state/mvvm/model/MyModel.ets|pages/state/mvvm/view/MyTopView.ets|pages/state/mvvm/view/MyBottomView.ets|pages/state/mvvm/view/MyListView.ets|pages/state/mvvm/viewmodel/MyViewModel.ets"),
         ]),
         new Node1("组件（通用的属性方法和事件方法）", [
@@ -242,13 +231,21 @@ struct Index {
         new Node1("组件（webview）", [
           new Node2("Web（基础）", "pages/component/webview/WebDemo", "/entry/src/main/resources/rawfile/html1.html|/entry/src/main/resources/rawfile/html2.html"),
         ]),
+        new Node1("输入", [
+          new Node2("触摸类输入", "pages/input/TouchDemo"),
+          new Node2("键盘类输入", "pages/input/KeyboardDemo"),
+          new Node2("手势识别", "pages/input/GestureDemo"),
+        ]),
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),
           new Node2("单位相关", "pages/ui/UnitDemo"),
-          new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
           new Node2("样式相关", "pages/ui/StyleDemo", "pages/ui/MyButtonAttributeModifier.ets"),
           new Node2("主题相关", "pages/ui/ThemeDemo", "pages/ui/MyTheme.ets"),
           new Node2("安全区域", "pages/ui/SafeAreaDemo"),
+          new Node2("状态栏和导航栏", "pages/ui/SystemBarDemo"),
+          new Node2("屏幕和窗口", "pages/ui/DisplayWindowDemo"),
+          new Node2("获取组件的尺寸和位置", "pages/ui/ComponentInfoDemo"),
+          new Node2("屏幕方向", "pages/ui/OrientationDemo"),
         ]),
         new Node1("图形", [
           new Node2("边框", "pages/shape/BorderDemo"),
