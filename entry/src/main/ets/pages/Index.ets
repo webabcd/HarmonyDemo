@@ -1,14 +1,5 @@
-import { text } from '@kit.ArkGraphics2D';
-
 import { router } from '@kit.ArkUI';
-import { resourceManager } from '@kit.LocalizationKit';
-import { fileIo } from '@kit.CoreFileKit';
-import { common } from '@kit.AbilityKit';
-import { TextReader } from '@kit.SpeechKit';
 import util from '@ohos.util';
-import fs from '@ohos.file.fs';
-import { BusinessError } from '@kit.BasicServicesKit';
-import utils from '@arkts.utils';
 
 @Entry
 @Component
