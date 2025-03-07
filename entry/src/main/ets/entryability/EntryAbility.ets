@@ -34,7 +34,9 @@ export default class EntryAbility extends UIAbility {
     };
     let storage: LocalStorage = new LocalStorage(record);
 
-    // 加载当前 UIAbility 的首页（必须是 @Entry 组件，必须在 /entry/src/main/resources/base/profile/main_pages.json 文件中声明）
+    // 加载当前 UIAbility 的首页
+    //   必须是 @Entry 组件
+    //   必须在 main_pages.json 文件（在 module.json5 中通过 "pages":"$profile:main_pages" 指定的）中声明
     // 这里指定的 LocalStorage 对象的数据，会自动合并到当前 UIAbility 的 LocalStorage.getShared() 中
     windowStage.loadContent('pages/Index', storage, (err) => {
       if (err.code) {

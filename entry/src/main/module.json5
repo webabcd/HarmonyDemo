@@ -12,7 +12,7 @@
     ],
     "deliveryWithInstall": true,
     "installationFree": false,
-    "pages": "$profile:main_pages",
+    "pages": "$profile:main_pages", // 用于描述页面的信息（参见 /entry/src/main/resources/base/profile/main_pages.json）
     "abilities": [
       {
         "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的名称（自定义标识）

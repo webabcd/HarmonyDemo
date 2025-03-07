@@ -81,7 +81,7 @@ struct UnitDemo {
 
       // lpx，与 designWidth 相关
       // 比如 designWidth 是 720，真实宽度是 1440px，则 1lpx 等于 2px
-      // designWidth 是在 /entry/src/main/resources/base/profile/main_pages.json 文件中配置的，说明如下
+      // designWidth 是在 main_pages.json 文件（在 module.json5 中通过 "pages":"$profile:main_pages" 指定的）中配置的，说明如下
       // {
       //   "window": {
       //     "designWidth": 720, // 设计的基准宽度，与 lpx 相关，缺省值为 720
