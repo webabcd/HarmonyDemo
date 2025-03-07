@@ -1,5 +1,9 @@
+开发文档
 https://developer.huawei.com
 https://docs.openharmony.cn
+
+第三方库
+https://ohpm.openharmony.cn
 
 OpenHarmony 是开源的
 HarmonyOS 是鸿蒙操作系统，不开源，他是基于 OpenHarmony 开发的，其支持 Android 的 app 是因为其集成了 AOSP（Android Open Source Project）
@@ -20,6 +24,22 @@ ets 的全称是 extended typescript
 
 .json5 文件
 兼容 json 的基础上，引入了新的特性，比如支持注释，支持尾随逗号，允许未加引号的键名等
+
+开发工具 DevEco Studio，其中的 DevEco 是 Development Ecosystem 的缩写
+文件结构及说明如下
+HarmonyDemo // 项目名称
+├── AppScope
+│   └── app.json5  // 应用级的配置
+├── entry // 模块名称
+│   ├── src
+│   │   └── main
+│   │       ├── ets // 用于保存代码文件
+│   │       ├── resources // 用于保存资源文件
+│   │       └── module.json5 // 当前模块的配置
+│   ├── build-profile.json5 // 当前模块的编译相关的配置
+│   └── oh-package.json5 // 当前模块的依赖配置
+├── build-profile.json5 // 应用级的编译相关的配置
+└── oh-package.json5 // 应用级的依赖配置
 
 通过 Previewer 可以快速查看 UI 效果，修改代码后不用重新编译即可快速看到修改后的效果，类似 flutter 的 hot reload，但是很多功能都无法使用
 通过 Simulator 可以使用较完整的功能，但是它不支持 hot reload
