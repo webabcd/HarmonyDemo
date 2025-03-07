@@ -20,6 +20,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("基础知识", "pages/basic/Overview", "/readme.txt"),
+
           new Node2("UIAbility", "pages/basic/UIAbilityDemo", "/entry/src/main/module.json5|/entry/src/main/ets/entryability/EntryAbility.ets|/entry/src/main/ets/entryability/EntryAbility2.ets|/entry/src/main/ets/pages/basic/UIAbilityDemo2.ets"),
           new Node2("UIAbility 的启动类型", "pages/basic/LaunchTypeDemo", "/entry/src/main/ets/entryability/EntryAbility_singleton.ets|/entry/src/main/ets/entryability/EntryAbility_multiton.ets|/entry/src/main/ets/entryability/EntryAbility_specified.ets|/entry/src/main/ets/entryability/MyAbilityStage.ets"),
 

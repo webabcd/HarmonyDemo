@@ -219,7 +219,8 @@
     "pages/state/PersistentStorageDemo",
     "pages/basic/UIAbilityDemo",
     "pages/basic/UIAbilityDemo2",
-    "pages/basic/LaunchTypeDemo"
+    "pages/basic/LaunchTypeDemo",
+    "pages/basic/Overview"
   ],
   "window": {
     "designWidth": 720,

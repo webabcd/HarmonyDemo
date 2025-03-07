@@ -4,7 +4,7 @@
     "type": "entry", // 当前 module 的类型
     "srcEntry": "./ets/entryability/MyAbilityStage.ets", // 当前 module 的对应的 AbilityStage 的代码的地址
     "description": "$string:module_desc", // 当前 module 的描述
-    "mainElement": "com.webabcd.harmonydemo.EntryAbility", // 当前 module 的入口 ability 的名称
+    "mainElement": "com.webabcd.harmonydemo.EntryAbility", // 当前 module 的入口 ability 的名称（ability 必须是 exported 为 true 的）
     "deviceTypes": [
       "phone",
       "tablet",
@@ -18,23 +18,14 @@
         "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的名称（自定义标识）
         "srcEntry": "./ets/entryability/EntryAbility.ets", // 当前 ability 的代码的地址
         "description": "$string:EntryAbility_desc", // 描述
-        "icon": "$media:layered_image", // 图标
-        "label": "$string:EntryAbility_label", // 图标下显示的文字
+        "icon": "$media:layered_image", // 图标（入口 ability 的图标就是 app 的图标）
+        "label": "$string:EntryAbility_label", // 标题（入口 ability 的标题就是 app 的标题）
         "startWindowIcon": "$media:startIcon", // 启动屏上显示的图标
         "startWindowBackground": "$color:start_window_background", // 启动屏的背景
         "exported": true, // 用于标识当前 ability 是否可以被其他应用调用
         "orientation": "portrait", // 屏幕方向
         "preferMultiWindowOrientation": "landscape_auto", // 悬浮窗方向
-        "skills": [
-          {
-            "entities": [
-              "entity.system.home"
-            ],
-            "actions": [
-              "action.system.home"
-            ]
-          }
-        ],
+        "skills": [ { "entities": [ "entity.system.home" ], "actions": [ "action.system.home" ] } ], // 这个设置说明当前 ability 是入口 ability（主：有了这个配置则 module 的 mainElement 标签将失效）
         "backgroundModes": [ // 长时任务的类型
           "dataTransfer", // 数据上传下载
           // "audioPlayback", // 音频、视频播放

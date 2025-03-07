@@ -7,7 +7,7 @@ import { AbilityStage, Want } from '@kit.AbilityKit';
 
 export default class MyAbilityStage extends AbilityStage {
 
-  // 创建完成时的回调（注：加载 HAP 的主 UIAbility 实例之前会先创建 AbilityStage 实例）
+  // 创建完成时的回调（注：加载 HAP 的入口 UIAbility 实例之前会先创建 AbilityStage 实例）
   onCreate() {
 
   }

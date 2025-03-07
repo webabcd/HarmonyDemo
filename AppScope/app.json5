@@ -4,7 +4,7 @@
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
-    "icon": "$media:app_icon",
-    "label": "$string:app_name"
+    "icon": "$media:app_icon", // 应用图标（我这里测试发现，应用的图标实际走的是入口 ability 的图标）
+    "label": "$string:app_name" // 应用标题（我这里测试发现，应用的标题实际走的是入口 ability 的标题）
   }
 }
