@@ -221,7 +221,9 @@
     "pages/basic/UIAbilityDemo2",
     "pages/basic/LaunchTypeDemo",
     "pages/basic/Overview",
-    "pages/ndk/NdkDemo"
+    "pages/ndk/NdkDemo",
+    "pages/component/flyout/ModalDemo",
+    "pages/component/flyout/SheetDemo"
   ],
   "window": {
     "designWidth": 720,

@@ -11,6 +11,8 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("Modal（全模态弹出框）", "pages/component/flyout/ModalDemo"),
+          new Node2("Sheet（半模态弹出框）", "pages/component/flyout/SheetDemo"),
           new Node2("NDK 基础", "pages/ndk/NdkDemo", "/ndk1/src/main/ets/pages/NdkDemo.ets|/ndk1/src/main/cpp/types/napi_init.cpp|/ndk1/src/main/cpp/types/CMakeLists.txt|/ndk1/src/main/cpp/types/libndk1/Index.d.ts|/ndk1/src/main/cpp/types/libndk1/oh-package.json5"),
         ]),
 
