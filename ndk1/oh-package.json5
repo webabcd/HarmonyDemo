@@ -1,0 +1,11 @@
+{
+  "name": "ndk1",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "libndk1.so": "file:./src/main/cpp/types/libndk1" // 引用 ./src/main/cpp/types/libndk1
+  }
+}

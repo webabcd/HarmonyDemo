@@ -1,0 +1,6 @@
+{
+  "name": "libndk1.so", // .so 的名称，要与 CMakeLists.txt 中的 add_library() 中指定的名称一致
+  "types": "./Index.d.ts", // 指定类型声明文件，其用于帮助 TypeScript 编译器理解 libndk1.so 中导出的函数和变量
+  "version": "1.0.0",
+  "description": "Please describe the basic information."
+}

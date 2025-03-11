@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "Ndk1Ability_desc",
+      "value": "description"
+    },
+    {
+      "name": "Ndk1Ability_label",
+      "value": "MyNdk"
+    }
+  ]
+}

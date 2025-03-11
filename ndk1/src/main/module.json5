@@ -1,0 +1,28 @@
+{
+  "module": {
+    "name": "ndk1",
+    "type": "feature",
+    "description": "$string:module_desc",
+    "mainElement": "Ndk1Ability",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "com.webabcd.harmonydemo.Ndk1Ability",
+        "srcEntry": "./ets/ndk1ability/Ndk1Ability.ets",
+        "description": "$string:Ndk1Ability_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:Ndk1Ability_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      }
+    ]
+  }
+}

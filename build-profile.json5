@@ -68,6 +68,18 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ndk1",
+      "srcPath": "./ndk1",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }

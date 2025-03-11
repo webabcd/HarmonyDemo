@@ -220,7 +220,8 @@
     "pages/basic/UIAbilityDemo",
     "pages/basic/UIAbilityDemo2",
     "pages/basic/LaunchTypeDemo",
-    "pages/basic/Overview"
+    "pages/basic/Overview",
+    "pages/ndk/NdkDemo"
   ],
   "window": {
     "designWidth": 720,
