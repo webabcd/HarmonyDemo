@@ -1,6 +1,6 @@
 /*
  * 显示相关
- * visibility, overlay
+ * visibility, overlay, clickEffect
  */
 
 import { TitleBar } from '../../TitleBar';
@@ -15,6 +15,7 @@ struct DisplayDemo {
       Tabs() {
         TabContent() { MySample1() }.tabBar('visibility').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('overlay').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('clickEffect').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -87,6 +88,44 @@ struct MySample2 {
             x: 0,
             y: 0,
           }
+        })
+    }
+  }
+}
+
+@Component
+struct MySample3 {
+
+  build() {
+    Column({ space: 10 }) {
+
+      Button("no clickEffect").width(300).height(100)
+
+      /*
+       * clickEffect() - 点击后，组件的缩放动画效果的相关参数
+       *   level - 缩放动画效果的级别（ClickEffectLevel 枚举）
+       *     LIGHT - 速度较快
+       *     MIDDLE - 速度中等
+       *     HEAVY - 速度较慢
+       *   scale - 缩放比例的最小值
+       */
+
+      Button("clickEffect（LIGHT, 0.5）").width(300).height(100)
+        .clickEffect({
+          level:ClickEffectLevel.LIGHT,
+          scale: 0.5,
+        })
+
+      Button("clickEffect（MIDDLE, 0.5）").width(300).height(100)
+        .clickEffect({
+          level:ClickEffectLevel.MIDDLE,
+          scale: 0.5,
+        })
+
+      Button("clickEffect（HEAVY, 0.5）").width(300).height(100)
+        .clickEffect({
+          level:ClickEffectLevel.HEAVY,
+          scale: 0.5,
         })
     }
   }

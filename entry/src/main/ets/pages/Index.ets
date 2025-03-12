@@ -91,7 +91,7 @@ struct Index {
           new Node2("@Reusable（组件复用）", "pages/component/common/ReusableDemo"),
           new Node2("尺寸相关（width, height, aspectRatio, size, constraintSize, margin, padding, pixelRound）", "pages/component/common/SizeDemo"),
           new Node2("位置相关（align, direction, position, markAnchor, offset）", "pages/component/common/PositionDemo"),
-          new Node2("显示相关（visibility, overlay）", "pages/component/common/DisplayDemo"),
+          new Node2("显示相关（visibility, overlay, clickEffect）", "pages/component/common/DisplayDemo"),
           new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
           new Node2("事件相关（onAppear/onDisAppear, onAreaChange/onSizeChange, onVisibleAreaChange, 自定义事件）", "pages/component/common/EventDemo"),
         ]),
