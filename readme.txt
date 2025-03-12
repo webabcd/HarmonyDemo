@@ -27,19 +27,19 @@ ets 的全称是 extended typescript
 
 开发工具 DevEco Studio，其中的 DevEco 是 Development Ecosystem 的缩写
 文件结构及说明如下
-HarmonyDemo // 项目名称
-├── AppScope
-│   └── app.json5  // 应用级的配置
-├── entry // 模块名称
-│   ├── src
-│   │   └── main
-│   │       ├── ets // 用于保存代码文件
-│   │       ├── resources // 用于保存资源文件
-│   │       └── module.json5 // 当前模块的配置
-│   ├── build-profile.json5 // 当前模块的编译相关的配置
-│   └── oh-package.json5 // 当前模块的依赖配置
-├── build-profile.json5 // 应用级的编译相关的配置
-└── oh-package.json5 // 应用级的依赖配置
+HarmonyDemo                         // 项目名称
+|---AppScope
+|   |---app.json5                   // 应用级的配置
+|---entry // 模块名称
+|   |---src
+|   |   |---main
+|   |       |---ets                 // 用于保存代码文件
+|   |       |---resources           // 用于保存资源文件
+|   |       |---module.json5        // 当前模块的配置
+|   |---build-profile.json5         // 当前模块的编译相关的配置
+|   |---oh-package.json5            // 当前模块的依赖配置
+|---build-profile.json5             // 应用级的编译相关的配置
+|---oh-package.json5                // 应用级的依赖配置
 
 一个项目由多个模块（module）组成，模块的类型有 HAP（包括 entry 和 feature 两种类型）, HSP, HAR
 每个 HAP 可以包含多个 UIAbility，每个 UIAbility 实例都会在最近任务列表中显示为一个对应的任务窗口，每个 UIAbility 可以包含多个页面
