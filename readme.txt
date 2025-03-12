@@ -30,12 +30,12 @@ ets 的全称是 extended typescript
 HarmonyDemo                         // 项目名称
 |---AppScope
 |   |---app.json5                   // 应用级的配置
-|---entry // 模块名称
+|---entry                           // 模块名称
 |   |---src
 |   |   |---main
-|   |       |---ets                 // 用于保存代码文件
-|   |       |---resources           // 用于保存资源文件
-|   |       |---module.json5        // 当前模块的配置
+|   |   |   |---ets                 // 用于保存代码文件
+|   |   |   |---resources           // 用于保存资源文件
+|   |   |   |---module.json5        // 当前模块的配置
 |   |---build-profile.json5         // 当前模块的编译相关的配置
 |   |---oh-package.json5            // 当前模块的依赖配置
 |---build-profile.json5             // 应用级的编译相关的配置
