@@ -182,7 +182,7 @@
 - pages/component/common/SizeDemo
 3. 位置相关（align, direction, position, markAnchor, offset）
 - pages/component/common/PositionDemo
-4. 显示相关（visibility, overlay）
+4. 显示相关（visibility, overlay, clickEffect）
 - pages/component/common/DisplayDemo
 5. 前景背景
 - pages/component/common/ForegroundBackgroundDemo
@@ -358,35 +358,39 @@
 ### 组件（弹出类）
 1. promptAction（toast, menu, dialog, custom）
 - pages/component/flyout/PromptActionDemo
-2. Popup（弹出框）
+2. Modal（全模态弹出框）
+- pages/component/flyout/ModalDemo
+3. Sheet（半模态弹出框）
+- pages/component/flyout/SheetDemo
+4. Popup（弹出框）
 - pages/component/flyout/PopupDemo
-3. Menu（上下文菜单）
+5. Menu（上下文菜单）
 - pages/component/flyout/MenuDemo
-4. AlertDialog（警告弹框）
+6. AlertDialog（警告弹框）
 - pages/component/flyout/AlertDialogDemo
-5. ActionSheet（列表弹框）
+7. ActionSheet（列表弹框）
 - pages/component/flyout/ActionSheetDemo
-6. CustomDialog（自定义弹框）
+8. CustomDialog（自定义弹框）
 - pages/component/flyout/CustomDialogDemo
-7. CustomDialog 之 TipsDialog（图文弹框）
+9. CustomDialog 之 TipsDialog（图文弹框）
 - pages/component/flyout/CustomDialogDemo_TipsDialog
-8. CustomDialog 之 SelectDialog（列表弹框）
+10. CustomDialog 之 SelectDialog（列表弹框）
 - pages/component/flyout/CustomDialogDemo_SelectDialog
-9. CustomDialog 之 ConfirmDialog（信息确认弹框）
+11. CustomDialog 之 ConfirmDialog（信息确认弹框）
 - pages/component/flyout/CustomDialogDemo_ConfirmDialog
-10. CustomDialog 之 AlertDialog（警告弹框）
+12. CustomDialog 之 AlertDialog（警告弹框）
 - pages/component/flyout/CustomDialogDemo_AlertDialog
-11. CustomDialog 之 LoadingDialog（加载弹框）
+13. CustomDialog 之 LoadingDialog（加载弹框）
 - pages/component/flyout/CustomDialogDemo_LoadingDialog
-12. CustomDialog 之 CustomContentDialog（自定义内容弹框）
+14. CustomDialog 之 CustomContentDialog（自定义内容弹框）
 - pages/component/flyout/CustomDialogDemo_CustomContentDialog
-13. CalendarPickerDialog（日历选择弹窗）
+15. CalendarPickerDialog（日历选择弹窗）
 - pages/component/flyout/CalendarPickerDialogDemo
-14. DatePickerDialog（日期滑动选择弹窗）
+16. DatePickerDialog（日期滑动选择弹窗）
 - pages/component/flyout/DatePickerDialogDemo
-15. TimePickerDialog（时间滑动选择弹窗）
+17. TimePickerDialog（时间滑动选择弹窗）
 - pages/component/flyout/TimePickerDialogDemo
-16. TextPickerDialog（文本滑动选择弹窗）
+18. TextPickerDialog（文本滑动选择弹窗）
 - pages/component/flyout/TextPickerDialogDemo
 
 ### 组件（媒体类）
@@ -551,3 +555,12 @@
 - pages/background/MyWorkSchedulerExtensionAbility.ets
 4. 提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）
 - pages/background/ReminderTaskDemo
+
+### Native Development Kit
+1. NDK 基础
+- pages/ndk/NdkDemo
+- /ndk1/src/main/ets/pages/NdkDemo.ets
+- /ndk1/src/main/cpp/napi_init.cpp
+- /ndk1/src/main/cpp/CMakeLists.txt
+- /ndk1/src/main/cpp/types/libndk1/Index.d.ts
+- /ndk1/src/main/cpp/types/libndk1/oh-package.json5

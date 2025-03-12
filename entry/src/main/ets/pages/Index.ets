@@ -11,9 +11,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-          new Node2("Modal（全模态弹出框）", "pages/component/flyout/ModalDemo"),
-          new Node2("Sheet（半模态弹出框）", "pages/component/flyout/SheetDemo"),
-          new Node2("NDK 基础", "pages/ndk/NdkDemo", "/ndk1/src/main/ets/pages/NdkDemo.ets|/ndk1/src/main/cpp/types/napi_init.cpp|/ndk1/src/main/cpp/types/CMakeLists.txt|/ndk1/src/main/cpp/types/libndk1/Index.d.ts|/ndk1/src/main/cpp/types/libndk1/oh-package.json5"),
+
         ]),
 
         new Node1("ArkTS 基础", [
@@ -184,6 +182,8 @@ struct Index {
         ]),
         new Node1("组件（弹出类）", [
           new Node2("promptAction（toast, menu, dialog, custom）", "pages/component/flyout/PromptActionDemo"),
+          new Node2("Modal（全模态弹出框）", "pages/component/flyout/ModalDemo"),
+          new Node2("Sheet（半模态弹出框）", "pages/component/flyout/SheetDemo"),
           new Node2("Popup（弹出框）", "pages/component/flyout/PopupDemo"),
           new Node2("Menu（上下文菜单）", "pages/component/flyout/MenuDemo"),
           new Node2("AlertDialog（警告弹框）", "pages/component/flyout/AlertDialogDemo"),
@@ -281,6 +281,9 @@ struct Index {
           new Node2("长时任务（应用退到后台之后，允许特定任务长时间运行）", "pages/background/ContinuousTaskDemo"),
           new Node2("延迟任务（由系统决策，在合适的时候执行）", "pages/background/DeferredTaskDemo", "pages/background/MyWorkSchedulerExtensionAbility.ets"),
           new Node2("提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）", "pages/background/ReminderTaskDemo"),
+        ]),
+        new Node1("Native Development Kit", [
+          new Node2("NDK 基础", "pages/ndk/NdkDemo", "/ndk1/src/main/ets/pages/NdkDemo.ets|/ndk1/src/main/cpp/napi_init.cpp|/ndk1/src/main/cpp/CMakeLists.txt|/ndk1/src/main/cpp/types/libndk1/Index.d.ts|/ndk1/src/main/cpp/types/libndk1/oh-package.json5"),
         ]),
       ]
     let md = this.siteMapToMarkdown()
