@@ -223,7 +223,10 @@
     "pages/basic/Overview",
     "pages/ndk/NdkDemo",
     "pages/component/flyout/ModalDemo",
-    "pages/component/flyout/SheetDemo"
+    "pages/component/flyout/SheetDemo",
+    "pages/canvas/CanvasDemo",
+    "pages/canvas/CanvasRenderingContext2DDemo",
+    "pages/canvas/CanvasRenderingContext2DDemo2"
   ],
   "window": {
     "designWidth": 720,

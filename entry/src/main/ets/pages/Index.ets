@@ -11,7 +11,9 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
-
+          new Node2("canvas 基础，动画", "pages/canvas/CanvasDemo"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，画笔样式，渐变色）", "pages/canvas/CanvasRenderingContext2DDemo"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（）", "pages/canvas/CanvasRenderingContext2DDemo2"),
         ]),
 
         new Node1("ArkTS 基础", [
@@ -365,14 +367,14 @@ struct Index {
             if (this.selectedNode1 == index) {
               ForEach(this.siteMap[this.selectedNode1].childNodes, (node2: Node2) => {
                 Column() {
-                  Divider().height(1).opacity(0.2).margin({ left: 42, right: 8 })
+                  Divider().height(1).opacity(0.5).margin({ left: 8, right: 8 })
 
                   Row() {
                     Text(node2.title).fontSize(16).layoutWeight(1).margin({ left: 42 }).align(Alignment.Start)
                     Blank()
                   }
-                  .height(48)
                   .width('100%')
+                  .margin({ top: 10, bottom: 10 })
                   .onClick(() => {
                     router.pushUrl({
                       url: node2.url,
