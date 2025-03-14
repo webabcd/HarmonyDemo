@@ -210,6 +210,7 @@ struct MySample3 {
        *
        * Matrix2D - 矩阵
        *   identity() - 获取单位矩阵
+       *   invert() - 获取当前矩阵的逆矩阵
        *   translate() - 位移
        *   scale() - 缩放
        *   rotate() - 旋转（参数按顺序分别为: 旋转的弧度, 旋转中心点的 x, y）

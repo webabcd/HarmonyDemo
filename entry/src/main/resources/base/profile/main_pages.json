@@ -226,7 +226,8 @@
     "pages/component/flyout/SheetDemo",
     "pages/canvas/CanvasDemo",
     "pages/canvas/CanvasRenderingContext2DDemo",
-    "pages/canvas/CanvasRenderingContext2DDemo2"
+    "pages/canvas/CanvasRenderingContext2DDemo2",
+    "pages/canvas/CanvasRenderingContext2DDemo3"
   ],
   "window": {
     "designWidth": 720,

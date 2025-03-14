@@ -1,7 +1,7 @@
 /*
  * CanvasRenderingContext2D - 按照 W3C 标准封装了本地绘图接口（效率比 DrawingRenderingContext 低）
  *
- * 本例用于演示如何通过 CanvasRenderingContext2D 绘制简单图形，路径图形，贝塞尔曲线，画笔样式，渐变色，图像色
+ * 本例用于演示如何通过 CanvasRenderingContext2D 绘制简单图形，路径图形，贝塞尔曲线，Path2D，画笔样式，渐变色，图像色
  */
 
 import { TitleBar } from '../TitleBar';
@@ -17,9 +17,10 @@ struct CanvasRenderingContext2DDemo {
         TabContent() { MySample1() }.tabBar('简单图形').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('路径图形').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('贝塞尔曲线').align(Alignment.Top)
-        TabContent() { MySample4() }.tabBar('画笔样式').align(Alignment.Top)
-        TabContent() { MySample5() }.tabBar('渐变色').align(Alignment.Top)
-        TabContent() { MySample6() }.tabBar('图像色').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('Path2D').align(Alignment.Top)
+        TabContent() { MySample5() }.tabBar('画笔样式').align(Alignment.Top)
+        TabContent() { MySample6() }.tabBar('渐变色').align(Alignment.Top)
+        TabContent() { MySample7() }.tabBar('图像色').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -88,8 +89,8 @@ struct MySample2 {
        *   stroke() - 用画笔连接路径
        *   fill() - 填充路径组成的图形的内部
        *
-       *   move() - 路径移动到指定的点
-       *   lineTo() - 之前 move() 点通过直线路径连接 lineTo() 点
+       *   moveTo() - 路径移动到指定的点
+       *   lineTo() - 之前 moveTo() 点通过直线路径连接 lineTo() 点
        *   rect() - 矩形路径
        *   ellipse() - 椭圆路径
        *   arc() - 圆弧路径
@@ -196,9 +197,53 @@ struct MySample3 {
   }
 }
 
-// 画笔样式
+// Path2D
 @Component
 struct MySample4 {
+
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true))
+
+  build() {
+    Column({ space: 10 }) {
+
+      /*
+       * CanvasRenderingContext2D - 按照 W3C 标准封装了本地绘图接口
+       *   stroke() - 用画笔绘制指定的 Path2D 对象
+       *
+       * Path2D - 路径
+       *   实例化时可以传入一个 svg(Scalable Vector Graphics) 的 path 路径
+       *   addPath() - 当前路径再叠加一个指定的路径
+       *   closePath() - 通过直线路径连接路径的首尾两端
+       *   moveTo(), lineTo(), arc(), arcTo(), ellipse(), rect(), bezierCurveTo(), quadraticCurveTo() - 这几个的用法参见本例中 MySample2 和 MySample3 的说明
+       */
+      Canvas(this.context).width('100%').height('100%').backgroundColor(Color.Yellow)
+        .onReady(() => {
+
+          this.context.strokeStyle = Color.Green
+          this.context.lineWidth = 5
+
+          // 指定一个 svg 的 path 路径，其是一个五角星图形
+          let path2D_1: Path2D = new Path2D('M108 0 L141 70 L218 78.3 L162 131 L175 205 L108 170 L41.2 205 L55 131 L1 78 L75 68 L108 0 Z')
+
+          let path2D_2: Path2D = new Path2D()
+          path2D_2.moveTo(200, 100)
+          path2D_2.lineTo(300, 100)
+          path2D_2.lineTo(200, 200)
+          path2D_2.closePath()
+
+          let path2D: Path2D = new Path2D()
+          path2D.addPath(path2D_1)
+          path2D.addPath(path2D_2)
+
+          this.context.stroke(path2D)
+        })
+    }
+  }
+}
+
+// 画笔样式
+@Component
+struct MySample5 {
 
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true))
 
@@ -298,7 +343,7 @@ struct MySample4 {
 
 // 渐变色
 @Component
-struct MySample5 {
+struct MySample6 {
 
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true))
 
@@ -351,7 +396,7 @@ struct MySample5 {
 
 // 图像色
 @Component
-struct MySample6 {
+struct MySample7 {
 
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true))
   private imageBitmap = new ImageBitmap("resources/base/media/son.jpg")
