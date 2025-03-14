@@ -1,7 +1,7 @@
 /*
  * CanvasRenderingContext2D - 按照 W3C 标准封装了本地绘图接口（效率比 DrawingRenderingContext 低）
  *
- * 本例用于演示如何通过 CanvasRenderingContext2D 实现简单图形，路径图形，贝塞尔曲线，画笔样式，渐变色
+ * 本例用于演示如何通过 CanvasRenderingContext2D 绘制简单图形，路径图形，贝塞尔曲线，画笔样式，渐变色，图像色
  */
 
 import { TitleBar } from '../TitleBar';
@@ -19,6 +19,7 @@ struct CanvasRenderingContext2DDemo {
         TabContent() { MySample3() }.tabBar('贝塞尔曲线').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('画笔样式').align(Alignment.Top)
         TabContent() { MySample5() }.tabBar('渐变色').align(Alignment.Top)
+        TabContent() { MySample6() }.tabBar('图像色').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -343,6 +344,38 @@ struct MySample5 {
           conicGradient.addColorStop(1.0, '#0000ff')
           this.context.fillStyle = conicGradient
           this.context.fillRect(0, 400, 200, 200)
+        })
+    }
+  }
+}
+
+// 图像色
+@Component
+struct MySample6 {
+
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true))
+  private imageBitmap = new ImageBitmap("resources/base/media/son.jpg")
+
+  build() {
+    Column({ space: 10 }) {
+
+      /*
+       * CanvasRenderingContext2D - 按照 W3C 标准封装了本地绘图接口
+       *   createPattern() - 重复图像
+       *     参数按顺序分别是: 源图像, 重复方式
+       *   fillStyle - 使用指定的重复图像作为填充色
+       *   strokeStyle - 使用指定的重复图像作为画笔色
+       */
+      Canvas(this.context).width('100%').height('100%').backgroundColor(Color.Yellow)
+        .onReady(() => {
+
+          let pattern = this.context.createPattern(this.imageBitmap, 'repeat')! // 重复
+          this.context.fillStyle = pattern
+          this.context.fillRect(0, 0, 300, 180)
+
+          pattern = this.context.createPattern(this.imageBitmap, 'mirror')! // 翻转重复
+          this.context.fillStyle = pattern
+          this.context.fillRect(0, 200, 300, 180)
         })
     }
   }

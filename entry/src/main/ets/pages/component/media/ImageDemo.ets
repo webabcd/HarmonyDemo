@@ -45,8 +45,12 @@ struct MySample1 {
       Image($r('app.media.son'))
         .width(50).height(50)
 
-      // 显示指定目录下的图片文件（注：文件需要放在 /src/main/ets 目录下，然后通过类似如下的方式引用）
+      // 显示 ets 目录下的图片文件（注：文件需要放在 /src/main/ets 目录下，然后通过类似如下的方式引用）
       Image('/pages/component/media/son.jpg')
+        .width(50).height(50)
+
+      // 显示 resources 目录下的图片文件（注：文件需要放在 /src/main/resources 目录下，然后通过类似如下的方式引用）
+      Image('/resources/base/media/son.jpg')
         .width(50).height(50)
 
       // 显示网络图片

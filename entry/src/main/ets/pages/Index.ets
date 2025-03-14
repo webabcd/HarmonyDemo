@@ -12,8 +12,8 @@ struct Index {
       [
         new Node1("临时测试用", [
           new Node2("canvas 基础，动画", "pages/canvas/CanvasDemo"),
-          new Node2("通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，画笔样式，渐变色）", "pages/canvas/CanvasRenderingContext2DDemo"),
-          new Node2("通过 CanvasRenderingContext2D 绘制图形（）", "pages/canvas/CanvasRenderingContext2DDemo2"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，画笔样式，渐变色，图像色）", "pages/canvas/CanvasRenderingContext2DDemo"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（文本，图像，变换，透明，阴影）", "pages/canvas/CanvasRenderingContext2DDemo2"),
         ]),
 
         new Node1("ArkTS 基础", [
