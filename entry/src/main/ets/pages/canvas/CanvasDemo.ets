@@ -46,12 +46,17 @@ struct MySample1 {
    */
   private context: DrawingRenderingContext = new DrawingRenderingContext(LengthMetricsUnit.DEFAULT)
 
+  @State message: string = ""
+
   build() {
     Column({ space: 10 }) {
 
+      Text(this.message)
+
       Canvas(this.context).width('100%').height('100%').backgroundColor(Color.Yellow)
         .onReady(() => {
-          MyLog.d(`width:${this.context.size.width}, height:${this.context.size.height}`)
+          this.message = `width:${this.context.size.width}\n`
+          this.message += `height:${this.context.size.height}`
 
           this.context.canvas.drawRect({
             left: this.getUIContext().vp2px(50),
@@ -79,15 +84,24 @@ struct MySample2 {
    *   构造函数的第 2 个参数是一个 LengthMetricsUnit 枚举
    *     DEFAULT - 在当前 context 中绘制的图形的单位为 vp
    *     PX - 在当前 context 中绘制的图形的单位为 px
+   *   width - 画布宽
+   *   height - 画布高
    */
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings, LengthMetricsUnit.DEFAULT)
 
+  @State message: string = ""
+
   build() {
     Column({ space: 10 }) {
 
+      Text(this.message)
+
       Canvas(this.context).width('100%').height('100%').backgroundColor(Color.Yellow)
         .onReady(() => {
+          this.message = `width:${this.context.width}\n`
+          this.message += `height:${this.context.height}`
+
           this.context.fillRect(50, 50, 200, 200)
         })
     }
