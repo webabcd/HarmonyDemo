@@ -227,7 +227,8 @@
     "pages/canvas/CanvasDemo",
     "pages/canvas/CanvasRenderingContext2DDemo",
     "pages/canvas/CanvasRenderingContext2DDemo2",
-    "pages/canvas/CanvasRenderingContext2DDemo3"
+    "pages/canvas/CanvasRenderingContext2DDemo3",
+    "pages/input/DragDropDemo"
   ],
   "window": {
     "designWidth": 720,

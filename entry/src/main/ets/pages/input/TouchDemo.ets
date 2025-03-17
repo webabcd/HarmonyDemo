@@ -128,7 +128,7 @@ struct MySample3 {
       Text(this.message)
 
       /*
-       * draggable() - 是否支持按下后的拖拽操作
+       * draggable() - 是否支持按下后的拖拽操作（注：设置为 true 后，还必须要监听 onDragStart() 事件，才能支持拖拽操作）
        * allowDrop() - 当拖拽组件落入当前组件时，指定允许传递的数据类型（一个 UniformDataType 枚举数组）
        *   PLAIN_TEXT, IMAGE, 等
        *
