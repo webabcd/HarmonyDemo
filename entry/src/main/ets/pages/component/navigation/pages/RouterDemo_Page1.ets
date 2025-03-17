@@ -27,6 +27,22 @@ struct RouterDemo_Page1 {
     const params = router.getParams() as Record<string, string>
     this.message += `RouterDemo_Page1 pageId:${Math.floor(Math.random() * 1000).toString()}\n`
     this.message += `p1:${params?.p1 || ""}, p2:${params?.p2 || ""}\n`
+    
+    /*
+     * queryRouterPageInfo() - 组件的内置方法，可以获取当前的 RouterPageInfo
+     *   index - 当前页面在栈中的从栈底开始的索引位置（注：此处的索引是从 1 开始的）
+     *   name - 当前页面的文件名称
+     *   path - 当前页面的文件地址
+     *   pageId - 由系统生成的当前页面的唯一标识
+     *   state - 页面状态（一个 RouterPageState 枚举）
+     *     ABOUT_TO_APPEAR - 页面即将显示
+     *     ABOUT_TO_DISAPPEAR - 页面即将销毁
+     *     ON_PAGE_SHOW - 页面显示了
+     *     ON_PAGE_HIDE - 页面隐藏了
+     *     ON_BACK_PRESS - 页面返回时
+     */
+    let routerPageInfo = this.queryRouterPageInfo()
+    this.message += `routerPageInfo:${JSON.stringify(routerPageInfo)}\n`
   }
 
   build() {
