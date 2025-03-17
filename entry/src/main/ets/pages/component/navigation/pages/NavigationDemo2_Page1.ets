@@ -47,6 +47,16 @@ struct NavigationDemo2_Page1 {
 
   @State message: string = ""
 
+  aboutToAppear(): void {
+    /*
+     * queryNavigationInfo() - 组件的内置方法，可以获取当前的 NavigationInfo
+     *   navigationId - 当前 Navigation 的标识（由系统自动生成）
+     *   pathStack - 当前 Navigation 的 NavPathStack 对象
+     */
+    let navigationInfo = this.queryNavigationInfo();
+    this.message += `navigationInfo: ${JSON.stringify(navigationInfo)}\n\n`
+  }
+
   build() {
 
     /*
