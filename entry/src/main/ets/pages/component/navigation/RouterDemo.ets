@@ -2,8 +2,6 @@
  * router - 路由接口，通过页面地址做路由
  *   页面需要用 @Entry 装饰，且需要在 main_pages.json 文件（在 module.json5 中通过 "pages":"$profile:main_pages" 指定的）中声明
  *
- * 官方建议可能的话最好使用 Navigation 组件做导航
- *
  * 注：本例演示的是如何通过页面地址做路由（必须是 @Entry 组件），如需要通过路由表做路由（允许非 @Entry 组件）请参见 NavigationDemo2.ets, NavigationDemo3.ets 中的说明
  */
 

@@ -1,8 +1,6 @@
 /*
  * router - 路由接口，通过页面地址做路由
  *
- * 官方建议可能的话最好使用 Navigation 组件做导航
- *
  * 注：本例演示的是如何通过页面地址做路由（必须是 @Entry 组件），如需要通过路由表做路由（允许非 @Entry 组件）请参见 NavigationDemo2.ets, NavigationDemo3.ets 中的说明
  */
 
@@ -27,7 +25,7 @@ struct RouterDemo_Page1 {
     const params = router.getParams() as Record<string, string>
     this.message += `RouterDemo_Page1 pageId:${Math.floor(Math.random() * 1000).toString()}\n`
     this.message += `p1:${params?.p1 || ""}, p2:${params?.p2 || ""}\n`
-    
+
     /*
      * queryRouterPageInfo() - 组件的内置方法，可以获取当前的 RouterPageInfo
      *   index - 当前页面在栈中的从栈底开始的索引位置（注：此处的索引是从 1 开始的）
