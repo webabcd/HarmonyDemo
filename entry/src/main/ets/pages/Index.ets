@@ -11,6 +11,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("自定义组件", "pages/component/custom/CustomComponentDemo"),
           new Node2("拖拽", "pages/input/DragDropDemo"),
           new Node2("canvas 基础，动画", "pages/canvas/CanvasDemo"),
           new Node2("通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，Path2D，画笔样式，渐变色，图像色）", "pages/canvas/CanvasRenderingContext2DDemo"),
