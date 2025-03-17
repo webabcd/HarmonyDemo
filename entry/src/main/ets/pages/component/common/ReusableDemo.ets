@@ -32,8 +32,8 @@ struct ReusableDemo {
         MyComponent1()
 
         // MyComponent2 用 @Reusable 装饰了
-        // 在第一次显示和隐藏 MyComponent2 的过程中，会走到 aboutToAppear, onAppear, onDisAppear
-        // 然后在后续的不停地显示和隐藏 MyComponent2 的过程中，会循环走到 aboutToReuse, onAppear, onDisAppear
+        // 在第一次显示和隐藏 MyComponent2 的过程中，会走到 aboutToAppear, onAppear, onDisAppear, aboutToRecycle
+        // 然后在后续的不停地显示和隐藏 MyComponent2 的过程中，会循环走到 aboutToReuse, onAppear, onDisAppear, aboutToRecycle
         // 说明此组件被复用了
         MyComponent2({
           r: Math.floor(Math.random() * 1000)
@@ -45,12 +45,15 @@ struct ReusableDemo {
 
 @Component
 struct MyComponent1 {
+
   aboutToAppear() {
     MyLog.d(`1 aboutToAppear`)
   }
+
   aboutToDisappear(): void {
     MyLog.d(`1 aboutToDisappear`)
   }
+
   build() {
     Column() { }.width(100).height(100).backgroundColor(Color.Orange)
     .onAppear(() => {
@@ -67,14 +70,18 @@ struct MyComponent1 {
 @Reusable
 @Component
 struct MyComponent2 {
+
   @State r:number = 0
+
   aboutToAppear() {
     MyLog.d(`2 aboutToAppear`)
   }
+
   aboutToDisappear(): void {
     MyLog.d(`2 aboutToDisappear`)
   }
-  // 通过 @Reusable 装饰的组件，复用时会走到 aboutToReuse() 方法
+
+  // 通过 @Reusable 装饰的组件，从复用缓存中取出并挂载到组件树上时，会走到 aboutToReuse() 方法
   // 如下例：
   // this.r 获取到的是，组件被放入到缓存之前时 r 参数的值
   // params.r 获取到的是，组件复用时，外部传递过来的 r 参数的值
@@ -83,6 +90,12 @@ struct MyComponent2 {
     // 根据组件复用时，外部传递过来的 r 参数的值更新 this.r 的值
     this.r = params.r as number
   }
+
+  // 通过 @Reusable 装饰的组件，从组件树上卸载并加入到复用缓存中时，会走到 aboutToRecycle() 方法
+  aboutToRecycle() {
+    MyLog.d(`2 aboutToRecycle`)
+  }
+
   build() {
     Column() { }.width(100).height(100).backgroundColor(Color.Orange)
     .onAppear(() => {
