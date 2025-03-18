@@ -417,6 +417,8 @@ struct MySample5 {
         /*
          * customKeyboard() - 绑定自定义软键盘
          *   supportAvoidance - 弹出自定义软键盘时，输入框是否需要自动避让以避免被软键盘覆盖
+         *
+         * 注：通过此方式，也可以实现禁止用户点击后弹出软键盘
          */
         .customKeyboard(this.CustomKeyboardBuilder(), {
           supportAvoidance: true
