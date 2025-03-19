@@ -16,8 +16,12 @@ struct ClassDemo {
   class Person {
     // 注：类的属性和方法支持 3 种访问修饰符，分别是 private, protected, public（默认都是 public 的）
 
-    // 属性（不用初始化），注意此处 ? 的用法
-    age?:number;
+    // 属性（不用初始化），注意此处 ? 的用法（age 的类型实际上是 number | undefined）
+    age:number|undefined;
+    // 属性（不用初始化），注意此处 ? 的用法（age 的类型实际上是 number | undefined）
+    age2?:number;
+    // 属性（不用初始化），注意此处 ! 的用法
+    age3!:number;
     // 属性（声明时初始化）
     weight:number = 0;
     // 属性（在构造函数中初始化）
@@ -66,6 +70,17 @@ struct ClassDemo {
   MyLog.d(`${a.age! * 2}`); // NaN
   a.age = 44;
   MyLog.d(`${a.age * 2}`); // 88
+
+  MyLog.d(`${a.age2}`); // undefined
+  // 注意此处 ! 的用法，如果不加 ! 的话会编译报错的
+  MyLog.d(`${a.age2! * 2}`); // NaN
+  a.age2 = 44;
+  MyLog.d(`${a.age2 * 2}`); // 88
+
+  MyLog.d(`${a.age3}`); // undefined
+  MyLog.d(`${a.age3 * 2}`); // NaN
+  a.age3 = 44;
+  MyLog.d(`${a.age3 * 2}`); // 88
 
   a.description = "I am wanglei.";
   MyLog.d(`${a.description}`); // I am wanglei.
