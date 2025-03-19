@@ -2,6 +2,7 @@
  * 自定义组件
  */
 
+import { Helper } from '../../../utils/Helper'
 import { MyLog, TitleBar } from '../../TitleBar'
 
 @Entry
@@ -12,8 +13,10 @@ struct CustomComponentDemo {
     Column() {
       TitleBar()
       Tabs() {
-        TabContent() { MySample1() }.tabBar('自定义组件的自定义布局').align(Alignment.Top)
-        TabContent() { MySample2() }.tabBar('自定义组件的内置方法').align(Alignment.Top)
+        TabContent() { MySample1() }.tabBar('简单示例').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('自定义布局').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('内置方法').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('自定义 controller').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -23,10 +26,52 @@ struct CustomComponentDemo {
 }
 
 
+// 自定义组件的简单示例
+@Component
+struct MyCustomComponent1 {
+  // 组件参数，在调用此组件的时候可以传递此参数
+  // 如果用 @Require 装饰，则代表在构造组件的时候必须要传参
+  // 定义的参数默认是必须要初始化的，如果不想初始化就定义为 ? 或 ! 即可
+  @Require message!: string
+
+  // 定义回调函数
+  onCallback?: (value: string) => void;
+
+  build() {
+    Button(`MyComponent1 ${this.message}`)
+      .onClick(() => {
+        if (this.onCallback) {
+          this.onCallback(Helper.getTimestampString())
+        }
+      })
+  }
+}
+@Component
+struct MySample1 {
+
+  @State message: string = 'Hello World';
+
+  build() {
+    Column({space:10}) {
+
+      Text(this.message)
+
+      MyCustomComponent1({
+        message: "abc",
+        // 回调函数
+        onCallback: (value: string) => {
+          this.message = value
+        }
+      })
+    }
+  }
+}
+
+
 // 自定义组件，用于演示自定义布局
 // 先通过 onMeasureSize() 计算每个子组件的尺寸，再通过 onPlaceChildren() 指定每个子组件的位置
 @Component
-struct MyCustomComponent {
+struct MyCustomComponent2 {
 
   @Builder doNothingBuilder() { }
   @BuilderParam builder: () => void = this.doNothingBuilder
@@ -92,7 +137,7 @@ struct MyCustomComponent {
   }
 }
 @Component
-struct MySample1 {
+struct MySample2 {
 
   // 自定义组件的子组件
   @Builder myBuilder() {
@@ -104,7 +149,7 @@ struct MySample1 {
   build() {
     Column({space:10}) {
       // 使用自定义组件
-      MyCustomComponent({ builder: this.myBuilder })
+      MyCustomComponent2({ builder: this.myBuilder })
         .width(300).height(300).backgroundColor(Color.Yellow)
     }
   }
@@ -113,7 +158,7 @@ struct MySample1 {
 
 // 自定义组件，用于演示自定义组件中的可用的内置方法
 @Component
-struct MyCustomComponent2 {
+struct MyCustomComponent3 {
 
   @State message: string = ""
 
@@ -144,10 +189,56 @@ struct MyCustomComponent2 {
   }
 }
 @Component
-struct MySample2 {
+struct MySample3 {
   build() {
     Column({space:10}) {
-      MyCustomComponent2()
+      MyCustomComponent3()
+    }
+  }
+}
+
+
+// 自定义 controller
+class MyCustomComponent4Controller {
+  changeText: (value: string) => void = (value: string) => {  }
+}
+// 自定义组件，用于演示自定义 controller
+@Component
+struct MyCustomComponent4 {
+
+  @State text: string = 'hello controller'
+  controller!: MyCustomComponent4Controller
+
+  aboutToAppear() {
+    if (this.controller) {
+      this.controller.changeText = this.changeText.bind(this);
+    }
+  }
+
+  private changeText(value: string) {
+    this.text = value;
+  }
+
+  build() {
+    Column() {
+      Text(this.text)
+    }
+  }
+}
+@Component
+struct MySample4 {
+
+  controller: MyCustomComponent4Controller = new MyCustomComponent4Controller();
+
+  build() {
+    Column({space:10}) {
+      MyCustomComponent4({
+        controller: this.controller
+      })
+
+      Button('调用 controller 的 changeText()').onClick(() => {
+        this.controller.changeText(Helper.getTimestampString());
+      })
     }
   }
 }
