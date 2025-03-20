@@ -16,7 +16,8 @@ struct ImageDemo {
       Tabs() {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('拉伸').align(Alignment.Top)
-        TabContent() { MySample3() }.tabBar('PixelMap').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('9-Slice').align(Alignment.Top)
+        TabContent() { MySample4() }.tabBar('PixelMap').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -120,6 +121,45 @@ struct MySample2 {
 
 @Component
 struct MySample3 {
+
+  build() {
+    Column({space:10}) {
+
+      Image('/pages/component/media/dialog.png').width(321).height(137)
+
+      /*
+       * resizable() - 用于实现图片的 9 切片, 9-Slice, 9-Patch
+       *   slice - 指定 9 切片的 4 条线
+       *
+       * 将图片分为 9 个部分
+       * +----------------+----------------+----------------+
+       * |      1         |      2         |      3         |
+       * +----------------+----------------+----------------+
+       * |      4         |      5         |      6         |
+       * +----------------+----------------+----------------+
+       * |      7         |      8         |      9         |
+       * +----------------+----------------+----------------+
+       * 拉伸图片时，1379 不会拉伸
+       * 拉伸图片时，28 仅水平方向拉伸
+       * 拉伸图片时，46 仅垂直方向拉伸
+       * 拉伸图片时，5 水平方向和垂直方向均拉伸
+       */
+      Image('/pages/component/media/dialog.png').width(100).height(300)
+        .resizable({
+          // 注：9 切片的 4 条线的位置是相对于原图像素分辨率的位置，所以单位是 px
+          slice: {
+            left: '100px', // 左边线的位置
+            right: '40px', // 右边线的位置
+            top: '40px', // 上边线的位置
+            bottom: '90px', // 下边线的位置
+          }
+        })
+    }
+  }
+}
+
+@Component
+struct MySample4 {
 
   @State pixelMap: PixelMap | undefined = undefined
 
