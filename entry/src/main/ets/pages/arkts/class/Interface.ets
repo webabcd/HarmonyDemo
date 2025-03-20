@@ -30,8 +30,10 @@ struct InterfaceDemo {
       return 'hello: '+ name;
     }
   };
+  webabcd.name = 'wanglei';
+  MyLog.d(`${webabcd.id}, ${webabcd.name}, ${webabcd.age}, ${webabcd.hello("webabcd")}`); // 1234, wanglei, 44, hello: webabcd
 
-  // 也可以通过 as 实现上面的效果
+  // 可以通过 as 把匿名对象转换为指定的接口
   let webabcd2 = {
     id: 1234,
     name: 'webabcd',
@@ -40,9 +42,13 @@ struct InterfaceDemo {
       return 'hello: '+ name;
     }
   } as Person;
+  webabcd2.name = 'wanglei';
+  MyLog.d(`${webabcd2.id}, ${webabcd2.name}, ${webabcd2.age}, ${webabcd2.hello("webabcd")}`); // 1234, wanglei, 44, hello: webabcd
 
-  webabcd.name = 'wanglei';
-  MyLog.d(`${webabcd.id}, ${webabcd.name}, ${webabcd.age}, ${webabcd.hello("webabcd")}`); // 1234, wanglei, 44, hello: webabcd
+  // 可以通过 as 把信息不全的匿名对象转换为指定的接口
+  let webabcd3 = { id: 1234 } as Person;
+  webabcd3.age = 44
+  MyLog.d(`${webabcd3.id}, ${webabcd3.name}, ${webabcd3.age}`); // 1234, undefined, 44
 }
 
 {
