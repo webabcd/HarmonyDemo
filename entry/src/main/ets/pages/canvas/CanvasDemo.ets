@@ -59,10 +59,10 @@ struct MySample1 {
           this.message += `height:${this.context.size.height}`
 
           this.context.canvas.drawRect({
-            left: this.getUIContext().vp2px(50),
-            right: this.getUIContext().vp2px(250),
-            top: this.getUIContext().vp2px(50),
-            bottom: this.getUIContext().vp2px(250),
+            left: vp2px(50),
+            right: vp2px(250),
+            top: vp2px(50),
+            bottom: vp2px(250),
           })
           this.context.invalidate()
         })

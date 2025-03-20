@@ -11,6 +11,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("AttributeModifier, ContentModifier, DrawModifier, GestureModifier", "pages/component/common/ModifierDemo"),
           new Node2("焦点", "pages/component/common/FocusDemo"),
           new Node2("自定义组件", "pages/component/common/CustomComponentDemo"),
           new Node2("拖拽", "pages/input/DragDropDemo"),

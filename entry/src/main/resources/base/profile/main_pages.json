@@ -230,7 +230,8 @@
     "pages/canvas/CanvasRenderingContext2DDemo3",
     "pages/input/DragDropDemo",
     "pages/component/common/CustomComponentDemo",
-    "pages/component/common/FocusDemo"
+    "pages/component/common/FocusDemo",
+    "pages/component/common/ModifierDemo"
   ],
   "window": {
     "designWidth": 720,
