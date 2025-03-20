@@ -65,6 +65,7 @@ struct StringDemo {
 
 
   // `` 这玩意叫模板字符串（template string），可以在 ${} 中执行表达式或函数或变量等
+  // ` 叫做反引号
   let g = "webabcd"
   MyLog.d(`hello: ${g}, ${g.length}`); // hello: webabcd, 7
 
@@ -74,6 +75,9 @@ struct StringDemo {
   MyLog.d(`${h}`);
   // 123
   //  456 " ' ` \n
+
+  // 通过 String.raw 结合 `` 可以避免解析转义符
+  MyLog.d(String.raw`\\ \n \t`); // \\ \n \t
 
 
   // 标签模板（tagged template），就是自定义的模板字符串
