@@ -97,6 +97,10 @@ struct BasicDemo {
   // MyLog.d(`${a.name}`); // 编译时报错
   MyLog.d(`${a?.name}`); // webabcd
   MyLog.d(`${a!.name}`); // webabcd
+  // 通过 if 判断一下，就可以不用 ? 或 ! 而直接读取 a 了
+  if (a) {
+    MyLog.d(`${a.name}`); // webabcd
+  }
 
   let b = getPerson(2)
   // MyLog.d(`${b.name}`); // 编译时报错
