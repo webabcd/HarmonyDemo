@@ -53,8 +53,8 @@ struct MySample1 {
        *   playMode - 动画的播放模式（PlayMode 枚举）
        *     Normal - 正向播放
        *     Reverse - 反向播放
-       *     Alternate - 动画在第奇数次播放时为正向播放，动画在第偶数次播放时为反向播放（此时建议 iterations 为奇数）
-       *     AlternateReverse - 动画在第奇数次播放时为反向播放，动画在第偶数次播放时为正向播放（此时建议 iterations 为偶数）
+       *     Alternate - 动画在第奇数次播放时为正向播放，动画在第偶数次播放时为反向播放
+       *     AlternateReverse - 动画在第奇数次播放时为反向播放，动画在第偶数次播放时为正向播放
        *   expectedFrameRateRange - 动画的期望帧率
        *     min - 期望的最小帧率
        *     max - 期望的最大帧率
