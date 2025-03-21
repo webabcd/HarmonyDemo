@@ -188,6 +188,12 @@
 - pages/component/common/ForegroundBackgroundDemo
 6. 事件相关（onAppear/onDisAppear, onAreaChange/onSizeChange, onVisibleAreaChange, 自定义事件）
 - pages/component/common/EventDemo
+7. 焦点
+- pages/component/common/FocusDemo
+8. 自定义组件
+- pages/component/common/CustomComponentDemo
+9. AttributeModifier, ContentModifier, DrawModifier, GestureModifier
+- pages/component/common/ModifierDemo
 
 ### 组件（布局类）
 1. Column（垂直布局）
@@ -444,6 +450,8 @@
 - pages/input/KeyboardDemo
 3. 手势识别
 - pages/input/GestureDemo
+4. 拖拽
+- pages/input/DragDropDemo
 
 ### UI
 1. 颜色相关
@@ -488,27 +496,39 @@
 ### 动画
 1. ImageAnimator（帧动画）
 - pages/animation/ImageAnimatorDemo
-2. 属性动画
+2. AnimatorResult（number 动画）
+- pages/animation/AnimatorResultDemo
+3. 属性动画
 - pages/animation/AnimationDemo
-3. @AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）
+4. @AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）
 - pages/animation/AnimatableExtendDemo
-4. 显式动画
+5. 显式动画
 - pages/animation/AnimationToDemo
-5. 关键帧动画
+6. 关键帧动画
 - pages/animation/KeyframeAnimateDemo
-6. 路径动画
+7. 路径动画
 - pages/animation/MotionPathDemo
-7. 单个组件显示和消失时的过渡动画
+8. 单个组件显示和消失时的过渡动画
 - pages/animation/TransitionDemo
-8. 一组件显示一组件消失时的过渡动画
+9. 一组件显示一组件消失时的过渡动画
 - pages/animation/GeometryTransitionDemo
-9. 页面转场效果
+10. 页面转场效果
 - pages/animation/PageTransitionDemo
 - pages/animation/PageTransitionDemo_1.ets
 - pages/animation/PageTransitionDemo_2.ets
 - pages/animation/PageTransitionDemo_3.ets
-10. Curve（动画曲线）
+11. Curve（动画曲线）
 - pages/animation/CurveDemo
+
+### canvas
+1. canvas 基础，动画
+- pages/canvas/CanvasDemo
+2. 通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，Path2D，画笔样式，渐变色，图像色）
+- pages/canvas/CanvasRenderingContext2DDemo
+3. 通过 CanvasRenderingContext2D 绘制图形（文本，图像，变换，透明，阴影）
+- pages/canvas/CanvasRenderingContext2DDemo2
+4. 通过 CanvasRenderingContext2D 绘制图形（图像滤镜，叠加绘制，图层，清除指定的区域，画布转图片，上下文的保存和加载）
+- pages/canvas/CanvasRenderingContext2DDemo3
 
 ### 资源
 1. 图标资源
@@ -544,6 +564,8 @@
 - /webapi/webapi/webserver.py
 2. json
 - pages/network/JsonDemo
+3. http server
+- pages/network/HttpServerDemo
 
 ### 后台
 1. 短时任务（应用退到后台之后，允许继续运行一段时间）

@@ -10,17 +10,9 @@ struct Index {
   aboutToAppear(): void {
     this.siteMap =
       [
+
         new Node1("临时测试用", [
-          new Node2("http server", "pages/network/HttpServerDemo"),
-          new Node2("AnimatorResult（number 动画）", "pages/animation/AnimatorResultDemo"),
-          new Node2("AttributeModifier, ContentModifier, DrawModifier, GestureModifier", "pages/component/common/ModifierDemo"),
-          new Node2("焦点", "pages/component/common/FocusDemo"),
-          new Node2("自定义组件", "pages/component/common/CustomComponentDemo"),
-          new Node2("拖拽", "pages/input/DragDropDemo"),
-          new Node2("canvas 基础，动画", "pages/canvas/CanvasDemo"),
-          new Node2("通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，Path2D，画笔样式，渐变色，图像色）", "pages/canvas/CanvasRenderingContext2DDemo"),
-          new Node2("通过 CanvasRenderingContext2D 绘制图形（文本，图像，变换，透明，阴影）", "pages/canvas/CanvasRenderingContext2DDemo2"),
-          new Node2("通过 CanvasRenderingContext2D 绘制图形（图像滤镜，叠加绘制，图层，清除指定的区域，画布转图片，上下文的保存和加载）", "pages/canvas/CanvasRenderingContext2DDemo3"),
+          new Node2("WebSocket", "pages/network/WebSocketDemo", "/entry/src/main/resources/rawfile/WebSocketClient.html"),
         ]),
 
         new Node1("ArkTS 基础", [
@@ -101,6 +93,9 @@ struct Index {
           new Node2("显示相关（visibility, overlay, clickEffect）", "pages/component/common/DisplayDemo"),
           new Node2("前景背景", "pages/component/common/ForegroundBackgroundDemo"),
           new Node2("事件相关（onAppear/onDisAppear, onAreaChange/onSizeChange, onVisibleAreaChange, 自定义事件）", "pages/component/common/EventDemo"),
+          new Node2("焦点", "pages/component/common/FocusDemo"),
+          new Node2("自定义组件", "pages/component/common/CustomComponentDemo"),
+          new Node2("AttributeModifier, ContentModifier, DrawModifier, GestureModifier", "pages/component/common/ModifierDemo"),
         ]),
         new Node1("组件（布局类）", [
           new Node2("Column（垂直布局）", "pages/component/layout/ColumnDemo"),
@@ -237,6 +232,7 @@ struct Index {
           new Node2("触摸类输入", "pages/input/TouchDemo"),
           new Node2("键盘类输入", "pages/input/KeyboardDemo"),
           new Node2("手势识别", "pages/input/GestureDemo"),
+          new Node2("拖拽", "pages/input/DragDropDemo"),
         ]),
         new Node1("UI", [
           new Node2("颜色相关", "pages/ui/ColorDemo"),
@@ -261,6 +257,7 @@ struct Index {
         ]),
         new Node1("动画", [
           new Node2("ImageAnimator（帧动画）", "pages/animation/ImageAnimatorDemo"),
+          new Node2("AnimatorResult（number 动画）", "pages/animation/AnimatorResultDemo"),
           new Node2("属性动画", "pages/animation/AnimationDemo"),
           new Node2("@AnimatableExtend 结合 AnimatableArithmetic<T>（让不可动画属性支持属性动画）", "pages/animation/AnimatableExtendDemo"),
           new Node2("显式动画", "pages/animation/AnimationToDemo"),
@@ -270,6 +267,12 @@ struct Index {
           new Node2("一组件显示一组件消失时的过渡动画", "pages/animation/GeometryTransitionDemo"),
           new Node2("页面转场效果", "pages/animation/PageTransitionDemo", "pages/animation/PageTransitionDemo_1.ets|pages/animation/PageTransitionDemo_2.ets|pages/animation/PageTransitionDemo_3.ets"),
           new Node2("Curve（动画曲线）", "pages/animation/CurveDemo"),
+        ]),
+        new Node1("canvas", [
+          new Node2("canvas 基础，动画", "pages/canvas/CanvasDemo"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（简单图形，路径图形，贝塞尔曲线，Path2D，画笔样式，渐变色，图像色）", "pages/canvas/CanvasRenderingContext2DDemo"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（文本，图像，变换，透明，阴影）", "pages/canvas/CanvasRenderingContext2DDemo2"),
+          new Node2("通过 CanvasRenderingContext2D 绘制图形（图像滤镜，叠加绘制，图层，清除指定的区域，画布转图片，上下文的保存和加载）", "pages/canvas/CanvasRenderingContext2DDemo3"),
         ]),
         new Node1("资源", [
           new Node2("图标资源", "pages/resource/IconDemo"),
@@ -284,6 +287,7 @@ struct Index {
         new Node1("网络", [
           new Node2("http", "pages/network/HttpDemo", "/webapi/webapi/webserver.py"),
           new Node2("json", "pages/network/JsonDemo"),
+          new Node2("http server", "pages/network/HttpServerDemo"),
         ]),
         new Node1("后台", [
           new Node2("短时任务（应用退到后台之后，允许继续运行一段时间）", "pages/background/TransientTaskDemo"),
