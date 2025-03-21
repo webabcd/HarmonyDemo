@@ -54,7 +54,7 @@ struct HarDemo {
  * 导入的方法类似如下 import { MainPage as har2_MainPage } from 'har2'
  *
  * 引用第三方 har 包时，先在 https://ohpm.openharmony.cn/ 中找到需要的第三方包
- * 如果需要在全局项目中引用，则在全局目录下执行类似如下的命令即可 ohpm i @pura/harmony-dialog
+ * 如果需要在全局项目中引用，则在全局目录下执行类似如下的命令即可（注：命令中的 i 是 install 的意思） ohpm i @pura/harmony-dialog
  * 然后会发现，在全局项目中的 oh-package.json5 中多了类似如下的配置
  * {
  *   "dependencies": {
