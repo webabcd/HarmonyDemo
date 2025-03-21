@@ -232,7 +232,8 @@
     "pages/component/common/CustomComponentDemo",
     "pages/component/common/FocusDemo",
     "pages/component/common/ModifierDemo",
-    "pages/animation/AnimatorResultDemo"
+    "pages/animation/AnimatorResultDemo",
+    "pages/network/HttpServerDemo"
   ],
   "window": {
     "designWidth": 720,

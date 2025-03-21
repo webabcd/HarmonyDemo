@@ -11,6 +11,7 @@ struct Index {
     this.siteMap =
       [
         new Node1("临时测试用", [
+          new Node2("http server", "pages/network/HttpServerDemo"),
           new Node2("AnimatorResult（number 动画）", "pages/animation/AnimatorResultDemo"),
           new Node2("AttributeModifier, ContentModifier, DrawModifier, GestureModifier", "pages/component/common/ModifierDemo"),
           new Node2("焦点", "pages/component/common/FocusDemo"),
