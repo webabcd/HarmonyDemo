@@ -2,7 +2,7 @@
  * 通过 socket 实现一个 http server
  */
 
-import { TitleBar } from '../TitleBar'
+import { MyLog, TitleBar } from '../TitleBar'
 
 import { socket } from '@kit.NetworkKit'
 import { BusinessError } from '@kit.BasicServicesKit'
@@ -42,7 +42,8 @@ struct HttpServerDemo {
       client.on("message",  (value: socket.SocketMessageInfo)  => {
 
         // 将客户端发来的数据转为字符串
-        let requestData = buffer.from(value.message).toString('utf-8');
+        let requestData = buffer.from(value.message).toString('utf-8')
+        MyLog.d(`收到的客户端发来的数据: ${requestData}`)
         this.message += `收到的客户端发来的数据的前 20 个字符: ${requestData.substring(0, 20)}\n`
 
         // 解析 http 请求并生成响应数据
