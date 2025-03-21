@@ -89,7 +89,7 @@ struct HttpServerDemo {
       Text(this.message)
 
       Web({
-        src: 'http://127.0.0.1:8080?k1=v1',
+        src: 'http://127.0.0.1:8080/xxx?k1=v1',
         controller: this.controller
       })
         .javaScriptAccess(true)
