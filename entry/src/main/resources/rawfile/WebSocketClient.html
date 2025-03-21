@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>WebSocketClient</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    </head>
+    <body>
+
+        <button onclick="send();">发送数据到服务端</button>
+
+        <div id="lblMsg"></div>
+        
+        <script type="text/javascript">
+
+            var ws;
+
+            connect();
+            function connect()
+            {
+                if ("WebSocket" in window)
+                {
+                    // 创建一个 WebSocket 对象
+                    ws = new WebSocket("ws://127.0.0.1:8888/service");
+                    // 连接成功
+                    ws.onopen = function()
+                    {
+                        writeLine("WebSocket 连接上了");
+                    }
+                    // 收到数据
+                    ws.onmessage = function(evt)
+                    {
+                        writeLine(evt.data);
+                    }
+                    // 关闭了
+                    ws.onclose = function(evt)
+                    {
+                        writeLine("WebSocket 关闭了, code: " + evt.code + ", reason: " + evt.reason);
+                    }
+                    // 异常了
+                    ws.onerror = function(evt)
+                    {
+                        writeLine("WebSocket 发生错误, code: " + evt.code + ", reason: " + evt.reason);
+                    }
+                }
+                else
+                {
+                    writeLine("不支持 html5 WebSocket");
+                }
+            }
+
+            function send()
+            {
+                // 发送数据
+                ws.send(`timestamp: ${new Date().getTime()}`);
+            }
+        
+            function writeLine(msg)
+            {
+                msg = htmlEncode(msg);
+                msg = msg.replace(/\n/g, "<br />");
+
+                var line = document.createElement("span");
+                line.innerHTML = msg;
+                
+                var lblMsg = document.getElementById("lblMsg");
+                lblMsg.appendChild(line);
+                lblMsg.appendChild(document.createElement("br"));
+
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        
+            function htmlEncode(str)
+            {
+                var s = "";
+                if (str.length == 0) return "";
+                s = str.replace(/&/g, "&amp;");
+                s = s.replace(/</g, "&lt;");
+                s = s.replace(/>/g, "&gt;");
+                s = s.replace(/\'/g, "&#39;");
+                s = s.replace(/\"/g, "&quot;");
+                return s;
+            }
+        
+        </script>
+        
+    </body>
+</html>
