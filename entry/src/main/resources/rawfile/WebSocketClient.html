@@ -30,7 +30,7 @@
                     // 收到数据
                     ws.onmessage = function(evt)
                     {
-                        writeLine(evt.data);
+                        writeLine(`js 的 websocket 客户端收到数据: ${evt.data}`);
                     }
                     // 关闭了
                     ws.onclose = function(evt)
