@@ -1,8 +1,8 @@
-# HarmonyOS Demo
+# HarmonyOS Demo（鸿蒙开发的示例代码和说明）
 
+> [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-
 
 ### ArkTS 基础
 1. 基础
