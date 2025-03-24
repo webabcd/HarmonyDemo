@@ -1,6 +1,9 @@
 # HarmonyOS Demo
 
 
+### 临时测试用
+
+
 ### ArkTS 基础
 1. 基础
 - pages/arkts/basic/Basic
@@ -566,6 +569,9 @@
 - pages/network/JsonDemo
 3. http server
 - pages/network/HttpServerDemo
+4. WebSocket
+- pages/network/WebSocketDemo
+- /entry/src/main/resources/rawfile/WebSocketClient.html
 
 ### 后台
 1. 短时任务（应用退到后台之后，允许继续运行一段时间）
