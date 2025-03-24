@@ -64,10 +64,10 @@ struct StringDemo {
   MyLog.d(`${f.repeat(3)}`); // webabcd,webabcd,webabcd,
 
 
-  // `` 这玩意叫模板字符串（template string），可以在 ${} 中执行表达式或函数或变量等
+  // `` 这玩意叫模板字符串（template string），可以在 ${} 中执行表达式或函数或变量等（如果只是想输出 ${} 的原始字符，则可以使用 \ 转义符）
   // ` 叫做反引号
   let g = "webabcd"
-  MyLog.d(`hello: ${g}, ${g.length}`); // hello: webabcd, 7
+  MyLog.d(`hello: ${g}, ${g.length}, \$\{\}`); // hello: webabcd, 7, ${}
 
   // 可以通过 template string 定义多行文本
   let h = `123
