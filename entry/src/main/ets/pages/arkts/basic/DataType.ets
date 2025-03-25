@@ -67,6 +67,12 @@ struct DataTypeDemo {
 
   // 如果是对象类型，则需要通过 instanceof 判断具体的对象类型
   MyLog.d(`${b instanceof Date}`); // true
+
+  // 通过 Array.isArray() 判断是否是数组类型
+  MyLog.d(`${Array.isArray([1, 2, 3])}`); // true
+
+  // 通过 every() 判断数组中的元素是否均为指定的类型
+  MyLog.d(`${[1, 2, 3].every(item => typeof item === 'number')}`); // true
 }
 
 {
