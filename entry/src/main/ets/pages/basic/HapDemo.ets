@@ -7,6 +7,7 @@
 
 import { TitleBar } from '../TitleBar';
 import { common, Want } from '@kit.AbilityKit';
+import { Helper } from '../../utils/Helper';
 
 @Entry
 @Component
@@ -52,7 +53,7 @@ struct MySample1 {
           abilityName: 'com.webabcd.harmonydemo.Feature1Ability', // 需要打开的 feature ability 的名称（此名称是在 module.json5 中配置的）
           parameters: { // 传参
             'k1': 'v1',
-            'k2': 'v2',
+            'k2': `${Helper.getTimestampString()}`,
           }
         };
         // context.startAbility() - 拉起指定的 ability

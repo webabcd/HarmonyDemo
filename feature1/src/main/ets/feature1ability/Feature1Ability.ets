@@ -3,38 +3,31 @@ import { window } from '@kit.ArkUI';
 
 export default class Feature1Ability extends UIAbility {
 
-  want: Want | undefined
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    this.want = want
+    this.parseWantParameter(want)
   }
 
-  onDestroy(): void {
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.parseWantParameter(want)
+  }
 
+  // 解析 Want 中的参数，并保存在 AppStorage 中
+  parseWantParameter(want: Want) {
+    let k1 = ""
+    let k2 = ""
+    if (want.parameters?.k1) {
+      k1 = want.parameters.k1.toString()
+    }
+    if (want.parameters?.k2) {
+      k2 = want.parameters.k2.toString()
+    }
+    AppStorage.setOrCreate("k1", k1)
+    AppStorage.setOrCreate("k2", k2)
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
+    windowStage.loadContent('pages/Index', (err) => {
 
-    // 获取通过 Want 传递过来的数据
-    let k1 = this.want?.parameters?.k1
-    let k2 = this.want?.parameters?.k2
-
-    // 通过 LocalStorage 将数据传递给页面
-    let storage = LocalStorage.getShared()
-    storage.setOrCreate("k1", k1)
-    storage.setOrCreate("k2", k2)
-
-    windowStage.loadContent('pages/Index', storage);
-  }
-
-  onWindowStageDestroy(): void {
-
-  }
-
-  onForeground(): void {
-
-  }
-
-  onBackground(): void {
-
+    });
   }
 }

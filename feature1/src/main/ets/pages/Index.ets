@@ -1,14 +1,12 @@
-let storage: LocalStorage = LocalStorage.getShared()
-
-@Entry(storage)
+@Entry
 @Component
 struct Index {
-  @State message: string = 'hello feature1\n';
+  @State message: string = '';
 
-  aboutToAppear(): void {
-    // 获取 LocalStorage 中的数据（本例会在 UIAbility 中通过 windowStage.loadContent(path, localStorage) 传递 Want 中的数据）
-    this.message += `k1: ${storage.get("k1")}\n`
-    this.message += `k2: ${storage.get("k2")}`
+  onPageShow(): void {
+    // 获取 AppStorage 中的数据（本例会在 UIAbility 中解析 Want 中的参数，并保存在 AppStorage 中）
+    this.message = `k1: ${AppStorage.get("k1")}\n`
+    this.message += `k2: ${AppStorage.get("k2")}`
   }
 
   build() {
