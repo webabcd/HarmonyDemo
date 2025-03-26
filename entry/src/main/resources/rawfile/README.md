@@ -3,6 +3,8 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 剪切板
+- pages/ipc/PasteboardDemo
 
 ### ArkTS 基础
 1. 基础

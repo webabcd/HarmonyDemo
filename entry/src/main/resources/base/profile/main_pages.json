@@ -234,7 +234,8 @@
     "pages/component/common/ModifierDemo",
     "pages/animation/AnimatorResultDemo",
     "pages/network/HttpServerDemo",
-    "pages/network/WebSocketDemo"
+    "pages/network/WebSocketDemo",
+    "pages/ipc/PasteboardDemo"
   ],
   "window": {
     "designWidth": 720,
