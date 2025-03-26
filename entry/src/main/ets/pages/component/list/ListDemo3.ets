@@ -28,43 +28,63 @@ struct MySample1 {
 
   private array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   @State editFlag: boolean = false
+  @State selectedIndexSet: Set<number> = new Set<number>()
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
       /*
        * List - 编辑列表
-       * 本例用于演示，如何通过自己写代码的方式实现切换到所谓的编辑模式，以及在编辑模式下显示多选框
+       *   multiSelectable() - 是否支持多选
        *
-       * 注：我这里测试发现 ListItem 的 selectable(), selected(), onSelect() 和 List 的 multiSelectable() 均无效
+       * ListItem - list 内的每个 item
+       *   selectable() - 是否允许选中
+       *   selected() - 是否选中
+       *
+       * 注：本例用于演示，如何选中 ListItem，以及如何切换到显示多选框的编辑模式
        */
       List({ space: 20 }) {
-        ForEach(this.array, (item: number) => {
+        ForEach(this.array, (item: number, index: number) => {
           ListItem() {
             Row() {
               Text(item.toString()).height(100)
                 .layoutWeight(1)
                 .fontSize(48).fontColor(Color.White).textAlign(TextAlign.Center)
-                .stateStyles({
-                  // 普通状态的样式
-                  normal: {
-                    .backgroundColor(Color.Orange).borderRadius(20)
-                  },
-                  // 手指按下时的样式
-                  pressed: {
-                    .backgroundColor(Color.Blue).borderRadius(5)
-                  },
-                })
 
               if (this.editFlag) {
                 Blank(10)
                 Checkbox().width(24).height(24)
+                  .select(this.selectedIndexSet.has(index) ? true: false)
+                  .onChange((value:boolean) => {
+                    if (value) {
+                      this.selectedIndexSet.add(index)
+                    } else {
+                      this.selectedIndexSet.delete(index)
+                    }
+                  })
               }
             }
           }
+          .stateStyles({
+            // 普通状态的样式
+            normal: {
+              .backgroundColor(Color.Orange).borderRadius(20)
+            },
+            // 手指按下时的样式
+            pressed: {
+              .backgroundColor(Color.Blue).borderRadius(5)
+            },
+            // 选中时的样式
+            selected: {
+              .backgroundColor(Color.Green).borderRadius(5)
+            },
+          })
+          .selectable(true)
+          .selected(this.selectedIndexSet.has(index) ? true: false)
         })
       }
       .width('100%')
       .height('100%')
+      .multiSelectable(true)
 
       Button('切换编辑模式')
         .onClick(() => {
@@ -113,8 +133,6 @@ struct MySample2 {
        * List - 编辑列表
        * 本例用于演示，如何通过自定义的方式实现 ListItem 的拖动排序
        * 另外，通过 ForEach 可以更方便地实现 ListItem 的拖动排序，详见 /component/list/ListDemo5.ets 中的说明
-       *
-       * 注：我这里测试发现 List 的 onItemDragStart(), onItemDragEnter(), onItemDragMove(), onItemDragLeave(), onItemDrop() 均无效
        */
       List({ space: 20, initialIndex: 0 }) {
         ForEach(this.array, (item: string) => {

@@ -79,6 +79,7 @@ struct MySample2 {
 
   @State array: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
   @State editFlag: boolean = false
+  @State selectedIndexSet: Set<number> = new Set<number>()
 
   build() {
     Column({space:10}) {
@@ -89,40 +90,58 @@ struct MySample2 {
 
       /*
        * Grid - 网格
-       * 本例用于演示，如何通过自己写代码的方式实现切换到所谓的编辑模式，以及在编辑模式下显示多选框
+       *   multiSelectable() - 是否支持多选
        *
-       * 注：我这里测试发现 GridItem 的 selectable(), selected(), onSelect() 和 Grid 的 multiSelectable() 均无效
+       * GridItem - grid 内的每个 item
+       *   selectable() - 是否允许选中
+       *   selected() - 是否选中
+       *
+       * 注：本例用于演示，如何选中 GridItem，以及如何切换到显示多选框的编辑模式
        */
       Grid() {
-        ForEach(this.array, (item: string) => {
+        ForEach(this.array, (item: string, index: number) => {
           GridItem() {
             Row() {
               Text(item).height(80)
                 .layoutWeight(1)
                 .fontSize(48).fontColor(Color.White).textAlign(TextAlign.Center)
-                .stateStyles({
-                  // 普通状态的样式
-                  normal: {
-                    .backgroundColor(Color.Orange).borderRadius(20)
-                  },
-                  // 手指按下时的样式
-                  pressed: {
-                    .backgroundColor(Color.Blue).borderRadius(5)
-                  },
-                })
 
               if (this.editFlag) {
                 Blank(10)
                 Checkbox().width(24).height(24).margin({right:5})
+                  .select(this.selectedIndexSet.has(index) ? true: false)
+                  .onChange((value:boolean) => {
+                    if (value) {
+                      this.selectedIndexSet.add(index)
+                    } else {
+                      this.selectedIndexSet.delete(index)
+                    }
+                  })
               }
             }
-
-          }.backgroundColor(Color.Orange)
+          }
+          .stateStyles({
+            // 普通状态的样式
+            normal: {
+              .backgroundColor(Color.Orange).borderRadius(20)
+            },
+            // 手指按下时的样式
+            pressed: {
+              .backgroundColor(Color.Blue).borderRadius(5)
+            },
+            // 选中时的样式
+            selected: {
+              .backgroundColor(Color.Green).borderRadius(5)
+            },
+          })
+          .selectable(true)
+          .selected(this.selectedIndexSet.has(index) ? true: false)
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(10)
+      .multiSelectable(true)
       .backgroundColor(Color.Yellow)
       .height(300)
     }
