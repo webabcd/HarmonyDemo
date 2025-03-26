@@ -235,7 +235,11 @@
     "pages/animation/AnimatorResultDemo",
     "pages/network/HttpServerDemo",
     "pages/network/WebSocketDemo",
-    "pages/ipc/PasteboardDemo"
+    "pages/ipc/PasteboardDemo",
+    "pages/ipc/WantDemo",
+    "pages/ipc/DeepLinkingDemo",
+    "pages/ipc/AppLinkingDemo",
+    "pages/component/webview/WebDemo2"
   ],
   "window": {
     "designWidth": 720,

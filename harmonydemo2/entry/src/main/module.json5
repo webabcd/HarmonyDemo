@@ -1,0 +1,53 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "com.webabcd.harmonydemo2.EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          },
+          // 作为 deep linking 的目标应用，需要做类似如下的配置
+          {
+            // actions 不能为空，随便配置一个值就好
+            "actions": [
+              "action.app.scheme.webabcd"
+            ],
+            "uris": [
+              {
+                // deep linking 的协议名
+                "scheme": "webabcd",
+                // deep linking 的域名
+                "host": "a.b.c"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

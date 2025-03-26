@@ -5,6 +5,14 @@
 ### 临时测试用
 1. 剪切板
 - pages/ipc/PasteboardDemo
+2. xxx
+- pages/ipc/WantDemo
+3. Deep Linking
+- pages/ipc/DeepLinkingDemo
+4. App Linking
+- pages/ipc/AppLinkingDemo
+5. Web
+- pages/component/webview/WebDemo2
 
 ### ArkTS 基础
 1. 基础
