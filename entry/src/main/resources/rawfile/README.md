@@ -9,8 +9,14 @@
 - pages/ipc/WantDemo
 3. Deep Linking
 - pages/ipc/DeepLinkingDemo
-4. App Linking
 - pages/ipc/AppLinkingDemo
+- /entry/src/main/resources/rawfile/DeepLinking.html
+- /harmonydemo2/entry/src/main/module.json5
+- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
+- /harmonydemo2/entry/src/main/ets/pages/Index.ets
+4. App Linking
+
+
 5. Web
 - pages/component/webview/WebDemo2
 

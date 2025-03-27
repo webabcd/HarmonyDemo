@@ -3,7 +3,7 @@
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",
-    "mainElement": "EntryAbility",
+    "mainElement": "com.webabcd.harmonydemo2.EntryAbility",
     "deviceTypes": [
       "phone",
       "tablet",
@@ -37,12 +37,13 @@
             "actions": [
               "action.app.scheme.webabcd"
             ],
+            // 配置 deep linking 的地址，本例为 webabcd://a.b.c
             "uris": [
               {
                 // deep linking 的协议名
                 "scheme": "webabcd",
                 // deep linking 的域名
-                "host": "a.b.c"
+                "host": "a.b.c",
               }
             ]
           }

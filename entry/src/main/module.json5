@@ -13,6 +13,9 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages", // 用于描述页面的信息（参见 /entry/src/main/resources/base/profile/main_pages.json）
+    "querySchemes": [ // 当前应用可以通过 canOpenLink() 判断当前设备中是否存在支持指定协议（这个协议必须在 querySchemes 中配置，最多 50 个）的应用
+      "webabcd"
+    ],
     "abilities": [
       {
         "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的名称（自定义标识）
