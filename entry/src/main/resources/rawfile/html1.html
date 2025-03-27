@@ -10,60 +10,21 @@
 <div id="div"></div>
 
 <div>
-    <button onclick="alertSample();">alert</button>
-</div>
-
-<div>
-    <button onclick="confirmSample();">confirm</button>
-</div>
-
-<div>
-    <button onclick="promptSample();">prompt</button>
-</div>
-
-<div>
-    <button onclick="consoleSample();">console</button>
+    <button onclick="js2arkts();">js 调用 arkts</button>
 </div>
 
 <script>
 
-    // 用于演示在 webview 中使用本地存储
-    localStorage.setItem("name", "webabcd");
-    const name = localStorage.getItem("name");
-    document.getElementById('div').innerHTML = `name: ${name}<br/>`
-
-    // 用于演示在 webview 中拦截 alert
-    function alertSample() {
-        alert("i am alert")
-        document.getElementById('div').innerHTML += `alert ok<br/>`
+    // 用于演示在 webview 中通过 arkts 调用 js
+    function arkts2js(name) {
+        return `hello:${name}`
     }
 
-    // 用于演示在 webview 中拦截 confirm
-    function confirmSample() {
-        let r = confirm("i am confirm");
-        if (r == true) {
-            document.getElementById('div').innerHTML += `confirm ok<br/>`
-        } else {
-            document.getElementById('div').innerHTML += `confirm cancel<br/>`
-        }
-    }
-
-    // 用于演示在 webview 中拦截 prompt
-    function promptSample() {
-        let message = prompt("i am prompt");
-        if (message != null) {
-            document.getElementById('div').innerHTML += `prompt ${message}<br/>`
-        } else {
-            document.getElementById('div').innerHTML += `prompt cancel<br/>`
-        }
-    }
-
-    // 用于演示在 webview 中拦截 console
-    function consoleSample() {
-        console.debug("console debug")
-        console.info("console info")
-        console.warn("console warn")
-        console.error("console error")
+    // 用于演示在 webview 中通过 js 调用 arkts
+    function js2arkts() {
+        // 在 webview 中通过 WebviewController 的 registerJavaScriptProxy 注册了名为 jsObj 的 js 对象（并指定此 js 对象包括 js2arkts 方法）
+        let result = jsObj.js2arkts("webabcd")
+        document.getElementById('div').innerHTML += `js2arkts ${result}<br/>`
     }
 
 </script>

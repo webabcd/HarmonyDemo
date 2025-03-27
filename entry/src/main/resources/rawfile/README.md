@@ -3,24 +3,25 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-1. 剪切板
-- pages/ipc/PasteboardDemo
-2. Deep Linking
+1. Deep Linking
 - pages/ipc/DeepLinkingDemo
 - /entry/src/main/resources/rawfile/DeepLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-3. App Linking
+2. App Linking
 - pages/ipc/AppLinkingDemo
 - /entry/src/main/resources/rawfile/AppLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-4. Want
+3. Want
 - pages/ipc/WantDemo
-5. Web
+4. 剪切板
+- pages/ipc/PasteboardDemo
+5. Web（拦截）
 - pages/component/webview/WebDemo2
+- /entry/src/main/resources/rawfile/html2.html
 
 ### ArkTS 基础
 1. 基础
@@ -462,7 +463,6 @@
 1. Web（基础）
 - pages/component/webview/WebDemo
 - /entry/src/main/resources/rawfile/html1.html
-- /entry/src/main/resources/rawfile/html2.html
 
 ### 输入
 1. 触摸类输入
