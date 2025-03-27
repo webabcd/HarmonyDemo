@@ -46,6 +46,30 @@
                 "host": "a.b.c",
               }
             ]
+          },
+          // 作为 app linking 的目标应用，需要做类似如下的配置
+          {
+            // entities 必须配置为 entity.system.browsable
+            "entities": [
+              "entity.system.browsable"
+            ],
+            // actions 必须配置为 ohos.want.action.viewData
+            "actions": [
+              "ohos.want.action.viewData"
+            ],
+            // 配置 app linking 的地址，本例为 https://x.y.z
+            "uris": [
+              {
+                // app linking 的协议名，必须配置为 https
+                "scheme": "https",
+                // app linking 的域名
+                "host": "x.y.z",
+                // app linking 的 path，这是可选的，当需要一套域名匹配不同的应用时，则可以通过 path 区分
+                "path": ""
+              }
+            ],
+            // domainVerify 必须配置为 true
+            "domainVerify": true
           }
         ]
       }

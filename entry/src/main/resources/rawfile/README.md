@@ -5,18 +5,20 @@
 ### 临时测试用
 1. 剪切板
 - pages/ipc/PasteboardDemo
-2. xxx
-- pages/ipc/WantDemo
-3. Deep Linking
+2. Deep Linking
 - pages/ipc/DeepLinkingDemo
-- pages/ipc/AppLinkingDemo
 - /entry/src/main/resources/rawfile/DeepLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-4. App Linking
-
-
+3. App Linking
+- pages/ipc/AppLinkingDemo
+- /entry/src/main/resources/rawfile/AppLinking.html
+- /harmonydemo2/entry/src/main/module.json5
+- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
+- /harmonydemo2/entry/src/main/ets/pages/Index.ets
+4. Want
+- pages/ipc/WantDemo
 5. Web
 - pages/component/webview/WebDemo2
 

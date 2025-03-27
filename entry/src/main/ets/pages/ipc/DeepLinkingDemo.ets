@@ -3,7 +3,7 @@
  *
  * 注：本例演示的 deep linking 的目标应用请参见 harmonydemo2 项目
  *
- * 在 deep linking 的目标应用的 module.json5 中做类似如下的配置
+ * 1、在 deep linking 的目标应用的 module.json5 中做类似如下的配置
  * {
  *   "module": {
  *     "abilities": [
@@ -26,12 +26,12 @@
  *             ]
  *           }
  *         ]
- *      }
+ *       }
  *     ]
  *   }
  * }
  *
- * 在 deep linking 的调用方的 module.json5 中做类似如下的配置（用于让调用方判断设备中是否存在支持指定协议的应用）
+ * 2、在 deep linking 的调用方的 module.json5 中做类似如下的配置（用于让调用方判断设备中是否存在支持指定协议的应用）
  * {
  *   "module": {
  *     "querySchemes": [ // 当前应用可以通过 canOpenLink() 判断当前设备中是否存在支持指定协议（这个协议必须在 querySchemes 中配置，最多 50 个）的应用
@@ -41,7 +41,7 @@
  * }
  */
 
-import { MyLog, TitleBar } from '../TitleBar';
+import { TitleBar } from '../TitleBar';
 import { bundleManager, common, OpenLinkOptions, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Helper } from '../../utils/Helper';
@@ -121,8 +121,8 @@ struct MySample2 {
        *     link - deep linking 地址
        *     options - 选项（一个 OpenLinkOptions 对象）
        *       appLinkingOnly - 是否仅以 app linking 的方式打开
-       *         true - 有 app linking 匹配的应用则打开，没有则抛出异常
-       *         false - 优先尝试以 app linking 的方式打开应用，然后再以 deep linking 的方式打开应用
+       *         true - 仅以 app linking 的方式打开
+       *         false - 优先尝试以 app linking 的方式打，然后再以 deep linking 的方式打开
        *       parameters - 传参，目标 app 可以从 want 中获取
        */
       Button('通过 openLink 拉起 app').onClick(() => {
@@ -138,9 +138,9 @@ struct MySample2 {
         };
 
         context.openLink(link, openLinkOptions).then(() => {
-          MyLog.d('openLink 成功');
+          this.message = 'openLink 成功';
         }).catch((err: BusinessError) => {
-          MyLog.d(`openLink 失败 errCode:${err.code}, errMessage:${err.message}`);
+          this.message = `openLink 失败 errCode:${err.code}, errMessage:${err.message}`;
         });
       })
     }
@@ -176,9 +176,9 @@ struct MySample3 {
         };
 
         context.startAbility(want).then(() => {
-          MyLog.d('startAbility 成功');
+          this.message = 'startAbility 成功';
         }).catch((err: BusinessError) => {
-          MyLog.d(`startAbility 失败 errCode:${err.code}, errMessage:${err.message}`);
+          this.message = `startAbility 失败 errCode:${err.code}, errMessage:${err.message}`;
         });
       })
     }
@@ -188,10 +188,13 @@ struct MySample3 {
 @Component
 struct MySample4 {
 
+  @State message: string = ""
   controller: webview.WebviewController = new webview.WebviewController();
 
   build() {
     Column({space:10}) {
+
+      Text(this.message)
 
       /*
        * 通过 webview 显示 html，然后拦截跳转请求，如果发现是 deep linking 连接，则通过 openLink() 做 deep linking 跳转
@@ -202,9 +205,9 @@ struct MySample4 {
           const url: string = event.data.getRequestUrl();
           if (url.startsWith("webabcd://")) {
             context.openLink(url).then(() => {
-              MyLog.d('startAbility 成功');
+              this.message = 'startAbility 成功';
             }).catch((err: BusinessError) => {
-              MyLog.d(`startAbility 失败 errCode:${err.code}, errMessage:${err.message}`);
+              this.message = `startAbility 失败 errCode:${err.code}, errMessage:${err.message}`;
             });
             // 阻止此次跳转
             return true;

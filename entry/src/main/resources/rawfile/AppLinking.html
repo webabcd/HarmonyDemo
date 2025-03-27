@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>app linking</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    </head>
+    <body>
+
+        <p>
+            <button onclick="openLink()">通过 app linking 跳转至指定的应用</button>
+        </p>
+
+        <p>
+            <a href="https://x.y.z?p1=xyz">通过 app linking 跳转至指定的应用</a>
+        </p>
+
+        <script type="text/javascript">
+            function openLink() {
+                window.open("https://x.y.z/api?p1=xyz")
+            }
+        </script>
+
+    </body>
+</html>
