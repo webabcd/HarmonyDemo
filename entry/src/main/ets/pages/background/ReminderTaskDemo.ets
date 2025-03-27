@@ -93,7 +93,7 @@ struct MySample1 {
        * 2、打开设置 app 并进入到想要的设置页面
        * 3、比如 wifi 设置页面，则可以在日志中找到 my router: wifi_entry
        */
-      uri: 'SettingsHome'
+      uri: 'systemui_notification_settings'
     };
 
     /*
