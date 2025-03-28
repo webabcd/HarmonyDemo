@@ -164,7 +164,7 @@ struct MySample4 {
   @State pixelMap: PixelMap | undefined = undefined
 
   async aboutToAppear() {
-    this.pixelMap = await this.getPixmapFromMedia($r('app.media.son'))
+    this.pixelMap = await this.getPixmapFromResource($r('app.media.son'))
   }
 
   build() {
@@ -175,7 +175,7 @@ struct MySample4 {
   }
 
   // 图片资源转 PixelMap 对象
-  private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
+  private async getPixmapFromResource(resource: Resource): Promise<image.PixelMap> {
     // 资源转 Uint8Array 对象
     let uint8Array = await getContext(this).resourceManager.getMediaContent({
       bundleName: resource.bundleName,

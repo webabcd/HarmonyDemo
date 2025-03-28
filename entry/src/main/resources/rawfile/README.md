@@ -22,6 +22,7 @@
 5. Web（拦截）
 - pages/component/webview/WebDemo2
 - /entry/src/main/resources/rawfile/html2.html
+- /entry/src/main/resources/rawfile/html3.html
 
 ### ArkTS 基础
 1. 基础
