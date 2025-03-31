@@ -3,23 +3,27 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-1. Deep Linking
+1. 通知（授权，文本，进度条，角标）
+- pages/notification/NotificationDemo
+2. 通知（更新，删除，跳转，渠道）
+- pages/notification/NotificationDemo2
+3. Deep Linking
 - pages/ipc/DeepLinkingDemo
 - /entry/src/main/resources/rawfile/DeepLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-2. App Linking
+4. App Linking
 - pages/ipc/AppLinkingDemo
 - /entry/src/main/resources/rawfile/AppLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-3. Want
+5. Want
 - pages/ipc/WantDemo
-4. 剪切板
+6. 剪切板
 - pages/ipc/PasteboardDemo
-5. Web（拦截）
+7. Web（拦截）
 - pages/component/webview/WebDemo2
 - /entry/src/main/resources/rawfile/html2.html
 - /entry/src/main/resources/rawfile/html3.html
