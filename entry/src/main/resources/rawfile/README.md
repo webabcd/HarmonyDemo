@@ -3,6 +3,8 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 保存文件到媒体库
+- pages/media/MediaLibraryDemo
 1. 通知（授权，文本，进度条，角标）
 - pages/notification/NotificationDemo
 2. 通知（更新，删除，跳转，渠道）

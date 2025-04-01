@@ -241,7 +241,8 @@
     "pages/ipc/AppLinkingDemo",
     "pages/component/webview/WebDemo2",
     "pages/notification/NotificationDemo",
-    "pages/notification/NotificationDemo2"
+    "pages/notification/NotificationDemo2",
+    "pages/media/MediaLibraryDemo"
   ],
   "window": {
     "designWidth": 720,
