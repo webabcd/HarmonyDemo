@@ -61,7 +61,7 @@ struct MySample1 {
    *     BarPosition.End - 在底部或右侧
    *   index - 当前选中的页签的索引位置
    *   controller - 绑定的 TabsController 对象
-   *   vertical() - 页签栏和内容区是垂直排列还是水平排列
+   *   vertical() - 页签栏中的页签是垂直排列还是水平排列
    *   scrollable() - 是否允许在内容区通过滑动手势切换页签
    *   barMode() - 页签栏的布局模式（BarMode 枚举）
    *     Fixed - 页签栏不可滚动，每个页签的宽度会被平均分配
