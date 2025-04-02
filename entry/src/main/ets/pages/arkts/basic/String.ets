@@ -95,3 +95,46 @@ struct StringDemo {
   }
   MyLog.d(i`key1: ${"value1"}, key2: ${"value2"}`); // key1: value1, key2: value2
 }
+
+
+// 正则表达式
+{
+  // test() - 用于检查字符串是否匹配正则表达式
+  let regex1 = new RegExp(/IJK/ig)
+  MyLog.d(`${regex1.test("abxijkxyz")}`) // true
+
+  // exec() - 对字符串执行正则表达式，并返回匹配结果
+  let regex2 = new RegExp(/hello: (.*), age: (.*)/ig)
+  let execResult = regex2.exec("hello: webabcd, age: 44")
+  if (execResult) {
+    MyLog.d(execResult[0]) // hello: webabcd, age: 44
+    MyLog.d(execResult[1]) // webabcd
+    MyLog.d(execResult[2]) // 44
+  } else {
+    MyLog.d("未匹配")
+  }
+
+  // match() - 在字符串中查找与正则表达式匹配的内容，并返回匹配结果
+  let matchResult = "hello: webabcd, age: 44".match(new RegExp(/hello: (.*), age: (.*)/))
+  if (matchResult) {
+    MyLog.d(matchResult[0]) // hello: webabcd, age: 44
+    MyLog.d(matchResult[1]) // webabcd
+    MyLog.d(matchResult[2]) // 44
+  } else {
+    MyLog.d("未匹配")
+  }
+
+  // replace() - 通过正则表达式替换
+  let a = "hello webabcd, hello wanglei".replace(new RegExp(/hello/ig), "hi")
+  MyLog.d(a) // hi webabcd, hi wanglei
+  let b = "I am <name>webabcd</name><age>44</age>".replace(new RegExp(/<name>(.*?)<\/name><age>(.*?)<\/age>/ig), "$1, age $2") //
+  MyLog.d(b) // I am webabcd, age 44
+
+  // split() - 通过正则表达式 split
+  let c = "abc123ijk456xyz".split(/\d+/);
+  MyLog.d(c.join(',')) // abc,ijk,xyz
+
+  // search() - 通过正则表达式查找匹配的字符串在原字符串中的索引位置
+  let d = "hello webabcd".search(new RegExp(/webabcd/))
+  MyLog.d(`${d}`) // 6
+}
