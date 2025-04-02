@@ -56,7 +56,25 @@ struct MySample1 {
       Text(this.message)
 
       Button("杀死当前 UIAbility").onClick(() => {
+        /*
+         * getContext(this) - 获取上下文对象
+         * UIAbilityContext - 上下文对象
+         *   terminateSelf() - 杀死当前 UIAbility
+         *
+         * 注：
+         * 当调用 terminateSelf() 杀死当前 UIAbility 后，在最近任务列表中仍会保留其快照
+         * 如果不需要这个快照，则需要将 module.json5 中的 abilities 的 removeMissionAfterTerminate 设置为 true
+         */
         this.context.terminateSelf()
+      })
+
+      Button("杀死全部 UIAbility").onClick(() => {
+        /*
+         * ApplicationContext - 应用级上下文对象
+         *   killAllProcesses() - 杀死全部 UIAbility
+         * 注：杀死全部后，如果某个 UIAbility 不需要在最近任务列表中显示一个快照，则需要将 module.json5 中的 abilities 的 removeMissionAfterTerminate 设置为 true
+         */
+        this.context.getApplicationContext().killAllProcesses()
       })
 
       Button("杀死当前 UIAbility 并返回结果给父 UIAbility").onClick(() => {

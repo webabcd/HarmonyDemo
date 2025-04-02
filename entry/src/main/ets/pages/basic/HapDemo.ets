@@ -33,7 +33,8 @@ struct HapDemo {
  * 每个 hap 可以包含多个 UIAbility，每个 UIAbility 可以包含多个页面
  * 右键单击全局项目，然后 New -> Module... -> Empty Ability 即可创建新的模块，一个项目包含的模块和模块的地址是在项目的 build-profile.json5 中配置的
  * 如需调试，则先选择需要运行的模块，然后点击运行即可（注：当 feature 更新后，需要先运行它，这样才能从 entry 跳转到更新后的 feature）
- * 如需编译打包，则在 Build 菜单中，可以编译每个 hap 包（编译后每个 hap 模块都会生成一个对应的 .hap 文件），也可以把所有 hap 打包为一个 app（编译后是一个 .app 文件）
+ * 如需编译打包，则在 Build 菜单中，可以编译每个 hap 包（编译后每个 hap 模块都会生成一个对应的 .hap 文件），也可以把所有 .hap 和 .hsp 打包为一个 app（编译后是一个 .app 文件，用于分发和上架）
+ * 一个应用中的所有 .hap 和 .hsp 文件合在一起称为 bundle，在 AppScope 中的 app.json5 配置的 bundleName 为其唯一标识
  */
 @Component
 struct MySample1 {

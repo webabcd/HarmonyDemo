@@ -1,6 +1,8 @@
 /*
  * 资源
  *
+ *
+ * 下面以 module 级的资源为例做说明
  * src/main/resources/base/ - 默认资源目录（此内的文件会被编译且赋予资源文件 ID）
  *   element - 用于存放字符串，整型，颜色值等（不支持子目录）
  *   media - 用于存放媒体数据（不支持子目录）
@@ -16,6 +18,10 @@
  *     屏幕密度：sdpi, mdpi, ldpi, xldpi, xxldpi, xxxldpi
  * src/main/resources/rawfile/ - 此内的文件会被直接打进包中，不会被编译（支持子目录）
  * src/main/resources/resfile/ - 此内的文件会被直接打进包中，不会被编译，第一次安装后会被复制到应用的沙箱路径中（支持子目录）
+ *
+ *
+ * app 级的资源在 AppScope 目录内，目录结构与 module 级的资源一致，编译后 AppScope 的资源会合并到 module 的资源中，对于重名资源来说只会保留 AppScope 中的资源
+ * 另外 AppScope 中的 app.json5 中的字段也会在编译后合并到 module 的 module.json5 中
  */
 
 import { TitleBar } from '../TitleBar'
@@ -117,6 +123,9 @@ struct MySample1 {
 
       // 显示一个 PixelMap 对象
       Image(this.pixelMap).width(100).height(100)
+
+      // 使用应用级的资源，来自 /AppScope/resources/base/media/app_icon.png
+      Image($r('app.media.app_icon')).width(100).height(100)
 
       Text(this.message)
     }

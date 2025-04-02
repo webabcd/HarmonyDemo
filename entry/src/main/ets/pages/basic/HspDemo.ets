@@ -30,6 +30,7 @@ struct HspDemo {
  * HSP（Harmony Shared Package）是动态共享包
  * 右键单击全局项目，然后 New -> Module... -> Shared Library 即可创建新 hsp 包
  * 在 hsp 项目中的 oh-package.json5 的 main 指定的文件中，配置需要导出的功能
+ * 一个应用中的所有 .hap 和 .hsp 文件合在一起称为 bundle，在 AppScope 中的 app.json5 配置的 bundleName 为其唯一标识
  *
  * 源码方式引用本地的 hsp 模块时，如果需要在 entry 模块中引用，则在 entry/oh-package.json5 中做类似如下的配置
  * {

@@ -49,6 +49,10 @@ struct MySample1 {
          * getContext(this) - 获取上下文对象
          * UIAbilityContext - 上下文对象
          *   terminateSelf() - 杀死当前 UIAbility
+         *
+         * 注：
+         * 当调用 terminateSelf() 杀死当前 UIAbility 后，在最近任务列表中仍会保留其快照
+         * 如果不需要这个快照，则需要将 module.json5 中的 abilities 的 removeMissionAfterTerminate 设置为 true
          */
         let context = getContext(this) as common.UIAbilityContext;
         context.terminateSelf()

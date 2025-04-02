@@ -29,6 +29,7 @@ ets 的全称是 extended typescript
 文件结构及说明如下
 HarmonyDemo                         // 项目名称
 |---AppScope
+|   |---resources                   // 应用级的资源
 |   |---app.json5                   // 应用级的配置
 |---entry                           // 模块名称
 |   |---src

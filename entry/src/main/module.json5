@@ -35,7 +35,8 @@
           // "audioRecording", // 录音、录屏
           // "location", // 定位
           // "bluetoothInteraction", // 蓝牙传输
-        ]
+        ],
+        "removeMissionAfterTerminate": true // 当调用 terminateSelf() 杀死当前 UIAbility 时，是否需要将其从在最近任务列表中删除（默认值为 false）
       },
       {
         "name": "com.webabcd.harmonydemo.EntryAbility2",
