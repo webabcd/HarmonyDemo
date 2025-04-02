@@ -106,17 +106,21 @@ f4(1, 2, )
   };
 }
 
-{
-  // 虽然不支持函数重载，但是可以通过如下方式达到函数重载的效果
-  let myFunc = (x: number | string): number | string | void => {
-    if (typeof x == 'number') {
-      return x * 2;
-    } else if (typeof x == 'string') {
-      return `hello ${x}`;
-    } else {
-      // void
-    }
+// 声明函数重载签名（仅开发时用，编译后就去掉了，实际调用的是函数重载的实现）
+function myFunc(x: number): number
+function myFunc(x: string): string
+// 函数重载的实现
+function myFunc(x: number | string): number | string | void {
+  if (typeof x == 'number') {
+    return x * 2;
+  } else if (typeof x == 'string') {
+    return `hello ${x}`;
+  } else {
+    // void
   }
+}
+{
+  // 用于演示如何实现函数重载
   MyLog.d(`${myFunc(100)}, ${myFunc("webabcd")}`); // 200, hello webabcd
 }
 

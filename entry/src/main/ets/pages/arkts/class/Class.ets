@@ -28,7 +28,7 @@ struct ClassDemo {
     name:string;
     // 只读属性（在构造函数中初始化）
     readonly id:number;
-    // 构造函数
+    // 构造函数（注：关于构造函数的重载，与函数的重载差不多，请参见 Function.ets 中的相关说明）
     constructor(name:string, id:number) {
       this.name = name;
       this.id = id;

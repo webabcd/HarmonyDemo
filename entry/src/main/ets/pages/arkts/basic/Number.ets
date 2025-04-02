@@ -16,6 +16,13 @@ struct NumberDemo {
   // 将指定类型的数据转换为 number 类型
   MyLog.d(`${Number("100")}, ${Number(true)}, ${Number({})}, ${Number([])}`); // 100, 1, NaN, 0
 
+  // number 类型的最大安全整数为 Number.MAX_SAFE_INTEGER，如果超过了此值就会失去精度
+  // bigint 类型可以精确表示任意大的整数，不会失去精度，在数字后面加个 n 即代表此数字为 bigint 类型
+  let a: number = 9999999999999999999999999999999999999
+  let b: bigint = 9999999999999999999999999999999999999n
+  MyLog.d(`${typeof a}, ${a}`) // number, 1e+37
+  MyLog.d(`${typeof b}, ${b}`) // bigint, 9999999999999999999999999999999999999
+
   // 将数字格式化为字符串
   MyLog.d(1234.56789.toString()); // 1234.56789
   MyLog.d((32).toString(16)); // 20
