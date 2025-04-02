@@ -49,7 +49,7 @@ struct CommonStyleDemo {
           .position({ right: 0, top: 0 })
       }.width('90%').height(50).backgroundColor(Color.Orange).align(Alignment.BottomEnd)
 
-      // markAnchor() - 设置组件相对于父组件在其原本位置上的偏移量（x > 0 向左偏移，y > 0 向上偏移）
+      // markAnchor() - 定位锚点的偏移量，用于设置组件相对于父组件在其原本位置上的偏移量（x > 0 向左偏移，y > 0 向上偏移）
       //   可以指定一个 Position 对象，即 x/y 值
       //   也可以指定一个 Edges 对象，即 top/right/bottom/left 值
       //   单位可以是 vp, px, lpx, 百分比等
