@@ -3,7 +3,7 @@
  * 需要在 module.json5 中的 module 的 srcEntry 中配置对应的 AbilityStage 的代码的地址
  */
 
-import { AbilityStage, Want } from '@kit.AbilityKit';
+import { AbilityConstant, AbilityStage, Configuration, Want } from '@kit.AbilityKit';
 
 export default class MyAbilityStage extends AbilityStage {
 
@@ -18,5 +18,16 @@ export default class MyAbilityStage extends AbilityStage {
     //   如果相同 specified 标识的 UIAbility 已存在，则热启动它（启动已存在的实例）
     //   如果相同 specified 标识的 UIAbility 不存在，则冷启动它（创建新的实例，并启动）
     return `${want.parameters?.specifiedKey ?? ""}`
+  }
+
+  // 内存占用级别发生变化时的回调
+  // MEMORY_LEVEL_MODERATE - 内存占用适中
+  // MEMORY_LEVEL_LOW - 内存占用低
+  // MEMORY_LEVEL_CRITICAL - 内存占用高
+  onMemoryLevel(level: AbilityConstant.MemoryLevel): void {
+  }
+
+  // 全局的环境配置发生变化时的回调（比如系统语言，深色浅色模式等）
+  onConfigurationUpdate(newConfig: Configuration): void {
   }
 }

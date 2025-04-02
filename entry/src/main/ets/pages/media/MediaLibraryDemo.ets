@@ -1,5 +1,7 @@
 /*
  * 保存文件到媒体库
+ *
+ * 注：如果需要任意存取相册中的文件，则需要申请 ACL 权限
  */
 
 import { TitleBar } from '../TitleBar'
