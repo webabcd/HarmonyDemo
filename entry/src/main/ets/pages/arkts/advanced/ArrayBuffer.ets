@@ -15,10 +15,12 @@ struct ArrayBufferDemo {
 {
   /**
    * 1、ArrayBuffer - 内存之中的一段二进制数据，需要通过视图操作数据
-   * 2、TypedArray - 视图，用于操作 ArrayBuffer 对象，TypedArray 的具体类型如下
+   * 2、TypedArray - 视图，用于操作 ArrayBuffer 对象（注：ArrayBuffer 的长度无法改变），TypedArray 的具体类型如下
    *    Int8Array, Uint8Array, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array
-   * 3、DataView - 视图，用于操作 ArrayBuffer 对象，其可以通过如下方法操作 ArrayBuffer 对象
+   * 3、DataView - 视图，用于操作 ArrayBuffer 对象（注：ArrayBuffer 的长度无法改变），其可以通过如下方法操作 ArrayBuffer 对象
    *    setInt8/getInt8, setUint8/getUint8, setInt16/getInt16, setUint16/getUint16, setInt32/getInt32, setUint32/getUint32, setFloat32/getFloat32, setFloat64/getFloat64
+   *
+   * 注：ArrayBuffer 是一种固定大小的二进制缓冲区，其长度在创建时确定，之后不可修改
    */
 
 
@@ -70,7 +72,7 @@ struct ArrayBufferDemo {
   // 8, 7, 2, 4, 4, 4, 4
 
 
-  // TypedArray 包含有大部分的 Array 的方法，具体用法请参见 array 的说明
+  // 对 TypedArray 的查询相关的方法与 Array 基本类似，具体用法请参见 array 的说明
 
 
   let j = new Int32Array([1, 2, 3, 4]);
