@@ -34,7 +34,7 @@ struct VideoDemo {
 
       /*
        * Video - 视频播放器
-       *   src - 视频地址
+       *   src - 视频地址（注：如果要播放沙箱地址，别忘了加上 file://，比如 file:///data/storage/el2/base/haps/entry/files/test.mp4）
        *   previewUri - 预览图
        *   currentProgressRate - 播放倍速
        *     PlaybackSpeed.Speed_Forward_0_75_X 或 0.75
