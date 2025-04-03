@@ -39,6 +39,10 @@ struct DataTypeDemo {
   let f2: object = new Date();
 
   // 注：ArkTS 不支持 typescript 的 any 和 unknown
+
+  // 非要用 any 的话可以使用 ESObject（注：ESObject 是 any 的别名）
+  let x: ESObject = new Date();
+  MyLog.d(`${x.getTime()}`); // 1743665460665
 }
 
 {
