@@ -42,17 +42,30 @@ struct MySample1 {
        *   alt - 用于指定图片在加载过程中的占位图
        */
 
-      // 显示资源中的图片文件
-      Image($r('app.media.son'))
-        .width(50).height(50)
+      Row() {
+        // 显示资源中的图片文件
+        Image($r('app.media.son'))
+          .width(50).height(50)
 
-      // 显示 ets 目录下的图片文件（注：文件需要放在 /src/main/ets 目录下，然后通过类似如下的方式引用）
-      Image('/pages/component/media/son.jpg')
-        .width(50).height(50)
+        // 显示 ets 目录下的图片文件（注：文件需要放在 /src/main/ets 目录下，然后通过类似如下的方式引用）
+        Image('/pages/component/media/son.jpg')
+          .width(50).height(50)
 
-      // 显示 resources 目录下的图片文件（注：文件需要放在 /src/main/resources 目录下，然后通过类似如下的方式引用）
-      Image('/resources/base/media/son.jpg')
-        .width(50).height(50)
+        // 显示 resources 目录下的图片文件（注：文件需要放在 /src/main/resources 目录下，然后通过类似如下的方式引用）
+        Image('/resources/base/media/son.jpg')
+          .width(50).height(50)
+
+        // 显示资源中 rawfile 目录中的图片文件
+        Image($rawfile('son.jpg'))
+          .width(50).height(50)
+
+        // 显示资源中 resfile 目录中的图片文件（其会在第一次安装后被复制到应用的沙箱路径中）
+        // 注：别忘了加上 file://（地址类似 file:///data/storage/el1/bundle/entry/resources/resfile/son.jpg）
+        Image(`file://${getContext().resourceDir + "/son.jpg"}`)
+          .width(50).height(50)
+      }
+      .width('100%')
+      .justifyContent(FlexAlign.SpaceAround)
 
       // 显示网络图片
       Image('https://www.baidu.com/img/flexible/logo/pc/result.png')

@@ -18,6 +18,7 @@
  *     屏幕密度：sdpi, mdpi, ldpi, xldpi, xxldpi, xxxldpi
  * src/main/resources/rawfile/ - 此内的文件会被直接打进包中，不会被编译（支持子目录）
  * src/main/resources/resfile/ - 此内的文件会被直接打进包中，不会被编译，第一次安装后会被复制到应用的沙箱路径中（支持子目录）
+ *   注：可以通过 context.resourceDir 获取 resfile 对应的沙箱目录
  *
  *
  * app 级的资源在 AppScope 目录内，目录结构与 module 级的资源一致，编译后 AppScope 的资源会合并到 module 的资源中，对于重名资源来说只会保留 AppScope 中的资源
