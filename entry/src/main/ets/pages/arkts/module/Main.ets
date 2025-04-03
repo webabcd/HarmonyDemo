@@ -56,3 +56,9 @@ MyLog.d(`h: ${obj_h.name} ${obj_h.hello()}`);
 MyLog.d(`j: ${j.name}`);
 MyLog.d(`k: ${k.name}`);
 MyLog.d(`l: ${l.name}`);
+
+// 动态 import（注：ESObject 是 any 的别名）
+import('./m').then((ns:ESObject) => {
+  MyLog.d(`m: ${ns.add(1, 2)}`); // m: 3
+})
+
