@@ -5,27 +5,29 @@
 ### 临时测试用
 1. 保存文件到媒体库
 - pages/media/MediaLibraryDemo
-1. 通知（授权，文本，进度条，角标）
+2. 从媒体库读取文件
+- pages/media/MediaLibraryDemo2 
+3. 通知（授权，文本，进度条，角标）
 - pages/notification/NotificationDemo
-2. 通知（更新，删除，跳转，渠道）
+4. 通知（更新，删除，跳转，渠道）
 - pages/notification/NotificationDemo2
-3. Deep Linking
+5. Deep Linking
 - pages/ipc/DeepLinkingDemo
 - /entry/src/main/resources/rawfile/DeepLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-4. App Linking
+6. App Linking
 - pages/ipc/AppLinkingDemo
 - /entry/src/main/resources/rawfile/AppLinking.html
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
-5. Want
+7. Want
 - pages/ipc/WantDemo
-6. 剪切板
+8. 剪切板
 - pages/ipc/PasteboardDemo
-7. Web（拦截）
+9. Web（拦截）
 - pages/component/webview/WebDemo2
 - /entry/src/main/resources/rawfile/html2.html
 - /entry/src/main/resources/rawfile/html3.html
