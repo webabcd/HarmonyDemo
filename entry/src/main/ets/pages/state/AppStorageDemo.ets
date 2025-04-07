@@ -32,7 +32,7 @@ if (AppStorage.get('key3') == undefined) {
 struct AppStorageDemo {
   /*
    * AppStorage 与 @StorageLink(key) 的指定 key 的数据会做双向同步
-   * AppStorage 与 @StorageLink(key) 的指定 key 的数据会做 AppStorage 到 @StorageLink 的单向同步
+   * AppStorage 与 @StorageProp(key) 的指定 key 的数据会做 AppStorage 到 @StorageLink 的单向同步
    */
   @StorageLink('key1') link_key1: number = 0;
   @StorageLink('key2') link_key2: Person = new Person(0);
@@ -50,7 +50,7 @@ struct AppStorageDemo {
         this.link_key1 += 1;
       })
 
-      Button(`link_key2: ${this.link_key2.age}`) .onClick(() => {
+      Button(`link_key2: ${this.link_key2.age}`).onClick(() => {
         this.link_key2.age += 1;
       })
 
