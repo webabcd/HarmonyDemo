@@ -38,7 +38,7 @@
  * }
  */
 
-import { TitleBar } from '../TitleBar';
+import { RadioBar, TitleBar } from '../TitleBar';
 import { systemShare } from '@kit.ShareKit';
 import { uniformTypeDescriptor as utd } from '@kit.ArkData';
 import { common } from '@kit.AbilityKit';
@@ -130,8 +130,15 @@ struct MySample2 {
 
   context = getContext(this) as common.UIAbilityContext
 
+  @State previewMode: systemShare.SharePreviewMode = systemShare.SharePreviewMode.DEFAULT
+  valueList =  ["DEFAULT", "DETAIL"]
+
   build() {
     Column({space:10}) {
+
+      RadioBar({valueList: this.valueList, onChange: (selectedIndex: number) => {
+        this.previewMode = systemShare.SharePreviewMode[this.valueList[selectedIndex]]
+      }})
 
       Text(this.message)
 
@@ -185,7 +192,7 @@ struct MySample2 {
         let controller: systemShare.ShareController = new systemShare.ShareController(shareData)
         controller.show(this.context, {
           selectionMode: systemShare.SelectionMode.SINGLE,
-          previewMode: systemShare.SharePreviewMode.DETAIL
+          previewMode: this.previewMode
         }).then(() => {
           this.message = "打开系统分享面板成功"
         }).catch((error: BusinessError) => {
