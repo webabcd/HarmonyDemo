@@ -243,7 +243,8 @@
     "pages/notification/NotificationDemo",
     "pages/notification/NotificationDemo2",
     "pages/media/MediaLibraryDemo",
-    "pages/media/MediaLibraryDemo2"
+    "pages/media/MediaLibraryDemo2",
+    "pages/ipc/ShareDemo"
   ],
   "window": {
     "designWidth": 720,

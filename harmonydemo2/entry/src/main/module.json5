@@ -31,6 +31,7 @@
               "action.system.home"
             ]
           },
+
           // 作为 deep linking 的目标应用，需要做类似如下的配置
           {
             // actions 不能为空，随便配置一个值就好
@@ -47,6 +48,7 @@
               }
             ]
           },
+
           // 作为 app linking 的目标应用，需要做类似如下的配置
           {
             // entities 必须配置为 entity.system.browsable
@@ -70,6 +72,29 @@
             ],
             // domainVerify 必须配置为 true
             "domainVerify": true
+          },
+
+          // 作为系统分享的目标应用，需要做类似如下的配置
+          {
+            "actions": [
+              "ohos.want.action.sendData"
+            ],
+            "uris": [
+              {
+                // 系统分享的目标应用的协议名，必须配置为 file
+                "scheme": "file",
+                // 可接收数据的标准化数据类型
+                // 分享源分享此 utd 的数据时，当前应用会显示在分享面板中
+                "utd": "general.text",
+                // 可接收的分享数据的最大数量
+                "maxFileSupported": 1
+              },
+              {
+                "scheme": "file",
+                "utd": "general.jpeg",
+                "maxFileSupported": 1
+              }
+            ]
           }
         ]
       }

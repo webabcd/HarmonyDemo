@@ -3,6 +3,11 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 系统分享
+- pages/ipc/ShareDemo
+- /harmonydemo2/entry/src/main/module.json5
+- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
+- /harmonydemo2/entry/src/main/ets/pages/Index.ets
 1. 保存文件到媒体库
 - pages/media/MediaLibraryDemo
 2. 从媒体库读取文件
