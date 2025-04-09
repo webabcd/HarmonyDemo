@@ -26,7 +26,7 @@ struct MediaLibraryDemo {
   }
 }
 
-// 将指定的资源文件保存到指定的沙箱目录
+// 将指定的资源文件复制到指定的沙箱目录
 async function copyFile(src: Resource, dst: string) {
   let context = getContext() as common.UIAbilityContext;
   let resourceManager = context.resourceManager
@@ -107,11 +107,11 @@ struct MySample1 {
 
             let imagePath = this.context.filesDir + '/abc.jpg'
 
-            // 将指定的资源文件保存到指定的沙箱目录
+            // 将指定的资源文件复制到指定的沙箱目录
             try {
               await copyFile($r('app.media.son'), imagePath)
             } catch (error) {
-              this.message = `将指定的资源文件保存到指定的沙箱目录时失败：${JSON.stringify(error)}`
+              this.message = `将指定的资源文件复制到指定的沙箱目录时失败：${JSON.stringify(error)}`
             }
 
             // 保存沙箱文件到相册
@@ -160,11 +160,11 @@ struct MySample2 {
 
         let imagePath = this.context.filesDir + '/abc.jpg'
 
-        // 将指定的资源文件保存到指定的沙箱目录
+        // 将指定的资源文件复制到指定的沙箱目录
         try {
           await copyFile($r('app.media.son'), imagePath)
         } catch (error) {
-          this.message = `将指定的资源文件保存到指定的沙箱目录时失败：${JSON.stringify(error)}`
+          this.message = `将指定的资源文件复制到指定的沙箱目录时失败：${JSON.stringify(error)}`
         }
 
         try {
@@ -203,11 +203,11 @@ struct MySample2 {
       Button("向媒体库中已有权限的地址写入数据").onClick(async () => {
 
         let imagePath = this.context.filesDir + '/xyz.jpg'
-        // 将指定的资源文件保存到指定的沙箱目录
+        // 将指定的资源文件复制到指定的沙箱目录
         try {
           await copyFile($r('app.media.app_icon'), imagePath)
         } catch (error) {
-          this.message = `将指定的资源文件保存到指定的沙箱目录时失败：${JSON.stringify(error)}`
+          this.message = `将指定的资源文件复制到指定的沙箱目录时失败：${JSON.stringify(error)}`
         }
 
         // 向媒体库中已有权限的地址写入数据

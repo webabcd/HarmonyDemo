@@ -99,7 +99,7 @@ struct MySample1 {
           // 需要将选中的文件保存到的沙箱地址
           this.sandboxImageUrl = "file://" + getContext(this).filesDir + '/test.jpg'
 
-          // 将从相册中选中的图片保存到指定的沙箱地址
+          // 将从相册中选中的图片复制到指定的沙箱地址
           let albumImageFile = fs.openSync(this.albumImageUrl, fs.OpenMode.READ_ONLY)
           let sandboxImageFile = fs.openSync(this.sandboxImageUrl, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC)
           fs.copyFileSync(albumImageFile.fd, sandboxImageFile.fd)
