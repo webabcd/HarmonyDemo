@@ -91,6 +91,19 @@
         "name": "com.webabcd.harmonydemo.MyWorkSchedulerExtensionAbility", // 自定义标识
         "srcEntry": "./ets/pages/background/MyWorkSchedulerExtensionAbility.ets", // 延迟任务对应的代码的地址
         "type": "workScheduler" // 当前的 ExtensionAbility 的类型为延迟任务
+      },
+      {
+        "name": "com.webabcd.harmonydemo.EntryFormAbility", // 自定义标识
+        "srcEntry": "./ets/entryformability/EntryFormAbility.ets", // 卡片对应的 extension ability 的代码地址
+        "label": "$string:EntryAbility_label",
+        "description": "$string:EntryAbility_desc",
+        "type": "form", // 当前的 ExtensionAbility 的类型为卡片
+        "metadata": [
+          {
+            "name": "ohos.extension.form", // 卡片的 metadata 的 name 必须是 ohos.extension.form
+            "resource": "$profile:form_config" // 卡片的相关配置，详见 src/main/resources/profile/form_config.json 中的配置
+          }
+        ]
       }
     ],
     "routerMap": "$profile:route_map", // 指定路由表，详见 src/main/resources/profile/route_map.json 中的配置
@@ -99,7 +112,7 @@
         "name": "ohos.permission.INTERNET", // 请求 Internet 网络的权限
         "reason": "$string:hello_webabcd", // 申请此权限的原因
         "usedScene": {
-          "abilities": [ ],
+          "abilities": [ ], // 需要使用此权限的 ability 的名称，配置为空则所有 ability 均可以使用此权限
           "when":"always" // inuse（使用时允许使用此权限），always（始终允许使用此权限）
         }
       },
@@ -107,7 +120,7 @@
         "name": "ohos.permission.KEEP_BACKGROUND_RUNNING", // 请求长时任务的权限
         "reason": "$string:hello_webabcd", // 申请此权限的原因
         "usedScene": {
-          "abilities": [ ],
+          "abilities": [ ], // 需要使用此权限的 ability 的名称，配置为空则所有 ability 均可以使用此权限
           "when": "always" // inuse（使用时允许使用此权限），always（始终允许使用此权限）
         }
       },
@@ -115,7 +128,7 @@
         "name": "ohos.permission.PUBLISH_AGENT_REMINDER", // 请求提醒任务的权限
         "reason": "$string:hello_webabcd", // 申请此权限的原因
         "usedScene": {
-          "abilities": [ ],
+          "abilities": [ ], // 需要使用此权限的 ability 的名称，配置为空则所有 ability 均可以使用此权限
           "when": "always" // inuse（使用时允许使用此权限），always（始终允许使用此权限）
         }
       }

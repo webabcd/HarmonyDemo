@@ -244,7 +244,11 @@
     "pages/notification/NotificationDemo2",
     "pages/media/MediaLibraryDemo",
     "pages/media/MediaLibraryDemo2",
-    "pages/ipc/ShareDemo"
+    "pages/ipc/ShareDemo",
+    "pages/widget/StaticWidgetDemo",
+    "pages/widget/DynamicWidgetDemo",
+    "pages/basic/ContextDemo",
+    "pages/widget/FormLinkDemo"
   ],
   "window": {
     "designWidth": 720,

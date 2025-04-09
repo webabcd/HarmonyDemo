@@ -3,6 +3,22 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 静态卡片
+- pages/widget/StaticWidgetDemo
+- /harmonydemo/entry/src/main/module.json5
+- /harmonydemo/entry/src/main/resources/base/profile/form_config.json
+- /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
+- /harmonydemo/entry/src/main/ets/widget/pages/StaticWidgetCard.ets
+1. FormLink（为静态卡片提供与应用交互的功能）
+- pages/widget/FormLinkDemo
+- /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
+- /harmonydemo/entry/src/main/ets/widget/pages/FormLinkCard.ets
+1. 动态卡片
+- pages/widget/DynamicWidgetDemo
+- /harmonydemo/entry/src/main/module.json5
+- /harmonydemo/entry/src/main/resources/base/profile/form_config.json
+- /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
+- /harmonydemo/entry/src/main/ets/widget/pages/DynamicWidgetCard.ets
 1. 系统分享
 - pages/ipc/ShareDemo
 - /harmonydemo2/entry/src/main/module.json5

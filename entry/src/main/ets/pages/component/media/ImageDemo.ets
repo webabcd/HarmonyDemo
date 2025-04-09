@@ -28,6 +28,7 @@ struct ImageDemo {
 @Component
 struct MySample1 {
 
+  // ResourceStr 的意思是 string | Resource
   @State resourceStr:ResourceStr = ""
   aboutToAppear() {
     setTimeout(() => this.resourceStr = $r('app.media.son'), 3000);

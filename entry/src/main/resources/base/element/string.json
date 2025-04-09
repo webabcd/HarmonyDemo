@@ -15,6 +15,22 @@
     {
       "name": "hello_webabcd",
       "value": "hello webabcd"
+    },
+    {
+      "name": "staticWidget_desc",
+      "value": "static widget description"
+    },
+    {
+      "name": "staticWidget_display_name",
+      "value": "static widget"
+    },
+    {
+      "name": "formLink_desc",
+      "value": "FormLink description"
+    },
+    {
+      "name": "formLink_display_name",
+      "value": "FormLink"
     }
   ]
 }
