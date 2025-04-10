@@ -10,7 +10,8 @@ struct FormLinkDemo {
 
   @State message: string = "FormLink 的演示请参见：\n" +
     "/entryformability/EntryFormAbility.ets\n" +
-    "/widget/pages/FormLinkCard.ets"
+    "/widget/pages/FormLinkCard.ets" +
+    "/entryability/EntryAbility.ets"
 
   build() {
     Column({space:10}) {

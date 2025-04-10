@@ -92,9 +92,11 @@ export default class EntryFormAbility extends FormExtensionAbility {
     }
   }
 
+  // 卡片通过 message 的方式传递数据时，会触发此回调
   onFormEvent(formId: string, message: string) {
-    MyLog.d(`onFormEvent: ${formId}, ${message}`)
+    MyLog.d(`onFormEvent: ${formId}, ${message}`) // 此处的 message 参数就是 message 方式传递过来的数据
 
+    // 更新指定的卡片
     let formData: Record<string, string> = {
       'content': Helper.getTimestampString() // 卡片中可以通过 @LocalStorageProp('content') 引用此值
     };

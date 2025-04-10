@@ -13,6 +13,7 @@
 - pages/widget/FormLinkDemo
 - /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
 - /harmonydemo/entry/src/main/ets/widget/pages/FormLinkCard.ets
+- /harmonydemo/entry/src/main/ets/entryability/EntryAbility.ets 
 1. FormMenu
 - pages/widget/FormMenuDemo 
 1. 动态卡片
