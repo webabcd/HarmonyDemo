@@ -282,7 +282,7 @@ struct MySample3 {
    * MenuItemGroup - Menu 内的 MenuItem 分组
    *   header, footer - 组的 header 和 footer，可以指定一个字符串或自定义组件
    *
-   * MenuItem - Menu 内的或 MenuItemGroup 内的菜单项
+   * MenuItem - Menu 内的或 MenuItemGroup 内的菜单项（可以指定一个 MenuItemOptions 对象或一个自定义组件）
    *   startIcon, symbolStartIcon - 左侧图标
    *   endIcon, symbolEndIcon - 右侧图标
    *   content - 左侧内容
