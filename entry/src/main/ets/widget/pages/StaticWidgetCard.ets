@@ -17,6 +17,8 @@ struct StaticWidgetCard {
   @LocalStorageProp('height') cardHeight: string = ''
   @LocalStorageProp('dimension') cardDimension: string = ''
 
+  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(new RenderingContextSettings(true))
+
   build() {
     // 关于 FormLink 的详细说明请参见 FormLinkCard.ets
     FormLink({
@@ -36,6 +38,12 @@ struct StaticWidgetCard {
 
           // 在卡片上更新一个文本（需要在 FormExtensionAbility 把更新后的文本传过来，请参见 /entryformability/EntryFormAbility.ets 中的说明）
           Text(this.content)
+
+          // 卡片中也支持 Canvas 组件
+          Canvas(this.context).width(20).height(20).onReady(() => {
+            this.context.fillStyle = '#ff0000';
+            this.context.fillRect(0, 0, 20, 20);
+          })
 
           // 卡片 id
           Text(`formId: ${this.cardId}`)
