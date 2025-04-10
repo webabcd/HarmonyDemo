@@ -40,8 +40,9 @@ struct MySample1 {
        *   startAbility() - 拉起指定 want 的 app
        *
        * Want - 需要拉起的 ability 的相关信息
-       *   bundleName - 需要拉起的 app 的 bundleName
-       *   abilityName - 需要拉起的 app 的 abilityName
+       *   bundleName - bundle 的名称
+       *   moduleName - module 的名称
+       *   abilityName - ability 的名称
        *   parameters - 传参，目标 app 可以从 want 中获取
        *
        * 注：本例演示的目标应用请参见 harmonydemo2 项目
