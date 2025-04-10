@@ -2,7 +2,7 @@
   "module": {
     "name": "entry", // 当前 module 的名称
     "type": "entry", // 当前 module 的类型
-    "srcEntry": "./ets/entryability/MyAbilityStage.ets", // 当前 module 的对应的 AbilityStage 的代码的地址
+    "srcEntry": "./ets/MyAbilityStage.ets", // 当前 module 的对应的 AbilityStage 的代码的地址
     "description": "$string:module_desc", // 当前 module 的描述
     "mainElement": "com.webabcd.harmonydemo.EntryAbility", // 当前 module 的入口 ability 的名称（ability 必须是 exported 为 true 的）
     "deviceTypes": [
@@ -44,7 +44,7 @@
         "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",
         "startWindowIcon": "$media:startIcon",
-        "startWindowBackground": "$color:start_window_background",
+        "startWindowBackground": "$color:start_window_background"
       },
       {
         "name": "com.webabcd.harmonydemo.EntryAbility_singleton",
@@ -53,7 +53,7 @@
         "label": "$string:EntryAbility_label",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
-        "launchType": "singleton", // 指定当前 ability 的启动方式为 singleton 方式（详见 /basic/LaunchTypeDemo.ets 中的相关说明）
+        "launchType": "singleton" // 指定当前 ability 的启动方式为 singleton 方式（详见 /basic/LaunchTypeDemo.ets 中的相关说明）
       },
       {
         "name": "com.webabcd.harmonydemo.EntryAbility_multiton",
@@ -85,7 +85,7 @@
             "name": "ohos.extension.backup",
             "resource": "$profile:backup_config"
           }
-        ],
+        ]
       },
       {
         "name": "com.webabcd.harmonydemo.MyWorkSchedulerExtensionAbility", // 自定义标识

@@ -1,8 +1,9 @@
 /*
  * HAP（Harmony Ability Package） - 应用安装和运行的基本单元
  *
+ * AbilityStage 是 HAP 的容器，当需要加载 HAP 的入口 UIAbility 实例时，会先创建 AbilityStage 实例
  * 每个 HAP 都会对应一个 AbilityStage，需要在 module.json5 中的 module 的 srcEntry 中配置对应的 AbilityStage 的代码的地址
- * 当前 HAP 对应的 AbilityStage 请参见 /entry/src/main/ets/entryability/MyAbilityStage.ets 中的代码
+ * 当前 HAP 对应的 AbilityStage 请参见 /entry/src/main/ets/MyAbilityStage.ets 中的代码
  */
 
 import { TitleBar } from '../TitleBar';

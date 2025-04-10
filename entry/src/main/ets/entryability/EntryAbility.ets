@@ -11,7 +11,7 @@ export default class EntryAbility extends UIAbility {
 
   // UIAbility 实例创建完成时（冷启动）
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    MyLog.d('ability onCreate');
+    MyLog.d(`ability onCreate, parameters:${JSON.stringify((want.parameters))}`);
   }
 
   // 当 UIAbility 已经启动了，之后再次启动时（热启动）

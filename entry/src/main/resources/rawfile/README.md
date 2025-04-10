@@ -162,10 +162,10 @@
 - /entry/src/main/ets/entryability/EntryAbility_singleton.ets
 - /entry/src/main/ets/entryability/EntryAbility_multiton.ets
 - /entry/src/main/ets/entryability/EntryAbility_specified.ets
-- /entry/src/main/ets/entryability/MyAbilityStage.ets
+- /entry/src/main/ets/MyAbilityStage.ets
 8. HAP（Harmony Ability Package）
 - pages/basic/HapDemo
-- /entry/src/main/ets/entryability/MyAbilityStage.ets
+- /entry/src/main/ets/MyAbilityStage.ets
 - /feature1/src/main/ets/feature1ability/Feature1Ability.ets
 - /feature1/src/main/ets/pages/Index.ets
 9. HSP（Harmony Shared Package）
