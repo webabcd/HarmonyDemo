@@ -44,6 +44,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
     /*
      * formBindingData.createFormBindingData() - 创建一个 FormBindingData 对象
+     * formBindingData.FormBindingData - 需要传递给卡片的数据
      *   此对象中的字段的值，可以在卡片中通过 @LocalStorageProp 引用
      */
     let formData: Record<string, string | Record<string, number>> = {
@@ -68,6 +69,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
     /*
      * formBindingData.createFormBindingData() - 创建一个 FormBindingData 对象
+     * formBindingData.FormBindingData - 需要传递给卡片的数据
      *   此对象中的字段的值，可以在卡片中通过 @LocalStorageProp 引用
      * formProvider.updateForm() - 更新指定的卡片
      *   formId - 卡片 id

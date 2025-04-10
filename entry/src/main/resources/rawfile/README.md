@@ -14,8 +14,9 @@
 - /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
 - /harmonydemo/entry/src/main/ets/widget/pages/FormLinkCard.ets
 - /harmonydemo/entry/src/main/ets/entryability/EntryAbility.ets 
-1. FormMenu
-- pages/widget/FormMenuDemo 
+1. AddFormMenuItem（在应用内添加卡片）
+- pages/widget/AddFormMenuItemDemo
+- /harmonydemo/entry/src/main/resources/base/profile/form_config.json
 1. 动态卡片
 - pages/widget/DynamicWidgetDemo
 - /harmonydemo/entry/src/main/module.json5
