@@ -4,7 +4,6 @@
  * 静态卡片仅支持 UI 组件布局
  * 动态卡片除了支持 UI 组件布局外，还支持组件的通用事件方法以及自定义动画效果，可以用于需要交互的场景
  *
- * 先参见静态卡片 StaticWidgetDemo.ets 中的相关说明，动态卡片在静态卡片的基础上增加了对组件的通用事件方法以及自定义动画效果的支持
  *
  * 1、需要在 src/main/module.json5 中添加卡片类型的 extension ability
  * 2、卡片的相关配置，在 src/main/resources/profile/form_config.json
