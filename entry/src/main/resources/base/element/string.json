@@ -25,6 +25,14 @@
       "value": "static widget"
     },
     {
+      "name": "dynamicWidget_desc",
+      "value": "dynamic widget description"
+    },
+    {
+      "name": "dynamicWidget_display_name",
+      "value": "dynamic widget"
+    },
+    {
       "name": "formLink_desc",
       "value": "FormLink description"
     },

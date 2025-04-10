@@ -26,6 +26,27 @@
       "defaultDimension": "2*2"
     },
     {
+      "name": "dynamic widget",
+      "displayName": "$string:dynamicWidget_display_name",
+      "description": "$string:dynamicWidget_desc",
+      "src": "./ets/widget/pages/DynamicWidgetCard.ets",
+      "uiSyntax": "arkts",
+      "window": {
+        "designWidth": 720,
+        "autoDesignWidth": true
+      },
+      "colorMode": "auto",
+      "isDynamic": true,
+      "isDefault": false,
+      "updateEnabled": true,
+      "scheduledUpdateTime": "09:30",
+      "updateDuration": 1,
+      "supportDimensions": [
+        "4*4"
+      ],
+      "defaultDimension": "4*4"
+    },
+    {
       "name": "FormLink",
       "displayName": "$string:formLink_display_name",
       "description": "$string:formLink_desc",
