@@ -12,6 +12,7 @@ struct StaticWidgetCard {
   @LocalStorageProp('content') content: string = ''
   @LocalStorageProp('myImage') myImage: string = ''
 
+  @LocalStorageProp('formId') cardId: string = ''
   @LocalStorageProp('width') cardWidth: string = ''
   @LocalStorageProp('height') cardHeight: string = ''
   @LocalStorageProp('dimension') cardDimension: string = ''
@@ -36,6 +37,8 @@ struct StaticWidgetCard {
           // 在卡片上更新一个文本（需要在 FormExtensionAbility 把更新后的文本传过来，请参见 /entryformability/EntryFormAbility.ets 中的说明）
           Text(this.content)
 
+          // 卡片 id
+          Text(`formId: ${this.cardId}`)
           // 卡片的规格（1代表1*2, 2代表2*2, 3代表2*4, 4代表4*4, 7代表6*4）
           Text(`cardDimension: ${this.cardDimension}`)
           // 卡片的宽

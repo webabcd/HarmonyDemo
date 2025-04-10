@@ -47,6 +47,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
      *   此对象中的字段的值，可以在卡片中通过 @LocalStorageProp 引用
      */
     let formData: Record<string, string | Record<string, number>> = {
+      'formId': `${want.parameters!['ohos.extra.param.key.form_identity']}`, // 卡片 id
       'dimension': `${want.parameters!['ohos.extra.param.key.form_dimension']}`, // 卡片的规格（1代表1*2, 2代表2*2, 3代表2*4, 4代表4*4, 7代表6*4）
       'width': `${want.parameters!['ohos.extra.param.key.form_width']}`, // 卡片的宽
       'height': `${want.parameters!['ohos.extra.param.key.form_height']}`, // 卡片的高

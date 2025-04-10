@@ -248,7 +248,8 @@
     "pages/widget/StaticWidgetDemo",
     "pages/widget/DynamicWidgetDemo",
     "pages/basic/ContextDemo",
-    "pages/widget/FormLinkDemo"
+    "pages/widget/FormLinkDemo",
+    "pages/widget/FormMenuDemo"
   ],
   "window": {
     "designWidth": 720,
