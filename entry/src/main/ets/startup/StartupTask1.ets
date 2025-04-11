@@ -5,6 +5,7 @@
 import { StartupTask, common } from '@kit.AbilityKit';
 import { MyLog } from '../pages/TitleBar';
 
+// 因为 StartupTask 采用了 Sendable 协议，所以这里必须要通过 @Sendable 装饰
 @Sendable
 export default class StartupTask1 extends StartupTask {
   constructor() {
