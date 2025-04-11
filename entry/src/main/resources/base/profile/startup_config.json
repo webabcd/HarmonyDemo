@@ -1,0 +1,37 @@
+{
+  "configEntry": "./ets/startup/MyStartupConfigEntry.ets",
+  "startupTasks": [
+    {
+      "name": "StartupTask1",
+      "srcEntry": "./ets/startup/StartupTask1.ets",
+      "dependencies": [
+        "StartupTask2",
+        "StartupTask3"
+      ],
+      "runOnThread": "mainThread",
+      "waitOnMainThread": false
+    },
+    {
+      "name": "StartupTask2",
+      "srcEntry": "./ets/startup/StartupTask2.ets",
+      "dependencies": [ ],
+      "runOnThread": "mainThread",
+      "waitOnMainThread": false
+    },
+    {
+      "name": "StartupTask3",
+      "srcEntry": "./ets/startup/StartupTask3.ets",
+      "dependencies": [ ],
+      "runOnThread": "mainThread",
+      "waitOnMainThread": false
+    },
+    {
+      "name": "StartupTask4",
+      "srcEntry": "./ets/startup/StartupTask4.ets",
+      "dependencies": [ ],
+      "runOnThread": "mainThread",
+      "waitOnMainThread": false,
+      "excludeFromAutoStart": true
+    }
+  ]
+}

@@ -3,6 +3,14 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 启动任务
+- pages/basic/AppStartupDemo
+- /harmonydemo/entry/src/main/resources/base/profile/startup_config.json
+- /harmonydemo/entry/src/main/ets/startup/MyStartupConfigEntry.ets
+- /harmonydemo/entry/src/main/ets/startup/StartupTask1.ets
+- /harmonydemo/entry/src/main/ets/startup/StartupTask2.ets
+- /harmonydemo/entry/src/main/ets/startup/StartupTask3.ets
+- /harmonydemo/entry/src/main/ets/startup/StartupTask4.ets
 1. 静态卡片
 - pages/widget/StaticWidgetDemo
 - /harmonydemo/entry/src/main/module.json5

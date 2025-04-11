@@ -249,7 +249,8 @@
     "pages/widget/DynamicWidgetDemo",
     "pages/basic/ContextDemo",
     "pages/widget/FormLinkDemo",
-    "pages/widget/AddFormMenuItemDemo"
+    "pages/widget/AddFormMenuItemDemo",
+    "pages/basic/AppStartupDemo"
   ],
   "window": {
     "designWidth": 720,

@@ -3,6 +3,7 @@
     "name": "entry", // 当前 module 的名称
     "type": "entry", // 当前 module 的类型
     "srcEntry": "./ets/MyAbilityStage.ets", // 当前 module 的对应的 AbilityStage 的代码的地址
+    "appStartup": "$profile:startup_config", // 启动任务的配置文件
     "description": "$string:module_desc", // 当前 module 的描述
     "mainElement": "com.webabcd.harmonydemo.EntryAbility", // 当前 module 的入口 ability 的名称（ability 必须是 exported 为 true 的）
     "deviceTypes": [
