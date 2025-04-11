@@ -37,7 +37,7 @@ struct MySample1 {
 
   valueList = ["UNSPECIFIED", "PORTRAIT", "LANDSCAPE", "PORTRAIT_INVERTED", "LANDSCAPE_INVERTED", "AUTO_ROTATION", "AUTO_ROTATION_PORTRAIT", "AUTO_ROTATION_LANDSCAPE", "AUTO_ROTATION_RESTRICTED", "AUTO_ROTATION_PORTRAIT_RESTRICTED", "AUTO_ROTATION_LANDSCAPE_RESTRICTED", "LOCKED", "AUTO_ROTATION_UNSPECIFIED", "USER_ROTATION_PORTRAIT", "USER_ROTATION_LANDSCAPE", "USER_ROTATION_PORTRAIT_INVERTED", "USER_ROTATION_LANDSCAPE_INVERTED", "FOLLOW_DESKTOP"]
 
-  aboutToAppear() {
+  async aboutToAppear() {
     let callback = async () => {
       /*
        * display.getDefaultDisplaySync() - 旋转后，显示设备的相关信息
@@ -50,10 +50,15 @@ struct MySample1 {
        *     LANDSCAPE_INVERTED - 反向横屏（竖屏顺时针旋转 270 度）
        */
       let newDisplay: display.Display = display.getDefaultDisplaySync();
-      this.message += `orientation:${newDisplay.orientation}, width:${newDisplay.width}, height:${newDisplay.height}\n`
+      this.message = `orientation:${newDisplay.orientation}, width:${newDisplay.width}, height:${newDisplay.height}`
     }
     // 监听显示设备的方向变化
     display.on("change", callback);
+
+    let configuration = await this.context.resourceManager.getConfiguration()
+    // 获取当前的屏幕方向（Direction 枚举）
+    // DIRECTION_VERTICAL, DIRECTION_HORIZONTAL
+    this.message = `current direction: ${configuration.direction}`
   }
 
   aboutToDisappear(): void {
@@ -190,12 +195,12 @@ struct MySample3 {
   build() {
     Column({space:10}) {
 
-      Button("横屏悬浮框").onClick(() => {
+      Button("横屏悬浮框（请手动将当前 app 移入悬浮框后看效果）").onClick(() => {
         // 横屏悬浮框（需要先在 module.json5 中配置 "preferMultiWindowOrientation": "landscape_auto"）
         this.windowClass.enableLandscapeMultiWindow()
       })
 
-      Button("竖屏悬浮框").onClick(() => {
+      Button("竖屏悬浮框（请手动将当前 app 移入悬浮框后看效果）").onClick(() => {
         // 竖屏悬浮框（需要先在 module.json5 中配置 "preferMultiWindowOrientation": "landscape_auto"）
         this.windowClass.disableLandscapeMultiWindow()
       })

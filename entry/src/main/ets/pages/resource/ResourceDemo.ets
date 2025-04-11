@@ -21,6 +21,7 @@
  *   注：可以通过 context.resourceDir 获取 resfile 对应的沙箱目录
  *
  *
+ * 注：
  * app 级的资源在 AppScope 目录内，目录结构与 module 级的资源一致，编译后 AppScope 的资源会合并到 module 的资源中，对于重名资源来说只会保留 AppScope 中的资源
  * 另外 AppScope 中的 app.json5 中的字段也会在编译后合并到 module 的 module.json5 中
  */
@@ -41,6 +42,8 @@ struct ResourceDemo {
       TitleBar()
       Tabs() {
         TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('图片').align(Alignment.Top)
+        TabContent() { MySample3() }.tabBar('文件').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -67,16 +70,6 @@ struct MySample1 {
     // xxxldpi - dpi 在 480 - 640（左开右闭）
     this.message += `dpi: ${display.getDefaultDisplaySync().densityDPI}\n`
 
-    // 读取 src/main/resources/rawfile/mytext.txt 文件（从对应的包内路径获取数据）
-    const rawFile = await this.context.resourceManager.getRawFileContent("mytext.txt")
-    const textDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
-    const rawFileContent = textDecoder.decodeToString(rawFile, { stream: false })
-    this.message += `rawfile/mytext: ${rawFileContent}\n`
-
-    // 读取 src/main/resources/resfile/mytext.txt 文件（从对应的沙箱路径获取数据）
-    const resFileContent = await fileIo.readText(this.context.resourceDir + "/mytext.txt", { encoding: 'utf-8' })
-    this.message += `resfile/mytext: ${resFileContent}\n`
-
     // 创建资源管理对象，用于获取 src/main/resources/base/ 或 src/main/resources/限定词/ 中的数据
     let resourceManager = this.context.resourceManager
     // 获取资源中的字符串数据，建议保存在 element/string.json 中（虽然不限制文件名，但还是建议用 string.json）
@@ -99,6 +92,42 @@ struct MySample1 {
     this.message += `integer: ${e}\n`
     this.message += `strarray: ${f.join(",")}\n`
 
+    let configuration = await resourceManager.getConfiguration()
+    // 获取当前的区域信息
+    this.message += `locale: ${configuration.locale}\n`
+    // 获取当前的屏幕方向（Direction 枚举）
+    // DIRECTION_VERTICAL, DIRECTION_HORIZONTAL
+    this.message += `direction: ${configuration.direction}\n`
+    // 获取当前的设备类型（DeviceType 枚举）
+    // DEVICE_TYPE_PHONE, DEVICE_TYPE_TABLET, DEVICE_TYPE_CAR, DEVICE_TYPE_PC, DEVICE_TYPE_TV, DEVICE_TYPE_WEARABLE, DEVICE_TYPE_2IN1
+    this.message += `deviceType: ${configuration.deviceType}\n`
+    // 获取当前的颜色模式（ColorMode 枚举）
+    // DARK, LIGHT
+    this.message += `colorMode: ${configuration.colorMode}\n`
+  }
+
+  build() {
+    Column({space:10}) {
+
+      // $r() - 直接引用资源中的数据（返回的是一个 Resource 对象）
+      Text($r('app.string.hello_webabcd')).fontColor($r('app.color.color_demo'))
+
+      Text(this.message)
+    }
+  }
+}
+
+@Component
+struct MySample2 {
+
+  context = getContext(this) as common.UIAbilityContext;
+
+  @State pixelMap: PixelMap | undefined = undefined;
+
+  async aboutToAppear() {
+
+    // 创建资源管理对象，用于获取 src/main/resources/base/ 或 src/main/resources/限定词/ 中的数据
+    let resourceManager = this.context.resourceManager
     // 图片资源转 PixelMap 对象
     let g = resourceManager.getMediaContentSync($r('app.media.son').id)
     this.pixelMap = await this.getPixmap(g)
@@ -118,15 +147,66 @@ struct MySample1 {
   build() {
     Column({space:10}) {
 
-      // 直接显示资源中的数据
-      Text($r('app.string.hello_webabcd')).fontColor($r('app.color.color_demo'))
+      // $r() - 直接引用资源中的数据（返回的是一个 Resource 对象）
       Image($r('app.media.son')).width(100).height(100)
 
       // 显示一个 PixelMap 对象
       Image(this.pixelMap).width(100).height(100)
 
-      // 使用应用级的资源，来自 /AppScope/resources/base/media/app_icon.png
+      // 引用应用级的资源，来自 /AppScope/resources/base/media/app_icon.png
       Image($r('app.media.app_icon')).width(100).height(100)
+    }
+  }
+}
+
+@Component
+struct MySample3 {
+
+  context = getContext(this) as common.UIAbilityContext;
+
+  @State message: string = "";
+  @State imagePath: string = "";
+
+  // 将指定的资源文件复制到指定的沙箱目录
+  async copyFile(src: Resource, dst: string) {
+    let context = getContext() as common.UIAbilityContext;
+    let resourceManager = context.resourceManager
+    let buffer = resourceManager.getMediaContentSync(src.id).buffer
+    let outputStream = await fileIo.createStream(dst, 'w+');
+    let writeLength = await outputStream.write(buffer, {
+      offset: 0,
+      length: buffer.byteLength
+    })
+    await outputStream.close();
+  }
+
+  async aboutToAppear() {
+
+    // 读取 src/main/resources/rawfile/mytext.txt 文件（从对应的包内路径获取数据）
+    const rawFile = await this.context.resourceManager.getRawFileContent("mytext.txt")
+    const textDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
+    const rawFileContent = textDecoder.decodeToString(rawFile, { stream: false })
+    this.message += `rawfile/mytext: ${rawFileContent}\n`
+
+    // 读取 src/main/resources/resfile/mytext.txt 文件（从对应的沙箱路径获取数据）
+    const resFileContent = await fileIo.readText(this.context.resourceDir + "/mytext.txt", { encoding: 'utf-8' })
+    this.message += `resfile/mytext: ${resFileContent}\n`
+
+    // 将指定的资源文件复制到指定的沙箱目录
+    try {
+      let imagePath = this.context.filesDir + '/ResourceDemo.jpg'
+      await this.copyFile($r('app.media.son'), imagePath)
+    } catch (error) {
+      this.message = `将指定的资源文件复制到指定的沙箱目录时失败：${JSON.stringify(error)}`
+    }
+  }
+
+  build() {
+    Column({space:10}) {
+
+      // 显示沙箱目录中的图片文件
+      Image(`file://${getContext().filesDir + "/ResourceDemo.jpg"}`)
+        .width(50).height(50)
 
       Text(this.message)
     }
