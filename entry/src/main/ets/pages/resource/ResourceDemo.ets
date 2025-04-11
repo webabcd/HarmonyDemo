@@ -31,7 +31,7 @@ import { fileIo } from '@kit.CoreFileKit'
 import { common } from '@kit.AbilityKit'
 import { util } from '@kit.ArkTS'
 import { image } from '@kit.ImageKit'
-import { display } from '@kit.ArkUI'
+import { display, LayeredDrawableDescriptor } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -155,6 +155,17 @@ struct MySample2 {
 
       // 引用应用级的资源，来自 /AppScope/resources/base/media/app_icon.png
       Image($r('app.media.app_icon')).width(100).height(100)
+
+      // 显示一个 LayeredDrawableDescriptor 图片（将前景图片和背景图片组合为一个图片）
+      // 在资源中通过 .json 文件配置 LayeredDrawableDescriptor 图片，参见 resources/base/media/layered_image.json
+      // {
+      //   "layered-image":
+      //   {
+      //     "background" : "$media:background", // 背景图片
+      //     "foreground" : "$media:foreground"  // 前景图片
+      //   }
+      // }
+      Image((this.context.resourceManager.getDrawableDescriptor($r('app.media.layered_image').id) as LayeredDrawableDescriptor)).width(100).height(100)
     }
   }
 }

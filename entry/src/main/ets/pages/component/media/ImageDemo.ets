@@ -4,6 +4,8 @@
 
 import { RadioBar, TitleBar } from '../../TitleBar'
 import { image } from '@kit.ImageKit'
+import { LayeredDrawableDescriptor } from '@kit.ArkUI'
+import { common } from '@kit.AbilityKit'
 
 @Entry
 @Component
@@ -28,8 +30,11 @@ struct ImageDemo {
 @Component
 struct MySample1 {
 
+  context = getContext(this) as common.UIAbilityContext;
+
   // ResourceStr 的意思是 string | Resource
   @State resourceStr:ResourceStr = ""
+
   aboutToAppear() {
     setTimeout(() => this.resourceStr = $r('app.media.son'), 3000);
   }
@@ -63,6 +68,18 @@ struct MySample1 {
         // 显示资源中 resfile 目录中的图片文件（其会在第一次安装后被复制到应用的沙箱路径中）
         // 注：别忘了加上 file://（地址类似 file:///data/storage/el1/bundle/entry/resources/resfile/son.jpg）
         Image(`file://${getContext().resourceDir + "/son.jpg"}`)
+          .width(50).height(50)
+
+        // 显示一个 LayeredDrawableDescriptor 图片（将前景图片和背景图片组合为一个图片）
+        // 在资源中通过 .json 文件配置 LayeredDrawableDescriptor 图片，参见 resources/base/media/layered_image.json
+        // {
+        //   "layered-image":
+        //   {
+        //     "background" : "$media:background", // 背景图片
+        //     "foreground" : "$media:foreground"  // 前景图片
+        //   }
+        // }
+        Image((this.context.resourceManager.getDrawableDescriptor($r('app.media.layered_image').id) as LayeredDrawableDescriptor))
           .width(50).height(50)
       }
       .width('100%')
