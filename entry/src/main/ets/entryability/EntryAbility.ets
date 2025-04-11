@@ -128,6 +128,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   // 内存占用级别发生变化时的回调
+  // 注：在 AbilityStage 中也有此回调
   onMemoryLevel(level: AbilityConstant.MemoryLevel): void {
     // MEMORY_LEVEL_MODERATE - 内存占用适中
     // MEMORY_LEVEL_LOW - 内存占用低
@@ -136,6 +137,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   // 全局的环境配置发生变化时的回调（比如系统语言，深色浅色模式等）
+  // 注：在 AbilityStage 中也有此回调
   onConfigurationUpdate(newConfig: Configuration): void {
     MyLog.d(`ability onConfigurationUpdate ${JSON.stringify(newConfig)}`);
   }

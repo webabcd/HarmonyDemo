@@ -25,13 +25,17 @@ export default class MyAbilityStage extends AbilityStage {
   }
 
   // 内存占用级别发生变化时的回调
-  // MEMORY_LEVEL_MODERATE - 内存占用适中
-  // MEMORY_LEVEL_LOW - 内存占用低
-  // MEMORY_LEVEL_CRITICAL - 内存占用高
+  // 注：在 UIAbility 中也有此回调
   onMemoryLevel(level: AbilityConstant.MemoryLevel): void {
+    // MEMORY_LEVEL_MODERATE - 内存占用适中
+    // MEMORY_LEVEL_LOW - 内存占用低
+    // MEMORY_LEVEL_CRITICAL - 内存占用高
+    MyLog.d(`AbilityStage onMemoryLevel ${level}`);
   }
 
   // 全局的环境配置发生变化时的回调（比如系统语言，深色浅色模式等）
+  // 注：在 UIAbility 中也有此回调
   onConfigurationUpdate(newConfig: Configuration): void {
+    MyLog.d(`AbilityStage onConfigurationUpdate ${JSON.stringify(newConfig)}`);
   }
 }
