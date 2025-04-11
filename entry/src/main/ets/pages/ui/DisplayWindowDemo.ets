@@ -58,8 +58,10 @@ struct MySample1 {
   async aboutToAppear() {
     let ui = display.getDefaultDisplaySync()
     this.message += `orientation:${ui.orientation}\n`
-    this.message += `width:${ui.width}\n`
-    this.message += `height:${ui.height}\n`
+    this.message += `width:${ui.width}px\n`
+    this.message += `height:${ui.height}px\n`
+    this.message += `width:${ui.width / ui.densityPixels}vp\n`
+    this.message += `height:${ui.height / ui.densityPixels}vp\n`
     this.message += `densityDPI:${ui.densityDPI}\n`
     this.message += `densityPixels:${ui.densityPixels}\n`
     this.message += `scaledDensity:${ui.scaledDensity}\n`

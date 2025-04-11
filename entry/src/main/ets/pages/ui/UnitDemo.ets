@@ -25,19 +25,25 @@ struct UnitDemo {
     this.message += '\n'
 
     // dpi(Dots Per Inch) 每英寸点数
-    this.message += `densityDPI ${ui.densityDPI}`
+    this.message += `densityDPI: ${ui.densityDPI}`
     this.message += '\n'
     // 逻辑像素的密度，比如此值为 3 时 1vp 等于 3px
-    this.message += `densityPixels ${ui.densityPixels}`
+    this.message += `densityPixels: ${ui.densityPixels}`
     this.message += '\n'
     // 字体像素的密度，比如此值为 3 时 1fp 等于 3px
-    this.message += `scaledDensity ${ui.scaledDensity}`
+    this.message += `scaledDensity: ${ui.scaledDensity}`
     this.message += '\n'
     // 屏幕宽度，单位 px
-    this.message += `width ${ui.width}`
+    this.message += `width: ${ui.width}px`
     this.message += '\n'
     // 屏幕高度，单位 px
-    this.message += `height ${ui.height}`
+    this.message += `height: ${ui.height}px`
+    this.message += '\n'
+    // 屏幕宽度，单位 vp
+    this.message += `width: ${context.px2vp(ui.width)}vp`
+    this.message += '\n'
+    // 屏幕高度，单位 vp
+    this.message += `height: ${context.px2vp(ui.height)}vp`
   }
 
   build() {
