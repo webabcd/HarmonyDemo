@@ -58,6 +58,16 @@ struct MySample1 {
         context.terminateSelf()
       })
 
+      Button("将当前 UIAbility 移入后台").onClick(() => {
+        /*
+         * getContext(this) - 获取上下文对象
+         * UIAbilityContext - 上下文对象
+         *   moveAbilityToBackground() - 将当前 UIAbility 移入后台
+         */
+        let context = getContext(this) as common.UIAbilityContext;
+        context.moveAbilityToBackground()
+      })
+
       Button("打开当前 hap 包内的指定的 UIAbility").onClick(() => {
         let context = getContext(this) as common.UIAbilityContext;
         // Want - 需要拉起的 ability 的相关信息
