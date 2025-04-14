@@ -32,6 +32,7 @@ struct HapDemo {
  *   entry - 主模块，作为应用的入口，基础功能都应该放在这里，每个应用只能有一个 entry 模块
  *   feature - 特性模块，应用的扩展能力可以放在这里，其可以根据用户的需求和设备类型进行选择性安装，每个应用可以包含多个 feature 模块
  * 每个 hap 可以包含多个 UIAbility，每个 UIAbility 可以包含多个页面
+ * 每个 hap 可以包含多个 ExtensionAbility，比如 FormExtensionAbility, WorkSchedulerExtensionAbility 等
  * 右键单击全局项目，然后 New -> Module... -> Empty Ability 即可创建新的模块，一个项目包含的模块和模块的地址是在项目的 build-profile.json5 中配置的
  * 如需调试，则先选择需要运行的模块，然后点击运行即可（注：当 feature 更新后，需要先运行它，这样才能从 entry 跳转到更新后的 feature）
  * 如需编译打包，则在 Build 菜单中，可以编译每个 hap 包（编译后每个 hap 模块都会生成一个对应的 .hap 文件），也可以把所有 .hap 和 .hsp 打包为一个 app（编译后是一个 .app 文件，用于分发和上架）
