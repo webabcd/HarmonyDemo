@@ -37,7 +37,8 @@ struct MySample1 {
 
       /*
        * UIAbilityContext
-       *   startAbility() - 拉起指定 want 的 app
+       *   startAbility() - 拉起指定 want 的 ability
+       *   startAbilityForResult() - 拉起指定 want 的 ability 并获取返回结果（参见 /basic/UIAbilityDemo.ets 中的相关说明）
        *
        * Want - 需要拉起的 ability 的相关信息
        *   bundleName - bundle 的名称
@@ -47,7 +48,7 @@ struct MySample1 {
        *
        * 注：本例演示的目标应用请参见 harmonydemo2 项目
        */
-      Button('通过 want 拉起 app 的方式 1').onClick(() => {
+      Button('通过 want 拉起 ability 的方式 1').onClick(() => {
         let context: common.UIAbilityContext = getContext(this) as common.UIAbilityContext;
         let want: Want = {
           bundleName: 'com.webabcd.harmonydemo2',
@@ -66,7 +67,7 @@ struct MySample1 {
 
       /*
        * UIAbilityContext
-       *   startAbility() - 拉起指定 want 的 app
+       *   startAbility() - 拉起指定 want 的 ability
        *
        * Want - 需要拉起的 ability 的相关信息
        *   uri - deep linking 或 app linking 地址

@@ -159,7 +159,7 @@ struct MySample3 {
 
       /*
        * UIAbilityContext
-       *   startAbility() - 拉起指定 want 的 app
+       *   startAbility() - 拉起指定 want 的 ability
        *
        * Want - 需要拉起的 ability 的相关信息
        *   uri - deep linking 地址
