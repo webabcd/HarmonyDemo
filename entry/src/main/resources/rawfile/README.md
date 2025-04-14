@@ -5,7 +5,6 @@
 ### 临时测试用
 1. Context - 上下文
 - pages/basic/ContextDemo
-- /entry/src/main/ets/MyAbilityStage.ets
 1. AppStartup - 启动任务
 - pages/basic/AppStartupDemo
 - /harmonydemo/entry/src/main/resources/base/profile/startup_config.json

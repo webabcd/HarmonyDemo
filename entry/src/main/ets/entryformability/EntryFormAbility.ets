@@ -30,6 +30,11 @@ export default class EntryFormAbility extends FormExtensionAbility {
     // 通过 want.parameters 可以获取卡片的规格，以及宽和高等
     MyLog.d(`onAddForm ${JSON.stringify(want.parameters)}`)
 
+    // FormExtensionContext - FormExtensionAbility 的上下文（在 FormExtensionAbility 内，可以通过 this.context 获取 FormExtensionContext 对象）
+    let context = this.context
+    let abilityName = context.extensionAbilityInfo.name
+    MyLog.d(`extension ability name: ${abilityName}`)
+
     // 将指定的资源文件复制到指定的沙箱目录
     // 如果需要卡片显示一个网络图片，则可以先将图片下载到沙箱目录（注：卡片每次活过来后，最多在后台存在 5 秒），然后再参照本例后续的方法
     let imagePath = this.context.getApplicationContext().filesDir + '/icon.png'
