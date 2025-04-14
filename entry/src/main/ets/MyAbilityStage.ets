@@ -12,6 +12,15 @@ export default class MyAbilityStage extends AbilityStage {
   // 创建完成时的回调（注：加载 HAP 的入口 UIAbility 实例之前会先创建 AbilityStage 实例）
   onCreate() {
     MyLog.d('AbilityStage onCreate');
+
+    // AbilityStageContext - AbilityStage 的上下文（在 AbilityStage 内，可以通过 this.context 获取 AbilityStageContext 对象）
+    //   currentHapModuleInfo - 当前的 hap 模块信息（一个 HapModuleInfo 对象）
+    //     name - 当前的 hap 模块的名称
+    //     codePath - 当前的 hap 模块的 .hap 文件的地址
+    let abilityStageContext = this.context
+    let hapModuleInfo = abilityStageContext.currentHapModuleInfo
+    MyLog.d(`AbilityStage mudule name: ${hapModuleInfo.name}`) // 本例为 entry
+    MyLog.d(`AbilityStage mudule codePath: ${hapModuleInfo.codePath}`) // 本例为 /data/storage/el1/bundle/entry.hap
   }
 
   // 当 UIAbility 以 specified 的方式启动时，就会走到 HAP 的对应的 AbilityStage 中的 onAcceptWant() 回调

@@ -6,10 +6,13 @@
  *   el1 是设备级加密区，设备开机后即可访问的数据区
  *   el2 是用户级加密区，设备开机后且首次密码解锁之后才可以访问的数据区（若不需要密码解锁，则开机后即可访问）
  * haps/entry/ 对应的 hap 的模块名，本例是 entry
- * files - 需要永久保存的文件的目录，不卸载则不会被清理
- * cache - 缓存目录，由系统决定清理策略（比如存储不够用时，则可能会被清理）
- * temp - 临时目录，应用退出后即清理
- * preferences - 用于保存应用的首选项数据的目录，不卸载则不会被清理
+ *   files - 需要永久保存的文件的目录，不卸载则不会被清理
+ *   cache - 缓存目录，由系统决定清理策略（比如存储不够用时，则可能会被清理）
+ *   temp - 临时目录，应用退出后即清理
+ *   preferences - 用于保存应用的首选项数据的目录，不卸载则不会被清理
+ *
+ * resfile 对应的沙箱目录（注：resfile 中的文件在 app 第一次安装后会被复制到应用的 el1 沙箱路径中）类似如下
+ * /data/storage/el1/bundle/entry/resources/resfile
  */
 
 import { TitleBar } from '../TitleBar';
@@ -52,18 +55,20 @@ struct MySample1 {
   aboutToAppear(): void {
     /*
      * UIAbilityContext - 上下文
-     *   area - 沙箱目录的区域
+     *   area - 沙箱目录的区域，可以设置为 el1 或 el2
      *     AreaMode.EL1 - 设备级加密区
      *     AreaMode.EL2 - 用户级加密区
      *   filesDir - files 目录地址
      *   cacheDir - cache 目录地址
      *   tempDir - temp 目录地址
+     *   resourceDir - resfile 对应的沙箱目录（注：resfile 中的文件在 app 第一次安装后会被复制到应用的 el1 沙箱路径中）
      *   preferencesDir - preferences 目录地址
      */
     this.context.area = contextConstant.AreaMode.EL1
     this.message += `filesDir: ${this.context.filesDir}\n`
     this.message += `cacheDir: ${this.context.cacheDir}\n`
     this.message += `tempDir: ${this.context.tempDir}\n`
+    this.message += `resourceDir: ${this.context.resourceDir}\n`
     this.message += `preferencesDir: ${this.context.preferencesDir}\n`
 
     this.context.area = contextConstant.AreaMode.EL2

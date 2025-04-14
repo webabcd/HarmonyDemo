@@ -70,7 +70,7 @@ struct MySample1 {
     // xxxldpi - dpi 在 480 - 640（左开右闭）
     this.message += `dpi: ${display.getDefaultDisplaySync().densityDPI}\n`
 
-    // 创建资源管理对象，用于获取 src/main/resources/base/ 或 src/main/resources/限定词/ 中的数据
+    // 获取资源管理对象，用于获取 src/main/resources/base/ 或 src/main/resources/限定词/ 中的数据
     let resourceManager = this.context.resourceManager
     // 获取资源中的字符串数据，建议保存在 element/string.json 中（虽然不限制文件名，但还是建议用 string.json）
     let a = resourceManager.getStringSync($r('app.string.hello_webabcd').id)
@@ -126,7 +126,7 @@ struct MySample2 {
 
   async aboutToAppear() {
 
-    // 创建资源管理对象，用于获取 src/main/resources/base/ 或 src/main/resources/限定词/ 中的数据
+    // 获取资源管理对象，用于获取 src/main/resources/base/ 或 src/main/resources/限定词/ 中的数据
     let resourceManager = this.context.resourceManager
     // 图片资源转 PixelMap 对象
     let g = resourceManager.getMediaContentSync($r('app.media.son').id)
