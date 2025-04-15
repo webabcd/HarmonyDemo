@@ -44,6 +44,9 @@ struct RouterDemo {
     router.showAlertBeforeBackPage({
       message: '确认返回吗？'
     });
+
+    // 也可以通过 this.getUIContext().getRouter() 获取当前的 Router 对象
+    // let myRouter = this.getUIContext().getRouter()
   }
 
   build() {

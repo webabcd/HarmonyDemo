@@ -4,6 +4,8 @@
  *
  * 本例用于演示 @Entry 组件的生命周期和非 @Entry 组件的生命周期
  * 关于 UIAbility 的生命周期请参见 UIAbilityDemo.ets 中的相关说明
+ *
+ * 注：通过 ApplicationContext 可以监听应用的生命周期，请参见 /basic/ContextDemo.ets 中的相关说明
  */
 
 import { MyLog, TitleBar } from '../TitleBar';
