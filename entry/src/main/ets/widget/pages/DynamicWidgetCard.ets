@@ -8,6 +8,7 @@
  * 请先参见静态卡片 StaticWidgetCard.ets 中的相关说明，动态卡片在静态卡片的基础上增加了对组件的通用事件方法以及自定义动画效果的支持
  * 动态卡片通过 postCardAction 实现类似 FormLink 的功能，可以参考 FormLinkCard.ets 中的相关说明
  */
+
 import { Helper } from '../../utils/Helper'
 
 @Entry
