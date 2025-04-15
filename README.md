@@ -2,8 +2,6 @@
 
 > [我的博客](https://webabcd.cnblogs.com/)
 
-### 临时测试用
-
 ### ArkTS 基础
 1. 基础
 - pages/arkts/basic/Basic
