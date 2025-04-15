@@ -3,69 +3,6 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-1. Context - 上下文
-- pages/basic/ContextDemo
-1. AppStartup - 启动任务
-- pages/basic/AppStartupDemo
-- /harmonydemo/entry/src/main/resources/base/profile/startup_config.json
-- /harmonydemo/entry/src/main/ets/startup/MyStartupConfigEntry.ets
-- /harmonydemo/entry/src/main/ets/startup/StartupTask1.ets
-- /harmonydemo/entry/src/main/ets/startup/StartupTask2.ets
-- /harmonydemo/entry/src/main/ets/startup/StartupTask3.ets
-- /harmonydemo/entry/src/main/ets/startup/StartupTask4.ets
-1. 静态卡片
-- pages/widget/StaticWidgetDemo
-- /harmonydemo/entry/src/main/module.json5
-- /harmonydemo/entry/src/main/resources/base/profile/form_config.json
-- /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
-- /harmonydemo/entry/src/main/ets/widget/pages/StaticWidgetCard.ets
-1. FormLink（为静态卡片提供与应用交互的能力）
-- pages/widget/FormLinkDemo
-- /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
-- /harmonydemo/entry/src/main/ets/widget/pages/FormLinkCard.ets
-- /harmonydemo/entry/src/main/ets/entryability/EntryAbility.ets 
-1. AddFormMenuItem（在应用内添加卡片）
-- pages/widget/AddFormMenuItemDemo
-- /harmonydemo/entry/src/main/resources/base/profile/form_config.json
-1. 动态卡片
-- pages/widget/DynamicWidgetDemo
-- /harmonydemo/entry/src/main/module.json5
-- /harmonydemo/entry/src/main/resources/base/profile/form_config.json
-- /harmonydemo/entry/src/main/ets/entryformability/EntryFormAbility.ets
-- /harmonydemo/entry/src/main/ets/widget/pages/DynamicWidgetCard.ets
-1. 系统分享
-- pages/ipc/ShareDemo
-- /harmonydemo2/entry/src/main/module.json5
-- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
-- /harmonydemo2/entry/src/main/ets/pages/Index.ets
-1. 保存文件到媒体库
-- pages/media/MediaLibraryDemo
-2. 从媒体库读取文件
-- pages/media/MediaLibraryDemo2 
-3. 通知（授权，文本，进度条，角标）
-- pages/notification/NotificationDemo
-4. 通知（更新，删除，跳转，渠道）
-- pages/notification/NotificationDemo2
-5. Deep Linking
-- pages/ipc/DeepLinkingDemo
-- /entry/src/main/resources/rawfile/DeepLinking.html
-- /harmonydemo2/entry/src/main/module.json5
-- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
-- /harmonydemo2/entry/src/main/ets/pages/Index.ets
-6. App Linking
-- pages/ipc/AppLinkingDemo
-- /entry/src/main/resources/rawfile/AppLinking.html
-- /harmonydemo2/entry/src/main/module.json5
-- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
-- /harmonydemo2/entry/src/main/ets/pages/Index.ets
-7. Want
-- pages/ipc/WantDemo
-8. 剪切板
-- pages/ipc/PasteboardDemo
-9. Web（拦截）
-- pages/component/webview/WebDemo2
-- /entry/src/main/resources/rawfile/html2.html
-- /entry/src/main/resources/rawfile/html3.html
 
 ### ArkTS 基础
 1. 基础
@@ -196,6 +133,16 @@
 - /har2/src/main/ets/utils/Helper.ets
 - /har2/src/main/ets/components/MainPage.ets
 - /har2/src/main/ets/components/MyPage.ets
+11. AppStartup - 启动任务
+- pages/basic/AppStartupDemo
+- /entry/src/main/resources/base/profile/startup_config.json
+- /entry/src/main/ets/startup/MyStartupConfigEntry.ets
+- /entry/src/main/ets/startup/StartupTask1.ets
+- /entry/src/main/ets/startup/StartupTask2.ets
+- /entry/src/main/ets/startup/StartupTask3.ets
+- /entry/src/main/ets/startup/StartupTask4.ets
+12. Context - 上下文
+- pages/basic/ContextDemo
 
 ### 状态管理
 1. @State
@@ -507,6 +454,10 @@
 1. Web（基础）
 - pages/component/webview/WebDemo
 - /entry/src/main/resources/rawfile/html1.html
+2. Web（拦截）
+- pages/component/webview/WebDemo2
+- /entry/src/main/resources/rawfile/html2.html
+- /entry/src/main/resources/rawfile/html3.html
 
 ### 输入
 1. 触摸类输入
@@ -623,6 +574,40 @@
 3. 用户文件（公共目录）
 - pages/storage/UserFileDemo
 
+### 媒体
+1. 保存文件到媒体库
+- pages/media/MediaLibraryDemo
+2. 从媒体库读取文件
+- pages/media/MediaLibraryDemo2
+
+### 通知
+1. 通知（授权，文本，进度条，角标）
+- pages/notification/NotificationDemo
+2. 通知（更新，删除，跳转，渠道）
+- pages/notification/NotificationDemo2
+
+### 卡片
+1. 静态卡片
+- pages/widget/StaticWidgetDemo
+- /entry/src/main/module.json5
+- /entry/src/main/resources/base/profile/form_config.json
+- /entry/src/main/ets/entryformability/EntryFormAbility.ets
+- /entry/src/main/ets/widget/pages/StaticWidgetCard.ets
+2. FormLink（为静态卡片提供与应用交互的能力）
+- pages/widget/FormLinkDemo
+- /entry/src/main/ets/entryformability/EntryFormAbility.ets
+- /entry/src/main/ets/widget/pages/FormLinkCard.ets
+- /entry/src/main/ets/entryability/EntryAbility.ets
+3. AddFormMenuItem（在应用内添加卡片）
+- pages/widget/AddFormMenuItemDemo
+- /entry/src/main/resources/base/profile/form_config.json
+4. 动态卡片
+- pages/widget/DynamicWidgetDemo
+- /entry/src/main/module.json5
+- /entry/src/main/resources/base/profile/form_config.json
+- /entry/src/main/ets/entryformability/EntryFormAbility.ets
+- /entry/src/main/ets/widget/pages/DynamicWidgetCard.ets
+
 ### 网络
 1. http
 - pages/network/HttpDemo
@@ -645,6 +630,29 @@
 - pages/background/MyWorkSchedulerExtensionAbility.ets
 4. 提醒任务（提供倒计时提醒或闹钟提醒或日历提醒）
 - pages/background/ReminderTaskDemo
+
+### 跨进程通信
+1. Deep Linking
+- pages/ipc/DeepLinkingDemo
+- /entry/src/main/resources/rawfile/DeepLinking.html
+- /harmonydemo2/entry/src/main/module.json5
+- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
+- /harmonydemo2/entry/src/main/ets/pages/Index.ets
+2. App Linking
+- pages/ipc/AppLinkingDemo
+- /entry/src/main/resources/rawfile/AppLinking.html
+- /harmonydemo2/entry/src/main/module.json5
+- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
+- /harmonydemo2/entry/src/main/ets/pages/Index.ets
+3. Want
+- pages/ipc/WantDemo
+4. 剪切板
+- pages/ipc/PasteboardDemo
+5. 系统分享
+- pages/ipc/ShareDemo
+- /harmonydemo2/entry/src/main/module.json5
+- /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
+- /harmonydemo2/entry/src/main/ets/pages/Index.ets
 
 ### Native Development Kit
 1. NDK 基础
