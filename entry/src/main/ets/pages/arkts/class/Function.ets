@@ -48,6 +48,16 @@ f4(1, 2, )
 }
 
 {
+  // 固定参数值
+  // 让指定的字符串作为参数的类型
+  let x = (p1: "webabcd"): string => {
+    return `${p1}`;
+  }
+  // 必须要传一个参数，且这个参数的值必须是 "webabcd"
+  MyLog.d(`${x("webabcd")}`);
+  // webabcd
+
+
   // 参数默认值
   let a = (p1: string, p2: string = "webabcd"): string => {
     return `${p1} ${p2}`;
