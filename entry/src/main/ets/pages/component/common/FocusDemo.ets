@@ -27,6 +27,7 @@ struct FocusDemo {
 @Component
 struct MySample1 {
 
+  @State message: string = ""
   controller: TextInputController = new TextInputController()
 
   /*
@@ -42,17 +43,28 @@ struct MySample1 {
    *
    * TextInput
    *   enableKeyboardOnFocus() - 当 TextInput 通过程序的方式获取焦点时是否需要弹出软键盘
+   *   onFocus() - 获取到焦点时的回调
+   *   onBlur() - 失去了焦点时的回调
    * TextInputController
    *   stopEditing() - 让绑定的 TextInput 失去焦点，如果当前软键盘因为此 TextInput 而弹出，则也会被关闭
    */
   build() {
     Column({space:10}) {
+
+      Text(this.message)
+
       TextInput().width('90%').height(40)
 
       TextInput({controller:this.controller}).width('90%').height(40)
         .defaultFocus(true)
         .enableKeyboardOnFocus(false)
         .id("myTextInput")
+        .onFocus(() => {
+          this.message = 'myTextInput 获取了焦点'
+        })
+        .onBlur(() => {
+          this.message = 'myTextInput 失去了焦点'
+        })
 
       TextInput().width('90%').height(40)
         .focusable(false) // 不能获取焦点
