@@ -52,7 +52,8 @@ struct MySample1 {
       let newDisplay: display.Display = display.getDefaultDisplaySync();
       this.message = `orientation:${newDisplay.orientation}, width:${newDisplay.width}, height:${newDisplay.height}`
     }
-    // 监听显示设备的方向变化
+    // display.on("change") - 监听显示设备的方向变化
+    // 注：发生旋转之前就会触发 display.on("change") 事件，如果想要知道什么时候旋转完成请监听 windowClass.on('windowSizeChange') 事件（参见 DisplayWindowDemo.ets 中的相关说明）
     display.on("change", callback);
 
     let configuration = await this.context.resourceManager.getConfiguration()
