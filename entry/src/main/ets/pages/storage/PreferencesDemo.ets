@@ -58,7 +58,7 @@ struct MySample1 {
   /*
    * put(), putSync() - 写入数据到缓存，然后会自动持久化
    * clear(), clearSync() - 清空缓存
-   * flush() - 将缓存中的数据立即持久化到文件中
+   * flush() - 将缓存中的数据持久化到文件中
    *
    * key 必须是字符串类型
    * value 的可用类型有 number | string | boolean | Array<number> | Array<string> | Array<boolean> | Uint8Array | object | bigint
@@ -67,6 +67,7 @@ struct MySample1 {
     await this.dataPreferences?.put("key1", `hello: ${Math.floor(Math.random() * 1000)}`)
     let uint8Array = new util.TextEncoder().encodeInto(`hello: ${Math.floor(Math.random() * 1000)}`);
     await this.dataPreferences?.put('key2', uint8Array);
+    await this.dataPreferences?.flush()
     this.message = "写入成功"
   }
 
