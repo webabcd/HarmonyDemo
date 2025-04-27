@@ -30,6 +30,13 @@ struct RecordPartialDemo {
   // 实例化一个 Record 类型的对象
   let c: Record<string, string> = { 'name': 'webabcd' };
   MyLog.d(`${c.name}`); // webabcd
+
+  // 遍历 Record
+  Object.entries(b).forEach((value) => {
+    MyLog.d(`${value[0]}, ${value[1]}`); // webabcd
+  });
+  // width, 100
+  // height, 200
 }
 
 
