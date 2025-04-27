@@ -27,7 +27,7 @@ struct HttpServerDemo {
       port: 8080
     }
 
-    // 开始监听 socket
+    // 开始监听 socket（需要 ohos.permission.INTERNET 权限）
     this.tcpServer.listen(ipAddress).then(() => {
       this.message += `监听端口成功，监听的端口号：${ipAddress.port}\n`
     }).catch((err: BusinessError) => {
