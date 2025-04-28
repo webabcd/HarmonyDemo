@@ -65,6 +65,7 @@ struct MySample1 {
         Image($rawfile('son.jpg'))
           .width(50).height(50)
 
+        // 显示指定沙箱路径的图片文件
         // 显示资源中 resfile 目录中的图片文件（其会在第一次安装后被复制到应用的沙箱路径中）
         // 注：别忘了加上 file://（地址类似 file:///data/storage/el1/bundle/entry/resources/resfile/son.jpg）
         Image(`file://${getContext().resourceDir + "/son.jpg"}`)
