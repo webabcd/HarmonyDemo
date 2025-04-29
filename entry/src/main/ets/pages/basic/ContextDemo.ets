@@ -69,6 +69,12 @@ struct MySample1 {
     let context = getContext(this)
     this.message = `app name: ${context.applicationInfo.name}\n`
     this.message += `app codePath: ${context.applicationInfo.codePath}\n`
+
+    // 需要注意当前上下文和应用级上下文的区别
+    // 这个上下文是当前 UIAbility 的上下文，本例中得到的 filesDir 的地址为 /data/storage/el2/base/haps/entry/files
+    this.message += `current context filesDir: ${getContext().filesDir}\n`
+    // 这个上下文是应用级的上下文，本例中得到的 filesDir 的地址为 /data/storage/el2/base/files
+    this.message += `application context filesDir: ${getContext().getApplicationContext().filesDir}\n`
   }
 
   build() {

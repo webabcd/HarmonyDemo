@@ -13,6 +13,11 @@
  *
  * resfile 对应的沙箱目录（注：resfile 中的文件在 app 第一次安装后会被复制到应用的 el1 沙箱路径中）类似如下
  * /data/storage/el1/bundle/entry/resources/resfile
+ *
+ *
+ * 注：当获取目录地址时，需要注意是 UIAbility 级的上下文还是应用级的上下文
+ * 当在 entry 模块中，从 UIAbility 级的上下文获取 filesDir 时，其结果可能是 /data/storage/el2/base/haps/entry/files
+ * 当从应用级的上下文获取 filesDir 时，其结果可能是 /data/storage/el2/base/files
  */
 
 import { TitleBar } from '../TitleBar';
