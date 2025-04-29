@@ -57,6 +57,11 @@ struct EnumDemo {
 
   // 枚举值就是整型值
   MyLog.d(`${status == 0}`); // true
+
+  enum Status2 {X, Y};
+  // 下面这句会编译时报错
+  // MyLog.d(`${Status.Ok == Status2.X}`);
+  MyLog.d(`${Number(Status.Ok) == Number(Status2.X)}`); // true
 }
 
 {

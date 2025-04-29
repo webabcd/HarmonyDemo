@@ -30,6 +30,9 @@ import { myClass as j } from './j';
 import { myClass as k } from './k';
 import { myClass as l } from './l';
 
+// 导入一个命名空间
+import { model } from './n'
+
 @Entry
 @Component
 struct MainDemo {
@@ -61,4 +64,3 @@ MyLog.d(`l: ${l.name}`);
 import('./m').then((ns:ESObject) => {
   MyLog.d(`m: ${ns.add(1, 2)}`); // m: 3
 })
-

@@ -197,9 +197,18 @@ struct DataTypeDemo {
     }
     return "不可能";
   }
-
   MyLog.d(f1("webabcd")); // webabcd
   MyLog.d(f1(() => "webabcd")); // webabcd
+
+
+  // 通过 type 指定类型别名（允许将具体的值作为类型）
+  type MyType = "webabcd" | 44;
+  // 传参时只允许传入 "webabcd" 或 44
+  let f2 = (p: MyType): string => {
+    return `${p}`;
+  }
+  MyLog.d(f2("webabcd")); // webabcd
+  MyLog.d(f2(44)); // 44
 }
 
 {

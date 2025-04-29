@@ -200,6 +200,7 @@ struct MySample2 {
       {
         method: http.RequestMethod.GET,
       },
+      // 无论成功还是失败，都会先走到 httpRequest.on('dataEnd') 然后再走到这里
       (err: BusinessError, responseCode: number) => {
         if (!err) {
           this.message += `response code: ${responseCode}\n`

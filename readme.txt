@@ -38,9 +38,11 @@ HarmonyDemo                         // 项目名称
 |   |   |   |---resources           // 用于保存资源文件
 |   |   |   |---module.json5        // 当前模块的配置
 |   |---build-profile.json5         // 当前模块的编译相关的配置
-|   |---oh-package.json5            // 当前模块的依赖配置
+|   |---oh-package.json5            // 当前模块的依赖
+|   |---oh-package-lock.json5       // 当前模块的依赖及依赖的版本
 |---build-profile.json5             // 应用级的编译相关的配置
-|---oh-package.json5                // 应用级的依赖配置
+|---oh-package.json5                // 应用级的依赖
+|---oh-package-lock.json5           // 应用级的依赖及依赖的版本
 
 一个项目由多个模块（module）组成，模块的类型有 HAP（包括 entry 和 feature 两种类型）, HSP, HAR
 每个 HAP 可以包含多个 UIAbility，每个 UIAbility 实例都会在最近任务列表中显示为一个对应的任务窗口，每个 UIAbility 可以包含多个页面
@@ -71,3 +73,8 @@ Background Tasks Kit 提供后台任务能力。比如 import { backgroundTaskMa
 
 hdc（OpenHarmony Device Connector）
 命令行工具，其存放于类似如下的地址 /sdk/12/toolchains/hdc.exe
+
+ohpm（OpenHarmony Package Manager）
+安装指定的依赖 ohpm i @webabcd/harmony-httpserver
+安装所有依赖 ohpm i
+上面的 i 是 install 的缩写
