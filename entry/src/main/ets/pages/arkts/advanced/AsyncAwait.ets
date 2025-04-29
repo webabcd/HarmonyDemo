@@ -75,6 +75,7 @@ MyLog.d(`${p1()}, ${p2()}`);
 
 
   // 演示如何对 await 做 try/catch
+  // 演示当不对 await 做 try/catch 时，出现异常会如何处理
   let c = () => {
     return new Promise<string>((resolve, reject) =>{
       setTimeout(()=>{
@@ -88,6 +89,7 @@ MyLog.d(`${p1()}, ${p2()}`);
     });
   };
   (async () => {
+    // 对 await 做 try/catch 时
     try {
       // 如果走到 Promise 的 resolve() 则可以正常收到返回数据
       MyLog.d("try: " + await c()); // try: fulfilled
@@ -95,6 +97,12 @@ MyLog.d(`${p1()}, ${p2()}`);
       // 如果走到 Promise 的 reject() 则会捕获到异常
       MyLog.d("catch: " + e); // catch: rejected
     }
+
+    // 不对 await 做 try/catch 时
+    // 如果没有异常，则一切正常
+    // 如有发生异常，则之后的逻辑不再执行，但是并不会对外抛出异常
+    MyLog.d(await c()); // fulfilled
+    MyLog.d("xyz"); // xyz
   })();
 
 
