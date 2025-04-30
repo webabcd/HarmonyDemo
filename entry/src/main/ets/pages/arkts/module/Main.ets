@@ -30,7 +30,7 @@ import { myClass as j } from './j';
 import { myClass as k } from './k';
 import { myClass as l } from './l';
 
-// 导入一个命名空间
+// 导入一个命名空间（但是经测试，如果调用它的话会抛出异常，不知道为啥）
 import { model } from './n'
 
 @Entry
