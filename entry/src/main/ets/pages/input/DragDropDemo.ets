@@ -47,7 +47,8 @@ struct MySample1 {
        * onDragEnd() - 拖拽完成后的回调
        *
        * onDrop() - 当拖拽组件在当前组件释放时的回调
-       * onDragEnter(), onDragMove(), onDragLeave() - 当拖拽组件进入当前组件，在当前组件上移动，离开当前组件时的回调（当监听了 onDrop() 时才会生效）
+       * onDragEnter(), onDragMove(), onDragLeave() - 当拖拽组件进入当前组件，在当前组件上移动，离开当前组件时的回调
+       *   注：这 3 个回调必须监听了 onDrop() 时才会生效
        */
 
       Text('text').border({ color: Color.Black, width: 1 })
