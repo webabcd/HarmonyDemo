@@ -1,4 +1,5 @@
 from aiohttp import web
+import asyncio
 import json
 
 def setup_routes(app):
@@ -24,4 +25,5 @@ async def httpapi(request):
         
     result = f"method:{request.method}, k1:{k1}, k2:{k2}, h1:{h1}, postData:{postData}"
 
+    await asyncio.sleep(3)
     return web.Response(text=result)

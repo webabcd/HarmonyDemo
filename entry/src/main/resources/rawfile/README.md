@@ -3,6 +3,9 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. http（通过 rcp 实现 http 请求）
+- pages/network/RcpDemo
+- /webapi/webapi/webserver.py
 
 ### ArkTS 基础
 1. 基础
@@ -609,7 +612,7 @@
 - /entry/src/main/ets/widget/pages/DynamicWidgetCard.ets
 
 ### 网络
-1. http
+1. http（通过 HttpRequest 实现 http 请求）
 - pages/network/HttpDemo
 - /webapi/webapi/webserver.py
 2. json

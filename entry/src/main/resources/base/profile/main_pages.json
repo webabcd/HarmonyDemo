@@ -250,7 +250,8 @@
     "pages/basic/ContextDemo",
     "pages/widget/FormLinkDemo",
     "pages/widget/AddFormMenuItemDemo",
-    "pages/basic/AppStartupDemo"
+    "pages/basic/AppStartupDemo",
+    "pages/network/RcpDemo"
   ],
   "window": {
     "designWidth": 720,
