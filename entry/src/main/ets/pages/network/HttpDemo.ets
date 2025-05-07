@@ -1,5 +1,7 @@
 /*
  * http 请求
+ * 本例用于演示如何通过 HttpRequest 实现 http 请求
+ * 相对于 Network Kit 的 HttpRequest 来说，通过 Remote Communication Kit 的 rcp 实现 http 请求会更简单且功能更强大
  *
  * 需要在 src/main/module.json5 中添加网络权限，类似如下
  * {
@@ -70,7 +72,7 @@ struct MySample1 {
    */
 
   async get_sample() {
-    this.message = ""
+    this.message = "开始 get 请求\n"
     let httpRequest = http.createHttp()
 
     httpRequest.on('headersReceive', (header) => {
@@ -112,7 +114,7 @@ struct MySample1 {
     }
     const postData = JSON.stringify(person)
 
-    this.message = ""
+    this.message = "开始 post 请求\n"
     let httpRequest = http.createHttp()
 
     httpRequest.on('headersReceive', (header) => {
