@@ -47,14 +47,14 @@ struct MySample1 {
   async download_sample() {
     this.message = "开始下载文件\n"
 
-    const savePath = getContext().filesDir + "/rcp_sample1.mp4"
+    const savePath = getContext().filesDir + "/rcp_sample1.txt"
     let downloadToFile: rcp.DownloadToFile = {
       kind: 'file',
       file: savePath,
     }
 
     const session: rcp.Session = rcp.createSession()
-    session.downloadToFile('https://vjs.zencdn.net/v/oceans.mp4', downloadToFile).then((response) => {
+    session.downloadToFile('http://192.168.8.197:8001/api?k1=v1&k2=v2', downloadToFile).then((response) => {
       this.message += `response code: ${response.statusCode}\n`
       this.message += `save path: ${savePath}\n`
     }).catch((err: BusinessError) => {
