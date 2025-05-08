@@ -1,10 +1,10 @@
 from aiohttp import web
 import asyncio
-import json
 
 def setup_routes(app):
     app.router.add_route('*', '/api', httpapi)
     app.router.add_route('*', '/redirect', httpapi_redirect)
+    app.router.add_route('*', '/upload', httpapi_upload)
 
 async def launch():
     app = web.Application()
@@ -32,3 +32,16 @@ async def httpapi(request):
 
 async def httpapi_redirect(request):
     return web.Response(status=302, headers={'Location': '/api?k1=v1&k2=v2'})
+
+
+async def httpapi_upload(request):
+    filepath =  request.headers.get('filename', 'unknown.unknown')
+
+    with open(filepath, 'wb') as f:
+        while True:
+            chunk = await request.content.read(1024 * 1024) 
+            if not chunk:
+                break
+            f.write(chunk)
+
+    return web.json_response({'message': f'文件成功保存到 {filepath}'}, status=200)

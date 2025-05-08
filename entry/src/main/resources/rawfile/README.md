@@ -10,7 +10,7 @@
 - pages/network/RcpDemo2
 - /webapi/webapi/webserver.py
 2. http（通过 rcp 实现 http 请求，上传下载和流）
-- pages/network/RcpDemo2
+- pages/network/RcpDemo3
 - /webapi/webapi/webserver.py
 
 ### ArkTS 基础
