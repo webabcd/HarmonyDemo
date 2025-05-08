@@ -251,7 +251,8 @@
     "pages/widget/FormLinkDemo",
     "pages/widget/AddFormMenuItemDemo",
     "pages/basic/AppStartupDemo",
-    "pages/network/RcpDemo"
+    "pages/network/RcpDemo",
+    "pages/network/RcpDemo2"
   ],
   "window": {
     "designWidth": 720,

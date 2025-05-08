@@ -1,6 +1,6 @@
 /*
  * http 请求
- * 本例用于演示如何通过 rcp 实现 http 请求
+ * 本例用于演示如何通过 rcp 实现 http 请求，基础
  * 相对于 Network Kit 的 HttpRequest 来说，通过 Remote Communication Kit 的 rcp 实现 http 请求会更简单且功能更强大
  *
  * 需要在 src/main/module.json5 中添加网络权限，类似如下

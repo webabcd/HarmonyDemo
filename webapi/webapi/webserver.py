@@ -4,6 +4,7 @@ import json
 
 def setup_routes(app):
     app.router.add_route('*', '/api', httpapi)
+    app.router.add_route('*', '/redirect', httpapi_redirect)
 
 async def launch():
     app = web.Application()
@@ -27,3 +28,7 @@ async def httpapi(request):
 
     await asyncio.sleep(3)
     return web.Response(text=result)
+
+
+async def httpapi_redirect(request):
+    return web.Response(status=302, headers={'Location': '/api?k1=v1&k2=v2'})
