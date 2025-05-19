@@ -182,7 +182,7 @@ struct MySample1 {
         .width('100%')
         .height(200)
 
-      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { cross: LengthMetrics.vp(10) } }) {
+      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { main: LengthMetrics.vp(10), cross: LengthMetrics.vp(10) } }) {
         Button('play').onClick(() => {
           this.avPlayer?.play()
         })
@@ -284,7 +284,7 @@ struct MySample2 {
         this.createPlayer(this.xComponentController.getXComponentSurfaceId())
       }).width('100%').height(200)
 
-      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { cross: LengthMetrics.vp(10) } }) {
+      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { main: LengthMetrics.vp(10), cross: LengthMetrics.vp(10) } }) {
         Button('播放本地的资源媒体').onClick(async () => {
           // 将本地的资源媒体转为 AVFileDescriptor 并赋值给 AVPlayer 的 fdSrc 属性
           let fileDescriptor = await getContext(this).resourceManager.getRawFd('audio/1.mp3')
@@ -377,7 +377,7 @@ struct MySample3 {
         this.createPlayer(this.xComponentController.getXComponentSurfaceId())
       }).width('100%').height(200)
 
-      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { cross: LengthMetrics.vp(10) } }) {
+      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { main: LengthMetrics.vp(10), cross: LengthMetrics.vp(10) } }) {
         Button('switchBitrate').onClick(() => {
           if (this.bitrates.length > 0) {
             this.currentBitrateIndex += 1
@@ -464,7 +464,7 @@ struct MySample4 {
         this.createPlayer(this.xComponentController.getXComponentSurfaceId())
       }).width('100%').height(200)
 
-      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { cross: LengthMetrics.vp(10) } }) {
+      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { main: LengthMetrics.vp(10), cross: LengthMetrics.vp(10) } }) {
         Button('获取轨道信息').onClick(async () => {
           let trackList = await this.avPlayer?.getTrackDescription()
           if (trackList != null && trackList.length > 0) {
