@@ -156,6 +156,23 @@ struct MySample1 {
     });
   }
 
+  // 释放资源
+  release(): void {
+    this.avPlayer?.off('startRenderFrame')
+    this.avPlayer?.off('error')
+    this.avPlayer?.off('durationUpdate')
+    this.avPlayer?.off('timeUpdate')
+    this.avPlayer?.off('videoSizeChange')
+    this.avPlayer?.off('bufferingUpdate')
+    this.avPlayer?.off('speedDone')
+    this.avPlayer?.off('volumeChange')
+    this.avPlayer?.off('seekDone')
+    this.avPlayer?.off('stateChange')
+    this.avPlayer?.stop()
+    this.avPlayer?.reset()
+    this.avPlayer?.release()
+  }
+
   build() {
     Column({ space: 10 }) {
 
