@@ -253,7 +253,8 @@
     "pages/basic/AppStartupDemo",
     "pages/network/RcpDemo",
     "pages/network/RcpDemo2",
-    "pages/network/RcpDemo3"
+    "pages/network/RcpDemo3",
+    "pages/media/AVPlayerDemo"
   ],
   "window": {
     "designWidth": 720,

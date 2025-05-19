@@ -3,13 +3,15 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. AVPlayer（播放器，用于播放视频或音频）
+- pages/media/AVPlayerDemo
 1. http（通过 rcp 实现 http 请求，基础）
 - pages/network/RcpDemo
 - /webapi/webapi/webserver.py
 2. http（通过 rcp 实现 http 请求，进阶）
 - pages/network/RcpDemo2
 - /webapi/webapi/webserver.py
-2. http（通过 rcp 实现 http 请求，上传下载和流）
+3. http（通过 rcp 实现 http 请求，上传下载和流）
 - pages/network/RcpDemo3
 - /webapi/webapi/webserver.py
 
