@@ -79,6 +79,10 @@ struct MySample1 {
 
   // 创建 SoundPool 实例，并监听相关事件
   async initSoundPool() {
+    // 如果需要的话，可以通过 canIUse 判断当前设备是否支持 SoundPool
+    let supported = canIUse('SystemCapability.Multimedia.Media.SoundPool')
+    this.message += `是否支持 SoundPool: ${supported}\n`
+
     this.soundPool = await media.createSoundPool(6, {
       usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
       rendererFlags: 0
