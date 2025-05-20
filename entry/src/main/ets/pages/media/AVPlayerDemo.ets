@@ -42,8 +42,8 @@ struct MySample1 {
    *     注：仅 AVPlayer 处于 idle 状态时，才能设置 url/fdSrc 属性，设置 url/fdSrc 后，播放器会变为 initialized 状态
    *   setPlaybackStrategy() - 设置播放参数（一个 PlaybackStrategy 对象）
    *     preferredBufferDuration - 缓冲持续时间（单位：秒）
-   *     preferredBufferDurationForPlaying - 起播缓冲的缓冲持续时间（单位：秒），要求 api version 18 或以上
-   *     showFirstFrameOnPrepare - 播放器 prepared 后是否显示起播首帧，默认不显示，要求 api version 17 或以上
+   *     preferredBufferDurationForPlaying - 起播缓冲的缓冲持续时间（单位：秒），要求 api 18 或以上
+   *     showFirstFrameOnPrepare - 播放器 prepared 后是否显示起播首帧，默认不显示，要求 api 17 或以上
    *   on('startRenderFrame')/off('startRenderFrame') - 首帧渲染时的回调
    *   on('error')/off('error') - 发生错误时的回调
    *     建议在此回调内，调用 reset() 重置播放器
@@ -82,7 +82,7 @@ struct MySample1 {
    *     0.75, 1, 1.25, 1.75, 2, 0.5, 1.5, 3, 0.25, 0.125
    *   setVolume() - 设置播放器的音量（0 -1 之间）
    *   getPlaybackInfo() - 获取播放过程中的相关信息
-   *   getPlaybackPosition() - 获取当前的播放位置（要求 api version 18 或以上）
+   *   getPlaybackPosition() - 获取当前的播放位置（要求 api 18 或以上）
    */
   private xComponentController: XComponentController = new XComponentController()
   private avPlayer?: media.AVPlayer

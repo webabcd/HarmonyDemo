@@ -5,6 +5,8 @@
 ### 临时测试用
 1. AVPlayer（播放器，用于播放视频或音频）
 - pages/media/AVPlayerDemo
+2. SoundPool（音效播放器）
+- pages/media/SoundPoolDemo
 1. http（通过 rcp 实现 http 请求，基础）
 - pages/network/RcpDemo
 - /webapi/webapi/webserver.py
