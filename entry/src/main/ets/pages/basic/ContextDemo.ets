@@ -64,17 +64,21 @@ struct MySample1 {
 
   aboutToAppear(): void {
     /*
-     * 在页面内，可以通过 getContext(this) 获取 Context 对象，其返回的是 this 所指组件的所属 ability 的 context
+     * 在组件内，可以通过全局函数 getContext(this) 获取 Context 对象，其返回的是 this 所指组件的所属 ability 的 context
+     * 通过组件的 this.getUIContext().getHostContext() 可以获取组件的所属 ability 的 context
+     *
+     * 注：在 api 18 或以上 getContext() 已经被废弃了，建议使用 this.getUIContext().getHostContext()
      */
-    let context = getContext(this)
-    this.message = `app name: ${context.applicationInfo.name}\n`
-    this.message += `app codePath: ${context.applicationInfo.codePath}\n`
+    // let context = getContext(this)
+    let context = this.getUIContext().getHostContext()
+    this.message = `app name: ${context?.applicationInfo.name}\n`
+    this.message += `app codePath: ${context?.applicationInfo.codePath}\n`
 
     // 需要注意当前上下文和应用级上下文的区别
     // 这个上下文是当前 UIAbility 的上下文，本例中得到的 filesDir 的地址为 /data/storage/el2/base/haps/entry/files
-    this.message += `current context filesDir: ${context.filesDir}\n`
+    this.message += `current context filesDir: ${context?.filesDir}\n`
     // 这个上下文是应用级的上下文，本例中得到的 filesDir 的地址为 /data/storage/el2/base/files
-    this.message += `application context filesDir: ${context.getApplicationContext().filesDir}\n`
+    this.message += `application context filesDir: ${context?.getApplicationContext().filesDir}\n`
   }
 
   build() {
