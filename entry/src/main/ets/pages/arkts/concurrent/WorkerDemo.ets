@@ -58,14 +58,19 @@ struct WorkerDemo {
             threadWorker.terminate();
           }
 
-          // 工作线程被销毁后的回调（code 为 0 代表正常退出，code 为 1 代表异常退出）
-          threadWorker.onexit = (code: number) => {
-            this.message += `onexit: ${code}\n`
+          // 接收到工作线程传递过来的无法被反序列化的消息后的回调
+          threadWorker.onmessageerror = (event: MessageEvents) => {
+            console.info('workerPort onmessageerror');
           }
 
           // 工作线程运行中出现异常后的回调
           threadWorker.onerror = (err: ErrorEvent) => {
             this.message += `onerror: ${err.message}\n`
+          }
+          
+          // 工作线程被销毁后的回调（code 为 0 代表正常退出，code 为 1 代表异常退出）
+          threadWorker.onexit = (code: number) => {
+            this.message += `onexit: ${code}\n`
           }
 
           // postMessage() - 传递指定的消息给工作线程
