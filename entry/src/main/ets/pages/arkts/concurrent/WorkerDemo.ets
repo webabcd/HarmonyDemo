@@ -52,17 +52,20 @@ struct WorkerDemo {
           // 接收到工作线程传递过来的消息后的回调
           threadWorker.onmessage = (e: MessageEvents) => {
             // e.data 就是工作线程传递过来的消息
-            this.message += `onmessage:${e.data}\n`
+            this.message += `onmessage: ${e.data}\n`
+
+            // 终止工作线程
+            threadWorker.terminate();
           }
 
           // 工作线程被销毁后的回调（code 为 0 代表正常退出，code 为 1 代表异常退出）
           threadWorker.onexit = (code: number) => {
-            this.message += `onexit:${code}\n`
+            this.message += `onexit: ${code}\n`
           }
 
           // 工作线程运行中出现异常后的回调
           threadWorker.onerror = (err: ErrorEvent) => {
-            this.message += `onerror:${err.message}\n`
+            this.message += `onerror: ${err.message}\n`
           }
 
           // postMessage() - 传递指定的消息给工作线程

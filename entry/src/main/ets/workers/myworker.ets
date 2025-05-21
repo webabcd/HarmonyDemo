@@ -25,7 +25,7 @@ workerPort.onmessage = async (e: MessageEvents) => {
   await new Promise<void>((r) => { setTimeout(r, 1000) })
 
   // 传递指定的消息给宿主线程
-  workerPort.postMessage(`receive:${e.data}, send:worker to main`)
+  workerPort.postMessage(`worker to main`)
 
   // 销毁当前工作线程
   workerPort.close();
