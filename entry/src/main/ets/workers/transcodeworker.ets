@@ -5,7 +5,7 @@
 import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
 import { media } from '@kit.MediaKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import fs from '@ohos.file.fs';
+import { fileIo as fs } from '@kit.CoreFileKit';
 import { common, sendableContextManager } from '@kit.AbilityKit';
 import { MySendableObject } from '../pages/media/AVTranscoderDemo';
 
@@ -85,9 +85,7 @@ async function transcode(context: common.Context, rawfilePath: string, transcode
     // 将 rawfile 中的视频文件转为 AVFileDescriptor 对象
     let fileDescriptor: media.AVFileDescriptor = await context.resourceManager.getRawFd(rawfilePath);
     // 将沙箱路径中的视频文件转为 AVFileDescriptor 对象
-    // let file = fs.openSync(filePath);
-    // let fileSize = fs.statSync(filePath).size;
-    // let fileDescriptor: media.AVFileDescriptor = { fd: file.fd, offset: 0, length: fileSize };
+    // let fileDescriptor: media.AVFileDescriptor = fs.openSync(filePath);
     transcoder.fdSrc = fileDescriptor;
 
     // 拿到转码后的文件的文件描述符，并赋值给 transcoder 的 fdDst 属性
