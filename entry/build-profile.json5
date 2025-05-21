@@ -3,7 +3,8 @@
   "buildOption": {
     "sourceOption": {
       "workers": [
-        './src/main/ets/workers/myworker.ets'
+        './src/main/ets/workers/myworker.ets',
+        './src/main/ets/workers/transcodeworker.ets'
       ]
     }
   },

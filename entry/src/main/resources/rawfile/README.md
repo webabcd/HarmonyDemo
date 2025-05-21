@@ -7,6 +7,9 @@
 - pages/media/AVPlayerDemo
 2. SoundPool（音效播放器）
 - pages/media/SoundPoolDemo
+3. AVTranscoder（视频转码）
+- pages/media/AVTranscoderDemo
+- /entry/src/main/ets/workers/transcodeworker.ets
 1. http（通过 rcp 实现 http 请求，基础）
 - pages/network/RcpDemo
 - /webapi/webapi/webserver.py

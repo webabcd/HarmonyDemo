@@ -255,7 +255,8 @@
     "pages/network/RcpDemo2",
     "pages/network/RcpDemo3",
     "pages/media/AVPlayerDemo",
-    "pages/media/SoundPoolDemo"
+    "pages/media/SoundPoolDemo",
+    "pages/media/AVTranscoderDemo"
   ],
   "window": {
     "designWidth": 720,
