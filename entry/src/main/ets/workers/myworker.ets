@@ -33,7 +33,7 @@ workerPort.onmessage = async (e: MessageEvents) => {
 
 // 接收到宿主线程传递过来的无法被反序列化的消息后的回调
 workerPort.onmessageerror = (event: MessageEvents) => {
-  console.info('workerPort onmessageerror');
+  console.info('workerPort onmessageerror: ', event.data);
 };
 
 // 发生异常时的回调
