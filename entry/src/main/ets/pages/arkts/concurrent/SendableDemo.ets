@@ -5,6 +5,8 @@
  * 本例有 2 个示例
  * 第 1 个示例演示了，多线程之间传递普通对象，对象会做深拷贝
  * 第 2 个示例演示了，多线程之间传递 @Sendable 装饰的类的对象，多线程之间会共享对象
+ *
+ * 注：在 @Sendable 中可以通过 sendableContextManager 管理并传递 context 对象（参见 WorkerDemo.ets 中的相关说明）
  */
 
 import { TitleBar, MyLog } from '../../TitleBar';

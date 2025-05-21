@@ -26,6 +26,7 @@
 
 import { TitleBar } from '../../TitleBar';
 import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
+import { sendableContextManager } from '@kit.AbilityKit';
 
 @Entry
 @Component
@@ -64,9 +65,40 @@ struct WorkerDemo {
             this.message += `onerror:${err.message}\n`
           }
 
-          // 传递指定的消息给工作线程
-          threadWorker.postMessage("main to worker");
+          // postMessage() - 传递指定的消息给工作线程
+          threadWorker.postMessage("main to worker（postMessage）");
+
+          // postMessageWithSharedSendable() - 传递指定的 @Sendable 对象给工作线程
+          let context = this.getUIContext().getHostContext()
+          if (context) {
+            // 将 context 封装为 SendableContext（在工作线程中可以从 SendableContext 中解析出 context）
+            const sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(context)
+            const sendableObject: MySendableObject = new MySendableObject(sendableContext, "main to worker（postMessageWithSharedSendable）");
+            threadWorker.postMessageWithSharedSendable(sendableObject);
+          }
         })
     }
+  }
+}
+
+// 用于在线程之间传递的 @Sendable 对象
+@Sendable
+export class MySendableObject {
+  constructor(sendableContext: sendableContextManager.SendableContext, data: string = '') {
+    this.sendableContext = sendableContext;
+    this.data = data;
+  }
+
+  // 用于封装 context 对象
+  private sendableContext: sendableContextManager.SendableContext;
+  // 需要在线程之间传递的数据
+  private data: string;
+
+  public getSendableContext() {
+    return this.sendableContext;
+  }
+
+  public getData() {
+    return this.data;
   }
 }
