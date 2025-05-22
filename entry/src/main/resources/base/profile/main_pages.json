@@ -257,7 +257,8 @@
     "pages/media/AVPlayerDemo",
     "pages/media/SoundPoolDemo",
     "pages/media/AVTranscoderDemo",
-    "pages/media/AVMetadataExtractorDemo"
+    "pages/media/AVMetadataExtractorDemo",
+    "pages/media/AVImageGeneratorDemo"
   ],
   "window": {
     "designWidth": 720,

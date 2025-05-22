@@ -66,11 +66,16 @@ struct MySample1 {
        *   release() - 清理资源
        */
       Button('click me').onClick(async () => {
+        let context = this.getUIContext().getHostContext()
+        if (!context) {
+          return;
+        }
+
         if (canIUse("SystemCapability.Multimedia.Media.AVMetadataExtractor")) {
           let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
 
           // 将 rawfile 中的视频文件转为 AVFileDescriptor 对象
-          let fileDescriptor: media.AVFileDescriptor = await getContext(this).resourceManager.getRawFd('video/mp4.mp4');
+          let fileDescriptor: media.AVFileDescriptor = await context.resourceManager.getRawFd('video/mp4.mp4');
 
           // 将沙箱路径中的视频文件转为 AVFileDescriptor 对象
           // let fileDescriptor: media.AVFileDescriptor = fs.openSync(filePath);
@@ -115,10 +120,15 @@ struct MySample2 {
        *   dataSrc - 需要提取元数据的文件的 AVDataSrcDescriptor 对象（流式）
        */
       Button('click me').onClick(async () => {
+        let context = this.getUIContext().getHostContext()
+        if (!context) {
+          return;
+        }
+
         if (canIUse("SystemCapability.Multimedia.Media.AVMetadataExtractor")) {
           let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
 
-          let myBuffer: ArrayBuffer = (await getContext(this).resourceManager.getRawFileContent('video/mp4.mp4')).buffer as ArrayBuffer
+          let myBuffer: ArrayBuffer = (await context.resourceManager.getRawFileContent('video/mp4.mp4')).buffer as ArrayBuffer
           /*
            * AVDataSrcDescriptor - 数据流描述符
            *   fileSize - 流的总大小，如果是 -1 则代表不确定（比如直播）

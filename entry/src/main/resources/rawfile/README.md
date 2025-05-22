@@ -12,6 +12,8 @@
 - /entry/src/main/ets/workers/transcodeworker.ets
 4. AVMetadataExtractor（提取视频或音频的元数据信息）
 - pages/media/AVMetadataExtractorDemo
+5. AVImageGenerator（提取视频指定时间点的图像）
+- pages/media/AVImageGeneratorDemo
 1. http（通过 rcp 实现 http 请求，基础）
 - pages/network/RcpDemo
 - /webapi/webapi/webserver.py
