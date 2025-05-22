@@ -15,8 +15,8 @@ struct AVMetadataExtractorDemo {
     Column({ space: 10 }) {
       TitleBar()
       Tabs() {
-        TabContent() { MySample1() }.tabBar('基础').align(Alignment.Top)
-        TabContent() { MySample2() }.tabBar('基础').align(Alignment.Top)
+        TabContent() { MySample1() }.tabBar('通过 fdSrc 的方式提取').align(Alignment.Top)
+        TabContent() { MySample2() }.tabBar('通过 dataSrc 的方式提取').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -132,7 +132,7 @@ struct MySample2 {
            * 以本例来说用，通过 AVMetadataExtractor 的 AVDataSrcDescriptor 类型的 dataSrc 提取元数据信息
            * 会不停地回调 callback 以获取源文件数据，当解析到全部元数据后（不用读取全部源文件），则不再回调 callback 了
            */
-          let dataSrc: media.AVDataSrcDescriptor = {
+          let dataSrcDescriptor: media.AVDataSrcDescriptor = {
             fileSize: myBuffer.byteLength,
             callback: (buffer, len, pos) => {
               MyLog.d(`callback: buffer:${buffer.byteLength}, len,${len}, pos:${pos}`)
@@ -156,7 +156,7 @@ struct MySample2 {
               }
             }
           };
-          avMetadataExtractor.dataSrc = dataSrc
+          avMetadataExtractor.dataSrc = dataSrcDescriptor
 
           try {
             let avMetadata: media.AVMetadata = await avMetadataExtractor.fetchMetadata();
