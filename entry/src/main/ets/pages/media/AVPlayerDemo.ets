@@ -2,7 +2,7 @@
  * AVPlayer - 播放器（可以播放视频或音频）
  */
 
-import { TitleBar } from '../TitleBar'
+import { MyLog, TitleBar } from '../TitleBar'
 import { BusinessError } from '@kit.BasicServicesKit'
 import { media } from '@kit.MediaKit'
 import { LengthMetrics } from '@kit.ArkUI'
@@ -21,6 +21,7 @@ struct AVPlayerDemo {
         TabContent() { MySample3() }.tabBar('码流').align(Alignment.Top)
         TabContent() { MySample4() }.tabBar('轨道').align(Alignment.Top)
         TabContent() { MySample5() }.tabBar('外挂字幕').align(Alignment.Top)
+        TabContent() { MySample6() }.tabBar('通过 dataSrc 的方式播放').align(Alignment.Top)
       }
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -305,9 +306,9 @@ struct MySample2 {
         Button('播放本地的资源媒体').onClick(async () => {
           // 将本地的资源媒体转为 AVFileDescriptor 并赋值给 AVPlayer 的 fdSrc 属性
           let fileDescriptor = await getContext(this).resourceManager.getRawFd('audio/1.mp3')
-          let avFileDescriptor: media.AVFileDescriptor = { fd: fileDescriptor.fd, offset: fileDescriptor.offset, length: fileDescriptor.length }
+          // let avFileDescriptor: media.AVFileDescriptor = { fd: fileDescriptor.fd, offset: fileDescriptor.offset, length: fileDescriptor.length }
           if (this.avPlayer) {
-            this.avPlayer.fdSrc = avFileDescriptor
+            this.avPlayer.fdSrc = fileDescriptor
           }
         })
 
@@ -571,6 +572,109 @@ struct MySample5 {
       }).onLoad(async () => {
         this.createPlayer(this.xComponentController.getXComponentSurfaceId())
       }).width('100%').height(200)
+
+      Scroll() {
+        Text(this.message)
+      }
+      .layoutWeight(1).align(Alignment.TopStart).backgroundColor(Color.Yellow).width('100%')
+    }
+  }
+}
+
+@Component
+struct MySample6 {
+
+  @State message: string = ""
+
+  /*
+   * AVPlayer - 播放器（可以播放视频或音频）
+   *   dataSrc - 需要播放的视频流或音频流
+   *     注：仅 AVPlayer 处于 idle 状态时，才能设置 dataSrc 属性，设置 dataSrc 后，播放器会变为 initialized 状态
+   */
+  private xComponentController: XComponentController = new XComponentController()
+  private avPlayer?: media.AVPlayer
+
+  async createPlayer(surfaceId: string) {
+    let avPlayer: media.AVPlayer = await media.createAVPlayer();
+    this.avPlayer = avPlayer
+
+    avPlayer.on('error', (err: BusinessError) => {
+      this.message += `error: ${err.code}, ${err.message}\n`
+      avPlayer.reset()
+    });
+    avPlayer.on('stateChange', async (state: string, reason: media.StateChangeReason) => {
+      this.message += `stateChange: ${state}, ${reason}\n`
+      switch (state) {
+        case 'initialized':
+          avPlayer.surfaceId = surfaceId
+          avPlayer.prepare()
+          break;
+        case 'prepared':
+          avPlayer.play()
+          break;
+        case 'completed':
+          // 播放完成后，调用 reset() 将播放器置为 idle 状态
+          avPlayer.reset()
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
+  build() {
+    Column({ space: 10 }) {
+
+      XComponent({
+        id: 'xComponentId',
+        type: XComponentType.SURFACE,
+        controller: this.xComponentController
+      }).onLoad(async () => {
+        this.createPlayer(this.xComponentController.getXComponentSurfaceId())
+      }).width('100%').height(200)
+
+      Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceAround, space: { main: LengthMetrics.vp(10), cross: LengthMetrics.vp(10) } }) {
+        Button('通过 dataSrc 的方式播放').onClick(async () => {
+          let myBuffer: ArrayBuffer = (await getContext(this).resourceManager.getRawFileContent('video/mp4.mp4')).buffer as ArrayBuffer
+          /*
+           * AVDataSrcDescriptor - 数据流描述符
+           *   fileSize - 流的总大小，如果是 -1 则代表不确定（比如直播）
+           *   callback - 需要在此回调中填充数据，此回调可能会被多次回调
+           *     buffer - 当前需要填充的缓冲区
+           *     len - 当前需要填充的缓冲区的长度
+           *     pos - 当前需要填充的数据在源文件中的位置
+           *     返回值为当前成功填充的数据的长度，返回 -1 代表到末尾了，返回 -2 代表遇到异常了
+           */
+          let dataSrcDescriptor: media.AVDataSrcDescriptor = {
+            fileSize: myBuffer.byteLength,
+            callback: (buffer, len, pos) => {
+              MyLog.d(`callback: buffer:${buffer.byteLength}, len,${len}, pos:${pos}`)
+              if (buffer == undefined || len == undefined || pos == undefined) {
+                this.message += "dataSrc callback param invalid"
+                return -1;
+              }
+              if (pos >= myBuffer.byteLength) {
+                return -1
+              }
+
+              const targetArray = new Uint8Array(buffer);
+              if (pos + len >= myBuffer.byteLength) {
+                const sourceArray = new Uint8Array(myBuffer.slice(pos, myBuffer.byteLength));
+                targetArray.set(sourceArray);
+                return myBuffer.byteLength - pos
+              } else {
+                const sourceArray = new Uint8Array(myBuffer.slice(pos, pos + len));
+                targetArray.set(sourceArray);
+                return len
+              }
+            }
+          };
+
+          if (this.avPlayer) {
+            this.avPlayer.dataSrc = dataSrcDescriptor
+          }
+        })
+      }
 
       Scroll() {
         Text(this.message)
