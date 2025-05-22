@@ -47,7 +47,7 @@ struct MySample1 {
   async download_sample() {
     this.message = "开始下载文件\n"
 
-    const savePath = getContext().filesDir + "/rcp_sample1.txt"
+    const savePath = getContext(this).filesDir + "/rcp_sample1.txt"
     let downloadToFile: rcp.DownloadToFile = {
       kind: 'file',
       file: savePath,
@@ -93,7 +93,7 @@ struct MySample2 {
   async upload_sample() {
     this.message = "开始上传文件\n"
 
-    let filePath = getContext().resourceDir + "/son.jpg"
+    let filePath = getContext(this).resourceDir + "/son.jpg"
     let uploadFromFile = new rcp.UploadFromFile(filePath)
 
     const session: rcp.Session = rcp.createSession({headers:{"filename":"son.jpg"}})

@@ -145,7 +145,7 @@ struct MySample2 {
       Button("分享图片").onClick(() => {
 
         // 需要分享的图片的沙箱地址
-        let filePath = `${getContext().filesDir + "/share.jpg"}`
+        let filePath = `${getContext(this).filesDir + "/share.jpg"}`
 
         // 从 rawfile 中复制文件到指定的沙箱地址
         let context = getContext(this) as common.UIAbilityContext;

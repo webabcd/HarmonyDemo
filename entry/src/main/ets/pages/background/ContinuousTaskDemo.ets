@@ -188,7 +188,7 @@ struct MySample1 {
      * backgroundTaskManager.stopBackgroundRunning() - 停止长时任务
      *   context - 上下文
      */
-    backgroundTaskManager.stopBackgroundRunning(getContext()).then(() => {
+    backgroundTaskManager.stopBackgroundRunning(getContext(this)).then(() => {
       this.message += "stopBackgroundRunning 成功\n"
     }).catch((err: BusinessError) => {
       this.message += `stopBackgroundRunning errCode:${err.code}, errMessage:${err.message}\n`

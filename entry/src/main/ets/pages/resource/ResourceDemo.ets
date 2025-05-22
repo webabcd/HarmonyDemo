@@ -180,7 +180,7 @@ struct MySample3 {
 
   // 将指定的资源文件复制到指定的沙箱目录
   async copyFile(src: Resource, dst: string) {
-    let context = getContext() as common.UIAbilityContext;
+    let context = getContext(this) as common.UIAbilityContext;
     let resourceManager = context.resourceManager
     let buffer = resourceManager.getMediaContentSync(src.id).buffer
     let outputStream = await fileIo.createStream(dst, 'w+');
@@ -216,7 +216,7 @@ struct MySample3 {
     Column({space:10}) {
 
       // 显示沙箱目录中的图片文件
-      Image(`file://${getContext().filesDir + "/ResourceDemo.jpg"}`)
+      Image(`file://${getContext(this).filesDir + "/ResourceDemo.jpg"}`)
         .width(50).height(50)
 
       Text(this.message)

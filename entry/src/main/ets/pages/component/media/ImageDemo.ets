@@ -68,7 +68,7 @@ struct MySample1 {
         // 显示指定沙箱路径的图片文件
         // 显示资源中 resfile 目录中的图片文件（其会在第一次安装后被复制到应用的沙箱路径中）
         // 注：别忘了加上 file://（地址类似 file:///data/storage/el1/bundle/entry/resources/resfile/son.jpg）
-        Image(`file://${getContext().resourceDir + "/son.jpg"}`)
+        Image(`file://${getContext(this).resourceDir + "/son.jpg"}`)
           .width(50).height(50)
 
         // 显示一个 LayeredDrawableDescriptor 图片（将前景图片和背景图片组合为一个图片）
