@@ -108,9 +108,9 @@
       }
     ],
     "routerMap": "$profile:route_map", // 指定路由表，详见 src/main/resources/profile/route_map.json 中的配置
-    "requestPermissions":[
+    "requestPermissions":[ // 请求权限
       {
-        "name": "ohos.permission.INTERNET", // 请求 Internet 网络的权限
+        "name": "ohos.permission.INTERNET", // Internet 网络的权限
         "reason": "$string:hello_webabcd", // 申请此权限的原因
         "usedScene": {
           "abilities": [ ], // 需要使用此权限的 ability 的名称，配置为空则所有 ability 均可以使用此权限
@@ -118,19 +118,27 @@
         }
       },
       {
-        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING", // 请求长时任务的权限
-        "reason": "$string:hello_webabcd", // 申请此权限的原因
+        "name": "ohos.permission.GET_NETWORK_INFO", // 获取网络信息的权限
+        "reason": "$string:hello_webabcd",
         "usedScene": {
-          "abilities": [ ], // 需要使用此权限的 ability 的名称，配置为空则所有 ability 均可以使用此权限
-          "when": "always" // inuse（使用时允许使用此权限），always（始终允许使用此权限）
+          "abilities": [ ],
+          "when":"always"
         }
       },
       {
-        "name": "ohos.permission.PUBLISH_AGENT_REMINDER", // 请求提醒任务的权限
-        "reason": "$string:hello_webabcd", // 申请此权限的原因
+        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING", // 长时任务的权限
+        "reason": "$string:hello_webabcd",
         "usedScene": {
-          "abilities": [ ], // 需要使用此权限的 ability 的名称，配置为空则所有 ability 均可以使用此权限
-          "when": "always" // inuse（使用时允许使用此权限），always（始终允许使用此权限）
+          "abilities": [ ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.PUBLISH_AGENT_REMINDER", // 提醒任务的权限
+        "reason": "$string:hello_webabcd",
+        "usedScene": {
+          "abilities": [ ],
+          "when": "always"
         }
       }
     ]

@@ -258,7 +258,8 @@
     "pages/media/SoundPoolDemo",
     "pages/media/AVTranscoderDemo",
     "pages/media/AVMetadataExtractorDemo",
-    "pages/media/AVImageGeneratorDemo"
+    "pages/media/AVImageGeneratorDemo",
+    "pages/network/NetworkInfoDemo"
   ],
   "window": {
     "designWidth": 720,

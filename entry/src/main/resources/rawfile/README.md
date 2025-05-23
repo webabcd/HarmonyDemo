@@ -3,6 +3,8 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 网络信息
+- pages/network/NetworkInfoDemo
 1. AVPlayer（播放器，用于播放视频或音频）
 - pages/media/AVPlayerDemo
 2. SoundPool（音效播放器）

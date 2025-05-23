@@ -52,6 +52,13 @@ struct MySample1 {
         this.message = `json:${json}`
       })
 
+      Button("json 序列化（并格式化）").onClick(() => {
+        let person = new Person("webabcd", 44)
+        // 序列化时，如果需要格式化输出，则可以通过第 3 个参数控制缩进的空格数
+        let json = JSON.stringify(person, null, 2)
+        this.message = `json:${json}`
+      })
+
       Button("json 反序列化（对象）").onClick(() => {
         let json = '{"name":"webabcd", "age":44}'
         let person = JSON.parse(json) as Person
