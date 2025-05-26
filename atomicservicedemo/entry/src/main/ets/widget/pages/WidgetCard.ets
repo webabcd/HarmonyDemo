@@ -1,3 +1,7 @@
+/*
+ * 本例用于演示元服务的卡片
+ */
+
 @Entry
 @Component
 struct WidgetCard {
