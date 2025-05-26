@@ -3,6 +3,13 @@
  *
  * 先在 AGC 上的“证书、APP ID和Profile”的“APP ID”中新建一个 APP ID
  * 然后再在 DevEco Studio 中创建 atomic service 项目，创建的过程中需要将当前的 atomic service 项目绑定到 AGC 上的 APP ID
+ * 如果需要手动配置的话，则在 AppScope/app.json5 中做类似如下的配置
+ * {
+ *   "app": {
+ *     "bundleName": "com.atomicservice.6917572560037685495", // 在 AGC 上的“证书、APP ID和Profile”的“APP ID”中创建的包名
+ *     "bundleType": "atomicService", // 元服务
+ *   }
+ * }
  *
  * 元服务免安装，自动更新
  * 元服务是跟随华为账号的

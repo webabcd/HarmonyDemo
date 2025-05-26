@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.atomicservice.6917572560037685495",
-    "bundleType": "atomicService",
+    "bundleName": "com.atomicservice.6917572560037685495", // 在 AGC 上的“证书、APP ID和Profile”的“APP ID”中创建的包名
+    "bundleType": "atomicService", // 元服务
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
