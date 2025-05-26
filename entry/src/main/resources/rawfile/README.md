@@ -3,6 +3,8 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. 华为账号的默认登录
+- pages/account/HuaweiDefaultLoginDemo
 1. 元服务
 - pages/atomicservice/AtomicServiceDemo
 - /atomicservicedemo/entry/src/main/ets/Index.ets

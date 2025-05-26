@@ -260,7 +260,8 @@
     "pages/media/AVMetadataExtractorDemo",
     "pages/media/AVImageGeneratorDemo",
     "pages/network/NetworkInfoDemo",
-    "pages/atomicservice/AtomicServiceDemo"
+    "pages/atomicservice/AtomicServiceDemo",
+    "pages/account/HuaweiDefaultLoginDemo"
   ],
   "window": {
     "designWidth": 720,
