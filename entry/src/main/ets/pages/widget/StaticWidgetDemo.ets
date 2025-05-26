@@ -57,6 +57,8 @@
  * 3、卡片对应的 extension ability 的代码详见 /entryformability/EntryFormAbility.ets 中的说明
  *
  * 4、卡片的具体实现详见 /widget/pages/StaticWidgetCard.ets 中的说明
+ *
+ * 注：以上是开发时手动创建卡片的方式，如果要通过 DevEco Studio 自动创建卡片，则在 File -> New -> Service Widget 中创建即可
  */
 
 import { TitleBar } from '../TitleBar';
