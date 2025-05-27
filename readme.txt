@@ -72,7 +72,7 @@ Network Kit 提供网络相关能力。比如 import { http } from '@kit.Network
 Background Tasks Kit 提供后台任务能力。比如 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 
 hdc（OpenHarmony Device Connector）
-命令行工具，其存放于类似如下的地址 /sdk/12/toolchains/hdc.exe
+是一个用于设备连接和调试的命令行工具，类似于 Android 开发中的 ADB（Android Debug Bridge），其存放于类似如下的地址: DevEco Studio 安装目录/sdk/default/openharmony/toolchains/hdc.exe
 
 ohpm（OpenHarmony Package Manager）
 安装指定的依赖 ohpm i @webabcd/harmony-httpserver

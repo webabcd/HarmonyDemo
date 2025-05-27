@@ -25,18 +25,19 @@
  * 2、可以为元服务开发卡片
  * 3、可以通过负一屏搜索并打开指定的元服务，也可以通过元服务的卡片打开元服务（点击元服务右上角的按钮，可以找到生成卡片的入口）
  */
+import { router } from '@kit.ArkUI'
 
 @Entry
 @Component
 struct Index {
 
   build() {
-    RelativeContainer() {
+    Column({space:10}) {
       Text('atomic service')
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+
+      Button("华为账号的默认登录").onClick(() => {
+        router.pushUrl({url:"pages/HuaweiDefaultLogin"})
+      })
     }
     .height('100%')
     .width('100%')

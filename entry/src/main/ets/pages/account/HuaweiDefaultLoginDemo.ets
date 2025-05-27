@@ -1,5 +1,8 @@
 /*
+ * 华为账号的默认登录
  *
+ * 关于示例代码，请参见 /HarmonyDemo/atomicservicedemo 目录中的 /atomicservicedemo/entry/src/main/ets/HuaweiDefaultLogin.ets
+ * 关于配置与证书之类的说明，请参见 /entry/src/main/ets/pages/account/readme.txt
  */
 
 import { TitleBar } from '../TitleBar'
@@ -8,39 +11,12 @@ import { TitleBar } from '../TitleBar'
 @Component
 struct HuaweiDefaultLoginDemo {
 
+  @State message: string = "请参见 /HarmonyDemo/atomicservicedemo 目录中的 /atomicservicedemo/entry/src/main/ets/HuaweiDefaultLogin.ets 中的示例"
+
   build() {
-    Column({ space: 10 }) {
+    Column({space:10}) {
       TitleBar()
-      Tabs() {
-        TabContent() { MySample1() }.tabBar('xxx').align(Alignment.Top)
-        TabContent() { MySample2() }.tabBar('yyy').align(Alignment.Top)
-      }
-      .scrollable(true)
-      .barMode(BarMode.Scrollable)
-    }
-  }
-}
-
-@Component
-struct MySample1 {
-
-  @State message: string = '';
-
-  build() {
-    Column({space:10}) {
-
-    }
-  }
-}
-
-@Component
-struct MySample2 {
-
-  @State message: string = '';
-
-  build() {
-    Column({space:10}) {
-
+      Text(this.message)
     }
   }
 }
