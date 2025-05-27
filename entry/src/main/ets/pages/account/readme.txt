@@ -54,10 +54,8 @@ hdc 的地址在 DevEco Studio 安装目录/sdk/default/openharmony/toolchains �
 在 DevEco Studio 中选择 File -> Project Structure -> Project -> Signing Configs
 点击 Store file(*.p12): 最右侧的指纹按钮，然后复制证书指纹信息
 在 AGC 中选择“我的项目”，然后点击相关的项目，然后点击相关的应用，然后在“常规”中找到指定应用的“SHA256证书/公钥指纹”，然后点击“添加证书指纹”，然后粘贴之前复制的证书指纹信息
-注：配置成功后，大约 25 小时生效
 5、配置公钥指纹
 在 AGC 中选择“我的项目”，然后点击相关的项目，然后点击相关的应用，然后在“常规”中找到指定应用的“SHA256证书/公钥指纹”，然后点击“添加公钥指纹 (HarmonyOS API 9及以上)”，然后选择相关的公钥指纹信息即可
-注：配置成功后，大约 25 小时生效
 6、申请 scope 权限
 进入 https://developer.huawei.com/consumer/cn/console/api/scopeManage 
 先在左上角选择好项目和凭证（凭证名称是由应用名称和应用的 APP ID 组成的），然后再查看或申请 scope 权限
