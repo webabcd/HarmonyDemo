@@ -1,22 +1,25 @@
-注：关于证书和华为账号登录的示例请参见 /atomicservicedemo 项目
+注：关于证书和华为账号登录的示例请参见 /huaweilogindemo 项目
 
 
 几个概念：
 AGC - AppGallery Connect
-CSR - Certificate Signing Request
 AGC 的地址 https://developer.huawei.com/consumer/cn/service/josp/agc/index.html
 AGC 中的一个项目可以包含多个应用，这里所谓的项目比较类似分组的概念
+.csr - 证书请求文件 Certificate Signing Request
+.cer - AGC 上申请的证书文件的后缀名
+.p7b - AGC 上申请的 profile 文件的后缀名
+.p12 - 密钥库文件
 
 
 证书相关：
 1、生成证书请求文件
 在 DevEco Studio 中选择 Build -> Generate Key and CSR
 如果有密钥库文件（.p12）那么就选择它，如果没有则新建密钥库文件
-选择好密钥库文件之后，设置一个秘钥别名（可以用应用的名称做为秘钥别名，后续在配置签名的时候会用到）
-然后指定 .csr 文件的路径之后，就可以生成 .csr 文件了
+选择好密钥库文件之后，设置一个秘钥别名（一个密钥库可以包含多个秘钥别名，一个秘钥别名对应一个 .csr 文件，后续在配置签名的时候会用到秘钥别名）
+然后指定 .csr 文件的路径之后，就可以生成 .csr 文件了（建议 .csr 文件的文件名与秘钥别名一致）
 注：选择保存路径的时候，最好都指向一个单独的文件夹，最终会生成一个 .p12 文件（密钥库文件），一个 .csr 文件（证书请求文件），一个名为 material 的文件夹（存放一些相关的资料）
 2、在 AGC 的“证书、APP ID和Profile”中生成证书
-证书类型分为“调试证书”和“发布证书”，为证书起名时，调试证书可以起名为：应用名称_debug，发布证书可以起名为：应用名称_release
+证书类型分为“调试证书”和“发布证书”，为证书起名时，调试证书可以起名为：应用名称_debug，发布证书可以起名为：应用名称_release（注：证书的后缀名为 .cer）
 选择 .csr 文件后就可以生成证书了
 3、如果需要调试的话，则需要在 AGC 的“证书、APP ID和Profile”中注册调试设备，最多注册 100 个设备
 获取设备的 UDID 的方法如下：
@@ -26,7 +29,7 @@ AGC 中的一个项目可以包含多个应用，这里所谓的项目比较类�
 hdc 的地址在 DevEco Studio 安装目录/sdk/default/openharmony/toolchains 中
 4、在 AGC 的“证书、APP ID和Profile”中生成 profile
 需要选择相关的证书
-为 profile 起名时，调试 profile 可以起名为：应用名称_debug，发布 profile 可以起名为：应用名称_release
+为 profile 起名时，调试 profile 可以起名为：应用名称_debug，发布 profile 可以起名为：应用名称_release（注：profile 的后缀名为 .p7b）
 如果是调试 profile 还要选择已注册的设备
 5、配置签名
 在 DevEco Studio 中选择 File -> Project Structure -> Project -> Signing Configs 做配置（对应的配置文件为: 根目录/build-profile.json5）
