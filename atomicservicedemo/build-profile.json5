@@ -1,20 +1,6 @@
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "storeFile": "key/my_keystore.p12",
-          "storePassword": "0000001AA0E6FE858753518DEE646DBE2EA73234337597F91B6A664B86102F04AF69BB421741A1D06EE4",
-          "keyAlias": "atomicservicedemo",
-          "keyPassword": "0000001A0428A43F603FAEA337451AD43E707BEE1C529414E1BD16DA1F2F0FEF420245DCF096B70BA477",
-          "signAlg": "SHA256withECDSA",
-          "profile": "key/atomicservicedemo_debugDebug.p7b",
-          "certpath": "key/atomicservicedemo_debug.cer"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
