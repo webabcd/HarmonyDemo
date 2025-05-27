@@ -3,36 +3,7 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-1. 华为账号的默认登录
-- pages/account/HuaweiDefaultLoginDemo
-- /atomicservicedemo/entry/src/main/ets/HuaweiDefaultLogin.ets
-- /entry/src/main/ets/pages/account/readme.txt
-1. 元服务
-- pages/atomicservice/AtomicServiceDemo
-- /atomicservicedemo/entry/src/main/ets/Index.ets
-- /atomicservicedemo/entry/src/main/ets/widget/pages/WidgetCard.ets
-1. 网络信息
-- pages/network/NetworkInfoDemo
-1. AVPlayer（播放器，用于播放视频或音频）
-- pages/media/AVPlayerDemo
-2. SoundPool（音效播放器）
-- pages/media/SoundPoolDemo
-3. AVTranscoder（视频转码）
-- pages/media/AVTranscoderDemo
-- /entry/src/main/ets/workers/transcodeworker.ets
-4. AVMetadataExtractor（提取视频或音频的元数据信息）
-- pages/media/AVMetadataExtractorDemo
-5. AVImageGenerator（提取视频指定时间点的图像）
-- pages/media/AVImageGeneratorDemo
-1. http（通过 rcp 实现 http 请求，基础）
-- pages/network/RcpDemo
-- /webapi/webapi/webserver.py
-2. http（通过 rcp 实现 http 请求，进阶）
-- pages/network/RcpDemo2
-- /webapi/webapi/webserver.py
-3. http（通过 rcp 实现 http 请求，上传下载和流）
-- pages/network/RcpDemo3
-- /webapi/webapi/webserver.py
+
 
 ### ArkTS 基础
 1. 基础
@@ -609,6 +580,17 @@
 - pages/media/MediaLibraryDemo
 2. 从媒体库读取文件
 - pages/media/MediaLibraryDemo2
+3. AVPlayer（播放器，用于播放视频或音频）
+- pages/media/AVPlayerDemo
+4. SoundPool（音效播放器）
+- pages/media/SoundPoolDemo
+5. AVTranscoder（视频转码）
+- pages/media/AVTranscoderDemo
+- /entry/src/main/ets/workers/transcodeworker.ets
+6. AVMetadataExtractor（提取视频或音频的元数据信息）
+- pages/media/AVMetadataExtractorDemo
+7. AVImageGenerator（提取视频指定时间点的图像）
+- pages/media/AVImageGeneratorDemo
 
 ### 通知
 1. 通知（授权，文本，进度条，角标）
@@ -649,6 +631,17 @@
 4. WebSocket
 - pages/network/WebSocketDemo
 - /entry/src/main/resources/rawfile/WebSocketClient.html
+5. 网络信息
+- pages/network/NetworkInfoDemo
+6. http（通过 rcp 实现 http 请求，基础）
+- pages/network/RcpDemo
+- /webapi/webapi/webserver.py
+7. http（通过 rcp 实现 http 请求，进阶）
+- pages/network/RcpDemo2
+- /webapi/webapi/webserver.py
+8. http（通过 rcp 实现 http 请求，上传下载和流）
+- pages/network/RcpDemo3
+- /webapi/webapi/webserver.py
 
 ### 后台
 1. 短时任务（应用退到后台之后，允许继续运行一段时间）
@@ -683,6 +676,18 @@
 - /harmonydemo2/entry/src/main/module.json5
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
+
+### 元服务
+1. 元服务
+- pages/atomicservice/AtomicServiceDemo
+- /atomicservicedemo/entry/src/main/ets/pages/Index.ets
+- /atomicservicedemo/entry/src/main/ets/widget/pages/WidgetCard.ets
+
+### 华为账号
+1. 华为账号的默认登录
+- pages/account/HuaweiDefaultLoginDemo
+- /huaweilogindemo/entry/src/main/ets/pages/HuaweiDefaultLogin.ets
+- /entry/src/main/ets/pages/account/readme.txt
 
 ### Native Development Kit
 1. NDK 基础
