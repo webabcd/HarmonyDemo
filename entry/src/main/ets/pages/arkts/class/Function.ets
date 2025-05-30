@@ -74,7 +74,7 @@ f4(1, 2, )
   // hello wanglei, hello undefined
 
 
-  // 通过 ... 定义剩余参数，用于接收指定类型的可变数量的参数
+  // 通过 ... 定义剩余参数（也称为 rest 参数），用于接收指定类型的可变数量的参数
   let c = (p1: string, ...values: string[]) => {
     let result = "";
     for (let i = 0; i < values.length; i++) {
@@ -180,4 +180,19 @@ function myFunc(x: number | string): number | string | void {
   }, (a, b) => {
     return a + b
   })
+}
+
+// 闭包函数（closure）
+// 闭包函数能够记住并访问其定义时所在的作用域及其外部变量
+function fff(): () => number {
+  let count = 0;
+  return (): number => {
+    count++;
+    return count;
+  };
+}
+{
+  let a = fff();
+  MyLog.d(`${a()}`); // 1
+  MyLog.d(`${a()}`); // 2
 }

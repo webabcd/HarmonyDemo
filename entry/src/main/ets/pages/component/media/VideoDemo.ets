@@ -82,19 +82,19 @@ struct VideoDemo {
         .onError(() => {
           this.message += "onError\n"
         })
-        .onPrepared((e: DurationObject) => { // 回调参数是匿名的，需要将其转换为一个形状相同的自定义接口
+        .onPrepared((e: DurationObject) => { // 回调参数是一个对象字面量，需要将其转换为一个形状相同的自定义接口
           this.message += `onPrepared:${e.duration}\n`
         })
-        .onSeeking((e: TimeObject) => { // 回调参数是匿名的，需要将其转换为一个形状相同的自定义接口
+        .onSeeking((e: TimeObject) => { // 回调参数是一个对象字面量，需要将其转换为一个形状相同的自定义接口
           this.message += `onSeeking:${e.time}\n`
         })
-        .onSeeked((e: TimeObject) => { // 回调参数是匿名的，需要将其转换为一个形状相同的自定义接口
+        .onSeeked((e: TimeObject) => { // 回调参数是一个对象字面量，需要将其转换为一个形状相同的自定义接口
           this.message += `onSeeked:${e.time}\n`
         })
-        .onUpdate((e: TimeObject) => { // 回调参数是匿名的，需要将其转换为一个形状相同的自定义接口
+        .onUpdate((e: TimeObject) => { // 回调参数是一个对象字面量，需要将其转换为一个形状相同的自定义接口
           this.message += `onUpdate:${e.time}\n`
         })
-        .onFullscreenChange((e: FullscreenObject) => { // 回调参数是匿名的，需要将其转换为一个形状相同的自定义接口
+        .onFullscreenChange((e: FullscreenObject) => { // 回调参数是一个对象字面量，需要将其转换为一个形状相同的自定义接口
           this.message += `onFullscreenChange:${e.fullscreen}\n`
         })
 
@@ -143,17 +143,17 @@ struct VideoDemo {
   }
 }
 
-// 用于将回调参数中的匿名对象转换为形状相同的接口
+// 用于将回调参数中的对象字面量转换为形状相同的接口
 interface DurationObject {
   duration: number;
 }
 
-// 用于将回调参数中的匿名对象转换为形状相同的接口
+// 用于将回调参数中的对象字面量转换为形状相同的接口
 interface TimeObject {
   time: number;
 }
 
-// 用于将回调参数中的匿名对象转换为形状相同的接口
+// 用于将回调参数中的对象字面量转换为形状相同的接口
 interface FullscreenObject {
   fullscreen: boolean;
 }

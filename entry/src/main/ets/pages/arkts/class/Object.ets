@@ -99,3 +99,33 @@ struct ObjectDemo {
     // key:age, value:44
   });
 }
+
+// 对象字面量
+{
+  class MyClass {
+    name: string = "";
+    age: number = 0;
+  }
+
+  // 对象字面量（object literal）
+  // 通过花括号 { } 定义对象的方式就叫做对象字面量
+  let a: MyClass = {
+    name: "webabcd",
+    age: 44
+  };
+}
+
+// 匿名对象
+{
+  class MyClass {
+    public name: string;
+    public age: number;
+    public constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age
+    }
+  }
+
+  // 匿名对象是指在实例化时未绑定任何变量名的对象
+  new MyClass("webabcd", 44)
+}

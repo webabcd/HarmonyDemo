@@ -209,6 +209,17 @@ struct DataTypeDemo {
   }
   MyLog.d(f2("webabcd")); // webabcd
   MyLog.d(f2(44)); // 44
+
+
+  // 通过 type 指定类型别名（支持匿名类型）
+  type MyCallback = (name: string, age: number) => string;
+  let f3 = (callback: MyCallback): void => {
+    let result = callback("webabcd", 44)
+    MyLog.d(result) // webabcd, 44
+  }
+  f3((name, age) => {
+    return `${name}, ${age}`
+  })
 }
 
 {
