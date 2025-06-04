@@ -10,9 +10,9 @@ struct Index {
   @State message: string = '';
 
   // 分享过来的数据
-  @StorageProp('share_data') share_data: String = ''
+  @StorageProp('share_data') share_data: string = ''
   // 分享过来的图片地址
-  @StorageProp('share_uri') share_uri: String = ''
+  @StorageProp('share_uri') share_uri: string = ''
 
   onPageShow(): void {
     // 获取 AppStorage 中的数据（本例会在 UIAbility 中解析 Want 中的参数，并保存在 AppStorage 中）

@@ -21,7 +21,7 @@ import { promptAction } from '@kit.ArkUI';
 struct Hello {
 
   // 定义普通变量（声明时必须初始化）
-  name: String = "webabcd"
+  name: string = "webabcd"
   // @State 表示组件中的状态变量（声明时必须初始化），状态变量变化会触发相关 UI 刷新
   @State message: string = 'Hello World';
 

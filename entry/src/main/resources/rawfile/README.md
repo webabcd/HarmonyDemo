@@ -3,7 +3,8 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-
+1. 加密解密
+- pages/security/CryptoDemo
 
 ### ArkTS 基础
 1. 基础
