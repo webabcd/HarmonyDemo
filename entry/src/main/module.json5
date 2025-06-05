@@ -134,6 +134,14 @@
         }
       },
       {
+        "name": "ohos.permission.ACCESS_BIOMETRIC", // 使用生物特征识别能力（如人脸、指纹）进行身份认证的权限
+        "reason": "$string:hello_webabcd",
+        "usedScene": {
+          "abilities": [ ],
+          "when":"always"
+        }
+      },
+      {
         "name": "ohos.permission.KEEP_BACKGROUND_RUNNING", // 长时任务的权限
         "reason": "$string:hello_webabcd",
         "usedScene": {

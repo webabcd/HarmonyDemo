@@ -7,6 +7,8 @@
 - pages/security/CryptoDemo
 2. 关键资产
 - pages/security/AssetStoreDemo
+3. 用户认证
+- pages/security/UserAuthenticationDemo
 
 ### ArkTS 基础
 1. 基础
