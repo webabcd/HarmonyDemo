@@ -126,6 +126,14 @@
         }
       },
       {
+        "name": "ohos.permission.STORE_PERSISTENT_DATA", // 应用卸载后仍然保留关键资产的权限
+        "reason": "$string:hello_webabcd",
+        "usedScene": {
+          "abilities": [ ],
+          "when":"always"
+        }
+      },
+      {
         "name": "ohos.permission.KEEP_BACKGROUND_RUNNING", // 长时任务的权限
         "reason": "$string:hello_webabcd",
         "usedScene": {

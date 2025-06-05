@@ -262,7 +262,8 @@
     "pages/network/NetworkInfoDemo",
     "pages/atomicservice/AtomicServiceDemo",
     "pages/account/HuaweiDefaultLoginDemo",
-    "pages/security/CryptoDemo"
+    "pages/security/CryptoDemo",
+    "pages/security/AssetStoreDemo"
   ],
   "window": {
     "designWidth": 720,

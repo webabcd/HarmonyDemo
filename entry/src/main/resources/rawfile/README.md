@@ -5,6 +5,8 @@
 ### 临时测试用
 1. 加密解密
 - pages/security/CryptoDemo
+2. 关键资产
+- pages/security/AssetStoreDemo
 
 ### ArkTS 基础
 1. 基础
