@@ -17,7 +17,7 @@ struct UserAuthenticationDemo {
     Column() {
       TitleBar()
       Tabs() {
-        TabContent() { MySample1() }.tabBar('查询支持的用户认证能力').align(Alignment.Top)
+        TabContent() { MySample1() }.tabBar('查询系统支持的用户认证能力').align(Alignment.Top)
         TabContent() { MySample2() }.tabBar('通过 api 发起用户认证').align(Alignment.Top)
         TabContent() { MySample3() }.tabBar('通过组件发起用户认证').align(Alignment.Top)
       }
