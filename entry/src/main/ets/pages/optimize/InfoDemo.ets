@@ -59,6 +59,8 @@ struct MySample1 {
     this.message += `displayVersion: ${deviceInfo.displayVersion}\n` // emulator 5.0.0.112(SP2DEVC00E112R4P11log)
     // cpu 架构
     this.message += `abiList: ${deviceInfo.abiList}\n` // x86_64
+    // 系统的 api 版本
+    this.message += `sdkApiVersion: ${deviceInfo.sdkApiVersion}\n` // 13
     // 系统版本
     this.message += `osFullName: ${deviceInfo.osFullName}\n` // OpenHarmony-5.0.1.110
     // 系统版本中的 major 版本号
@@ -71,8 +73,6 @@ struct MySample1 {
     this.message += `buildVersion: ${deviceInfo.buildVersion}\n` // 110
     // 由很多信息拼接而成的版本标识
     this.message += `versionId: ${deviceInfo.versionId}\n` // phone/HUAWEI/HUAWEI/emulator/OpenHarmony-5.0.1.110/emulator/default/13/default/default
-    // 系统的 api 版本
-    this.message += `sdkApiVersion: ${deviceInfo.sdkApiVersion}\n` // 13
   }
 
   build() {
