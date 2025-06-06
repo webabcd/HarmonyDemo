@@ -9,6 +9,10 @@
 - pages/security/AssetStoreDemo
 3. 用户认证
 - pages/security/UserAuthenticationDemo
+3. hilog
+- pages/optimize/HiLogDemo
+3. 各种信息
+- pages/optimize/InfoDemo
 
 ### ArkTS 基础
 1. 基础

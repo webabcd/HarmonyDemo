@@ -8,7 +8,9 @@
  *
  * 日志级别从小到大排序为 DEBUG, INFO, WARN, ERROR, FATAL
  *
- * 注：在 release 版本的 app 中不会打印 DEBUG 级别的日志
+ * 注：
+ * 在 release 版本的 app 中默认不会打印 DEBUG 级别的日志
+ * 如果需要在 release 版本的 app 中打印 DEBUG 级别的日志，可以执行命令 hdc shell hilog -b D
  */
 
 import hilog from '@ohos.hilog';
@@ -17,7 +19,6 @@ export class MyLog {
   private static readonly DOMAIN: number = 0x0000;
   private static readonly TAG: string = 'webabcd';
 
-  // 注：在 release 版本的 app 中不会打印 DEBUG 级别的日志
   public static d(message: string): void {
     hilog.debug(MyLog.DOMAIN, MyLog.TAG, message);
   }

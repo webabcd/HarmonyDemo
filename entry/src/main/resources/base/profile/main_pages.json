@@ -264,7 +264,9 @@
     "pages/account/HuaweiDefaultLoginDemo",
     "pages/security/CryptoDemo",
     "pages/security/AssetStoreDemo",
-    "pages/security/UserAuthenticationDemo"
+    "pages/security/UserAuthenticationDemo",
+    "pages/optimize/HiLogDemo",
+    "pages/optimize/InfoDemo"
   ],
   "window": {
     "designWidth": 720,
