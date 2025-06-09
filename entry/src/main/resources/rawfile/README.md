@@ -9,8 +9,10 @@
 - pages/security/AssetStoreDemo
 3. 用户认证
 - pages/security/UserAuthenticationDemo
-3. hilog
+3. hilog 日志
 - pages/optimize/HiLogDemo
+3. 事件日志
+- pages/optimize/HiAppEventDemo
 3. 各种信息
 - pages/optimize/InfoDemo
 3. Targets, Products

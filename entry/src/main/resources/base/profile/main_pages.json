@@ -267,7 +267,8 @@
     "pages/security/UserAuthenticationDemo",
     "pages/optimize/HiLogDemo",
     "pages/optimize/InfoDemo",
-    "pages/tool/TargetsProducts"
+    "pages/tool/TargetsProducts",
+    "pages/optimize/HiAppEventDemo"
   ],
   "window": {
     "designWidth": 720,
