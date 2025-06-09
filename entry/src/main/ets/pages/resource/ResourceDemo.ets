@@ -23,7 +23,6 @@
  *
  * 注：
  * app 级的资源在 AppScope 目录内，目录结构与 module 级的资源一致，编译后 AppScope 的资源会合并到 module 的资源中，对于重名资源来说只会保留 AppScope 中的资源
- * 另外 AppScope 中的 app.json5 中的字段也会在编译后合并到 module 的 module.json5 中
  */
 
 import { TitleBar } from '../TitleBar'

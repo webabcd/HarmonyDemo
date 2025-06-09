@@ -22,8 +22,8 @@
         "name": "com.webabcd.harmonydemo.EntryAbility", // 当前 ability 的名称（自定义标识）
         "srcEntry": "./ets/entryability/EntryAbility.ets", // 当前 ability 的代码的地址
         "description": "$string:EntryAbility_desc", // 描述
-        "icon": "$media:layered_image", // 图标（入口 ability 的图标就是 app 的图标）
-        "label": "$string:EntryAbility_label", // 标题（入口 ability 的标题就是 app 的标题）
+        "icon": "$media:layered_image", // app 的图标（需要配置 entity.system.home, action.system.home），如果不指定此字段的话则 app 的图标会使用 AppScope/app.json5 中的 icon
+        "label": "$string:EntryAbility_label", // app 的标题（需要配置 entity.system.home, action.system.home），如果不指定此字段的话则 app 的标题会使用 AppScope/app.json5 中的 label
         "startWindowIcon": "$media:startIcon", // 启动屏上显示的图标
         "startWindowBackground": "$color:start_window_background", // 启动屏的背景
         "exported": true, // 用于标识当前 ability 是否可以被其他应用调用
