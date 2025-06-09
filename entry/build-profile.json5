@@ -47,6 +47,13 @@
           "./src/default/resources"
         ]
       },
+      "config": {
+        "deviceType": [ // 此 target 支持的设备类型
+          "phone",
+          "tablet",
+          "2in1"
+        ]
+      }
     },
     {
       "name": "target1",
@@ -65,9 +72,6 @@
           "./src/main/resources",
           "./src/target1/resources"
         ]
-      },
-      "output": {
-        "artifactName": "target1-1.0.0"
       },
       "config": {
         "deviceType": [
@@ -94,9 +98,6 @@
           "./src/main/resources",
           "./src/target2/resources"
         ]
-      },
-      "output": {
-        "artifactName": "target2-1.0.0"
       },
       "config": {
         "deviceType": [

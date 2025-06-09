@@ -8,6 +8,9 @@
  * 1、在 entry/build-profile.json5 中做 targets 配置
  * 2、在 hsp1/build-profile.json5 中做 targets 配置
  * 3、在 app 级的 build-profile.json5 中做 products 配置和 modules 配置
+ * 4、点击右上角工具栏“选择模块”框的左侧的“圆形”按钮，可以选择编译时的 product 和 target，也可以指定是 debug 模式还是 release 模式
+ * 5、如需构建 hap 则：Build -> Build Hap(s)/APP(s) -> Build Hap(s)
+ * 6、如需构建 app 则：Build -> Build Hap(s)/APP(s) -> Build APP(s)
  */
 
 // 不同的 target 定制了不同的 MyConfig.ets（地址分别为：entry/src/default/MyConfig.ets, entry/src/target1/MyConfig.ets, entry/src/target2/MyConfig.ets）
