@@ -17,12 +17,19 @@
       },
     },
   ],
+  // 配置 targets
+  // 注：
+  // 1、如果 hap 配置了 target，则 hap 依赖的 hsp 也需要做相关的 target 配置，否则会报错 Unable to find target 'target1' in module 'hsp1'. Make sure module 'hsp1' has the same target as module 'entry'.
+  // 2、哪个 target 需要打包到哪个 product 中，是在 app 级的 build-profile.json5 中配置的
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest"
+      "name": "target1"
+    },
+    {
+      "name": "target2"
     }
   ]
 }

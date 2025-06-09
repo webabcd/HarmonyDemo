@@ -4,7 +4,7 @@
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
-    "icon": "$media:app_icon", // app 的图标（注：会优先使用 entity.system.home, action.system.home 的 ability 的 icon，参见 entry/src/main/module.json5 中的相关配置
-    "label": "$string:app_name" // app 的标题（注：会优先使用 entity.system.home, action.system.home 的 ability 的 label，参见 entry/src/main/module.json5 中的相关配置
+    "icon": "$media:app_icon", // app 的图标（注：会优先使用 entity.system.home, action.system.home 的 ability 的 icon，参见 entry/src/main/module.json5 中的相关配置）
+    "label": "$string:app_name" // app 的标题（注：会优先使用 entity.system.home, action.system.home 的 ability 的 label，参见 entry/src/main/module.json5 中的相关配置）
   }
 }

@@ -13,6 +13,17 @@
 - pages/optimize/HiLogDemo
 3. 各种信息
 - pages/optimize/InfoDemo
+3. Targets, Products
+- pages/tool/MultiTargetsProducts
+- /entry/build-profile.json5
+- /hsp1/build-profile.json5
+- /build-profile.json5
+- /entry/src/default/MyConfig.ets
+- /entry/src/default/resources/base/element/string.json
+- /entry/src/target1/MyConfig.ets
+- /entry/src/target1/resources/base/element/string.json
+- /entry/src/target2/MyConfig.ets
+- /entry/src/target2/resources/base/element/string.json
 
 ### ArkTS 基础
 1. 基础

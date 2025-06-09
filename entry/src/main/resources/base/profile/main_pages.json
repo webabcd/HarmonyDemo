@@ -266,7 +266,8 @@
     "pages/security/AssetStoreDemo",
     "pages/security/UserAuthenticationDemo",
     "pages/optimize/HiLogDemo",
-    "pages/optimize/InfoDemo"
+    "pages/optimize/InfoDemo",
+    "pages/tool/TargetsProducts"
   ],
   "window": {
     "designWidth": 720,

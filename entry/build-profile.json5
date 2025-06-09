@@ -23,12 +23,88 @@
       }
     },
   ],
+  // 配置 targets
+  // 一个 hap 可以定制出多个 target，每个 target 都是一个定制的 hap
+  // 注：
+  // 1、如果 hap 引用了 hsp 则需要在 hsp 模块的 build-profile.json5 中配置相关的 target，否则会报错 Unable to find target 'target1' in module 'hsp1'. Make sure module 'hsp1' has the same target as module 'entry'.
+  // 2、哪个 target 需要打包到哪个 product 中，是在 app 级的 build-profile.json5 中配置的
   "targets": [
     {
-      "name": "default"
+      "name": "default", // 此 target 的名称
+      "source": {
+        "sourceRoots": ["./src/default"], // 此 target 的定制代码的目录
+        "abilities": [
+          {
+            "name": "com.webabcd.harmonydemo.EntryAbility", // 此 target 的入口 ability 的名称
+            "icon":"$media:mytarget_logo", // 此 target 的入口 ability 的图标（即定制 app 的图标）
+            "label":"$string:mytarget_name", // 此 target 的入口 ability 的标题（即定制 app 的标题）
+          }
+        ]
+      },
+      "resource": { // 此 target 的定制资源的目录
+        "directories": [
+          "./src/main/resources",
+          "./src/default/resources"
+        ]
+      },
     },
     {
-      "name": "ohosTest",
+      "name": "target1",
+      "source": {
+        "sourceRoots": ["./src/target1"],
+        "abilities": [
+          {
+            "name": "com.webabcd.harmonydemo.EntryAbility",
+            "icon":"$media:mytarget_logo",
+            "label":"$string:mytarget_name",
+          }
+        ]
+      },
+      "resource": {
+        "directories": [
+          "./src/main/resources",
+          "./src/target1/resources"
+        ]
+      },
+      "output": {
+        "artifactName": "target1-1.0.0"
+      },
+      "config": {
+        "deviceType": [
+          "phone",
+          "tablet",
+          "2in1"
+        ]
+      }
+    },
+    {
+      "name": "target2",
+      "source": {
+        "sourceRoots": ["./src/target2"],
+        "abilities": [
+          {
+            "name": "com.webabcd.harmonydemo.EntryAbility",
+            "icon":"$media:mytarget_logo",
+            "label":"$string:mytarget_name",
+          }
+        ]
+      },
+      "resource": {
+        "directories": [
+          "./src/main/resources",
+          "./src/target2/resources"
+        ]
+      },
+      "output": {
+        "artifactName": "target2-1.0.0"
+      },
+      "config": {
+        "deviceType": [
+          "phone",
+          "tablet",
+          "2in1"
+        ]
+      }
     }
   ]
 }

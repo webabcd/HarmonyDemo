@@ -1,9 +1,12 @@
 {
   "app": {
     "signingConfigs": [],
+    // 配置 products
+    // 一个 app 可以定制出多个 product，每个 product 都是一个定制的 app
+    // 注：必须要存在名为 default 的 product
     "products": [
       {
-        "name": "default",
+        "name": "default", // 此 product 的名称
         "signingConfig": "default",
         "compatibleSdkVersion": "5.0.1(13)",
         "runtimeOS": "HarmonyOS",
@@ -12,7 +15,40 @@
             "caseSensitiveCheck": true,
             "useNormalizedOHMUrl": true
           }
-        }
+        },
+        "bundleName": "com.webabcd.harmonydemo", // 此定制 app 的 bundleName（会覆盖 AppScope/app.json5 中的相关配置）
+        "icon": "$media:app_icon", // 此定制 app 的图标（会覆盖 AppScope/app.json5 中的相关配置），但是会优先使用 entry 的 target 的入口 ability 的 icon
+        "label": "$string:app_name" // 此定制 app 的标题（会覆盖 AppScope/app.json5 中的相关配置），但是会优先使用 entry 的 target 的入口 ability 的 label
+      },
+      {
+        "name": "product1",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.1(13)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        },
+        "bundleName": "com.webabcd.harmonydemo1",
+        "icon": "$media:app_icon",
+        "label": "$string:app_name"
+      },
+      {
+        "name": "product2",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.1(13)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        },
+        "bundleName": "com.webabcd.harmonydemo2",
+        "icon": "$media:app_icon",
+        "label": "$string:app_name"
       }
     ],
     "buildModeSet": [
@@ -24,15 +60,55 @@
       }
     ]
   },
+  // 配置 modules
+  // 当使用了 targets, products 时，则需要在此处配置 target 需要打包到哪个 product 中
   "modules": [
     {
       "name": "entry",
       "srcPath": "./entry",
       "targets": [
         {
+          // 将 entry 模块的名为 default 的 target 打包到名为 default 的 product 中
           "name": "default",
           "applyToProducts": [
             "default"
+          ]
+        },
+        {
+          "name": "target1",
+          "applyToProducts": [
+            "product1"
+          ]
+        },
+        {
+          "name": "target2",
+          "applyToProducts": [
+            "product2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hsp1",
+      "srcPath": "./hsp1",
+      "targets": [
+        {
+          // 将 hsp1 模块的名为 default 的 target 打包到名为 default 的 product 中
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        },
+        {
+          "name": "target1",
+          "applyToProducts": [
+            "product1"
+          ]
+        },
+        {
+          "name": "target2",
+          "applyToProducts": [
+            "product2"
           ]
         }
       ]
@@ -56,18 +132,6 @@
     {
       "name": "har2",
       "srcPath": "./har2",
-    },
-    {
-      "name": "hsp1",
-      "srcPath": "./hsp1",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
     },
     {
       "name": "ndk1",
