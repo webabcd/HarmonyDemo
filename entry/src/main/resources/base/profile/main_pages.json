@@ -268,7 +268,8 @@
     "pages/optimize/HiLogDemo",
     "pages/optimize/InfoDemo",
     "pages/tool/TargetsProducts",
-    "pages/optimize/HiAppEventDemo"
+    "pages/optimize/HiAppEventDemo",
+    "pages/optimize/HiDebugDemo"
   ],
   "window": {
     "designWidth": 720,

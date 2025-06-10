@@ -29,4 +29,8 @@ export class Helper {
       return Helper.formatDate(now)
     }
   }
+
+  static formatWithThousandSeparator(num: number | bigint): string {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 }

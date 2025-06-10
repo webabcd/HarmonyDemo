@@ -11,8 +11,10 @@
 - pages/security/UserAuthenticationDemo
 3. hilog 日志
 - pages/optimize/HiLogDemo
-3. 事件日志
+3. HiAppEvent（事件日志）
 - pages/optimize/HiAppEventDemo
+3. HiDebug（用于获取 cpu, 内存等信息）
+- pages/optimize/HiDebugDemo
 3. 各种信息
 - pages/optimize/InfoDemo
 3. Targets, Products
