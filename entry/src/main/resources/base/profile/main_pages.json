@@ -270,7 +270,8 @@
     "pages/tool/TargetsProducts",
     "pages/optimize/HiAppEventDemo",
     "pages/optimize/HiDebugDemo",
-    "pages/optimize/ErrorManagerDemo"
+    "pages/optimize/ErrorManagerDemo",
+    "pages/test/UnitTest"
   ],
   "window": {
     "designWidth": 720,

@@ -1,5 +1,6 @@
-import localUnitTest from './LocalUnit.test';
+import UnitTestTest from './UnitTest.test'
 
 export default function testsuite() {
-  localUnitTest();
+  // 需要在此处调用你的 .test.ets 测试文件中的函数
+  UnitTestTest()
 }

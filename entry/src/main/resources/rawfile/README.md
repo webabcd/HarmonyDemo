@@ -20,7 +20,11 @@
 - pages/optimize/HiDebugDemo
 3. 各种信息
 - pages/optimize/InfoDemo
-3. Targets, Products
+3. 单元测试
+- pages/test/UnitTest
+- /entry/src/test/List.test.ets
+- /entry/src/test/UnitTest.test.ets
+4. Targets, Products
 - pages/tool/MultiTargetsProducts
 - /entry/build-profile.json5
 - /hsp1/build-profile.json5
