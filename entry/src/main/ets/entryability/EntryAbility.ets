@@ -114,9 +114,12 @@ export default class EntryAbility extends UIAbility {
 
   // 停止监听未处理异常
   stopErrorManager() {
-    errorManager.off("error", this.errorManagerId, (err: BusinessError) => {
-      MyLog.d(`errorManager.off("error") errorManagerId:${this.errorManagerId}, errCode:${err.code}, errMessage:${err.message}`);
-    });
+    if (this.errorManagerId > -1) {
+      errorManager.off("error", this.errorManagerId, (err: BusinessError) => {
+        // 注：我是在 onDestroy() 中调用这里的，此时 MyLog 不能用了，需要直接用 hilog 或 console 写日志
+        console.info(`errorManager.off("error") errorManagerId:${this.errorManagerId}, errCode:${err.code}, errMessage:${err.message}`);
+      });
+    }
   }
 
   // UIAbility 实例销毁时
