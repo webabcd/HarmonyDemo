@@ -19,6 +19,7 @@ struct HiAppEventDemo {
         // 本例用于演示如何在应用内写入和监听自定义的事件日志
         TabContent() { MySample1() }.tabBar('应用的事件日志').align(Alignment.Top)
         // 本例用于演示如何监听崩溃和卡死日志，其他的如内存泄漏，滑动丢帧，cpu 高负载等日志请参见文档
+        // 注：对于崩溃和卡死日志来说，要等到 app 下次启动时才能获取到（如果需要当下拿到未处理异常，可以通过 errorManager 实现）
         TabContent() { MySample2() }.tabBar('系统的事件日志').align(Alignment.Top)
       }
       .scrollable(true)
@@ -159,6 +160,8 @@ struct MySample2 {
      *     log_over_limit - 所有的故障日志文件的总大小是否超过了 5MB 的上限，如果超过了则会导致故障日志写入失败，所以处理完 external_log 日志后要及时清理
      * hiAppEvent.addWatcher() - 监听指定的监听器
      * hiAppEvent.removeWatcher() - 取消监听指定的监听器
+     *
+     * 注：对于崩溃和卡死日志来说，要等到 app 下次启动时才能获取到（如果需要当下拿到未处理异常，可以通过 errorManager 实现）
      */
     this.watcher = {
       name: "watcher2",
@@ -207,11 +210,11 @@ struct MySample2 {
   build() {
     Column({ space: 10 }) {
 
-      Button("模拟崩溃").onClick(()=>{
+      Button("模拟崩溃").onClick(() => {
         let result: object = JSON.parse("");
       })
 
-      Button("模拟卡死").onClick(()=>{
+      Button("模拟卡死").onClick(() => {
         setTimeout(() => {
           while (true) {
 

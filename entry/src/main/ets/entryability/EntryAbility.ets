@@ -3,21 +3,29 @@
  * UIAbility 的相关配置，请参见 module.json5 配置文件中的 abilities 标签
  */
 
-import { AbilityConstant, Configuration, UIAbility, Want } from '@kit.AbilityKit';
+import { AbilityConstant, Configuration, errorManager, UIAbility, Want } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 import { MyLog } from '../utils/MyLog';
 import { formBindingData, formInfo, formProvider } from '@kit.FormKit';
 import { Helper } from '../utils/Helper';
 import { rpc } from '@kit.IPCKit';
+import process from '@ohos.process';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
 
   // 用于保存通过卡片的 call 的方式拉起了 ability 时，传递过来的名为 method 的参数
   private cardCallMethod = ""
 
+  // 监听未处理异常的监听器的标识
+  private errorManagerId = -1
+
   // UIAbility 实例创建完成时（冷启动）
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     MyLog.d(`ability onCreate, parameters:${JSON.stringify((want.parameters))}`);
+
+    // 开始监听未处理异常
+    this.startErrorManager()
 
     this.handleCard(want)
   }
@@ -74,6 +82,43 @@ export default class EntryAbility extends UIAbility {
     }
   }
 
+  // 开始监听未处理异常
+  startErrorManager() {
+    /*
+     * errorManager.on("error") - 开始监听未处理异常，返回此监听器的标识
+     *   onUnhandledException() - 监听到未处理异常后的回调
+     *     errMsg - 返回一个 string 信息
+     *   onException() - 监听到未处理异常后的回调
+     *     errObject - 返回一个 Error 对象
+     *       name - 异常的名称
+     *       message - 异常的信息
+     *       stack - 异常的调用栈信息
+     *   注：发生未处理异常时，会先走到 onUnhandledException() 然后再走到 onException()
+     * errorManager.off("error") - 通过监听器的标识停止监听未处理异常
+     */
+    let callback: errorManager.ErrorObserver = {
+      onUnhandledException: (errMsg: string) => {
+        MyLog.d(`errorManager onUnhandledException, errMsg:${errMsg}`);
+      },
+      onException: (errObject: Error) => {
+        MyLog.d(`errorManager onException, errName:${errObject.name}, errMessage:${errObject.message}, errStack:${errObject.stack}`);
+
+        // 出现未处理异常，就强制退出
+        let pro = new process.ProcessManager();
+        pro.exit(0);
+      }
+    }
+    this.errorManagerId = errorManager.on("error", callback);
+    MyLog.d(`errorManager.on("error") errorManagerId:${this.errorManagerId}`);
+  }
+
+  // 停止监听未处理异常
+  stopErrorManager() {
+    errorManager.off("error", this.errorManagerId, (err: BusinessError) => {
+      MyLog.d(`errorManager.off("error") errorManagerId:${this.errorManagerId}, errCode:${err.code}, errMessage:${err.message}`);
+    });
+  }
+
   // UIAbility 实例销毁时
   onDestroy(): void {
     MyLog.d('ability onDestroy');
@@ -82,6 +127,9 @@ export default class EntryAbility extends UIAbility {
       // 取消监听
       this.callee.off(this.cardCallMethod)
     }
+
+    // 停止监听未处理异常
+    this.stopErrorManager()
   }
 
   // UIAbility 的窗口创建完成时

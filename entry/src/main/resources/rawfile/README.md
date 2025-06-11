@@ -13,6 +13,9 @@
 - pages/optimize/HiLogDemo
 3. HiAppEvent（事件日志）
 - pages/optimize/HiAppEventDemo
+3. errorManager（捕获未处理异常）
+- pages/optimize/ErrorManagerDemo
+- /entry/src/main/ets/entryability/EntryAbility.ets
 3. HiDebug（用于获取 cpu, 内存等信息）
 - pages/optimize/HiDebugDemo
 3. 各种信息

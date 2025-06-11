@@ -269,7 +269,8 @@
     "pages/optimize/InfoDemo",
     "pages/tool/TargetsProducts",
     "pages/optimize/HiAppEventDemo",
-    "pages/optimize/HiDebugDemo"
+    "pages/optimize/HiDebugDemo",
+    "pages/optimize/ErrorManagerDemo"
   ],
   "window": {
     "designWidth": 720,
