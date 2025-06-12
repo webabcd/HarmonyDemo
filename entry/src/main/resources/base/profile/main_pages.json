@@ -271,7 +271,8 @@
     "pages/optimize/HiAppEventDemo",
     "pages/optimize/HiDebugDemo",
     "pages/optimize/ErrorManagerDemo",
-    "pages/test/UnitTest"
+    "pages/test/UnitTest",
+    "pages/arkts/concurrent/EmitterDemo"
   ],
   "window": {
     "designWidth": 720,

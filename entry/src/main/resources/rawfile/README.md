@@ -3,6 +3,8 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+1. emitter（用于同一进程内不同线程间或同一线程内发送和订阅事件）
+- pages/arkts/concurrent/EmitterDemo
 1. 加密解密
 - pages/security/CryptoDemo
 2. 关键资产
