@@ -20,7 +20,7 @@
  *   data - 自定义的 key/value 数据
  */
 
-import { MyLog, TitleBar } from '../../TitleBar';
+import { MyLog, TitleBar } from '../TitleBar';
 import { taskpool } from '@kit.ArkTS';
 import { emitter } from '@kit.BasicServicesKit';
 

@@ -3,8 +3,10 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
+3. 各种信息
+- pages/info/InfoDemo
 1. emitter（用于同一进程内不同线程间或同一线程内发送和订阅事件）
-- pages/arkts/concurrent/EmitterDemo
+- pages/info/EmitterDemo
 1. 加密解密
 - pages/security/CryptoDemo
 2. 关键资产
@@ -20,8 +22,6 @@
 - /entry/src/main/ets/entryability/EntryAbility.ets
 3. HiDebug（用于获取 cpu, 内存等信息）
 - pages/optimize/HiDebugDemo
-3. 各种信息
-- pages/optimize/InfoDemo
 3. 单元测试
 - pages/test/UnitTest
 - /entry/src/test/List.test.ets

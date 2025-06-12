@@ -266,13 +266,13 @@
     "pages/security/AssetStoreDemo",
     "pages/security/UserAuthenticationDemo",
     "pages/optimize/HiLogDemo",
-    "pages/optimize/InfoDemo",
+    "pages/info/InfoDemo",
     "pages/tool/TargetsProducts",
     "pages/optimize/HiAppEventDemo",
     "pages/optimize/HiDebugDemo",
     "pages/optimize/ErrorManagerDemo",
     "pages/test/UnitTest",
-    "pages/arkts/concurrent/EmitterDemo"
+    "pages/info/EmitterDemo"
   ],
   "window": {
     "designWidth": 720,
