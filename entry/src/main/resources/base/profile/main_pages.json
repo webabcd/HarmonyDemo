@@ -272,7 +272,8 @@
     "pages/optimize/HiDebugDemo",
     "pages/optimize/ErrorManagerDemo",
     "pages/test/UnitTest",
-    "pages/info/EmitterDemo"
+    "pages/info/EmitterDemo",
+    "pages/info/CommonEventManagerDemo"
   ],
   "window": {
     "designWidth": 720,
