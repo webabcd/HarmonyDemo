@@ -3,44 +3,6 @@
 > [我的博客](https://webabcd.cnblogs.com/)
 
 ### 临时测试用
-3. 各种信息
-- pages/info/InfoDemo
-1. emitter（用于同一进程内不同线程间或同一线程内发送和订阅事件）
-- pages/info/EmitterDemo
-1. CommonEventManager（用于进程间通信，以及订阅系统事件）
-- pages/info/CommonEventManagerDemo
-1. 加密解密
-- pages/security/CryptoDemo
-2. 关键资产
-- pages/security/AssetStoreDemo
-3. 申请权限
-- pages/security/PermissionDemo
-3. 用户认证
-- pages/security/UserAuthenticationDemo
-3. hilog 日志
-- pages/optimize/HiLogDemo
-3. HiAppEvent（事件日志）
-- pages/optimize/HiAppEventDemo
-3. errorManager（捕获未处理异常）
-- pages/optimize/ErrorManagerDemo
-- /entry/src/main/ets/entryability/EntryAbility.ets
-3. HiDebug（用于获取 cpu, 内存等信息）
-- pages/optimize/HiDebugDemo
-3. 单元测试
-- pages/test/UnitTest
-- /entry/src/test/List.test.ets
-- /entry/src/test/UnitTest.test.ets
-4. Targets, Products
-- pages/tool/MultiTargetsProducts
-- /entry/build-profile.json5
-- /hsp1/build-profile.json5
-- /build-profile.json5
-- /entry/src/default/MyConfig.ets
-- /entry/src/default/resources/base/element/string.json
-- /entry/src/target1/MyConfig.ets
-- /entry/src/target1/resources/base/element/string.json
-- /entry/src/target2/MyConfig.ets
-- /entry/src/target2/resources/base/element/string.json
 
 ### ArkTS 基础
 1. 基础
@@ -714,6 +676,14 @@
 - /harmonydemo2/entry/src/main/ets/entryability/EntryAbility.ets
 - /harmonydemo2/entry/src/main/ets/pages/Index.ets
 
+### 信息
+1. 各种信息
+- pages/info/InfoDemo
+2. emitter（用于同一进程内不同线程间或同一线程内发送和订阅事件）
+- pages/info/EmitterDemo
+3. CommonEventManager（用于进程间通信，以及订阅系统事件）
+- pages/info/CommonEventManagerDemo
+
 ### 元服务
 1. 元服务
 - pages/atomicservice/AtomicServiceDemo
@@ -734,3 +704,43 @@
 - /ndk1/src/main/cpp/CMakeLists.txt
 - /ndk1/src/main/cpp/types/libndk1/Index.d.ts
 - /ndk1/src/main/cpp/types/libndk1/oh-package.json5
+
+### 安全
+1. 加密解密
+- pages/security/CryptoDemo
+2. 关键资产
+- pages/security/AssetStoreDemo
+3. 申请权限
+- pages/security/PermissionDemo
+4. 用户认证
+- pages/security/UserAuthenticationDemo
+
+### 优化
+1. hilog 日志
+- pages/optimize/HiLogDemo
+2. HiAppEvent（事件日志）
+- pages/optimize/HiAppEventDemo
+3. errorManager（捕获未处理异常）
+- pages/optimize/ErrorManagerDemo
+- /entry/src/main/ets/entryability/EntryAbility.ets
+4. HiDebug（用于获取 cpu, 内存等信息）
+- pages/optimize/HiDebugDemo
+
+### 测试
+1. 单元测试
+- pages/test/UnitTest
+- /entry/src/test/List.test.ets
+- /entry/src/test/UnitTest.test.ets
+
+### 工具
+1. Targets, Products
+- pages/tool/TargetsProducts
+- /entry/build-profile.json5
+- /hsp1/build-profile.json5
+- /build-profile.json5
+- /entry/src/default/MyConfig.ets
+- /entry/src/default/resources/base/element/string.json
+- /entry/src/target1/MyConfig.ets
+- /entry/src/target1/resources/base/element/string.json
+- /entry/src/target2/MyConfig.ets
+- /entry/src/target2/resources/base/element/string.json
