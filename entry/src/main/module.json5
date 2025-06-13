@@ -156,6 +156,22 @@
           "abilities": [ ],
           "when": "always"
         }
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION", // 模糊定位
+        "reason": "$string:hello_webabcd",
+        "usedScene": {
+          "abilities": [ ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.LOCATION", // 精确定位
+        "reason": "$string:hello_webabcd",
+        "usedScene": {
+          "abilities": [ ],
+          "when": "always"
+        }
       }
     ]
   }

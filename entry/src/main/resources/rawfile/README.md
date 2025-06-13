@@ -13,6 +13,8 @@
 - pages/security/CryptoDemo
 2. 关键资产
 - pages/security/AssetStoreDemo
+3. 申请权限
+- pages/security/PermissionDemo
 3. 用户认证
 - pages/security/UserAuthenticationDemo
 3. hilog 日志
