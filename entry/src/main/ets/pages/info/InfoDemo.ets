@@ -49,6 +49,8 @@ struct MySample1 {
      */
     // 设备类型，可能的值有 phone, tablet, 2in1, tv, wearable, car
     this.message += `deviceType: ${deviceInfo.deviceType}\n` // phone
+    // 设备型号
+    this.message += `productModel: ${deviceInfo.productModel}\n` // emulator
     // 厂家名称
     this.message += `manufacture: ${deviceInfo.manufacture}\n` // HUAWEI
     // 品牌名称
