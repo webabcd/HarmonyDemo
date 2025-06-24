@@ -5,6 +5,9 @@
 import { TitleBar } from '../TitleBar'
 import BuildProfile from 'BuildProfile'
 import { deviceInfo } from '@kit.BasicServicesKit'
+import { Helper } from '../../utils/Helper'
+import process from '@ohos.process';
+import { systemDateTime } from '@kit.BasicServicesKit';
 
 @Entry
 @Component
@@ -75,12 +78,27 @@ struct MySample1 {
     this.message += `buildVersion: ${deviceInfo.buildVersion}\n` // 110
     // 由很多信息拼接而成的版本标识
     this.message += `versionId: ${deviceInfo.versionId}\n` // phone/HUAWEI/HUAWEI/emulator/OpenHarmony-5.0.1.110/emulator/default/13/default/default
+
+    /*
+     * 时间相关
+     */
+    // 当前时间戳（单位：毫秒）
+    this.message += `time: ${Helper.formatWithThousandSeparator(new Date().getTime())}\n`
+    // 当前系统已运行的时间（单位：秒）
+    this.message += `process uptime: ${process.uptime()}\n`;
+    // 当前系统已运行的时间
+    //   timeType - systemDateTime.TimeType.STARTUP（包括深度睡眠时间），systemDateTime.TimeType.ACTIVE（不包括深度睡眠时间）
+    //   isNanoseconds - false（毫秒），true（纳秒）
+    this.message += `process uptime: ${systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, false)}\n`;
   }
 
   build() {
     Column({ space: 10 }) {
 
-      Text(this.message)
+      Scroll() {
+        Text(this.message)
+      }
+      .layoutWeight(1).align(Alignment.TopStart).backgroundColor(Color.Yellow).width('100%')
     }
   }
 }
