@@ -90,6 +90,8 @@
 1. 基础知识
 - pages/basic/Overview
 - /readme.txt
+- /readme_agc.txt
+- /readme_ohpm.txt
 2. ArkUI 基础
 - pages/basic/Hello
 3. @Builder 相关装饰器（@Builder, @BuilderParam, @LocalBuilder, WrappedBuilder）
