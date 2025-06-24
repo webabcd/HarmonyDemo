@@ -1,6 +1,6 @@
 /*
  * 本例用于演示华为账号的默认的登录体验
- * 登录后可以拿到 openID, unionID 等
+ * 登录后可以拿到 openID, unionID 等，以及华为账号头像和昵称等
  */
 
 import { authentication } from '@kit.AccountKit';
